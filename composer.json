@@ -1,7 +1,9 @@
 {
   "name": "melisplatform/melis-demo-cms",
   "description": "Melis Platform Demo Cms Site Module",
-  "type": "melisplatform-site-module",
+  "type": "melisplatform-module",
+  "melis-site": true,
+  "melis-module-category": "cms",
   "license": "OSL-3.0",
   "homepage": "https://github.com/melisplatform/melis-installer",
   "support": {
@@ -40,7 +42,7 @@
   },
   "autoload": {
     "psr-4": {
-      "MelisInstaller\\": "src/"
+      "MelisDemoCms\\": "src/"
     }
   }
 }
