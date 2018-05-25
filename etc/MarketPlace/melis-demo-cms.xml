@@ -1,0 +1,16 @@
+<melis-demo-cms>
+	<package_info>
+		<mp_title>Melis Demo Cms</mp_title>
+		<mp_subtitle>A Cms demo website</mp_subtitle>
+		<mp_description>
+			<![CDATA[
+				<p>
+					This module allows you view a sample of Cms website
+					built using the Melis Platform
+				</p>
+			]]>
+		</mp_description>
+		<mp_maintainers>melisplatform</mp_maintainers>
+		<mp_group>Melis Cms</mp_group>
+	</package_info>
+</melis-demo-cms>
