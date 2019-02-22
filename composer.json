@@ -3,11 +3,11 @@
   "description": "Official Melis Platform Demo Site",
   "type": "melisplatform-module",
   "license": "OSL-3.0",
-  "homepage": "https://github.com/benborla/melis-demo-cms",
+  "homepage": "https://github.com/melisplatform/melis-demo-cms",
   "support": {
     "email": "contact@melistechnology.com",
-    "source": "https://github.com/benborla/melis-demo-cms",
-    "issues": "https://github.com/benborla/melis-demo-cms/issues",
+    "source": "https://github.com/melisplatform/melis-demo-cms",
+    "issues": "https://github.com/melisplatform/melis-demo-cms/issues",
     "docs": "https://www.melistechnology.com/melistechnology/resources/download-documentation/id/17#documentation"
   },
   "authors": [
