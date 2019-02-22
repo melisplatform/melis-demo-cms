@@ -28,6 +28,8 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
                 $pages = $this->createMap((array) $e->getParams()['pages']);
                 /** @var \MelisAssetManager\Service\MelisModulesService $moduleService */
                 $moduleService = $sm->get('MelisAssetManagerModulesService');
+                /** @var \MelisMarketPlace\Service\MelisMarketPlaceSiteService $melisMarketPlaceSiteSvc */
+                $melisMarketPlaceSiteSvc = $sm->get('MelisMarketPlaceSiteService');
                 $path = $moduleService->getModulePath('MelisDemoCms');
 
                 $siteId = (int) $e->getParams()['site_id'];
@@ -38,10 +40,11 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
                 $melisDemoConfig = file_get_contents($path . '/config/MelisDemoCms.config.stub');
                 $melisDemoConfig = str_replace([
                     '%site_id%', '%news_page_id%', '%news_details_id%', '%testimonial%', '%homepage_slider_id%', '%about_us_slider%', '%search_results_page_id%'
-                ],[$siteId, $pages['News'], $pages['News Details'], null, $siteId, $aboutUsPageId, $pages['Search results']], $melisDemoConfig);
+                ],[$siteId, $pages['News'], $pages['News Details'], $pages['Testimonials'], $siteId, $aboutUsPageId, $pages['Search results']], $melisDemoConfig);
 
                 unlink($path . '/config/MelisDemoCms.config.php');
                 file_put_contents($path . '/config/MelisDemoCms.config.php', $melisDemoConfig);
+
             },
             -10000);
 
