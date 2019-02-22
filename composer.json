@@ -38,12 +38,12 @@
   },
   "require": {
     "composer/installers": "~1.0",
-    "melisplatform/melis-engine: "^3.0",
-    "melisplatform/melis-front: "^3.0",
-    "melisplatform/melis-cms: "^3.0",
-    "melisplatform/melis-cms-slider: "^3.0",
-    "melisplatform/melis-cms-prospects: "^3.0",
-    "melisplatform/melis-cms-news: "^3.0",
+    "melisplatform/melis-engine": "^3.0",
+    "melisplatform/melis-front": "^3.0",
+    "melisplatform/melis-cms": "^3.0",
+    "melisplatform/melis-cms-slider": "^3.0",
+    "melisplatform/melis-cms-prospects": "^3.0",
+    "melisplatform/melis-cms-news": "^3.0",
     "php": "^7.0"
   },
   "suggest": {
