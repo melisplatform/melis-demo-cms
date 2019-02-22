@@ -1,27 +1,32 @@
 <?php
+
+namespace MelisDemoCms;
+
 return array(
-    'tr_MelisDemoCms_name' => 'MelisDemoCms',
+    'tr_MelisDemoCms_name' => __NAMESPACE__,
 
     //install melisdemocms
-    'tr_melis_installer_site_id'        => 'Site id',
-    'tr_melis_installer_site_id_info'   => 'Site id info',
-    'tr_melis_installer_sub_menu_limit' => 'Submenu limit',
-    'tr_melis_installer_sub_menu_limit_info' => 'Submenu limit info',
-    'tr_melis_installer_news_menu_page_id' => 'News page id',
-    'tr_melis_installer_news_menu_page_id_info' => 'News page id info',
-    'tr_melis_installer_news_details_page_id' => 'News details page id',
-    'tr_melis_installer_news_details_page_id_info' => 'News details page id info',
-    'tr_melis_installer_testimonial_id' => 'Testimonial parent id',
-    'tr_melis_installer_testimonial_id_info' => 'Testimonial parent id info',
-    'tr_melis_installer_homepage_header_slider' => 'Homepage header slider id',
-    'tr_melis_installer_homepage_header_slider_info' => 'Enter header slider id info',
-    'tr_melis_installer_aboutus_slider_id' => 'About us slider id',
-    'tr_melis_installer_aboutus_slider_info' => 'About us slider id info',
+    'tr_site_demo_cms_site_id'        => 'Site id',
+    'tr_site_demo_cms_site_id_info'   => 'Site id info',
+    'tr_site_demo_cms_sub_menu_limit' => 'Submenu limit',
+    'tr_site_demo_cms_sub_menu_limit_info' => 'Submenu limit info',
+    'tr_site_demo_cms_news_menu_page_id' => 'News page id',
+    'tr_site_demo_cms_news_menu_page_id_info' => 'News page id info',
+    'tr_site_demo_cms_news_details_page_id' => 'News details page id',
+    'tr_site_demo_cms_news_details_page_id_info' => 'News details page id info',
+    'tr_site_demo_cms_testimonial_id' => 'Testimonial parent id',
+    'tr_site_demo_cms_testimonial_id_info' => 'Testimonial parent id info',
+    'tr_site_demo_cms_homepage_header_slider' => 'Homepage header slider id',
+    'tr_site_demo_cms_homepage_header_slider_info' => 'Enter header slider id info',
+    'tr_site_demo_cms_aboutus_slider_id' => 'About us slider id',
+    'tr_site_demo_cms_aboutus_slider_info' => 'About us slider id info',
 
-    'tr_melis_installer_sdom_scheme' => 'Scheme',
-    'tr_melis_installer_sdom_scheme_info' => 'Scheme info',
-    'tr_melis_installer_sdom_domain' => 'Domain name',
-    'tr_melis_installer_sdom_domain_info' => 'Domain name info',
+    'tr_site_demo_cms_sdom_scheme' => 'Scheme',
+    'tr_site_demo_cms_sdom_scheme_info' => 'Scheme info',
+    'tr_site_demo_cms_sdom_domain' => 'Domain name',
+    'tr_site_demo_cms_sdom_domain_info' => 'Domain name info',
+    'tr_site_demo_cms_name' => 'Name',
+    'tr_site_demo_cms_name_tooltip' => 'Use to display the name of the site',
 
     //not empty validator
     'tr_domain_install_sdom_domain_empty' => 'Domain name must not be empty',
@@ -33,15 +38,23 @@ return array(
     'tr_install_news_menu_page_id_empty' => 'News menu page id must not be empty',
     'tr_install_site_id_empty' => 'Site id must not be empty',
 
-    'tr_melis_installer_tool_site_scheme' => 'Scheme',
-    'tr_melis_installer_tool_site_scheme tooltip' => 'http or https protocol',
-    'tr_melis_installer_tool_site_domain' => 'Domain',
-    'tr_melis_installer_tool_site_domain tooltip' => 'Domain on which the site is accessible (ex: www.mysite.com)',
+    'tr_site_demo_cms_tool_site_scheme' => 'Scheme',
+    'tr_site_demo_cms_tool_site_scheme tooltip' => 'http or https protocol',
+    'tr_site_demo_cms_tool_site_domain' => 'Domain',
+    'tr_site_demo_cms_tool_site_domain tooltip' => 'Domain on which the site is accessible (ex: www.example.com)',
 
-    'tr_melis_installer_tool_site_scheme_invalid_selection' => 'Invalid scheme selection',
-    'tr_melis_installer_tool_site_domain_error_long' => 'Domain value too long, maximum characters accepted is 50 characters',
-    'tr_melis_installer_tool_site_domain_error_empty' => 'Please enter the domain',
-    'tr_melis_installer_tool_site_domain_invalid' => 'Please enter a valid domain',
+    'tr_site_demo_cms_tool_site_scheme_invalid_selection' => 'Invalid scheme selection',
+    'tr_site_demo_cms_tool_site_domain_error_long' => 'Domain value too long, maximum characters accepted is 50 characters',
+    'tr_site_demo_cms_tool_site_name_error_long' => 'Domain value too long, maximum characters accepted is 50 characters',
+    'tr_site_demo_cms_tool_site_domain_error_empty' => 'Please enter the domain',
+    'tr_site_demo_cms_tool_site_domain_invalid' => 'Please enter a valid domain',
+
+    'tr_melis_installer_tool_site_domain_error_long' => 'Domain too long, it should not exceed on 50 characters',
+    'tr_melis_installer_tool_site_domain_error_empty' => 'Domain is required',
+    'tr_melis_installer_tool_site_scheme_error_empty' => 'Scheme is required',
+    'tr_melis_installer_tool_site_name_error_empty' => 'Name is required',
+
+    'tr_install_setup_message_ok' => 'Setup complete',
 );
 
 ?>
