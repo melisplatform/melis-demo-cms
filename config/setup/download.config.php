@@ -459,201 +459,203 @@ return [
                                                     'plang_page_id_initial' =>  Melis::FOREIGN_KEY
                                                 ]
                                             ],
+                                            Melis::CMS_PAGE_TREE => [
+                                                // <OurDesigns | Jaker>
+                                                [
+                                                    Melis::PRIMARY_KEY => 'tree_page_id',
+                                                    'tree_page_id' => Melis::CURRENT_PAGE_ID,
+                                                    'tree_father_page_id' => Melis::FOREIGN_KEY,
+                                                    'tree_page_order' => 2,
+                                                    Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
+                                                    Melis::RELATION => [
+                                                        Melis::CMS_PAGE_PUBLISHED => [
+                                                            [
+                                                                Melis::PRIMARY_KEY => 'page_id',
+                                                                'page_id' => Melis::FOREIGN_KEY,
+                                                                'page_type' => 'PAGE',
+                                                                'page_status' => '1',
+                                                                'page_menu' => 'LINK',
+                                                                'page_name' => 'Jaker',
+                                                                'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Content Details']],
+                                                                'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0">  <melisTag id="header_title"><![CDATA[Our Designs]]></melisTag>  <melisTag id="header_subtitle"><![CDATA[<h5 class="uppercase">pants</h5>]]></melisTag>  <melisTag id="content_image"><![CDATA[<img src="/MelisDemoCms/images/team/pants/p01.jpg" caption="false" height=" " width=" " data-mce-src="/MelisDemoCms/images/team/pants/p01.jpg">]]></melisTag> <melisTag id="content_subtitle1"><![CDATA[New Fashion]]></melisTag> <melisTag id="content_title"><![CDATA[Jaker]]></melisTag>   <melisTag id="content_subtitle2"><![CDATA[sweet collection]]></melisTag>    <melisTag id="content_text"><![CDATA[<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>]]></melisTag>    <melisTag id="header_image"><![CDATA[<img alt="" src="/MelisDemoCms/images/bg/designs.jpg" data-mce-src="/MelisDemoCms/images/bg/designs.jpg">]]></melisTag></document>',
+                                                                'page_search_type' => 'tr_meliscms_page_tab_properties_search_type_option1',
+                                                            ],
+                                                        ],
+                                                        Melis::CMS_PAGE_LANG => [
+                                                            [
+                                                                'plang_page_id' =>  Melis::FOREIGN_KEY,
+                                                                'plang_lang_id' => 1,
+                                                                'plang_page_id_initial' =>  Melis::FOREIGN_KEY
+                                                            ]
+                                                        ],
+                                                    ]
+                                                ],
+                                                // </OurDesigns | Jaker>
+
+                                                // <OurDesigns | Duchesse>
+                                                [
+                                                    Melis::PRIMARY_KEY => 'tree_page_id',
+                                                    'tree_page_id' => Melis::CURRENT_PAGE_ID,
+                                                    'tree_father_page_id' => Melis::FOREIGN_KEY,
+                                                    'tree_page_order' => 3,
+                                                    Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
+                                                    Melis::RELATION => [
+                                                        Melis::CMS_PAGE_PUBLISHED => [
+                                                            [
+                                                                Melis::PRIMARY_KEY => 'page_id',
+                                                                'page_id' => Melis::FOREIGN_KEY,
+                                                                'page_type' => 'PAGE',
+                                                                'page_status' => '1',
+                                                                'page_menu' => 'LINK',
+                                                                'page_name' => 'Duchesse',
+                                                                'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Content Details']],
+                                                                'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0">  <melisTag id="header_title"><![CDATA[Our Designs]]></melisTag>  <melisTag id="content_subtitle"><![CDATA[Shirts]]></melisTag>   <melisTag id="content_text_1"><![CDATA[<div class="show-product row"><div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><div class="brand-img text-center"><img src="/MelisDemoCms/images/product/01.jpg" alt="" data-mce-src="/MelisDemoCms/images/product/01.jpg"></div></div><div class="col-lg-7 col-md-7 col-sm-6 col-xs-12"><div class="show-product-description"><h6 class="sp-category">New Fashion</h6><h2 class="uppercase montserrat">Brand Cortta</h2><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div></div></div>]]></melisTag>    <melisTag id="content_text_2"><![CDATA[<div class="show-product row"><div class="col-lg-7 col-md-7 col-sm-6 col-xs-12"><div class="show-product-description"><h6 class="sp-category">New Fashion</h6><h2 class="uppercase montserrat">Brand Cortta</h2><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div></div><div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><div class="brand-img text-center"><img src="/MelisDemoCms/images/product/02.jpg" alt="" data-mce-src="/MelisDemoCms/images/product/02.jpg"></div></div></div>]]></melisTag>    <melisTag id="content_text_3"><![CDATA[<div class="show-product row"><div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><div class="brand-img text-center"><img src="/MelisDemoCms/images/product/03.jpg" alt="" data-mce-src="/MelisDemoCms/images/product/03.jpg"></div></div><div class="col-lg-7 col-md-7 col-sm-6 col-xs-12"><div class="show-product-description"><h6 class="sp-category">New Fashion</h6><h2 class="uppercase montserrat">Brand Cortta</h2><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div></div></div>]]></melisTag>    <melisTag id="header_subtitle"><![CDATA[<h5 class="uppercase">pants</h5>]]></melisTag>  <melisTag id="content_image"><![CDATA[<img src="/MelisDemoCms/images/team/pants/p02.jpg">]]></melisTag> <melisTag id="content_subtitle1"><![CDATA[New Fashion]]></melisTag> <melisTag id="content_title"><![CDATA[Duchesse]]></melisTag>    <melisTag id="content_subtitle2"><![CDATA[sweet collection]]></melisTag>    <melisTag id="content_text"><![CDATA[<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>]]></melisTag>    <melisTag id="header_image"><![CDATA[<img alt="" src="/MelisDemoCms/images/bg/designs.jpg" data-mce-src="/MelisDemoCms/images/bg/designs.jpg">]]></melisTag></document>',
+                                                                'page_search_type' => 'tr_meliscms_page_tab_properties_search_type_option1',
+                                                            ],
+                                                        ],
+                                                        Melis::CMS_PAGE_LANG => [
+                                                            [
+                                                                'plang_page_id' =>  Melis::FOREIGN_KEY,
+                                                                'plang_lang_id' => 1,
+                                                                'plang_page_id_initial' =>  Melis::FOREIGN_KEY
+                                                            ]
+                                                        ],
+                                                    ]
+                                                ],
+                                                // </OurDesigns | Duchesse>
+
+                                                // <OurDesigns | Velour>
+                                                [
+                                                    Melis::PRIMARY_KEY => 'tree_page_id',
+                                                    'tree_page_id' => Melis::CURRENT_PAGE_ID,
+                                                    'tree_father_page_id' => Melis::FOREIGN_KEY,
+                                                    'tree_page_order' => 4,
+                                                    Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
+                                                    Melis::RELATION => [
+                                                        Melis::CMS_PAGE_PUBLISHED => [
+                                                            [
+                                                                Melis::PRIMARY_KEY => 'page_id',
+                                                                'page_id' => Melis::FOREIGN_KEY,
+                                                                'page_type' => 'PAGE',
+                                                                'page_status' => '1',
+                                                                'page_menu' => 'LINK',
+                                                                'page_name' => 'Velour',
+                                                                'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Content Details']],
+                                                                'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0">  <melisTag id="header_title"><![CDATA[Our Designs]]></melisTag>  <melisTag id="header_subtitle"><![CDATA[<h5 class="uppercase">pants</h5>]]></melisTag>  <melisTag id="content_image"><![CDATA[<img src="/MelisDemoCms/images/team/pants/p03.jpg" />]]></melisTag>   <melisTag id="content_subtitle1"><![CDATA[New Fashion]]></melisTag> <melisTag id="content_title"><![CDATA[Velour]]></melisTag>  <melisTag id="content_subtitle2"><![CDATA[sweet collection]]></melisTag>    <melisTag id="content_text"><![CDATA[<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>]]></melisTag>    <melisTag id="header_image"><![CDATA[<img alt="" src="/MelisDemoCms/images/bg/designs.jpg" data-mce-src="/MelisDemoCms/images/bg/designs.jpg">]]></melisTag></document>',
+                                                                'page_search_type' => 'tr_meliscms_page_tab_properties_search_type_option1',
+                                                            ],
+                                                        ],
+                                                        Melis::CMS_PAGE_LANG => [
+                                                            [
+                                                                'plang_page_id' =>  Melis::FOREIGN_KEY,
+                                                                'plang_lang_id' => 1,
+                                                                'plang_page_id_initial' =>  Melis::FOREIGN_KEY
+                                                            ]
+                                                        ],
+                                                    ]
+                                                ],
+                                                // </OurDesigns | Velour>
+
+                                                // <OurDesigns | Streester>
+                                                [
+                                                    Melis::PRIMARY_KEY => 'tree_page_id',
+                                                    'tree_page_id' => Melis::CURRENT_PAGE_ID,
+                                                    'tree_father_page_id' => Melis::FOREIGN_KEY,
+                                                    'tree_page_order' => 5,
+                                                    Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
+                                                    Melis::RELATION => [
+                                                        Melis::CMS_PAGE_PUBLISHED => [
+                                                            [
+                                                                Melis::PRIMARY_KEY => 'page_id',
+                                                                'page_id' => Melis::FOREIGN_KEY,
+                                                                'page_type' => 'PAGE',
+                                                                'page_status' => '1',
+                                                                'page_menu' => 'LINK',
+                                                                'page_name' => 'Streester',
+                                                                'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Content Details']],
+                                                                'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0">  <melisTag id="header_image"><![CDATA[<img alt="" src="/MelisDemoCms/images/bg/designs.jpg" data-mce-src="/MelisDemoCms/images/bg/designs.jpg">]]></melisTag>    <melisTag id="header_title"><![CDATA[Our Designs]]></melisTag>  <melisTag id="content_subtitle"><![CDATA[pants 4]]></melisTag>  <melisTag id="content_text_1"><![CDATA[<div class="show-product row"><div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><div class="brand-img text-center"><img src="/MelisDemoCms/images/product/01.jpg" alt="" /></div></div><div class="col-lg-7 col-md-7 col-sm-6 col-xs-12"><div class="show-product-description"><h6 class="sp-category">New Fashion</h6><h2 class="uppercase montserrat">Brand Cortta</h2><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div></div></div>]]></melisTag> <melisTag id="content_text_2"><![CDATA[<div class="show-product row"><div class="col-lg-7 col-md-7 col-sm-6 col-xs-12"><div class="show-product-description"><h6 class="sp-category">New Fashion</h6><h2 class="uppercase montserrat">Brand Cortta</h2><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div></div><div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><div class="brand-img text-center"><img src="/MelisDemoCms/images/product/02.jpg" alt="" /></div></div></div>]]></melisTag> <melisTag id="content_text_3"><![CDATA[<div class="show-product row"><div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><div class="brand-img text-center"><img src="/MelisDemoCms/images/product/03.jpg" alt="" /></div></div><div class="col-lg-7 col-md-7 col-sm-6 col-xs-12"><div class="show-product-description"><h6 class="sp-category">New Fashion</h6><h2 class="uppercase montserrat">Brand Cortta</h2><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div></div></div>]]></melisTag> <melisTag id="header_subtitle"><![CDATA[<h5 class="uppercase">pants</h5>]]></melisTag>  <melisTag id="content_image"><![CDATA[<img src="/MelisDemoCms/images/team/pants/p04.jpg">]]></melisTag> <melisTag id="content_subtitle1"><![CDATA[New Fashion]]></melisTag> <melisTag id="content_title"><![CDATA[Streester]]></melisTag>   <melisTag id="content_subtitle2"><![CDATA[Blain collection]]></melisTag>    <melisTag id="content_text"><![CDATA[<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>]]></melisTag></document>',
+                                                                'page_search_type' => 'tr_meliscms_page_tab_properties_search_type_option1',
+                                                            ],
+                                                        ],
+                                                        Melis::CMS_PAGE_LANG => [
+                                                            [
+                                                                'plang_page_id' =>  Melis::FOREIGN_KEY,
+                                                                'plang_lang_id' => 1,
+                                                                'plang_page_id_initial' =>  Melis::FOREIGN_KEY
+                                                            ]
+                                                        ],
+                                                    ]
+                                                ],
+                                                // </OurDesigns | Streester>
+
+                                                // <OurDesigns | Glany>
+                                                [
+                                                    Melis::PRIMARY_KEY => 'tree_page_id',
+                                                    'tree_page_id' => Melis::CURRENT_PAGE_ID,
+                                                    'tree_father_page_id' => Melis::FOREIGN_KEY,
+                                                    'tree_page_order' => 6,
+                                                    Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
+                                                    Melis::RELATION => [
+                                                        Melis::CMS_PAGE_PUBLISHED => [
+                                                            [
+                                                                Melis::PRIMARY_KEY => 'page_id',
+                                                                'page_id' => Melis::FOREIGN_KEY,
+                                                                'page_type' => 'PAGE',
+                                                                'page_status' => '1',
+                                                                'page_menu' => 'LINK',
+                                                                'page_name' => 'Glany',
+                                                                'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Content Details']],
+                                                                'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0">  <melisTag id="header_image"><![CDATA[<img alt="" src="/MelisDemoCms/images/bg/designs.jpg" data-mce-src="/MelisDemoCms/images/bg/designs.jpg">]]></melisTag>    <melisTag id="header_title"><![CDATA[Our Designs]]></melisTag>  <melisTag id="content_subtitle"><![CDATA[Shirts]]></melisTag>   <melisTag id="content_text_1"><![CDATA[<div class="show-product row"><div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><div class="brand-img text-center"><img src="/MelisDemoCms/images/product/01.jpg" alt="" data-mce-src="/MelisDemoCms/images/product/01.jpg"></div></div><div class="col-lg-7 col-md-7 col-sm-6 col-xs-12"><div class="show-product-description"><h6 class="sp-category">New Fashion</h6><h2 class="uppercase montserrat">Brand Cortta</h2><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div></div></div>]]></melisTag>    <melisTag id="content_text_2"><![CDATA[<div class="show-product row"><div class="col-lg-7 col-md-7 col-sm-6 col-xs-12"><div class="show-product-description"><h6 class="sp-category">New Fashion</h6><h2 class="uppercase montserrat">Brand Cortta</h2><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div></div><div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><div class="brand-img text-center"><img src="/MelisDemoCms/images/product/02.jpg" alt="" data-mce-src="/MelisDemoCms/images/product/02.jpg"></div></div></div>]]></melisTag>    <melisTag id="header_subtitle"><![CDATA[<h5 class="uppercase">pants</h5>]]></melisTag>  <melisTag id="content_image"><![CDATA[<img src="/MelisDemoCms/images/team/pants/p05.jpg" />]]></melisTag>   <melisTag id="content_subtitle1"><![CDATA[New Fashion]]></melisTag> <melisTag id="content_title"><![CDATA[Glany]]></melisTag>   <melisTag id="content_subtitle2"><![CDATA[<span class="product-price">Blain collection</span>]]></melisTag> <melisTag id="content_text"><![CDATA[<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>]]></melisTag></document>',
+                                                                'page_search_type' => 'tr_meliscms_page_tab_properties_search_type_option1',
+                                                            ],
+                                                        ],
+                                                        Melis::CMS_PAGE_LANG => [
+                                                            [
+                                                                'plang_page_id' =>  Melis::FOREIGN_KEY,
+                                                                'plang_lang_id' => 1,
+                                                                'plang_page_id_initial' =>  Melis::FOREIGN_KEY
+                                                            ]
+                                                        ],
+                                                    ]
+                                                ],
+                                                // </OurDesigns | Glany>
+
+                                                // <OurDesigns | Grimy>
+                                                [
+                                                    Melis::PRIMARY_KEY => 'tree_page_id',
+                                                    'tree_page_id' => Melis::CURRENT_PAGE_ID,
+                                                    'tree_father_page_id' => Melis::FOREIGN_KEY,
+                                                    'tree_page_order' => 7,
+                                                    Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
+                                                    Melis::RELATION => [
+                                                        Melis::CMS_PAGE_PUBLISHED => [
+                                                            [
+                                                                Melis::PRIMARY_KEY => 'page_id',
+                                                                'page_id' => Melis::FOREIGN_KEY,
+                                                                'page_type' => 'PAGE',
+                                                                'page_status' => '1',
+                                                                'page_menu' => 'LINK',
+                                                                'page_name' => 'Grimy',
+                                                                'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Content Details']],
+                                                                'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0">  <melisTag id="header_image"><![CDATA[<img alt="" src="/MelisDemoCms/images/bg/designs.jpg" data-mce-src="/MelisDemoCms/images/bg/designs.jpg">]]></melisTag>    <melisTag id="header_title"><![CDATA[Our Designs]]></melisTag>  <melisTag id="header_subtitle"><![CDATA[pants]]></melisTag> <melisTag id="content_image"><![CDATA[<img src="/MelisDemoCms/images/team/pants/p06.jpg">]]></melisTag> <melisTag id="content_subtitle1"><![CDATA[New Fashion]]></melisTag> <melisTag id="content_title"><![CDATA[Grimy]]></melisTag>   <melisTag id="content_subtitle2"><![CDATA[Blain collection]]></melisTag></document>',
+                                                                'page_search_type' => 'tr_meliscms_page_tab_properties_search_type_option1',
+                                                            ],
+                                                        ],
+                                                        Melis::CMS_PAGE_LANG => [
+                                                            [
+                                                                'plang_page_id' =>  Melis::FOREIGN_KEY,
+                                                                'plang_lang_id' => 1,
+                                                                'plang_page_id_initial' =>  Melis::FOREIGN_KEY
+                                                            ]
+                                                        ],
+                                                    ]
+                                                ],
+                                                // </OurDesigns | Grimy>
+                                            ]
                                         ]
                                     ],
                                     // </OurDesigns | Pants>
 
-                                    // <OurDesigns | Jaker>
-                                    [
-                                        Melis::PRIMARY_KEY => 'tree_page_id',
-                                        'tree_page_id' => Melis::CURRENT_PAGE_ID,
-                                        'tree_father_page_id' => Melis::FOREIGN_KEY,
-                                        'tree_page_order' => 2,
-                                        Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
-                                        Melis::RELATION => [
-                                            Melis::CMS_PAGE_PUBLISHED => [
-                                                [
-                                                    Melis::PRIMARY_KEY => 'page_id',
-                                                    'page_id' => Melis::FOREIGN_KEY,
-                                                    'page_type' => 'PAGE',
-                                                    'page_status' => '1',
-                                                    'page_menu' => 'LINK',
-                                                    'page_name' => 'Jaker',
-                                                    'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Content Details']],
-                                                    'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0">  <melisTag id="header_title"><![CDATA[Our Designs]]></melisTag>  <melisTag id="header_subtitle"><![CDATA[<h5 class="uppercase">pants</h5>]]></melisTag>  <melisTag id="content_image"><![CDATA[<img src="/MelisDemoCms/images/team/pants/p01.jpg" caption="false" height=" " width=" " data-mce-src="/MelisDemoCms/images/team/pants/p01.jpg">]]></melisTag> <melisTag id="content_subtitle1"><![CDATA[New Fashion]]></melisTag> <melisTag id="content_title"><![CDATA[Jaker]]></melisTag>   <melisTag id="content_subtitle2"><![CDATA[sweet collection]]></melisTag>    <melisTag id="content_text"><![CDATA[<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>]]></melisTag>    <melisTag id="header_image"><![CDATA[<img alt="" src="/MelisDemoCms/images/bg/designs.jpg" data-mce-src="/MelisDemoCms/images/bg/designs.jpg">]]></melisTag></document>',
-                                                    'page_search_type' => 'tr_meliscms_page_tab_properties_search_type_option1',
-                                                ],
-                                            ],
-                                            Melis::CMS_PAGE_LANG => [
-                                                [
-                                                    'plang_page_id' =>  Melis::FOREIGN_KEY,
-                                                    'plang_lang_id' => 1,
-                                                    'plang_page_id_initial' =>  Melis::FOREIGN_KEY
-                                                ]
-                                            ],
-                                        ]
-                                    ],
-                                    // </OurDesigns | Jaker>
-
-                                    // <OurDesigns | Duchesse>
-                                    [
-                                        Melis::PRIMARY_KEY => 'tree_page_id',
-                                        'tree_page_id' => Melis::CURRENT_PAGE_ID,
-                                        'tree_father_page_id' => Melis::FOREIGN_KEY,
-                                        'tree_page_order' => 3,
-                                        Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
-                                        Melis::RELATION => [
-                                            Melis::CMS_PAGE_PUBLISHED => [
-                                                [
-                                                    Melis::PRIMARY_KEY => 'page_id',
-                                                    'page_id' => Melis::FOREIGN_KEY,
-                                                    'page_type' => 'PAGE',
-                                                    'page_status' => '1',
-                                                    'page_menu' => 'LINK',
-                                                    'page_name' => 'Duchesse',
-                                                    'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Content Details']],
-                                                    'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0">  <melisTag id="header_title"><![CDATA[Our Designs]]></melisTag>  <melisTag id="content_subtitle"><![CDATA[Shirts]]></melisTag>   <melisTag id="content_text_1"><![CDATA[<div class="show-product row"><div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><div class="brand-img text-center"><img src="/MelisDemoCms/images/product/01.jpg" alt="" data-mce-src="/MelisDemoCms/images/product/01.jpg"></div></div><div class="col-lg-7 col-md-7 col-sm-6 col-xs-12"><div class="show-product-description"><h6 class="sp-category">New Fashion</h6><h2 class="uppercase montserrat">Brand Cortta</h2><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div></div></div>]]></melisTag>    <melisTag id="content_text_2"><![CDATA[<div class="show-product row"><div class="col-lg-7 col-md-7 col-sm-6 col-xs-12"><div class="show-product-description"><h6 class="sp-category">New Fashion</h6><h2 class="uppercase montserrat">Brand Cortta</h2><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div></div><div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><div class="brand-img text-center"><img src="/MelisDemoCms/images/product/02.jpg" alt="" data-mce-src="/MelisDemoCms/images/product/02.jpg"></div></div></div>]]></melisTag>    <melisTag id="content_text_3"><![CDATA[<div class="show-product row"><div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><div class="brand-img text-center"><img src="/MelisDemoCms/images/product/03.jpg" alt="" data-mce-src="/MelisDemoCms/images/product/03.jpg"></div></div><div class="col-lg-7 col-md-7 col-sm-6 col-xs-12"><div class="show-product-description"><h6 class="sp-category">New Fashion</h6><h2 class="uppercase montserrat">Brand Cortta</h2><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div></div></div>]]></melisTag>    <melisTag id="header_subtitle"><![CDATA[<h5 class="uppercase">pants</h5>]]></melisTag>  <melisTag id="content_image"><![CDATA[<img src="/MelisDemoCms/images/team/pants/p02.jpg">]]></melisTag> <melisTag id="content_subtitle1"><![CDATA[New Fashion]]></melisTag> <melisTag id="content_title"><![CDATA[Duchesse]]></melisTag>    <melisTag id="content_subtitle2"><![CDATA[sweet collection]]></melisTag>    <melisTag id="content_text"><![CDATA[<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>]]></melisTag>    <melisTag id="header_image"><![CDATA[<img alt="" src="/MelisDemoCms/images/bg/designs.jpg" data-mce-src="/MelisDemoCms/images/bg/designs.jpg">]]></melisTag></document>',
-                                                    'page_search_type' => 'tr_meliscms_page_tab_properties_search_type_option1',
-                                                ],
-                                            ],
-                                            Melis::CMS_PAGE_LANG => [
-                                                [
-                                                    'plang_page_id' =>  Melis::FOREIGN_KEY,
-                                                    'plang_lang_id' => 1,
-                                                    'plang_page_id_initial' =>  Melis::FOREIGN_KEY
-                                                ]
-                                            ],
-                                        ]
-                                    ],
-                                    // </OurDesigns | Duchesse>
-
-                                    // <OurDesigns | Velour>
-                                    [
-                                        Melis::PRIMARY_KEY => 'tree_page_id',
-                                        'tree_page_id' => Melis::CURRENT_PAGE_ID,
-                                        'tree_father_page_id' => Melis::FOREIGN_KEY,
-                                        'tree_page_order' => 4,
-                                        Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
-                                        Melis::RELATION => [
-                                            Melis::CMS_PAGE_PUBLISHED => [
-                                                [
-                                                    Melis::PRIMARY_KEY => 'page_id',
-                                                    'page_id' => Melis::FOREIGN_KEY,
-                                                    'page_type' => 'PAGE',
-                                                    'page_status' => '1',
-                                                    'page_menu' => 'LINK',
-                                                    'page_name' => 'Velour',
-                                                    'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Content Details']],
-                                                    'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0">  <melisTag id="header_title"><![CDATA[Our Designs]]></melisTag>  <melisTag id="header_subtitle"><![CDATA[<h5 class="uppercase">pants</h5>]]></melisTag>  <melisTag id="content_image"><![CDATA[<img src="/MelisDemoCms/images/team/pants/p03.jpg" />]]></melisTag>   <melisTag id="content_subtitle1"><![CDATA[New Fashion]]></melisTag> <melisTag id="content_title"><![CDATA[Velour]]></melisTag>  <melisTag id="content_subtitle2"><![CDATA[sweet collection]]></melisTag>    <melisTag id="content_text"><![CDATA[<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>]]></melisTag>    <melisTag id="header_image"><![CDATA[<img alt="" src="/MelisDemoCms/images/bg/designs.jpg" data-mce-src="/MelisDemoCms/images/bg/designs.jpg">]]></melisTag></document>',
-                                                    'page_search_type' => 'tr_meliscms_page_tab_properties_search_type_option1',
-                                                ],
-                                            ],
-                                            Melis::CMS_PAGE_LANG => [
-                                                [
-                                                    'plang_page_id' =>  Melis::FOREIGN_KEY,
-                                                    'plang_lang_id' => 1,
-                                                    'plang_page_id_initial' =>  Melis::FOREIGN_KEY
-                                                ]
-                                            ],
-                                        ]
-                                    ],
-                                    // </OurDesigns | Velour>
-
-                                    // <OurDesigns | Streester>
-                                    [
-                                        Melis::PRIMARY_KEY => 'tree_page_id',
-                                        'tree_page_id' => Melis::CURRENT_PAGE_ID,
-                                        'tree_father_page_id' => Melis::FOREIGN_KEY,
-                                        'tree_page_order' => 5,
-                                        Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
-                                        Melis::RELATION => [
-                                            Melis::CMS_PAGE_PUBLISHED => [
-                                                [
-                                                    Melis::PRIMARY_KEY => 'page_id',
-                                                    'page_id' => Melis::FOREIGN_KEY,
-                                                    'page_type' => 'PAGE',
-                                                    'page_status' => '1',
-                                                    'page_menu' => 'LINK',
-                                                    'page_name' => 'Streester',
-                                                    'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Content Details']],
-                                                    'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0">  <melisTag id="header_image"><![CDATA[<img alt="" src="/MelisDemoCms/images/bg/designs.jpg" data-mce-src="/MelisDemoCms/images/bg/designs.jpg">]]></melisTag>    <melisTag id="header_title"><![CDATA[Our Designs]]></melisTag>  <melisTag id="content_subtitle"><![CDATA[pants 4]]></melisTag>  <melisTag id="content_text_1"><![CDATA[<div class="show-product row"><div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><div class="brand-img text-center"><img src="/MelisDemoCms/images/product/01.jpg" alt="" /></div></div><div class="col-lg-7 col-md-7 col-sm-6 col-xs-12"><div class="show-product-description"><h6 class="sp-category">New Fashion</h6><h2 class="uppercase montserrat">Brand Cortta</h2><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div></div></div>]]></melisTag> <melisTag id="content_text_2"><![CDATA[<div class="show-product row"><div class="col-lg-7 col-md-7 col-sm-6 col-xs-12"><div class="show-product-description"><h6 class="sp-category">New Fashion</h6><h2 class="uppercase montserrat">Brand Cortta</h2><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div></div><div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><div class="brand-img text-center"><img src="/MelisDemoCms/images/product/02.jpg" alt="" /></div></div></div>]]></melisTag> <melisTag id="content_text_3"><![CDATA[<div class="show-product row"><div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><div class="brand-img text-center"><img src="/MelisDemoCms/images/product/03.jpg" alt="" /></div></div><div class="col-lg-7 col-md-7 col-sm-6 col-xs-12"><div class="show-product-description"><h6 class="sp-category">New Fashion</h6><h2 class="uppercase montserrat">Brand Cortta</h2><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div></div></div>]]></melisTag> <melisTag id="header_subtitle"><![CDATA[<h5 class="uppercase">pants</h5>]]></melisTag>  <melisTag id="content_image"><![CDATA[<img src="/MelisDemoCms/images/team/pants/p04.jpg">]]></melisTag> <melisTag id="content_subtitle1"><![CDATA[New Fashion]]></melisTag> <melisTag id="content_title"><![CDATA[Streester]]></melisTag>   <melisTag id="content_subtitle2"><![CDATA[Blain collection]]></melisTag>    <melisTag id="content_text"><![CDATA[<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>]]></melisTag></document>',
-                                                    'page_search_type' => 'tr_meliscms_page_tab_properties_search_type_option1',
-                                                ],
-                                            ],
-                                            Melis::CMS_PAGE_LANG => [
-                                                [
-                                                    'plang_page_id' =>  Melis::FOREIGN_KEY,
-                                                    'plang_lang_id' => 1,
-                                                    'plang_page_id_initial' =>  Melis::FOREIGN_KEY
-                                                ]
-                                            ],
-                                        ]
-                                    ],
-                                    // </OurDesigns | Streester>
-
-                                    // <OurDesigns | Glany>
-                                    [
-                                        Melis::PRIMARY_KEY => 'tree_page_id',
-                                        'tree_page_id' => Melis::CURRENT_PAGE_ID,
-                                        'tree_father_page_id' => Melis::FOREIGN_KEY,
-                                        'tree_page_order' => 6,
-                                        Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
-                                        Melis::RELATION => [
-                                            Melis::CMS_PAGE_PUBLISHED => [
-                                                [
-                                                    Melis::PRIMARY_KEY => 'page_id',
-                                                    'page_id' => Melis::FOREIGN_KEY,
-                                                    'page_type' => 'PAGE',
-                                                    'page_status' => '1',
-                                                    'page_menu' => 'LINK',
-                                                    'page_name' => 'Glany',
-                                                    'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Content Details']],
-                                                    'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0">  <melisTag id="header_image"><![CDATA[<img alt="" src="/MelisDemoCms/images/bg/designs.jpg" data-mce-src="/MelisDemoCms/images/bg/designs.jpg">]]></melisTag>    <melisTag id="header_title"><![CDATA[Our Designs]]></melisTag>  <melisTag id="content_subtitle"><![CDATA[Shirts]]></melisTag>   <melisTag id="content_text_1"><![CDATA[<div class="show-product row"><div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><div class="brand-img text-center"><img src="/MelisDemoCms/images/product/01.jpg" alt="" data-mce-src="/MelisDemoCms/images/product/01.jpg"></div></div><div class="col-lg-7 col-md-7 col-sm-6 col-xs-12"><div class="show-product-description"><h6 class="sp-category">New Fashion</h6><h2 class="uppercase montserrat">Brand Cortta</h2><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div></div></div>]]></melisTag>    <melisTag id="content_text_2"><![CDATA[<div class="show-product row"><div class="col-lg-7 col-md-7 col-sm-6 col-xs-12"><div class="show-product-description"><h6 class="sp-category">New Fashion</h6><h2 class="uppercase montserrat">Brand Cortta</h2><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div></div><div class="col-lg-5 col-md-5 col-sm-6 col-xs-12"><div class="brand-img text-center"><img src="/MelisDemoCms/images/product/02.jpg" alt="" data-mce-src="/MelisDemoCms/images/product/02.jpg"></div></div></div>]]></melisTag>    <melisTag id="header_subtitle"><![CDATA[<h5 class="uppercase">pants</h5>]]></melisTag>  <melisTag id="content_image"><![CDATA[<img src="/MelisDemoCms/images/team/pants/p05.jpg" />]]></melisTag>   <melisTag id="content_subtitle1"><![CDATA[New Fashion]]></melisTag> <melisTag id="content_title"><![CDATA[Glany]]></melisTag>   <melisTag id="content_subtitle2"><![CDATA[<span class="product-price">Blain collection</span>]]></melisTag> <melisTag id="content_text"><![CDATA[<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>]]></melisTag></document>',
-                                                    'page_search_type' => 'tr_meliscms_page_tab_properties_search_type_option1',
-                                                ],
-                                            ],
-                                            Melis::CMS_PAGE_LANG => [
-                                                [
-                                                    'plang_page_id' =>  Melis::FOREIGN_KEY,
-                                                    'plang_lang_id' => 1,
-                                                    'plang_page_id_initial' =>  Melis::FOREIGN_KEY
-                                                ]
-                                            ],
-                                        ]
-                                    ],
-                                    // </OurDesigns | Glany>
-
-                                    // <OurDesigns | Grimy>
-                                    [
-                                        Melis::PRIMARY_KEY => 'tree_page_id',
-                                        'tree_page_id' => Melis::CURRENT_PAGE_ID,
-                                        'tree_father_page_id' => Melis::FOREIGN_KEY,
-                                        'tree_page_order' => 7,
-                                        Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
-                                        Melis::RELATION => [
-                                            Melis::CMS_PAGE_PUBLISHED => [
-                                                [
-                                                    Melis::PRIMARY_KEY => 'page_id',
-                                                    'page_id' => Melis::FOREIGN_KEY,
-                                                    'page_type' => 'PAGE',
-                                                    'page_status' => '1',
-                                                    'page_menu' => 'LINK',
-                                                    'page_name' => 'Grimy',
-                                                    'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Content Details']],
-                                                    'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0">  <melisTag id="header_image"><![CDATA[<img alt="" src="/MelisDemoCms/images/bg/designs.jpg" data-mce-src="/MelisDemoCms/images/bg/designs.jpg">]]></melisTag>    <melisTag id="header_title"><![CDATA[Our Designs]]></melisTag>  <melisTag id="header_subtitle"><![CDATA[pants]]></melisTag> <melisTag id="content_image"><![CDATA[<img src="/MelisDemoCms/images/team/pants/p06.jpg">]]></melisTag> <melisTag id="content_subtitle1"><![CDATA[New Fashion]]></melisTag> <melisTag id="content_title"><![CDATA[Grimy]]></melisTag>   <melisTag id="content_subtitle2"><![CDATA[Blain collection]]></melisTag></document>',
-                                                    'page_search_type' => 'tr_meliscms_page_tab_properties_search_type_option1',
-                                                ],
-                                            ],
-                                            Melis::CMS_PAGE_LANG => [
-                                                [
-                                                    'plang_page_id' =>  Melis::FOREIGN_KEY,
-                                                    'plang_lang_id' => 1,
-                                                    'plang_page_id_initial' =>  Melis::FOREIGN_KEY
-                                                ]
-                                            ],
-                                        ]
-                                    ],
-                                    // </OurDesigns | Grimy>
 
                                     // <OurDesigns | Suits>
                                     [
@@ -1278,11 +1280,11 @@ return [
                             'tree_page_order' => 14,
                             Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
                             Melis::RELATION => [
-                                Melis::CMS_PAGE_SAVED => [
+                                Melis::CMS_PAGE_PUBLISHED => [
                                     [
                                         Melis::PRIMARY_KEY => 'page_id',
                                         'page_id' => Melis::FOREIGN_KEY,
-                                        'page_type' => 'PAGE',
+                                        'page_type' => 'FOLDER',
                                         'page_status' => '1',
                                         'page_menu' => 'NONE',
                                         'page_name' => 'Transversal pages',
@@ -1299,6 +1301,38 @@ return [
                                     ]
                                 ],
                                 Melis::CMS_PAGE_TREE => [
+                                    // <SearchResults>
+                                    [
+                                        Melis::PRIMARY_KEY => 'tree_page_id',
+                                        'tree_page_id' => Melis::CURRENT_PAGE_ID,
+                                        'tree_father_page_id' => Melis::FOREIGN_KEY,
+                                        'tree_page_order' => 15,
+                                        Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
+                                        Melis::RELATION => [
+                                            Melis::CMS_PAGE_PUBLISHED => [
+                                                [
+                                                    Melis::PRIMARY_KEY => 'page_id',
+                                                    'page_id' => Melis::FOREIGN_KEY,
+                                                    'page_type' => 'PAGE',
+                                                    'page_status' => '1',
+                                                    'page_menu' => 'LINK',
+                                                    'page_name' => 'Search results',
+                                                    'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Search']],
+                                                    'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0">  <melisTag id="header_image"><![CDATA[<img alt="" src="/MelisDemoCms/images/bg/search.jpg">]]></melisTag>    <melisTag id="header_title"><![CDATA[Search Results]]></melisTag>   <melisTag id="search_title"><![CDATA[Search Results]]></melisTag>   <melisTag id="footer_title_1"><![CDATA[Contact US]]></melisTag> <melisTag id="footer_text_1"><![CDATA[<ul>                                        <li>                                            <div class="contact-icon">                                               <i class="zmdi zmdi-pin-drop"></i>                                          </div>                                            <div class="contact-text">                                                <p><span>777/a  Seventh Street,</span> <span>Rampura, Bonosri</span></p>                                            </div>                                        </li>                                        <li>                                            <div class="contact-icon"> <i class="zmdi zmdi-email-open"></i> </div>                                            <div class="contact-text">                                                <p><span><a href="#">company@gmail.com</a></span> <span><a href="#">admin@devitems.com</a></span></p>                                            </div>                                        </li>                                        <li>                                            <div class="contact-icon"> <i class="zmdi zmdi-phone-paused"></i> </div>                                            <div class="contact-text">                                                <p><span>+11 (019) 25184203</span> <span>+11 (018) 50950555</span></p>                                            </div>                                        </li>                                    </ul>]]></melisTag>    <melisTag id="footer_title_2"><![CDATA[Information]]></melisTag></document>',
+                                                    'page_search_type' => 'tr_meliscms_page_tab_properties_search_type_option1',
+                                                ],
+                                            ],
+                                            Melis::CMS_PAGE_LANG => [
+                                                [
+                                                    'plang_page_id' =>  Melis::FOREIGN_KEY,
+                                                    'plang_lang_id' => 1,
+                                                    'plang_page_id_initial' =>  Melis::FOREIGN_KEY
+                                                ]
+                                            ],
+                                        ]
+                                    ],
+                                    // </SearchResults>
+                                    
                                     // <TraversalPages | Testimonials>
                                     [
                                         Melis::PRIMARY_KEY => 'tree_page_id',
@@ -1307,7 +1341,7 @@ return [
                                         'tree_page_order' => 1,
                                         Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
                                         Melis::RELATION => [
-                                            Melis::CMS_PAGE_SAVED => [
+                                            Melis::CMS_PAGE_PUBLISHED => [
                                                 [
                                                     Melis::PRIMARY_KEY => 'page_id',
                                                     'page_id' => Melis::FOREIGN_KEY,
@@ -1431,38 +1465,6 @@ return [
                             ]
                         ],
                         // </TraversalPages>
-
-                        // <SearchResults>
-                        [
-                            Melis::PRIMARY_KEY => 'tree_page_id',
-                            'tree_page_id' => Melis::CURRENT_PAGE_ID,
-                            'tree_father_page_id' => Melis::CMS_SITE_ID,
-                            'tree_page_order' => 15,
-                            Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
-                            Melis::RELATION => [
-                                Melis::CMS_PAGE_PUBLISHED => [
-                                    [
-                                        Melis::PRIMARY_KEY => 'page_id',
-                                        'page_id' => Melis::FOREIGN_KEY,
-                                        'page_type' => 'PAGE',
-                                        'page_status' => '1',
-                                        'page_menu' => 'LINK',
-                                        'page_name' => 'Search results',
-                                        'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Search']],
-                                        'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0">  <melisTag id="header_image"><![CDATA[<img alt="" src="/MelisDemoCms/images/bg/search.jpg">]]></melisTag>    <melisTag id="header_title"><![CDATA[Search Results]]></melisTag>   <melisTag id="search_title"><![CDATA[Search Results]]></melisTag>   <melisTag id="footer_title_1"><![CDATA[Contact US]]></melisTag> <melisTag id="footer_text_1"><![CDATA[<ul>                                        <li>                                            <div class="contact-icon">                                               <i class="zmdi zmdi-pin-drop"></i>                                          </div>                                            <div class="contact-text">                                                <p><span>777/a  Seventh Street,</span> <span>Rampura, Bonosri</span></p>                                            </div>                                        </li>                                        <li>                                            <div class="contact-icon"> <i class="zmdi zmdi-email-open"></i> </div>                                            <div class="contact-text">                                                <p><span><a href="#">company@gmail.com</a></span> <span><a href="#">admin@devitems.com</a></span></p>                                            </div>                                        </li>                                        <li>                                            <div class="contact-icon"> <i class="zmdi zmdi-phone-paused"></i> </div>                                            <div class="contact-text">                                                <p><span>+11 (019) 25184203</span> <span>+11 (018) 50950555</span></p>                                            </div>                                        </li>                                    </ul>]]></melisTag>    <melisTag id="footer_title_2"><![CDATA[Information]]></melisTag></document>',
-                                        'page_search_type' => 'tr_meliscms_page_tab_properties_search_type_option1',
-                                    ],
-                                ],
-                                Melis::CMS_PAGE_LANG => [
-                                    [
-                                        'plang_page_id' =>  Melis::FOREIGN_KEY,
-                                        'plang_lang_id' => 1,
-                                        'plang_page_id_initial' =>  Melis::FOREIGN_KEY
-                                    ]
-                                ],
-                            ]
-                        ],
-                        // </SearchResults>
                     ],
                     // </editor-fold>
 
