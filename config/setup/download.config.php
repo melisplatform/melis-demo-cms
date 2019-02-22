@@ -1470,7 +1470,7 @@ return [
                     Melis::CMS_NEWS => [
                         [
                             'cnews_status' => '1',
-                            'cnews_image1' => __NAMESPACE__ . '/images/news/N01.jpg',
+                            'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N01.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
@@ -1488,7 +1488,7 @@ return [
                         ],
                         [
                             'cnews_status' => '1',
-                            'cnews_image1' => __NAMESPACE__ . '/images/news/N02.jpg',
+                            'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N02.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
@@ -1506,7 +1506,7 @@ return [
                         ],
                         [
                             'cnews_status' => '1',
-                            'cnews_image1' => __NAMESPACE__ . '/images/news/N03.jpg',
+                            'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N03.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
@@ -1524,7 +1524,7 @@ return [
                         ],
                         [
                             'cnews_status' => '1',
-                            'cnews_image1' => __NAMESPACE__ . '/images/news/N04.jpg',
+                            'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N04.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
@@ -1542,7 +1542,7 @@ return [
                         ],
                         [
                             'cnews_status' => '1',
-                            'cnews_image1' => __NAMESPACE__ . '/images/news/N05.jpg',
+                            'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N05.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
@@ -1560,7 +1560,7 @@ return [
                         ],
                         [
                             'cnews_status' => '1',
-                            'cnews_image1' => __NAMESPACE__ . '/images/news/N06.jpg',
+                            'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N06.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
@@ -1578,7 +1578,7 @@ return [
                         ],
                         [
                             'cnews_status' => '1',
-                            'cnews_image1' => __NAMESPACE__ . '/images/news/N07.jpg',
+                            'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N07.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
@@ -1596,7 +1596,7 @@ return [
                         ],
                         [
                             'cnews_status' => '1',
-                            'cnews_image1' => __NAMESPACE__ . '/images/news/N08.jpg',
+                            'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N08.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
@@ -1614,7 +1614,7 @@ return [
                         ],
                         [
                             'cnews_status' => '1',
-                            'cnews_image1' => __NAMESPACE__ . '/images/news/N09.jpg',
+                            'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N09.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
@@ -1632,7 +1632,7 @@ return [
                         ],
                         [
                             'cnews_status' => '1',
-                            'cnews_image1' => __NAMESPACE__ . '/images/news/N10.jpg',
+                            'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N10.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
@@ -1650,7 +1650,7 @@ return [
                         ],
                         [
                             'cnews_status' => '1',
-                            'cnews_image1' => __NAMESPACE__ . '/images/news/N11.jpg',
+                            'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N11.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
@@ -1668,7 +1668,7 @@ return [
                         ],
                         [
                             'cnews_status' => '1',
-                            'cnews_image1' => __NAMESPACE__ . '/images/news/N12.jpg',
+                            'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N12.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
@@ -1686,7 +1686,7 @@ return [
                         ],
                         [
                             'cnews_status' => '1',
-                            'cnews_image1' => __NAMESPACE__ . '/images/news/N13.jpg',
+                            'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N13.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
@@ -1704,7 +1704,7 @@ return [
                         ],
                         [
                             'cnews_status' => '1',
-                            'cnews_image1' => __NAMESPACE__ . '/images/news/N14.jpg',
+                            'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N14.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
@@ -1722,7 +1722,7 @@ return [
                         ],
                         [
                             'cnews_status' => '1',
-                            'cnews_image1' => __NAMESPACE__ . '/images/news/N15.jpg',
+                            'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N15.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
@@ -1740,7 +1740,7 @@ return [
                         ],
                         [
                             'cnews_status' => '1',
-                            'cnews_image1' => __NAMESPACE__ . '/images/news/N16.jpg',
+                            'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N16.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
@@ -1758,7 +1758,7 @@ return [
                         ],
                         [
                             'cnews_status' => '1',
-                            'cnews_image1' => __NAMESPACE__ . '/images/news/N17.jpg',
+                            'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N17.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
@@ -1776,7 +1776,7 @@ return [
                         ],
                         [
                             'cnews_status' => '1',
-                            'cnews_image1' => __NAMESPACE__ . '/images/news/N18.jpg',
+                            'cnews_image1' => '/' . __NAMESPACE__ . '/images/news/N18.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
