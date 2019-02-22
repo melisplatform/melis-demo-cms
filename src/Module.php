@@ -38,6 +38,8 @@ class Module
         // Event listener to Setup MelisDemoCms pre-defined datas
         $eventManager->attach(new SetupDemoCmsListener());
 
+        $eventManager->attach(new \MelisDemoCms\Listener\MelisDemoCmsCreateConfigListener());
+
         $this->createTranslations($e);
     }
 
@@ -88,6 +90,7 @@ class Module
             include __DIR__ . '/../config/module.config.php',
             include __DIR__ . '/../config/setup/download.config.php',
             include __DIR__ . '/../config/setup/update.config.php',
+            include __DIR__ . '/../config/MelisDemoCms.config.php',
         ];
 
         foreach ($configFiles as $file) {
