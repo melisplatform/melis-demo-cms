@@ -56,7 +56,7 @@ return [
                                     ],
                                     'attributes' => [
                                         'id' => 'domain',
-                                        'value' => '',
+                                        'value' => $_SERVER['HTTP_HOST'],
                                         'required' => 'required',
                                         'placeholder' => 'www.example.com',
                                         'class' => 'form-control',
@@ -74,7 +74,7 @@ return [
                                     ],
                                     'attributes' => [
                                         'id' => 'name',
-                                        'value' => '',
+                                        'value' => 'Melis Demo CMS',
                                         'required' => 'required',
                                         'placeholder' => 'My Site Name',
                                         'class' => 'form-control',
