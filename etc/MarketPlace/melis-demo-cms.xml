@@ -1,0 +1,42 @@
+<melis-demo-cms>
+	<package_info>
+		<mp_title>Melis Demo Cms</mp_title>
+		<mp_subtitle>A CMS demo website</mp_subtitle>
+		<mp_description>
+			<![CDATA[
+				<p>MelisDemoCms is a ready to install website made with the goal of being an example for developers.</p>
+				<p>The site makes use templating plugins, drag'n'drop, modules sliders, news and prospects.</p>
+				<p>It will present the dos and donts and provide example of implementation.</p>
+			]]>
+		</mp_description>
+		<mp_maintainers>melisplatform</mp_maintainers>
+		<mp_group>Melis Site</mp_group>
+	</package_info>
+	<package_images>
+		<img_1>
+			<mpi_image_title>Melis Demo Cms Home Page</mpi_image_title>
+			<mpi_image_file>melis_translation-1.JPG</mpi_image_file>
+			<mpi_image_main>1</mpi_image_main>
+		</img_1>
+		<img_2>
+			<mpi_image_title>Melis Demo Cms News Page</mpi_image_title>
+			<mpi_image_file>melis_translation-2.JPG</mpi_image_file>
+			<mpi_image_main>0</mpi_image_main>
+		</img_2>
+		<img_3>
+			<mpi_image_title>Melis Demo Cms About Us Page</mpi_image_title>
+			<mpi_image_file>melis_translation-3.JPG</mpi_image_file>
+			<mpi_image_main>0</mpi_image_main>
+		</img_3>
+		<img_4>
+			<mpi_image_title>Melis Demo Cms Contact Us Page</mpi_image_title>
+			<mpi_image_file>melis_translation-4.JPG</mpi_image_file>
+			<mpi_image_main>0</mpi_image_main>
+		</img_4>
+		<img_5>
+			<mpi_image_title>Melis Demo Cms Site Footer</mpi_image_title>
+			<mpi_image_file>melis_translation-5.JPG</mpi_image_file>
+			<mpi_image_main>0</mpi_image_main>
+		</img_5>
+	</package_images>
+</melis-demo-cms>
