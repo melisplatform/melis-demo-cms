@@ -1805,65 +1805,70 @@ return [
                             Melis::RELATION => [
                                 Melis::CMS_PROSPECTS_THEMES_ITEMS => [
                                     [
-                                        'pros_theme_id' => Melis::FOREIGN_KEY,
+
+                                        'pros_theme_id' => 1,
                                         Melis::RELATION => [
                                             Melis::CMS_PROSPECTS_THEMES_ITEMS_TRANSLATIONS => [
                                                 [
                                                     'item_trans_text' => 'About a product',
                                                     'item_trans_lang_id' => 1,
-                                                    'item_trans_theme_item_id' => Melis::ROOT_FOREIGN_KEY,
+                                                    'item_trans_theme_item_id' => 1,
                                                 ],
                                                 [
                                                     'item_trans_text' => 'About the company',
                                                     'item_trans_lang_id' => 1,
-                                                    'item_trans_theme_item_id' => Melis::ROOT_FOREIGN_KEY,
+                                                    'item_trans_theme_item_id' => 2,
                                                 ],
                                                 [
                                                     'item_trans_text' => 'Press related',
                                                     'item_trans_lang_id' => 1,
-                                                    'item_trans_theme_item_id' => Melis::ROOT_FOREIGN_KEY,
+                                                    'item_trans_theme_item_id' => 3,
                                                 ],
                                                 [
                                                     'item_trans_text' => 'Apply for a position',
                                                     'item_trans_lang_id' => 1,
-                                                    'item_trans_theme_item_id' => Melis::ROOT_FOREIGN_KEY,
+                                                    'item_trans_theme_item_id' => 4,
                                                 ],
                                                 [
                                                     'item_trans_text' => 'Other',
                                                     'item_trans_lang_id' => 1,
-                                                    'item_trans_theme_item_id' => Melis::ROOT_FOREIGN_KEY,
+                                                    'item_trans_theme_item_id' => 5,
                                                 ],
                                             ],
                                         ],
                                     ],
+                                    ['pros_theme_id' => 1],
+                                    ['pros_theme_id' => 1],
+                                    ['pros_theme_id' => 1],
+                                    ['pros_theme_id' => 1]
                                 ],
                             ],
                         ],
-                        [
-                            'pros_theme_name' => 'Melis Demo CMS Contact 1',
-                            'pros_theme_code' => 'MELIS_DEMO_CMS_CONTACT 1',
-                            Melis::RELATION => [
-                                Melis::CMS_PROSPECTS_THEMES_ITEMS => [
-                                    [
-                                        'pros_theme_id' => Melis::FOREIGN_KEY,
-                                        Melis::RELATION => [
-                                            Melis::CMS_PROSPECTS_THEMES_ITEMS_TRANSLATIONS => [
-                                                [
-                                                    'item_trans_text' => 'Just observe',
-                                                    'item_trans_lang_id' => 1,
-                                                    'item_trans_theme_item_id' => Melis::ROOT_FOREIGN_KEY,
-                                                ],
-                                                [
-                                                    'item_trans_text' => 'must keep trying',
-                                                    'item_trans_lang_id' => 1,
-                                                    'item_trans_theme_item_id' => Melis::ROOT_FOREIGN_KEY,
-                                                ],
-                                            ],
-                                        ],
-                                    ],
-                                ],
-                            ],
-                        ],
+//                        [
+//                            'pros_theme_name' => 'Melis Demo CMS Contact 1',
+//                            'pros_theme_code' => 'MELIS_DEMO_CMS_CONTACT 1',
+//                            Melis::RELATION => [
+//                                Melis::CMS_PROSPECTS_THEMES_ITEMS => [
+//                                    [
+//                                        'pros_theme_id' => Melis::FOREIGN_KEY,
+//                                        Melis::RELATION => [
+//                                            Melis::CMS_PROSPECTS_THEMES_ITEMS_TRANSLATIONS => [
+//                                                [
+//                                                    'item_trans_text' => 'Just observe',
+//                                                    'item_trans_lang_id' => 1,
+//                                                    'item_trans_theme_item_id' => Melis::ROOT_FOREIGN_KEY,
+//                                                ],
+//                                                [
+//                                                    'item_trans_text' => 'must keep trying',
+//                                                    'item_trans_lang_id' => 1,
+//                                                    'item_trans_theme_item_id' => Melis::ROOT_FOREIGN_KEY,
+//                                                ],
+//                                            ],
+//                                        ],
+//                                    ],
+//                                ],
+//                            ],
+//                        ],
                     ],
                     // </editor-fold>
 
