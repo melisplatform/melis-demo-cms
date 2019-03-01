@@ -9,6 +9,7 @@
 
 namespace MelisDemoCms\Controller;
 
+
 use MelisDemoCms\Controller\BaseController;
 
 class SearchController extends BaseController
@@ -25,7 +26,7 @@ class SearchController extends BaseController
 	    $searchParameters = array(
 	        'template_path' => 'MelisDemoCms/plugin/search-results',
 	        'pageId' => $this->idPage,
-	        'siteModuleName' => 'MelisDemoCms',
+	        'siteModuleName' => 'melis-demo-cms',
 	        'pagination' => array(
 	            'nbPerPage' => 10,
 	            'nbPageBeforeAfter' => 3
@@ -33,7 +34,7 @@ class SearchController extends BaseController
 	    );
 		// add generated view to children views for displaying it in the contact view
 		$this->view->addChild($searchResults->render($searchParameters), 'searchresults');
-		
+
         $this->view->setVariable('renderMode', $this->renderMode);
         $this->view->setVariable('idPage', $this->idPage);
         return $this->view;
