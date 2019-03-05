@@ -13,34 +13,6 @@
         
         // Favicon
         $this->headLink(array('rel' => 'apple-touch-icon', 'href' => $this->basePath('/MelisDemoCms/images/icons/favicon.ico'), 'PREPEND'));
-    
-        // Bootstrap fremwork main css
-        $this->headLink()->appendStylesheet('/MelisDemoCms/css/bootstrap.min.css');
-        
-        // This core.css file contents all plugings css file
-        $this->headLink()->appendStylesheet('/MelisDemoCms/css/core.css');
-        
-        // Theme shortcodes/elements style
-        $this->headLink()->appendStylesheet('/MelisDemoCms/css/shortcode/shortcodes.css');
-        
-        // Owl Carousel Style
-        $this->headLink()->appendStylesheet('/MelisDemoCms/css/owl.carousel.css');
-        $this->headLink()->appendStylesheet('/MelisDemoCms/css/owl.theme.default.css');
-        $this->headLink()->appendStylesheet('/MelisDemoCms/css/owl.theme.green.min.css');
-        
-        // Theme main style
-        $this->headLink()->appendStylesheet('/MelisDemoCms/css/style.css');
-        
-        // Responsive css
-        $this->headLink()->appendStylesheet('/MelisDemoCms/css/responsive.css');
-        
-        // Animate Css Plugin
-        $this->headLink()->appendStylesheet('/MelisDemoCms/css/animate.css');
-        
-        // Customs styles
-        $this->headLink()->appendStylesheet('/MelisDemoCms/css/custom.css');
-        $this->headLink()->appendStylesheet('/MelisDemoCms/css/skin/skin-default.css');
-        
         // Render Page CSS from Controller Action of the page
         if (is_array($this->pageCss)){
             for ($i = 0 ; $i < count($this->pageCss); $i++){
@@ -250,26 +222,7 @@
         </div> 
         <!-- Body main wrapper end -->
         
-        <?php 
-            /* Placed js at the end of the document so the pages load faster */
-             
-            // jquery latest version
-            $this->inlineScript()->appendFile($this->basePath('/MelisDemoCms/js/vendor/jquery-2.2.4.min.js'));
-              
-            // Bootstrap framework js
-            $this->inlineScript()->appendFile($this->basePath('/MelisDemoCms/js/bootstrap.min.js'));
-              
-            // Owl Carousel
-            $this->inlineScript()->appendFile($this->basePath('/MelisDemoCms/js/owl.carousel.js'));
-              
-            // Countdown ??
-            $this->inlineScript()->appendFile($this->basePath('/MelisDemoCms/js/jquery.countdown.min.js'));
-              
-            // All js plugins included in this file
-            $this->inlineScript()->appendFile($this->basePath('/MelisDemoCms/js/plugins.js'));
-              
-            $this->inlineScript()->appendFile($this->basePath('/MelisDemoCms/js/main.js'));
-              
+        <?php
             // Render Page JS from Controller Action of the page
             if (is_array($this->pageJs)){
                 for ($i = 0 ; $i < count($this->pageJs); $i++){
@@ -281,10 +234,5 @@
             echo $this->inlineScript();
             
         ?>
-        <script type="text/javascript">
-            var newsMenuHeight = $('.news-menu-area').height();
-            $('.news-menu-area .single-mega-item.coloum-4').addClass("line");
-            $('.news-menu-area .single-mega-item.coloum-4.line').css({'height': newsMenuHeight});
-        </script>
     </body>
 </html>
