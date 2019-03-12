@@ -236,6 +236,10 @@ Version: 1.0
 	  else{
 		$('#sticky-header').removeClass("sticky");
 	  }
+
+    var newsMenuHeight = $('.news-menu-area').height();
+    $('.news-menu-area .single-mega-item.coloum-4').addClass("line");
+    $('.news-menu-area .single-mega-item.coloum-4.line').css({'height': newsMenuHeight});
 });
 
 
