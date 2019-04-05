@@ -69,7 +69,14 @@ class HomeController extends BaseController
 	    );
 		// add generated view to children views for displaying it in the contact view
 		$this->view->addChild($showListForFolderPlugin->render($menuParameters), 'testimonialList');
-        
+
+        /**
+         * Displaying a GDPR/Cookie banner using MelisGdprBanner plugin
+         * @var \MelisFront\Controller\Plugin\MelisFrontGdprBannerPlugin $gdprBannerPlugin
+         */
+        $gdprBannerPlugin = $this->MelisFrontGdprBannerPlugin();
+        $this->view->addChild($gdprBannerPlugin->render(['template_path' => 'MelisDemoCms/plugin/gdpr-banner']), 'gdprBanner');
+
         $this->view->setVariable('idPage', $this->idPage);
         $this->view->setVariable('renderType', $this->renderType);
         $this->view->setVariable('renderMode', $this->renderMode);
