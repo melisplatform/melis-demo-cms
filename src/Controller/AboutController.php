@@ -14,10 +14,7 @@ class AboutController extends BaseController
 {
     public function aboutusAction()
     {
-        // Getting the Site config "MelisDemoCms.config.php"
-        $siteConfig = $this->getServiceLocator()->get('config');
-        $siteConfig = $siteConfig['site']['MelisDemoCms'];
-        $siteDatas = $siteConfig['datas'];
+        $siteDatas = $this->layout()->getVariable('siteConfig');
         
         /**
          * Generating Homepage header Slider using MelisCmsSliderShowSliderPlugin Plugin

@@ -9,6 +9,7 @@
 
 namespace MelisDemoCms\Listener;
 
+use MelisFront\Service\MelisSiteConfigService;
 use Zend\EventManager\EventManagerInterface;
 use Zend\EventManager\ListenerAggregateInterface;
 use Zend\View\Model\ViewModel;
@@ -29,20 +30,23 @@ class SiteMenuCustomizationListener implements ListenerAggregateInterface
         	function($e){
         	    // Getting the Service Locator from param target
         	    $this->serviceLocator = $e->getTarget()->getServiceLocator();
-        	    // Getting the Site config "MelisDemoCms.config.php"
-        	    $siteConfig = $this->serviceLocator->get('config');
-        	    $siteConfig = $siteConfig['site']['MelisDemoCms'];
-        	    $siteDatas = $siteConfig['datas'];
+
         	    // Getting the Datas from the Event Parameters
         	    $params = $e->getParams();
-        	    
 	            $viewVariables = $params['view']->getVariables();
-	            
+
         	    if ($params['view']->getTemplate() == 'MelisDemoCms/plugin/menu' && !empty($viewVariables['menu']))
         	    {
+                    $frontConfig = $params['pluginFronConfig'];
+                    $pageId = $frontConfig['pageId'];
+
+                    /** @var MelisSiteConfigService $siteConfigSrv */
+                    $siteConfigSrv = $this->serviceLocator->get('MelisSiteConfigService');
+                    $siteConfig = $siteConfigSrv->getSiteConfigByPageId($pageId);
+
         	        // Geeting the custom datas from site config
-        	        $limit = (!empty($siteDatas['sub_menu_limit'])) ? $siteDatas['sub_menu_limit'] : null;
-        	        $newsMenuPageId = (!empty($siteDatas['news_menu_page_id'])) ? $siteDatas['news_menu_page_id'] : null;
+        	        $limit = (!empty($siteConfig['siteConfig']['sub_menu_limit'])) ? $siteConfig['siteConfig']['sub_menu_limit'] : null;
+        	        $newsMenuPageId = (!empty($siteConfig['siteConfig']['news_menu_page_id'])) ? $siteConfig['siteConfig']['news_menu_page_id'] : null;
         	        
         	        $sitePages = (!empty($viewVariables['menu'][0]['pages'])) ? $viewVariables['menu'][0]['pages'] : array();
         	        if (!empty($viewVariables['menu']))

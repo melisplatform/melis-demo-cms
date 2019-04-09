@@ -10,6 +10,7 @@
 namespace MelisDemoCms\Controller;
 
 use MelisFront\Controller\MelisSiteActionController;
+use MelisFront\Service\MelisSiteConfigService;
 use Zend\Mvc\MvcEvent;
 use Zend\View\Model\ViewModel;
 
@@ -26,15 +27,16 @@ class BaseController extends MelisSiteActionController
     {
         // Getting the Site config "MelisDemoCms.config.php"
         $sm = $event->getApplication()->getServiceManager();
-        $siteConfig = $sm->get('config');
-        $siteConfig = $siteConfig['site']['MelisDemoCms'];
-        $siteDatas = $siteConfig['datas'];
-        // Adding the SiteDatas to layout so views can access to the SiteDatas easily
-        $this->layout()->setVariable('siteDatas', $siteDatas);
-        $this->layout()->setVariable('homepage', $siteConfig['conf']['home_page']);
-        
         $pageId = $this->params()->fromRoute('idpage');
-        $renderMode = $this->params()->fromRoute('renderMode');
+
+        /** @var MelisSiteConfigService $siteConfigSrv */
+        $siteConfigSrv = $sm->get('MelisSiteConfigService');
+        $siteConfig = $siteConfigSrv->getSiteConfigByPageId($pageId);
+
+        $homePageId = (!empty($siteConfig['siteConfig']['homePageId'])) ? $siteConfig['siteConfig']['homePageId'] : null;
+        $this->layout()->setVariable('siteConfig', $siteConfig['siteConfig']);
+        $this->layout()->setVariable('allSites', $siteConfig['allSites']);
+        $this->layout()->setVariable('homepage', $homePageId);
         
 		/**
 		 * Generating Site Menu using MelisFrontMenuPlugin Plugin
@@ -42,7 +44,7 @@ class BaseController extends MelisSiteActionController
 	    $menuPlugin = $this->MelisFrontMenuPlugin();
 	    $menuParameters = array(
 	        'template_path' => 'MelisDemoCms/plugin/menu',
-	        'pageIdRootMenu' => $siteConfig['conf']['home_page'],
+	        'pageIdRootMenu' => $homePageId,
 	    );
 	    
 		// add generated view to children views for displaying it in the contact view

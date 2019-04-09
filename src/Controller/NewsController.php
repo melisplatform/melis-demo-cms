@@ -9,8 +9,6 @@
 
 namespace MelisDemoCms\Controller;
 
-use MelisDemoCms\Controller\BaseController;
-
 class NewsController extends BaseController
 {
     /**
@@ -20,11 +18,7 @@ class NewsController extends BaseController
      */
     public function listAction()
     {
-        // Getting the Site config "MelisDemoCms.config.php"
-        $siteConfig = $this->getServiceLocator()->get('config');
-        $siteConfig = $siteConfig['site']['MelisDemoCms'];
-        $siteDatas = $siteConfig['datas'];
-        
+        $siteDatas = $this->layout()->getVariable('siteConfig');
         /**
          * Listing News using MelisCmsNewsListNewsPlugin
          */
@@ -59,11 +53,7 @@ class NewsController extends BaseController
      */
     public function detailsAction()
     {
-        
-        // Getting the Site config "MelisDemoCms.config.php"
-        $siteConfig = $this->getServiceLocator()->get('config');
-        $siteConfig = $siteConfig['site']['MelisDemoCms'];
-        $siteDatas = $siteConfig['datas'];
+        $siteDatas = $this->layout()->getVariable('siteConfig');
         
         $dateMax = date("Y-m-d H:i:s", strtotime("now"));
 		$listNewsPluginView = $this->MelisCmsNewsShowNewsPlugin();
