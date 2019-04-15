@@ -2000,25 +2000,6 @@ return [
                             ]
                         ],
                     ],
-                    // </editor-fold>
-
-                    // <editor-fold desc="CMS_SITE_HOME">
-                    Melis::CMS_SITE_HOME => [
-                        [
-                            'shome_site_id' => Melis::CMS_SITE_ID,
-                            'shome_site_lang_id' => 1,
-                            'shome_site_lang_page_id' => Melis::CMS_SITE_ID,
-                        ]
-                    ],
-                    // </editor-fold>
-
-                    // <editor-fold desc="CMS_SITE_LANGS">
-                    Melis::CMS_SITE_LANGS => [
-                        [
-                            'slang_site_id' => Melis::CMS_SITE_ID,
-                            'slang_lang_id' => 1,
-                        ]
-                    ],
                 ],
             ],
         ],
