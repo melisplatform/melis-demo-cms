@@ -3,7 +3,7 @@
 return [
     'site' => [
         'MelisDemoCms' => [
-            '1' => array(
+            '%site_id%' => array(
                 'en_EN' => array(
                     'homePageId' => '%site_id%',
                     // Submenu limit
