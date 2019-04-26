@@ -177,7 +177,6 @@ return [
             'MelisDemoCms/plugin/news-details' => __DIR__ . '/../view/plugins/news-details.phtml',
             'MelisDemoCms/plugin/aboutus-slider' => __DIR__ . '/../view/plugins/aboutus-slider.phtml',
             'MelisDemoCms/plugin/search-results' => __DIR__ . '/../view/plugins/search-results.phtml',
-            'MelisDemoCms/plugin/gdpr-banner' => __DIR__ . '/../view/plugins/gdpr-banner.phtml',
         ],
         'template_path_stack' => [
             __DIR__ . '/../view',

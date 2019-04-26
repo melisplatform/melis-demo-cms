@@ -65,11 +65,6 @@ return [
                         'template_path' => ['MelisDemoCms/plugin/search-results'],
                     ],
                 ],
-                'MelisFrontGdprBannerPlugin' => [
-                    'front' => [
-                        'template_path' => ['MelisDemoCms/plugin/gdpr-banner'],
-                    ],
-                ],
             ],
         ],
         'meliscmsnews' => [

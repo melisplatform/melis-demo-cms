@@ -2001,21 +2001,6 @@ return [
                         ],
                     ],
                     // </editor-fold>
-
-                    // <editor-fold desc="CMS_GDPR_TEXTS">
-                    Melis::CMS_GDPR_TEXTS => [
-                        [
-                            'mcgdpr_text_site_id' => 1,
-                            'mcgdpr_text_lang_id' => 1,
-                            'mcgdpr_text_value' => 'Our site uses cookies. By continuing to use our site you are agreeing to our Cookie Policy.',
-                        ],
-                        [
-                            'mcgdpr_text_site_id' => 1,
-                            'mcgdpr_text_lang_id' => 2,
-                            'mcgdpr_text_value' => 'Notre site utilise des cookies. En poursuivant votre navigation sur notre site vous acceptez notre politique de cookies.',
-                        ],
-                    ],
-                    // </editor-fold>
                 ],
             ],
         ],
