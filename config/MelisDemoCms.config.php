@@ -5,25 +5,25 @@ return [
         'MelisDemoCms' => [
             'conf' => [
                 'id' => 'id_MelisDemoCms',
-                'home_page' => '%site_id%',
+                'home_page' => 1,
             ],
             'datas' => [
                 // Site id
-                'site_id' => '%site_id%',
+                'site_id' => 1,
                 // Submenu limit
                 'sub_menu_limit' => null,
                 // News Page Id
-                'news_menu_page_id' => '%news_page_id%',
+                'news_menu_page_id' => 2,
                 // News Details Page Id
-                'news_details_page_id' => '%news_details_id%',
+                'news_details_page_id' => 3,
                 // Testimonial parent id
-                'testimonial_id' => '%testimonial%',
+                'testimonial_id' => 33,
                 // Homepage header slider
-                'homepage_header_slider' => '%homepage_slider_id%',
+                'homepage_header_slider' => 1,
                 // Aboutus slider
-                'aboutus_slider' => '%about_us_slider%',
+                'aboutus_slider' => 2,
                 // Search results page
-                'search_result_page_id' => '%search_results_page_id%',
+                'search_result_page_id' => 32,
                 /**
                  * Required Modules for installation,
                  * to trigger services that needed to install the MelisDemoCms
