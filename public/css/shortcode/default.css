@@ -76,12 +76,6 @@ input {
     outline: medium none;
     color: #f1f1f1;
 }
-p a {
-    color: #e61c23;
-}
-p a:hover {
-    text-decoration: underline;
-}
 .uppercase { 
     text-transform: uppercase
 }
@@ -1525,3 +1519,10 @@ h3.widget-title-modal {
 }
 .shadow-box:hover{ box-shadow: 0 1px 20px rgba(0, 0, 0, 0.2) }
 .shadow-box-2{ box-shadow: 0 1px 20px rgba(0, 0, 0, 0.2) }
+
+p > a {
+    color: #e61c23;
+}
+p > a:hover {
+    text-decoration: underline;
+}
