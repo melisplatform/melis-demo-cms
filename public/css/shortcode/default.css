@@ -76,6 +76,12 @@ input {
     outline: medium none;
     color: #f1f1f1;
 }
+p a {
+    color: #e61c23;
+}
+p a:hover {
+    text-decoration: underline;
+}
 .uppercase { 
     text-transform: uppercase
 }
