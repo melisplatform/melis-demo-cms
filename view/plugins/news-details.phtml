@@ -1,3 +1,8 @@
+<?php
+    if (is_object($this->news)) {
+        $this->news = (array) $this->news;
+    }
+?>
 <?php if (!empty($this->news)): ?>
     <div class="blog-img pos-rltv product-overlay" style="cursor: default">
         <?php if (!empty($this->news['cnews_image1'])): ?>
