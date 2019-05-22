@@ -627,6 +627,10 @@ CSS INDEX
     width: 100%;
 }
 
+.blog-img.pos-rltv.product-overlay:before {
+    z-index: auto;
+}
+
 .blog-slider .blog-img {
     margin-bottom: 30px;
 }
