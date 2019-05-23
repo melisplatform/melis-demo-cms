@@ -38,12 +38,6 @@
   },
   "require": {
     "composer/installers": "~1.0",
-    "melisplatform/melis-engine": "^2.3",
-    "melisplatform/melis-front": "^2.3",
-    "melisplatform/melis-cms": "^2.3",
-    "melisplatform/melis-cms-slider": "^2.3",
-    "melisplatform/melis-cms-prospects": "^2.3",
-    "melisplatform/melis-cms-news": "^2.3",
     "php": "^7.0"
   },
   "suggest": {
