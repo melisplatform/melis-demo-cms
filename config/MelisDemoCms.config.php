@@ -5,25 +5,25 @@ return [
         'MelisDemoCms' => [
             'conf' => [
                 'id' => 'id_MelisDemoCms',
-                'home_page' => 1,
+                'home_page' => '%site_id%',
             ],
             'datas' => [
                 // Site id
-                'site_id' => 1,
+                'site_id' => '%site_id%',
                 // Submenu limit
                 'sub_menu_limit' => null,
                 // News Page Id
-                'news_menu_page_id' => 2,
+                'news_menu_page_id' => '%news_page_id%',
                 // News Details Page Id
-                'news_details_page_id' => 3,
+                'news_details_page_id' => '%news_details_id%',
                 // Testimonial parent id
-                'testimonial_id' => 33,
+                'testimonial_id' => '%testimonial%',
                 // Homepage header slider
-                'homepage_header_slider' => 1,
+                'homepage_header_slider' => '%homepage_slider_id%',
                 // Aboutus slider
-                'aboutus_slider' => 2,
+                'aboutus_slider' => '%about_us_slider%',
                 // Search results page
-                'search_result_page_id' => 32,
+                'search_result_page_id' => '%search_results_page_id%',
                 /**
                  * Required Modules for installation,
                  * to trigger services that needed to install the MelisDemoCms
@@ -63,6 +63,11 @@ return [
                 'MelisFrontSearchResultsPlugin' => [
                     'front' => [
                         'template_path' => ['MelisDemoCms/plugin/search-results'],
+                    ],
+                ],
+                'MelisFrontGdprBannerPlugin' => [
+                    'front' => [
+                        'template_path' => ['MelisDemoCms/plugin/gdpr-banner'],
                     ],
                 ],
             ],

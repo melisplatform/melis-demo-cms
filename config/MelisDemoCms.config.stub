@@ -19,9 +19,9 @@ return [
                 // Testimonial parent id
                 'testimonial_id' => '%testimonial%',
                 // Homepage header slider
-                'homepage_header_slider' => 1,
+                'homepage_header_slider' => '%homepage_slider_id%',
                 // Aboutus slider
-                'aboutus_slider' => 2,
+                'aboutus_slider' => '%about_us_slider%',
                 // Search results page
                 'search_result_page_id' => '%search_results_page_id%',
                 /**
@@ -63,6 +63,11 @@ return [
                 'MelisFrontSearchResultsPlugin' => [
                     'front' => [
                         'template_path' => ['MelisDemoCms/plugin/search-results'],
+                    ],
+                ],
+                'MelisFrontGdprBannerPlugin' => [
+                    'front' => [
+                        'template_path' => ['MelisDemoCms/plugin/gdpr-banner'],
                     ],
                 ],
             ],
