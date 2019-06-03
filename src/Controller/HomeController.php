@@ -16,8 +16,10 @@ class HomeController extends BaseController
 {
     public function indexAction()
     {
-        $siteConfig = $this->layout()->getVariable('siteConfig');
-        $generalConfig = $this->layout()->getVariable('allSites');
+        /**
+         * get the site config
+         */
+        $siteConfigSrv = $this->getServiceLocator()->get('MelisSiteConfigService');
         /**
          * Generating Homepage header Slider using MelisCmsSliderShowSliderPlugin Plugin
          */
@@ -26,25 +28,25 @@ class HomeController extends BaseController
             'template_path' => 'MelisDemoCms/plugin/homepage-slider',
             'id' => 'showSliderHomepage',
             'pageId' => $this->idPage,
-            'sliderId' => $siteConfig['homepage_header_slider'],
+            'sliderId' => $siteConfigSrv->getSiteConfigByKey('homePageId'),
         );
         // add generated view to children views for displaying it in the contact view
         $this->view->addChild($showSlider->render($showSliderParameters), 'homePageSlider');
-        
+
         /**
          * Generating Homepage Latest News slider using MelisCmsNewsLatestNewsPlugin Plugin
          */
 	    $latestNewsPluginView = $this->MelisCmsNewsLatestNewsPlugin();
 	    $latestNewsParameters = array(
 	        'template_path' => 'MelisDemoCms/plugin/latest-news',
-	        'pageIdNews'    => $siteConfig['news_details_page_id'],
+	        'pageIdNews'    => $siteConfigSrv->getSiteConfigByKey('news_details_page_id'),
 	        'filter' => array(
 	            'column' => 'cnews_publish_date',
 	            'order' => 'DESC',
 	            'date_min' => null,
 	            'date_max' => null,
 	            'unpublish_filter' => true,
-	            'site_id' => $siteConfig['site_id'],
+	            'site_id' => $siteConfigSrv->getSiteConfigByKey('site_id'),
 	            'search' => '',
 	            'limit' => 6,
 	        )
@@ -57,7 +59,7 @@ class HomeController extends BaseController
 	    $menuParameters = array(
 	        'template_path' => 'MelisDemoCms/plugin/testimonial-slider',
             'pageId' => $this->idPage,
-	        'pageIdFolder' => $siteConfig['testimonial_id'],
+	        'pageIdFolder' => $siteConfigSrv->getSiteConfigByKey('testimonial_id'),
 	        'renderMode' => $this->renderMode,
 	    );
 		// add generated view to children views for displaying it in the contact view

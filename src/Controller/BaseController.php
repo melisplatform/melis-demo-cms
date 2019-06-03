@@ -31,20 +31,13 @@ class BaseController extends MelisSiteActionController
 
         /** @var MelisSiteConfigService $siteConfigSrv */
         $siteConfigSrv = $sm->get('MelisSiteConfigService');
-        $siteConfig = $siteConfigSrv->getSiteConfigByPageId($pageId);
-
-        $homePageId = (!empty($siteConfig['siteConfig']['homePageId'])) ? $siteConfig['siteConfig']['homePageId'] : null;
-        $this->layout()->setVariable('siteConfig', $siteConfig['siteConfig']);
-        $this->layout()->setVariable('allSites', $siteConfig['allSites']);
-        $this->layout()->setVariable('homepage', $homePageId);
-        
 		/**
 		 * Generating Site Menu using MelisFrontMenuPlugin Plugin
 		 */
 	    $menuPlugin = $this->MelisFrontMenuPlugin();
 	    $menuParameters = array(
 	        'template_path' => 'MelisDemoCms/plugin/menu',
-	        'pageIdRootMenu' => $homePageId,
+	        'pageIdRootMenu' => $siteConfigSrv->getSiteConfigByKey('homePageId'),
 	    );
 	    
 		// add generated view to children views for displaying it in the contact view
