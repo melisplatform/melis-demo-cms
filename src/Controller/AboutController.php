@@ -14,10 +14,7 @@ class AboutController extends BaseController
 {
     public function aboutusAction()
     {
-        // Getting the Site config "MelisDemoCms.config.php"
-        $siteConfig = $this->getServiceLocator()->get('config');
-        $siteConfig = $siteConfig['site']['MelisDemoCms'];
-        $siteDatas = $siteConfig['datas'];
+        $siteConfigSrv = $this->getServiceLocator()->get('MelisSiteConfigService');
         
         /**
          * Generating Homepage header Slider using MelisCmsSliderShowSliderPlugin Plugin
@@ -26,7 +23,7 @@ class AboutController extends BaseController
         $showSliderParameters = array(
             'template_path' => 'MelisDemoCms/plugin/aboutus-slider',
             'id' => 'showSliderAboutUs',
-            'sliderId' => $siteDatas['aboutus_slider'],
+            'sliderId' => $siteConfigSrv->getSiteConfigByKey('aboutus_slider'),
         );
         // add generated view to children views for displaying it in the contact view
         $this->view->addChild($showSlider->render($showSliderParameters), 'aboutUsSlider');

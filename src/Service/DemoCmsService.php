@@ -87,12 +87,13 @@ class DemoCmsService extends MelisCoreGeneralService
      */
     public function getNewsListFormMenu($newsId, $limit = null)
     {
-        // Getting the Site config "MelisDemoCms.config.php"
-        $siteConfig = $this->getServiceLocator()->get('config');
-        $siteConfig = $siteConfig['site']['MelisDemoCms'];
-        $siteDatas = $siteConfig['datas'];
+        /**
+         * get the site config service
+         */
+        $siteConfigSrv = $this->getServiceLocator()->get('MelisSiteConfigService');
+
         // Getting the Page Id where the News Details will render
-        $newsDetailsIdPage = $siteDatas['news_details_page_id'];
+        $newsDetailsIdPage = $siteConfigSrv->getSiteConfigByKey('news_details_page_id');
         
         /**
          * Retriving the List of Recent 4 News, this is group by month
@@ -115,7 +116,7 @@ class DemoCmsService extends MelisCoreGeneralService
          *      ),
          */
         $newsTable = $this->serviceLocator->get('MelisCmsNewsTable');
-        $newsList = $newsTable->getNewsListByMonths(4, $siteDatas['site_id'])->toArray();
+        $newsList = $newsTable->getNewsListByMonths(4, $siteConfigSrv->getSiteConfigByKey('site_id'))->toArray();
     
         // Page Tree service to generate Page Link
         $melisTree = $this->serviceLocator->get('MelisEngineTree');
@@ -128,7 +129,7 @@ class DemoCmsService extends MelisCoreGeneralService
              */
             $news = array();
             if(!empty($val['month']) && !empty($val['year'])){
-                $news = $newsTable->getNewsByMonthYear($val['month'], $val['year'], $limit, $siteDatas['site_id'])->toArray();
+                $news = $newsTable->getNewsByMonthYear($val['month'], $val['year'], $limit, $siteConfigSrv->getSiteConfigByKey('site_id'))->toArray();
             }
             
             $newsSubMenu = array();
@@ -188,18 +189,17 @@ class DemoCmsService extends MelisCoreGeneralService
      */
     public function getNewsListMonthsYears($datefilter = null, $monthDesc = false)
     {
-        // Getting the Site config "MelisDemoCms.config.php"
-        $siteConfig = $this->getServiceLocator()->get('config');
-        $siteConfig = $siteConfig['site']['MelisDemoCms'];
-        $siteDatas = $siteConfig['datas'];
-        // Getting the Page Id where the News Details will render
-        $newsIdPage = $siteDatas['news_menu_page_id'];
+        /**
+         * get the site config service
+         */
+        $siteConfigSrv = $this->getServiceLocator()->get('MelisSiteConfigService');
+        $newsIdPage = $siteConfigSrv->getSiteConfigByKey('news_menu_page_id');
         
         /**
          * Retreiving the the list of News group by months and year
          */
         $newsTable = $this->serviceLocator->get('MelisCmsNewsTable');
-        $newsList = $newsTable->getNewsListByMonths(null, $siteDatas['site_id']);
+        $newsList = $newsTable->getNewsListByMonths(null, $siteConfigSrv->getSiteConfigByKey('site_id'));
         
         $list = array();
         $addedYear = array();
