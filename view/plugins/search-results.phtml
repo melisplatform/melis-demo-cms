@@ -2,8 +2,7 @@
     <?php if (!$this->indexerOk){?>
     	<?php if ($this->moduleDirWritable){?>
         	<div class="alert alert-info">
-        		<p>The search engine cannot proceed to a search as the website has not been indexed.</p>
-                <p>Please use the following URL to index your website:</p>
+        		<?= $this->siteTranslate('tr_site_demo_cms_search_results_website_not_indexed', 1, $this->SiteConfig('site_id'));?>
                 <a href="<?php echo $this->indexerURL ?>" class="text-danger"><?php echo $this->indexerURL?></a>
         	</div>
     	<?php }else{?>
@@ -14,8 +13,8 @@
         			</div>
         			<div class="col-xs-11">
         				<h3><strong>Oppsss...</strong></h3>
-        				<p>/module/MelisSites/<?php echo $this->moduleName?>/luceneIndex directory is not writable, please make the directory writable and try again</p>
-        			</div>
+        			    <?= sprintf($this->siteTranslate('tr_site_demo_cms_search_results_lucene_index_not_writable', 1, $this->SiteConfig('site_id')), $this->moduleName);?>
+                    </div>
         		</div>
         	</div>
     	<?php }?>
@@ -35,7 +34,7 @@
                 </article>
             <?php }?>
         <?php }else{?>    
-        	<h4 class="search-results-title">No Result</h4>
+        	<h4 class="search-results-title"><?= $this->siteTranslate('tr_site_demo_cms_common_no_result', 1, $this->SiteConfig('site_id')); ?></h4>
         <?php }?>
         
         <!-- Pagination -->
@@ -60,7 +59,7 @@
 			</div>
 			<div class="col-xs-11">
 				<h3><strong>Oppsss...</strong></h3>
-				<p>/module/MelisSites/<?php echo $this->moduleName?> directory doesn't exist</p>
+                <?= sprintf($this->siteTranslate('tr_site_demo_cms_search_results_dir_not_exist', 1, $this->SiteConfig('site_id')), $this->moduleName); ?>
 			</div>
 		</div>
 	</div>

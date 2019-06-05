@@ -1,8 +1,8 @@
 <div class="alert alert-success <?php echo ($this->success) ? : 'hidden'?>">
-	<strong>Success!</strong> Your message has been sent to us.
+    <?= $this->siteTranslate('tr_site_demo_cms_contact_us_success', 1, $this->SiteConfig('site_id'));?>
 </div>
 <div class="alert alert-danger <?php echo (!empty($this->errors)) ? : 'hidden'?> ">
-	<strong>Error!</strong> There was an error sending your message.
+	<?= $this->siteTranslate('tr_site_demo_cms_contact_us_failed', 1, $this->SiteConfig('site_id'));?>
 </div>
 
 <?php
@@ -23,7 +23,7 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="input-box">
-                <button value="Submit" class="sbumit-btn pull-right" id="submit-contactus-form-btn" data-siteid="<?php echo $this->SiteConfig('news_menu_page_id')?>">submit</button>
+                <button value="Submit" class="sbumit-btn pull-right" id="submit-contactus-form-btn" data-siteid="<?php echo $this->SiteConfig('news_menu_page_id')?>"><?= $this->siteTranslate('tr_site_demo_cms_common_submit', 1, $this->SiteConfig('site_id'));?></button>
             </div>
         </div>
     </div>

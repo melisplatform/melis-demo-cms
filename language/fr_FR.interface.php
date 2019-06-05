@@ -49,5 +49,18 @@ return array(
     'tr_site_demo_cms_tool_site_domain_invalid' => 'Veuillez saisir un nom de domaine valide',
 
     'tr_install_setup_message_ok' => 'Setup complete',
+
+    'tr_site_demo_cms_common_no_result' => 'Aucun résultatt',
+    'tr_site_demo_cms_common_read_more' => 'Lire plus',
+    'tr_site_demo_cms_common_submit' => 'Envoyer',
+    'tr_site_demo_cms_common_no_data' => 'Aucune donnée trouvée',
+
+    'tr_site_demo_cms_contact_us_success' => "<strong>Succès !</strong> Votre message nous a bien été envoyé.",
+    'tr_site_demo_cms_contact_us_failed' => "<strong>Erreur!</strong> Une erreur s'est produite à l'envoi de votre message.",
+
+    'tr_site_demo_cms_search_results_dir_not_exist' => "Le dossier <p>/module/MelisSites/%s n'existe pas</p>",
+    'tr_site_demo_cms_search_results_lucene_index_not_writable' => "Le dossier <p>/module/MelisSites/%s/luceneIndex n'est pas inscriptible, veuillez changer le dossier en inscriptible et réessayer</p>",
+    'tr_site_demo_cms_search_results_website_not_indexed' => "<p>Le moteur de recherche ne peut effectuer de recherche car le site n'a pas été indexé.</p>
+                                                              <p>Vueillez utiliser l'URL suivante pour indéxer votre site</p>",
 );
 ?>
