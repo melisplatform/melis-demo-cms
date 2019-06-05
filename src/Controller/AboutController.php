@@ -23,7 +23,7 @@ class AboutController extends BaseController
         $showSliderParameters = array(
             'template_path' => 'MelisDemoCms/plugin/aboutus-slider',
             'id' => 'showSliderAboutUs',
-            'sliderId' => $siteConfigSrv->getSiteConfigByKey('aboutus_slider'),
+            'sliderId' => $siteConfigSrv->getSiteConfigByKey('aboutus_slider', $this->idPage),
         );
         // add generated view to children views for displaying it in the contact view
         $this->view->addChild($showSlider->render($showSliderParameters), 'aboutUsSlider');

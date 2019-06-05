@@ -37,7 +37,7 @@ class BaseController extends MelisSiteActionController
 	    $menuPlugin = $this->MelisFrontMenuPlugin();
 	    $menuParameters = array(
 	        'template_path' => 'MelisDemoCms/plugin/menu',
-	        'pageIdRootMenu' => $siteConfigSrv->getSiteConfigByKey('homePageId'),
+	        'pageIdRootMenu' => $siteConfigSrv->getSiteConfigByKey('homePageId', $this->idPage),
 	    );
 	    
 		// add generated view to children views for displaying it in the contact view

@@ -93,7 +93,7 @@ class DemoCmsService extends MelisCoreGeneralService
         $siteConfigSrv = $this->getServiceLocator()->get('MelisSiteConfigService');
 
         // Getting the Page Id where the News Details will render
-        $newsDetailsIdPage = $siteConfigSrv->getSiteConfigByKey('news_details_page_id');
+        $newsDetailsIdPage = $siteConfigSrv->getSiteConfigByKey('news_details_page_id', $newsId);
         
         /**
          * Retriving the List of Recent 4 News, this is group by month
@@ -116,7 +116,7 @@ class DemoCmsService extends MelisCoreGeneralService
          *      ),
          */
         $newsTable = $this->serviceLocator->get('MelisCmsNewsTable');
-        $newsList = $newsTable->getNewsListByMonths(4, $siteConfigSrv->getSiteConfigByKey('site_id'))->toArray();
+        $newsList = $newsTable->getNewsListByMonths(4, $siteConfigSrv->getSiteConfigByKey('site_id', $newsId))->toArray();
     
         // Page Tree service to generate Page Link
         $melisTree = $this->serviceLocator->get('MelisEngineTree');
@@ -129,7 +129,7 @@ class DemoCmsService extends MelisCoreGeneralService
              */
             $news = array();
             if(!empty($val['month']) && !empty($val['year'])){
-                $news = $newsTable->getNewsByMonthYear($val['month'], $val['year'], $limit, $siteConfigSrv->getSiteConfigByKey('site_id'))->toArray();
+                $news = $newsTable->getNewsByMonthYear($val['month'], $val['year'], $limit, $siteConfigSrv->getSiteConfigByKey('site_id', $newsId))->toArray();
             }
             
             $newsSubMenu = array();

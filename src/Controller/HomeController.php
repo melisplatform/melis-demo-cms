@@ -28,7 +28,7 @@ class HomeController extends BaseController
             'template_path' => 'MelisDemoCms/plugin/homepage-slider',
             'id' => 'showSliderHomepage',
             'pageId' => $this->idPage,
-            'sliderId' => $siteConfigSrv->getSiteConfigByKey('homepage_header_slider'),
+            'sliderId' => $siteConfigSrv->getSiteConfigByKey('homepage_header_slider', $this->idPage),
         );
         // add generated view to children views for displaying it in the contact view
         $this->view->addChild($showSlider->render($showSliderParameters), 'homePageSlider');
@@ -39,14 +39,14 @@ class HomeController extends BaseController
 	    $latestNewsPluginView = $this->MelisCmsNewsLatestNewsPlugin();
 	    $latestNewsParameters = array(
 	        'template_path' => 'MelisDemoCms/plugin/latest-news',
-	        'pageIdNews'    => $siteConfigSrv->getSiteConfigByKey('news_details_page_id'),
+	        'pageIdNews'    => $siteConfigSrv->getSiteConfigByKey('news_details_page_id', $this->idPage),
 	        'filter' => array(
 	            'column' => 'cnews_publish_date',
 	            'order' => 'DESC',
 	            'date_min' => null,
 	            'date_max' => null,
 	            'unpublish_filter' => true,
-	            'site_id' => $siteConfigSrv->getSiteConfigByKey('site_id'),
+	            'site_id' => $siteConfigSrv->getSiteConfigByKey('site_id', $this->idPage),
 	            'search' => '',
 	            'limit' => 6,
 	        )
@@ -59,7 +59,7 @@ class HomeController extends BaseController
 	    $menuParameters = array(
 	        'template_path' => 'MelisDemoCms/plugin/testimonial-slider',
             'pageId' => $this->idPage,
-	        'pageIdFolder' => $siteConfigSrv->getSiteConfigByKey('testimonial_id'),
+	        'pageIdFolder' => $siteConfigSrv->getSiteConfigByKey('testimonial_id', $this->idPage),
 	        'renderMode' => $this->renderMode,
 	    );
 		// add generated view to children views for displaying it in the contact view
