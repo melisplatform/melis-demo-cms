@@ -1,8 +1,8 @@
 <div class="alert alert-success <?php echo ($this->success) ? : 'hidden'?>">
-    <?= $this->siteTranslate('tr_site_demo_cms_contact_us_success', 1, $this->SiteConfig('site_id'));?>
+    <?= $this->siteTranslate('tr_site_demo_cms_contact_us_success', $this->SiteConfig('default_lang_id'), $this->SiteConfig('site_id'));?>
 </div>
 <div class="alert alert-danger <?php echo (!empty($this->errors)) ? : 'hidden'?> ">
-	<?= $this->siteTranslate('tr_site_demo_cms_contact_us_failed', 1, $this->SiteConfig('site_id'));?>
+	<?= $this->siteTranslate('tr_site_demo_cms_contact_us_failed', $this->SiteConfig('default_lang_id'), $this->SiteConfig('site_id'));?>
 </div>
 
 <?php

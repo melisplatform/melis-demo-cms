@@ -5,6 +5,8 @@ return [
         'MelisDemoCms' => [
             '%site_id%' => array(
                 'en_EN' => array(
+                    //default language id
+                    'default_lang_id' => 1,
                     'homePageId' => '%site_id%',
                     // Submenu limit
                     'sub_menu_limit' => null,

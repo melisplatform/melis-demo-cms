@@ -2,7 +2,7 @@
     <?php if (!$this->indexerOk){?>
     	<?php if ($this->moduleDirWritable){?>
         	<div class="alert alert-info">
-        		<?= $this->siteTranslate('tr_site_demo_cms_search_results_website_not_indexed', 1, $this->SiteConfig('site_id'));?>
+        		<?= $this->siteTranslate('tr_site_demo_cms_search_results_website_not_indexed', $this->SiteConfig('default_lang_id'), $this->SiteConfig('site_id'));?>
                 <a href="<?php echo $this->indexerURL ?>" class="text-danger"><?php echo $this->indexerURL?></a>
         	</div>
     	<?php }else{?>
@@ -34,7 +34,7 @@
                 </article>
             <?php }?>
         <?php }else{?>    
-        	<h4 class="search-results-title"><?= $this->siteTranslate('tr_site_demo_cms_common_no_result', 1, $this->SiteConfig('site_id')); ?></h4>
+        	<h4 class="search-results-title"><?= $this->siteTranslate('tr_site_demo_cms_common_no_result', $this->SiteConfig('default_lang_id'), $this->SiteConfig('site_id')); ?></h4>
         <?php }?>
         
         <!-- Pagination -->
@@ -59,7 +59,7 @@
 			</div>
 			<div class="col-xs-11">
 				<h3><strong>Oppsss...</strong></h3>
-                <?= sprintf($this->siteTranslate('tr_site_demo_cms_search_results_dir_not_exist', 1, $this->SiteConfig('site_id')), $this->moduleName); ?>
+                <?= sprintf($this->siteTranslate('tr_site_demo_cms_search_results_dir_not_exist', $this->SiteConfig('default_lang_id'), $this->SiteConfig('site_id')), $this->moduleName); ?>
 			</div>
 		</div>
 	</div>
