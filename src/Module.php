@@ -90,6 +90,7 @@ class Module
             include __DIR__ . '/../config/module.config.php',
             include __DIR__ . '/../config/setup/download.config.php',
             include __DIR__ . '/../config/setup/update.config.php',
+            include __DIR__ . '/../config/melis.plugins.config.php',
             include __DIR__ . '/../config/MelisDemoCms.config.php',
         ];
 

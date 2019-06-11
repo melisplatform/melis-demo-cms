@@ -326,7 +326,7 @@ CSS INDEX
     top: 10px;
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
-    z-index: 99;
+    z-index: 1;
 }
 .single-product:hover .product-overlay:before,
 .single-ctg-item:hover .product-overlay:before,
@@ -625,6 +625,10 @@ CSS INDEX
 }
 .blog-img img {
     width: 100%;
+}
+
+.blog-img.pos-rltv.product-overlay:before {
+    z-index: auto;
 }
 
 .blog-slider .blog-img {

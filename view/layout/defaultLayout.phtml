@@ -76,7 +76,7 @@
                                     <div class="search-box global-table">
                                         <div class="global-row">
                                             <div class="global-cell">
-                                                <form action="<?php echo $this->MelisLink($this->layout()->siteDatas['search_result_page_id'], false)?>" method="get">
+                                                <form action="<?php echo $this->MelisLink($this->SiteConfig('search_result_page_id'), false)?>" method="get">
                                                     <div class="input-box">
                                                         <input class="single-input" placeholder="Search" type="text" name=keyword value="<?php echo $this->layout()->search?>" required>
                                                         <button class="src-btn"><i class="fa fa-search"></i></button>

@@ -52,12 +52,12 @@
             <?php endforeach;?>
         <?php else: ?>
             <div class="alert alert-warning">
-                No data found
+                <?= $this->siteTranslate('tr_site_demo_cms_common_no_data', $this->SiteConfig('default_lang_id'), $this->SiteConfig('site_id'))?>
             </div>
         <?php endif;?>
     </div>
  <?php else: ?>
     <div class="alert alert-warning">
-        No Result
+        <?= $this->siteTranslate('tr_site_demo_cms_common_no_result', $this->SiteConfig('default_lang_id'), $this->SiteConfig('site_id')); ?>
     </div>
 <?php endif;?>

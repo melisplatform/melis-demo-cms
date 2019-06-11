@@ -55,6 +55,21 @@ return array(
     'tr_melis_installer_tool_site_name_error_empty' => 'Name is required',
 
     'tr_install_setup_message_ok' => 'Setup complete',
+
+    'tr_site_demo_cms_common_no_result' => 'No Result',
+    'tr_site_demo_cms_common_read_more' => 'Read More',
+    'tr_site_demo_cms_common_submit' => 'Submit',
+    'tr_site_demo_cms_common_no_data' => 'No data found',
+
+    'tr_site_demo_cms_contact_us_success' => "<strong>Success!</strong> Your message has been sent to us.",
+    'tr_site_demo_cms_contact_us_failed' => "<strong>Error!</strong> There was an error sending your message.",
+
+    'tr_site_demo_cms_search_results_dir_not_exist' => "<p>/module/MelisSites/%s directory doesn't exist</p>",
+    'tr_site_demo_cms_search_results_lucene_index_not_writable' => "<p>/module/MelisSites/%s/luceneIndex directory is not writable, please make the directory writable and try again</p>",
+    'tr_site_demo_cms_search_results_website_not_indexed' => "<p>The search engine cannot proceed to a search as the website has not been indexed.</p>
+                                                              <p>Please use the following URL to index your website</p>",
+
+
 );
 
 ?>

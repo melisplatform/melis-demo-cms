@@ -10,6 +10,6 @@
 </ol>
 <?php }else{?>
 	<div class="alert alert-warning" role="alert">
-		No result
+        <?= $this->siteTranslate('tr_site_demo_cms_common_no_result', $this->SiteConfig('default_lang_id'), $this->SiteConfig('site_id')); ?>
 	</div>
 <?php }?>

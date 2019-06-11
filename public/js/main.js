@@ -189,7 +189,7 @@ Version: 1.0
 	/*----------------------------
      cart-plus-minus-button
     ------------------------------ */
-    $(".cart-plus-minus")
+    $(".cart-plus-minus");
     $(".qtybutton").on("click", function() {
         var $button = $(this);
         var oldValue = $button.parent().find("input").val();
@@ -208,7 +208,7 @@ Version: 1.0
 	
 	
 	
-		$('.acc-toggle').on('click', function(){
+	$('.acc-toggle').on('click', function(){
 		if ($('.acc-toggle input').is(':checked')) {
 			$('.create-acc-body').slideDown();
 		}else{
@@ -223,13 +223,9 @@ Version: 1.0
 			$('.ship-acc-body').slideUp();
 		}
 	});
-		
-	
-	
-
 })(jQuery);
 
-	$(window).scroll(function() {
+$(window).scroll(function() {
 	if ($(this).scrollTop() > 1){ 
 		$('#sticky-header').addClass("sticky");
 	  }
