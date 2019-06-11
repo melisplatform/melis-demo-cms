@@ -50,7 +50,7 @@ return array(
 
     'tr_install_setup_message_ok' => 'Setup complete',
 
-    'tr_site_demo_cms_common_no_result' => 'Aucun résultatt',
+    'tr_site_demo_cms_common_no_result' => 'Aucun résultat',
     'tr_site_demo_cms_common_read_more' => 'Lire plus',
     'tr_site_demo_cms_common_submit' => 'Envoyer',
     'tr_site_demo_cms_common_no_data' => 'Aucune donnée trouvée',
