@@ -130,7 +130,7 @@ File: `/melis-front/src/Service/MelisSiteConfigService.php`
 * For Cms plugins (tags, basic page elements) and Services **[See Full documentation for Melis Cms here](https://github.com/melisplatform/melis-cms)**
 * For Cms Slider Plugins and Services **[See Full documentation for Melis Cms Slider here](https://github.com/melisplatform/melis-cms-slider)**
 * For Cms News Plugins (news list, latest news, and details) and Services **[See Full documentation for Melis Cms News here](https://github.com/melisplatform/melis-cms-news)**
-* For Cms Prospects Plugin (contact form) and Services **[See Full documentation for Melis Cms News here](https://github.com/melisplatform/melis-cms-prospects)**
+* For Cms Prospects Plugin (contact form) and Services **[See Full documentation for Melis Cms Prospects here](https://github.com/melisplatform/melis-cms-prospects)**
     
 ## View Helpers
 
