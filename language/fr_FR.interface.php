@@ -60,7 +60,6 @@ return array(
 
     'tr_site_demo_cms_search_results_dir_not_exist' => "Le dossier <p>/module/MelisSites/%s n'existe pas</p>",
     'tr_site_demo_cms_search_results_lucene_index_not_writable' => "Le dossier <p>/module/MelisSites/%s/luceneIndex n'est pas inscriptible, veuillez changer le dossier en inscriptible et réessayer</p>",
-    'tr_site_demo_cms_search_results_website_not_indexed' => "<p>Le moteur de recherche ne peut effectuer de recherche car le site n'a pas été indexé.</p>
-                                                              <p>Vueillez utiliser l'URL suivante pour indéxer votre site</p>",
+    'tr_site_demo_cms_search_results_website_not_indexed' => "<p>Le moteur de recherche ne peut effectuer de recherche car le site n'a pas été indexé.</p> <p>Vueillez utiliser l'URL suivante pour indéxer votre site</p>",
 );
 ?>

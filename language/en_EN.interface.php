@@ -66,8 +66,7 @@ return array(
 
     'tr_site_demo_cms_search_results_dir_not_exist' => "<p>/module/MelisSites/%s directory doesn't exist</p>",
     'tr_site_demo_cms_search_results_lucene_index_not_writable' => "<p>/module/MelisSites/%s/luceneIndex directory is not writable, please make the directory writable and try again</p>",
-    'tr_site_demo_cms_search_results_website_not_indexed' => "<p>The search engine cannot proceed to a search as the website has not been indexed.</p>
-                                                              <p>Please use the following URL to index your website</p>",
+    'tr_site_demo_cms_search_results_website_not_indexed' => "<p>The search engine cannot proceed to a search as the website has not been indexed.</p> <p>Please use the following URL to index your website</p>",
 
 
 );
