@@ -52,9 +52,6 @@ composer require melisplatform/melis-demo-cms
 * Melis Cms News
 
 ## Services  
-
-### Melis Front Services 
-
 * MelisSiteConfigService  
 Provides services to retrieve the config for your sites.  
 File: `/melis-front/src/Service/MelisSiteConfigService.php`  
@@ -128,9 +125,16 @@ File: `/melis-front/src/Service/MelisSiteConfigService.php`
     // Retrieves the translation for the language id 1 and site id 1.
     ```
     
+* For SEO, URL Services, and Templating Plugins **[See Full documentation for Melis Front here](https://github.com/melisplatform/melis-front)**
+* For Page, and Tree System Services and Engine Plugins **[See Full documentation for Melis Engine here](https://github.com/melisplatform/melis-engine)**
+* For Cms plugins (tags, basic page elements) and Services **[See Full documentation for Melis Cms here](https://github.com/melisplatform/melis-cms)**
+* For Cms Slider Plugins and Services **[See Full documentation for Melis Cms Slider here](https://github.com/melisplatform/melis-cms-slider)**
+* For Cms News Plugins (news list, latest news, and details) and Services **[See Full documentation for Melis Cms News here](https://github.com/melisplatform/melis-cms-news)**
+* For Cms Prospects Plugin (contact form) and Services **[See Full documentation for Melis Cms News here](https://github.com/melisplatform/melis-cms-prospects)**
+    
 ## View Helpers
 
-###Melis Front View Helpers:  
+### Melis Front View Helpers:  
 * MelisSiteConfigHelper  
 This helper is used to get a specific config for a site.  
 File: `/melis-front/src/View/Helper/MelisDragDropZoneHelper.php`  
@@ -189,6 +193,9 @@ Function: `getText(translationkey, langId, siteId)`
     $text = $this->SiteTranslation('key', 1, 1);
     // Retrieves the translation for the language id 1 and site id 1.
     ```
+    
+* For More Melis Front View Helpers **[See Full documentation for Melis Front here](https://github.com/melisplatform/melis-front)**
+    
     
 ## Authors
 
