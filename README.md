@@ -51,9 +51,9 @@ composer require melisplatform/melis-demo-cms
 * Melis Cms Prospects
 * Melis Cms News
 
-## MelisFront Services  
+## Services  
 
-MelisFront provides many services to be used in other modules:  
+### Melis Front Services 
 
 * MelisSiteConfigService  
 Provides services to retrieve the config for your sites.  
@@ -130,31 +130,7 @@ File: `/melis-front/src/Service/MelisSiteConfigService.php`
     
 ## View Helpers
 
-Melis Front View Helpers:  
-
-* MelisTagsHelper: When called it will create an editable zone in the template of the page.  
-The tag must take 3 parameters: the id of page, its own id (unique) and a default text that will be displayed (used when no text has been filled into the zone, so that something is displayed and the template still looks like a template).  
-File: /melis-front/src/View/Helper/MelisTagsHelper.php  
-```
-// This code will display an editable zone, linked to the current page
-// with id about_part1_text, will load the html plugin and therefore a tinyMCE HTML configuration
-echo $this->MelisTag($this->idPage, 'about_part1_text', 'html', 
-                	 '<div>The default text to be shown in the back office</div>')   	
-```
-
-* MelisLinksHelper: When called it will generate a link to a Melis page, following all rules and possible SEO 
-File: /melis-front/src/View/Helper/MelisLinksHelper.php  
-```
-// This call will generate a link to pageId 1 and it will be an absolute URL including the domain
-echo $this->MelisLink(1, true);
-```
-
-* MelisDragDropZoneHelper  
-File: /melis-front/src/View/Helper/MelisDragDropZoneHelper.php  
-```
-// Creation of a dragdropzone link to the pageId and with id "dragdropzone_zone_1"
-echo $this->MelisDragDropZone($this->idPage, "dragdropzone_zone_1");
-```
+###Melis Front View Helpers:  
 * MelisSiteConfigHelper  
 This helper is used to get a specific config for a site.  
 File: `/melis-front/src/View/Helper/MelisDragDropZoneHelper.php`  
