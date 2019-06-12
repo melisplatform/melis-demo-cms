@@ -1496,7 +1496,7 @@ return [
                                         'page_menu' => 'NONE',
                                         'page_name' => '404',
                                         'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => '404']],
-                                        'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0"></document>',
+                                        'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0">		<melisTag id="page-404" plugin_container_id="" type="html"><![CDATA[<div class="page-404-container"><h1>404</h1><h4>Sorry, the page you were looking for could not be found.</h4><p>You can return to our <a href="/">home page</a>.</p></div>]]></melisTag></document>',
 
                                     ],
                                 ],
