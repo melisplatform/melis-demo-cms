@@ -178,6 +178,21 @@ button.sbumit-btn {
     text-transform: uppercase;
 }
 
+/* Page 404 */
+.page-404-container{
+    width: 100%;
+    padding: 170px;
+    text-align:center;
+}
+
+.page-404-container h1{
+    font-weight: 600;
+    font-size: 60pt;
+}
+
+.page-404-container p{
+    font-size: 14pt;
+}
 
 
 

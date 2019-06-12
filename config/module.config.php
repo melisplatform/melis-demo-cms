@@ -136,6 +136,7 @@ return [
             'MelisDemoCms\Controller\Contact' => \MelisDemoCms\Controller\ContactController::class,
             'MelisDemoCms\Controller\Testimonial' => \MelisDemoCms\Controller\TestimonialController::class,
             'MelisDemoCms\Controller\Search' => \MelisDemoCms\Controller\SearchController::class,
+            'MelisDemoCms\Controller\Page404' => \MelisDemoCms\Controller\Page404Controller::class,
             'MelisDemoCms\Controller\MelisSetupPostDownload'    => \MelisDemoCms\Controller\MelisSetupPostDownloadController::class,
             'MelisDemoCms\Controller\MelisSetupPostUpdate'    => \MelisDemoCms\Controller\MelisSetupPostUpdateController::class,
         ],
