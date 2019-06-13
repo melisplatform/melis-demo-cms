@@ -289,6 +289,19 @@ return [
                             'tpl_creation_date' => date('Y-m-d H:i:s'),
                             Site::THEN => [Site::UPDATE_CURRENT_TEMPLATE_ID],
                         ],
+                        [
+                            Melis::PRIMARY_KEY => 'tpl_id',
+                            'tpl_id' => Melis::CURRENT_TEMPLATE_ID,
+                            'tpl_site_id' => Melis::CMS_SITE_ID,
+                            'tpl_name' => '404',
+                            'tpl_type' => 'ZF2',
+                            'tpl_zf2_website_folder' => __NAMESPACE__,
+                            'tpl_zf2_layout' => 'defaultLayout',
+                            'tpl_zf2_controller' => 'Page404',
+                            'tpl_zf2_action' => 'index',
+                            'tpl_creation_date' => date('Y-m-d H:i:s'),
+                            Site::THEN => [Site::UPDATE_CURRENT_TEMPLATE_ID],
+                        ],
                     ],
                     // </editor-fold>
 
@@ -1465,6 +1478,44 @@ return [
                             ]
                         ],
                         // </TraversalPages>
+
+                        // <Page404>
+                        [
+                            Melis::PRIMARY_KEY => 'tree_page_id',
+                            'tree_page_id' => Melis::CURRENT_PAGE_ID,
+                            'tree_father_page_id' => Melis::CMS_SITE_ID,
+                            'tree_page_order' => 16,
+                            Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
+                            Melis::RELATION => [
+                                Melis::CMS_PAGE_PUBLISHED => [
+                                    [
+                                        Melis::PRIMARY_KEY => 'page_id',
+                                        'page_id' => Melis::FOREIGN_KEY,
+                                        'page_type' => 'PAGE',
+                                        'page_status' => '1',
+                                        'page_menu' => 'NONE',
+                                        'page_name' => '404',
+                                        'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => '404']],
+                                        'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0">		<melisTag id="page-404" plugin_container_id="" type="html"><![CDATA[<div class="page-404-container"><h1>404</h1><h4>Sorry, the page you were looking for could not be found.</h4><p>You can return to our <a href="/">home page</a>.</p></div>]]></melisTag></document>',
+
+                                    ],
+                                ],
+                                Melis::CMS_PAGE_LANG => [
+                                    [
+                                        'plang_page_id' =>  Melis::FOREIGN_KEY,
+                                        'plang_lang_id' => 1,
+                                        'plang_page_id_initial' =>  Melis::FOREIGN_KEY
+                                    ]
+                                ],
+                                Melis::CMS_SITE_404 => [
+                                    [
+                                        's404_site_id' => Melis::CMS_SITE_ID,
+                                        's404_page_id' =>  Melis::FOREIGN_KEY
+                                    ]
+                                ],
+                            ]
+                        ],
+                        // </Page404>
                     ],
                     // </editor-fold>
 
