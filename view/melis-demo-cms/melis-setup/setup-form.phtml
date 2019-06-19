@@ -3,7 +3,7 @@
 $siteDemoCmsForm = $this->siteDemoCmsForm;
 $formId          = $siteDemoCmsForm->getAttributes()['id'];
 
-echo "<h3>" . $this->siteTranslate('tr_site_demo_cms_common_no_data') . "</h3>";
+echo "<h3>" . $this->translate('tr_site_demo_cms_common_no_data') . "</h3>";
 echo $this->form()->openTag($siteDemoCmsForm);
 echo "<fieldset id='$formId'>";
 foreach($siteDemoCmsForm->getElements() as $element => $attributes)  {
