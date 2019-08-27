@@ -15,7 +15,7 @@ return array(
         '/melis-demo-cms/public/css/skin/skin-default.css',
     ),
     'js' => array(
-        '/melis-demo-cms/public/js/vendor/jquery-2.2.4.min.js',
+        '/melis-demo-cms/public/js/vendor/jquery.min.js',
         '/melis-demo-cms/public/js/bootstrap.min.js',
         '/melis-demo-cms/public/js/owl.carousel.js',
         '/melis-demo-cms/public/js/jquery.countdown.min.js',
