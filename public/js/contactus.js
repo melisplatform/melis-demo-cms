@@ -1,6 +1,7 @@
 $(function(){
 	$("form#contact-us").submit(function(e) {
-		
+        e.preventDefault();
+        
         var datastring = $(this).serializeArray();
         var url 	 = window.location.href;
 
@@ -26,7 +27,7 @@ $(function(){
         }).fail(function() {
             alert( translations.tr_meliscore_error_message );
         });
-        
-		e.preventDefault();
+
+        return false;
 	});
 })
