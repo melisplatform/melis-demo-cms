@@ -1,11 +1,10 @@
 <?php
-
-return [
-    'MelisAssetManager',
-    'MelisEngine',
-    'MelisFront',
-    'MelisCmsNews',
-    'MelisCmsSlider',
-    'MelisCmsProspects',
-    'MelisDemoCms',
-];
+return array(
+  'MelisAssetManager',
+  'MelisEngine',
+  'MelisFront',
+  'MelisCmsNews',
+  'MelisCmsSlider',
+  'MelisCmsProspects',
+  'MelisDemoCms',
+);

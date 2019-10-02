@@ -11,7 +11,7 @@ $(function(){
             data        : datastring,
             dataType    : 'json',
             encode		: true
-        }).success(function(data){
+        }).done(function(data){
             if(data.success){
                 // Showing the Success result for submitting form
                 $(".contact-info .alert-success").removeClass("hidden");
@@ -23,7 +23,10 @@ $(function(){
                 // Highlighting the input fields that has an error using the custom helper
                 melisSiteHelper.melisSiteShowFormResult(data.errors, "contact-us");
             }
+        }).fail(function() {
+            alert( translations.tr_meliscore_error_message );
         });
+        
 		e.preventDefault();
 	});
 })

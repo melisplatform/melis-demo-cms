@@ -22,7 +22,37 @@ return [
                     'search_result_page_id' => '%search_results_page_id%',
                 ),
             ),
-            'allSites' => array(
+            '3' => array(
+				'en_EN' => array(
+					'homePageId' => 80
+				),
+			),
+			'4' => array(
+				'en_EN' => array(
+					'homePageId' => 82
+				),
+			),
+			'5' => array(
+				'en_EN' => array(
+					'homePageId' => 84
+				),
+			),
+			'6' => array(
+				'en_EN' => array(
+					'homePageId' => 86
+				),
+			),
+			'7' => array(
+				'en_EN' => array(
+					'homePageId' => 88
+				),
+			),
+			'9' => array(
+				'en_EN' => array(
+					'homePageId' => 92
+				),
+			),
+			'allSites' => array(
                 // General cross site config
                 // No page ids here
                 /**
