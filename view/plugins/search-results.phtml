@@ -10,9 +10,8 @@
 <div class="job_listing">
     <div class="listing_tab" id="tab_filter">
             <?php foreach ($this->searchresults as $key => $val) : ?>
-                <div class="item lon">
+                <div class="item lon" style="width: 100%;">
                     <div class="list_item">
-                        <figure><a href="#"><img src="" alt=""></a></figure>
                         <div class="joblisting_text">
                             <div class="job_list_table">
                                 <div class="jobsearch-table-cell">
@@ -47,6 +46,9 @@
                 ]
             )
         ?>
+
+        <div style="height: 50px;"></div>
+
     <?php endif; ?>
 <?php else : ?>
 
