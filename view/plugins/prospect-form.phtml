@@ -1,0 +1,86 @@
+<?php if (! empty($this->prospectsForm)) : ?>
+    <div class="contact_form">
+        <h2 class="f_p f_size_22 t_color3 f_600 l_height28 mt_100 mb_40">Leave a Message</h2>
+        <div class="alert success hidden">
+            <div class="alert_body">
+                <i class="icon-check"></i>
+                <?= $this->siteTranslate('tr_demo_meliscms_contact_us_success', $this->SiteConfig('default_lang_id'), $this->SiteConfig('site_id')) ?>
+            </div>
+            <div class="alert_close"><i class="icon_close"></i></div>
+        </div>
+        <div class="alert error hidden">
+            <div class="alert_body">
+                <i class="icon-close"></i>
+                <?= $this->siteTranslate('tr_demo_meliscms_contact_us_error', $this->SiteConfig('default_lang_id'), $this->SiteConfig('site_id')) ?>
+            </div>
+            <div class="alert_close"><i class="icon_close"></i></div>
+        </div>
+        <?php
+            $form = $this->prospectsForm;
+            $formAttributes = $form->getAttributes();
+        ?>
+        <form
+            action=""
+            class="contact_form_box apply_form"
+            method="<?= $formAttributes['method'] ?>"
+            id="<?= $formAttributes['id'] ?>"
+            name="<?= $formAttributes['name'] ?>"
+            data-pluginid="<?= $formAttributes['data-pluginid'] ?>"
+            novalidate="novalidate"
+        >
+            <div class="row">
+                <?php foreach ($form->getElements() as $key => $element) : ?>
+                    <?php if ($key == 'pros_message') : ?>
+                        <div class="col-lg-12">
+                            <div class="form-group text_box">
+                                <textarea
+                                    id="<?= $element->getAttributes()['id'] ?>"
+                                    name="<?= $element->getAttributes()['name'] ?>"
+                                    placeholder="<?= $element->getAttributes()['placeholder'] ?? $element->getLabel() ?>"
+                                    cols="30"
+                                    rows="10"
+                                ></textarea>
+                            </div>
+                        </div>
+                    <?php elseif ($key == 'pros_theme') : ?>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <select id="<?= $element->getAttributes()['id'] ?>" name="<?= $element->getAttributes()['name'] ?>" class="selectpickers">
+                                    <option selected value=""><?= $element->getEmptyOption() ?></option>
+                                    <?php foreach ($element->getValueOptions() as $oKey => $option) : ?>
+                                        <option value="<?= $oKey ?>"><?= $option ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                        </div>
+                    <?php else : ?>
+                        <div class="col-lg-6">
+                            <div class="form-group text_box">
+                                <input
+                                    type="text"
+                                    id="<?= $element->getAttributes()['id'] ?>"
+                                    name="<?= $element->getAttributes()['name'] ?>"
+                                    placeholder="<?= $element->getAttributes()['placeholder'] ?>"
+                                >
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </div>
+            <button type="submit" class="btn_three" data-siteid="1">Send Message</button>
+        </form>
+    </div>
+<?php else : ?>
+    <div class="alert warning">
+        <div class="alert_body">
+            <i class="icon-close"></i>
+            <?=
+                $this->siteTranslate(
+                    'tr_demo_meliscms_no_result',
+                    $this->SiteConfig('default_lang_id'),
+                    $this->SiteConfig('site_id')
+                )
+            ?>
+        </div>
+    </div>
+<?php endif; ?>

@@ -1,198 +1,126 @@
-/*--------------------------------------------------------------
-
-Template: Theme Name
-Author: 
-Version:  1
-Design and Developed by: 
-
-Note: This is the file where you can add your custom styles to change the look of the theme. But don't modify "style.css" file.
-
----------------------------------------------------------------*/
-
-/* ----------------------------------------------------
-	You can put your custom css code here: 
--------------------------------------------------------*/
-
-.mobile-menu-area{
-	max-height: 450px;
-    overflow-x: auto;
-}
-.mobile-menu-area .mobile-search-input{
-	width: 66%;
-    height: 20px;
-}
-.mobile-menu-area .mobile-search-btn{
-	display: block;
-    right: 10px;
-    padding-top: 7px;
-}
-.mobile-menu-area .input-box input{
-	border: none;
+.hidden {
+    display: none;
 }
 
-.full-width.row{
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.instagrm ul img{
-	width : 79px;
-	height : 79px;
-}
-
-.breadcumb-area-overlay-media{
-    width: 15%;
-    position: absolute;
-    margin: 20px;
-}
-
-.breadcumb-area-overlay-media img{
-    width: 100%;
-    opacity: .5;
-	border: 5px solid rgba(255, 255, 255, 0.54);
-    border-radius: 3px;
-}
-
-.breadcumb-area-overlay-media img:hover{
-    opacity: 1;
-	cursor: pointer;
-}
-
-.contact-info form .form-control, .contact-info .alert{
-	border-radius: 0px;
-}
-
-.single-footer.contact-us li {
-	width: 100%;
-}
-
-.contact-info .single-footer.contact-us li {
-    width: initial;
-}
-
-.site-note{
-    color: #717171;
-    font-size: 12px;
-}
-
-.search-area{
-	min-height: 200px;
-}
-
-.single-choose .choose-icon .svg {
-    width: 100px;
-    height: 100px;
-    padding: 15px;
-    transition: all 0.4s ease-in-out;
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -ms-transition: all 0.4s ease-in-out;
-}
-
-.single-choose .choose-icon .svg svg{
-    width: 100%;
-    height: 100%;
-}
-
-.single-choose:hover .choose-icon .svg path{
-    fill: #cc3333;
-}
-.single-choose:hover .choose-icon .svg polygon{
-    fill: #cc3333;
-}
-
-.single-mega-item li.menu-title a {
- font-weight: 700;
-    font-family: Montserrat;
-}
-
-.single-mega-item {
- padding: 10px 25px;
-}
-
-.mega-menu-area {
- padding: 20px;
-}
-
-.mega-menu-area.news-menu-area ul.single-mega-item.coloum-4.line {
-    position: relative;
-}
-
-.mega-menu-area.news-menu-area ul.single-mega-item.coloum-4.line:after {
-	position: absolute;
-    right: 0;
-    content: ' ';
-    display: block;
-    width: 1px;
-    height: 38%;
-    background: #e2e2e2;
-    bottom: 33%;
-}
-
-.mega-menu-area.news-menu-area ul.single-mega-item.coloum-4:last-child:after {
- width: 0;
-}
-
-.main-menu li ul li a {
- line-height: 1.6;
-}
-
-.main-menu li ul .menu-title-all a{
+h1 {
     font-weight: 700;
-    font-family: Montserrat;
+    font-family: "Poppins", sans-serif;
+    font-size: 50px;
 }
 
-.home-page .blog-title h5, .news-details-page .blog-title h5{
-    text-overflow: inherit;
-    white-space: inherit;
+h2 {
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    line-height: 50px;
+    font-size: 40px;
 }
 
-/* Bootstrap datepicker */
-.bootstrap-datetimepicker-widget .list-unstyled li {
-	display: initial;
+h4 {
+    color: #051441;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
 }
 
-.bootstrap-datetimepicker-widget a:focus, .bootstrap-datetimepicker-widget a:hover {
-    color: inherit;
+h5 {
+    color: #222d39;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
 }
 
-.bootstrap-datetimepicker-widget a, .bootstrap-datetimepicker-widget button, .bootstrap-datetimepicker-widget input {
-    color: inherit;
+h6 {
+    color: #222d39;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
 }
 
-#news-list-plugin #date-min, #news-list-plugin #date-max {
-	background-color: rgba(255, 255, 255, 0);
+.custom-hamburger-color {
+    background: #5e2ced !important;
 }
 
-/* Custom button */
-.input-box button.sbumit-btn {
-    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-    border: 1px solid #e5e5e5;
-    height: 50px;
-    padding: 15px;
-	color: inherit;
+/*
+####################################################
+M E D I A  Q U E R I E S
+####################################################
+*/
+
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::
+Bootstrap 4 breakpoints
+*/
+
+/*
+Extra small devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap because it is "mobile first"
+*/
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+
 }
 
-button.sbumit-btn {
-    width: 30%;
-    text-transform: uppercase;
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {
+
 }
 
-/* Page 404 */
-.page-404-container{
-    width: 100%;
-    padding: 140px;
-    text-align:center;
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
 }
 
-.page-404-container h1{
-    font-weight: 600;
-    font-size: 60pt;
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
 }
 
-.page-404-container p{
-    font-size: 14pt;
+/* We occasionally use media queries that go in the other direction (the given screen size or smaller): */
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
 }
 
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
 
+}
 
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    .dropdown-menu-custom {
+        display: block !important;
+    }
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+
+}
+
+/* Extra large devices (large desktops) */
+/* No media query since the extra-large breakpoint has no upper bound on its width */
+
+/* There are also media queries and mixins for targeting a single segment of screen sizes using the minimum and maximum breakpoint widths. */
+/* Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { ... }
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}

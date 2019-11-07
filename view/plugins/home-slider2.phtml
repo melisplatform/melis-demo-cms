@@ -1,0 +1,33 @@
+<?php
+    $time = 0;
+?>
+<section class="erp_customer_logo_area">
+    <div class="container">
+        <?php if (! empty($this->showSlider)) : ?>
+        <ul class="list-unstyled animation_inner">
+            <?php foreach ($this->showSlider as $key => $slide) : ?>
+                <?php
+                    $rand = (string) rand(1, 2);
+                    $rand = '0.' . $rand;
+                    $time += (float) $rand;
+                    $sTime = (string) $time . 's';
+                ?>
+                <li class="wow slideInnew2" data-wow-delay="<?= $sTime ?>"><img src="<?= $this->basePath($slide->mcsdetail_img) ?>" alt=""></li>
+            <?php endforeach; ?>
+        </ul>
+        <?php else : ?>
+            <div class="alert warning">
+                <div class="alert_body">
+                    <i class="icon-close"></i>
+                    <?=
+                        $this->siteTranslate(
+                            'tr_demo_meliscms_no_result',
+                            $this->SiteConfig('default_lang_id'),
+                            $this->SiteConfig('site_id')
+                        )
+                    ?>
+                </div>
+            </div>
+        <?php endif; ?>
+    </div>
+</section>

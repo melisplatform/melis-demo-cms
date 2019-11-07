@@ -1,0 +1,71 @@
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <?php if (! empty($this->menu)) : ?>
+        <!-- Main page -->
+        <ul class="navbar-nav ml-auto mr-auto menu w_menu">
+            <!-- Other pages -->
+            <?php foreach ($this->menu[0]['pages'] as $key => $page) : ?>
+                <?php $hasSubMenu = false ?>
+                <!-- Check if the page have child pages with link -->
+                <?php if (! empty($page['pages'])) : ?>
+                    <?php foreach ($page['pages'] as $subKey => $subPage) : ?>
+                        <?php if ($subPage['menu'] == 'LINK') : ?>
+                            <?php
+                                $hasSubMenu = true;
+                                break;
+                            ?>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+                <li class="nav-item <?= ($hasSubMenu) ? 'dropdown submenu' : '' ?>">
+                    <a class="nav-link dropdown-toggle" href="<?= $page['uri'] ?>">
+                        <?= $page['label'] ?>
+                    </a>
+                    <?php if ($hasSubMenu) : ?>
+                        <ul class="dropdown-menu dropdown-menu-custom">
+                            <!-- List sub pages -->
+                            <?php foreach ($page['pages'] as $subKey => $subPage) : ?>
+                                <?php if ($subPage['menu'] == 'LINK') : ?>
+                                    <li class="nav-item">
+                                        <a href="<?= $subPage['uri'] ?>" class="nav-link">
+                                            <span style="font-size: 12px;"> <?= $subPage['label'] ?> </span>
+                                        </a>
+                                    </li>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php endif; ?>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    <?php else : ?>
+        <div class="alert warning" style="width: 100%; margin-top: 10px;">
+            <div class="alert_body">
+                <i class="icon-close"></i>
+                <?=
+                    $this->siteTranslate(
+                        'tr_demo_meliscms_no_result',
+                        $this->SiteConfig('default_lang_id'),
+                        $this->SiteConfig('site_id')
+                    )
+                ?>
+            </div>
+        </div>
+    <?php endif; ?>
+
+    <!-- Search Input -->
+    <div class="blog-sidebar">
+        <div class="widget sidebar_widget widget_search">
+            <form action="<?= $this->MelisLink($this->SiteConfig('search_result_page_id'), false) ?>" method="get" class="search-form input-group">
+                <input
+                    type="text"
+                    class="form-control widget_input"
+                    placeholder="<?= $this->siteTranslate('tr_demo_meliscms_search', $this->SiteConfig('default_lang_id'), $this->SiteConfig('site_id')) ?>"
+                    name="keyword"
+                    value="<?= $this->layout()->search?>"
+                    required
+                >
+                <button type="submit"><i class="ti-search"></i></button>
+            </form>
+        </div>
+    </div>
+</div>

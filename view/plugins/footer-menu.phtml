@@ -1,0 +1,33 @@
+<?php if (! empty($this->menu[0]['pages'])) : ?>
+    <div class="row">
+        <?php foreach ($this->menu[0]['pages'] as $key => $page) : ?>
+            <div class="col-lg-2">
+                <div class="f_widget dark_widget about-widget">
+                    <a href="<?= $page['uri'] ?>"><h3 class="f-title f_500 t_color mb_40" style="font-size: 16px;"><?= $page['label'] ?></h3></a>
+                    <ul class="list-unstyled f_list">
+                        <?php if (! empty($page['pages'])) : ?>
+                            <?php foreach ($page['pages'] as $subKey => $subPage) : ?>
+                                <?php if ($subPage['menu'] == 'LINK') : ?>
+                                    <li><a href="<?= $subPage['uri'] ?>"><span style="font-size: 12px;"> <?= $subPage['label'] ?> </span></a></li>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                    </ul>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+<?php else : ?>
+    <div class="alert warning">
+        <div class="alert_body">
+            <i class="icon-close"></i>
+            <?=
+                $this->siteTranslate(
+                    'tr_demo_meliscms_no_result',
+                    $this->SiteConfig('default_lang_id'),
+                    $this->SiteConfig('site_id')
+                )
+            ?>
+        </div>
+    </div>
+<?php endif; ?>

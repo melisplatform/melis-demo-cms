@@ -1,199 +1,265 @@
-<div class="home-page">
-    <!-- Homepage Header Slider -->
-    <?php echo $this->homePageSlider ?>
-    <!-- End of Homepage Header Slider -->
-    <div class="full-width row">
-    	<div class="col-xs-12">
-    		<?php echo $this->MelisDragDropZone($this->idPage, "dragdropzone_home_1") ?>
-    	</div>
-    	<div class="col-xs-12">
-        	<!--Delivery Service Start-->
-            <?php
-                echo $this->MelisTag($this->idPage, "homepage_line_1", 'html',
-                '<div class="delivery-service-area ptb-30">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="single-service shadow-box text-center">
-                                    <img src="'.$this->basePath('/MelisDemoCms/images/icons/trending.png').'" alt="">
-                                    <h5>Money Back Guarantee</h5>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="single-service shadow-box text-center">
-                                    <img src="'.$this->basePath('/MelisDemoCms/images/icons/news.png').'" alt="">
-                                    <h5>Gift Coupon</h5>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="single-service shadow-box text-center">
-                                    <img src="'.$this->basePath('/MelisDemoCms/images/icons/live.png').'" alt="">
-                                    <h5>Free Shipping</h5>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <div class="single-service shadow-box text-center">
-                                    <img src="'.$this->basePath('/MelisDemoCms/images/icons/chat.png').'" alt="">
-                                    <h5>24x7 Support</h5>
-                                </div>
-                            </div>
+<!-- Title Fullscreen Mini Template -->
+<?=
+    $this->MelisTag(
+        $this->idPage,
+        'home-html-1',
+        'html',
+        '<section class="erp_banner_area_two">
+            <ul class="list-unstyled cloud_animation">
+                <li><img src="/MelisDemoCms/img/erp-home/cloud_01.png" alt=""></li>
+                <li><img src="/MelisDemoCms/img/erp-home/cloud_02.png" alt=""></li>
+                <li><img src="/MelisDemoCms/img/erp-home/cloud_03.png" alt=""></li>
+                <li><img src="/MelisDemoCms/img/erp-home/cloud_04.png" alt=""></li>
+                <li><img src="/MelisDemoCms/img/erp-home/cloud_05.png" alt=""></li>
+                <li><img src="/MelisDemoCms/img/erp-home/cloud_06.png" alt=""></li>
+            </ul>
+            <div class="erp_shap"></div>
+            <div class="erp_shap_two" style="background: url(/MelisDemoCms/img/erp-home/banner_shap.png) no-repeat scroll top left;"></div>
+            <div class="section_intro">
+                <div class="section_container">
+                    <div class="intro">
+                        <div class=" intro_content">
+                            <h1>Cloud ERP Software for Small and medium business</h1>
+                            <p>A simple and powerful erp software for Manufacturing, Distribution and Services.</p>
+                            <a href="#" class="er_btn er_btn_two">Try to Free</a>
                         </div>
                     </div>
-                </div>');
+                </div>
+            </div>
+        </section>'
+    )
+?>
+
+<!-- Slider plugin | Carousel -->
+<?= $this->homeSlider1 ?>
+
+<!-- Title Subtitle Centered Mini Template -->
+<?=
+    $this->MelisTag(
+        $this->idPage,
+        'home-html-2',
+        'html',
+        '<section class="erp_service_area sec_pad">
+            <div class="container">
+                <div class="hosting_title erp_title text-center">
+                    <h2>Accessible, Convenient & Manageable</h2>
+                    <p>The full monty burke posh excuse my French Richard cheeky bobby spiffing crikey<br> Why gormless, pear shaped.!</p>
+                </div>
+            </div>
+        </section>'
+    )
+?>
+
+<!-- 3 Columns 2 Lines Mini Template -->
+<?=
+    $this->MelisTag(
+        $this->idPage,
+        'home-html-3',
+        'html',
+        '<section class="erp_service_area sec_pad">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 col-xs-12">
+                        <div class="erp_service_item pr_70">
+                            <img src="/MelisDemoCms/img/erp-home/erp_icon1.png" alt="">
+                            <a href="#"><h3 class="h_head">Secured Cloud</h3></a>
+                            <p>Bloke fantastic bubble and squeak do one what a plonker nancy boy burke fanny around.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="erp_service_item pr_70 pl_10">
+                            <img src="/MelisDemoCms/img/erp-home/erp_icon2.png" alt="">
+                            <a href="#"><h3 class="h_head">Single Platform</h3></a>
+                            <p>Bloke fantastic bubble and squeak do one what a plonker nancy boy burke fanny around.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="erp_service_item pl_70">
+                            <img src="/MelisDemoCms/img/erp-home/erp_icon3.png" alt="">
+                            <a href="#"><h3 class="h_head">Implement Yourself</h3></a>
+                            <p>Bloke fantastic bubble and squeak do one what a plonker nancy boy burke fanny around.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="erp_service_item pr_70">
+                            <img src="/MelisDemoCms/img/erp-home/erp_icon4.png" alt="">
+                            <a href="#"><h3 class="h_head">Multi Regional</h3></a>
+                            <p>Bloke fantastic bubble and squeak do one what a plonker nancy boy burke fanny around.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="erp_service_item pl_10">
+                            <img src="/MelisDemoCms/img/erp-home/erp_icon5.png" alt="">
+                            <a href="#"><h3 class="h_head">Quick Navigations</h3></a>
+                            <p>Bloke fantastic bubble and squeak do one what a plonker nancy boy burke fanny around.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="erp_service_item pl_70">
+                            <img src="/MelisDemoCms/img/erp-home/erp_icon6.png" alt="">
+                            <a href="#"><h3 class="h_head">Works in Web</h3></a>
+                            <p>Bloke fantastic bubble and squeak do one what a plonker nancy boy burke fanny around.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>'
+    )
+?>
+
+<!-- Blue Banner Text Mini Template -->
+<?=
+    $this->MelisTag(
+        $this->idPage,
+        'home-html-4',
+        'html',
+        '<section class="erp_action_area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-4">
+                        <img src="/MelisDemoCms/img/erp-home/action_img.png" alt="">
+                    </div>
+                    <div class="col-lg-9 col-md-8">
+                        <div class="erp_content">
+                            <h2>Trusted by <strong>10,030+ Businesses</strong> over 160 Countries and 24+ Languages</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>'
+    )
+?>
+
+<!-- 2 Columns Left Text Right Image Mini Template -->
+<?=
+    $this->MelisTag(
+        $this->idPage,
+        'home-html-5',
+        'html',
+        '<section class="erp_features_area_two sec_pad">
+            <div class="container">
+                <div class="row erp_item_features align-items-center flex-row-reverse">
+                    <div class="col-lg-6">
+                        <div class="erp_features_img_two">
+                            <div class="img_icon"><span class="pluse_1"></span><span class="pluse_2"></span><i class="icon_lightbulb_alt"></i></div>
+                            <img src="/MelisDemoCms/img/erp-home/crm_img1.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="erp_content_two">
+                            <div class="hosting_title erp_title">
+                                <h2>Nurture Your Customers Using Advanced CRM</h2>
+                                <p>Cack brolly butty grub chancer smashing brilliant vagabond, chimney pot blower such a fibber ummm I\'m telling chinwag he lost his bottle.!</p>
+                            </div>
+                            <div class="media erp_item">
+                                <div class="icon">
+                                    <i class="icon_menu-square_alt2"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h5>Everybody Gets a Dashboard</h5>
+                                </div>
+                            </div>
+                            <div class="media erp_item">
+                                <div class="icon green">
+                                    <i class="icon_ribbon_alt"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h5>Complete Leave Management</h5>
+                                </div>
+                            </div>
+                            <a href="#" class="erp_btn_learn">Learn More<i class="arrow_right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>'
+    )
+?>
+
+<!-- 2 Columns Right Text Left Image Mini Template -->
+<?=
+    $this->MelisTag(
+        $this->idPage,
+        'home-html-6',
+        'html',
+        '<section class="erp_features_area_two sec_pad">
+            <div class="container">
+                <div class="row erp_item_features align-items-center">
+                    <div class="col-lg-6">
+                        <div class="erp_features_img_two">
+                            <div class="img_icon red"><span class="pluse_1"></span><span class="pluse_2"></span><i class="icon_lightbulb_alt"></i></div>
+                            <img src="/MelisDemoCms/img/erp-home/crm_img2.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="erp_content_two">
+                            <div class="hosting_title erp_title">
+                                <h2>Integrated Project Management System</h2>
+                                <p>Cack brolly butty grub chancer smashing brilliant vagabond, chimney pot blower such a fibber ummm I\'m telling chinwag he lost his bottle.!</p>
+                            </div>
+                            <div class="media erp_item">
+                                <div class="icon blue">
+                                    <i class="icon_menu-square_alt2"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h5>Everybody Gets a Dashboard</h5>
+                                </div>
+                            </div>
+                            <div class="media erp_item">
+                                <div class="icon yellow">
+                                    <i class="icon_ribbon_alt"></i>
+                                </div>
+                                <div class="media-body">
+                                    <h5>Complete Leave Management</h5>
+                                </div>
+                            </div>
+                            <a href="#" class="erp_btn_learn">Learn More<i class="arrow_right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>'
+    )
+?>
+
+<!-- Title Subtitle Centered Mini Template -->
+<?=
+    $this->MelisTag(
+        $this->idPage,
+        'home-html-7',
+        'html',
+        '<section class="erp_service_area sec_pad">
+            <div class="container">
+                <div class="hosting_title erp_title text-center">
+                    <h2>Great companies that <span class="icon_heart"></span> SaasLand ERP</h2>
+                    <p>Cack brolly butty grub chancer smashing brilliant vagabond, chimney pot blower such a fibber<br> ummm I\'m telling chinwag he lost his bottle nancy boy.</p>
+                </div>
+            </div>
+        </section>'
+    )
+?>
+
+<!-- Slider plugin | WOW -->
+<?= $this->homeSlider2 ?>
+
+<!-- Title Subtitle Centered Mini Template -->
+<section class="erp_testimonial_area sec_pad">
+    <div class="container">
+        <div class="hosting_title erp_title text-center">
+            <?=
+                $this->MelisTag(
+                    $this->idPage,
+                    'home-textarea-1',
+                    'textarea',
+                    '<h2>What our customers<br> say about SaasLand ERP</h2>'
+                )
             ?>
-            <!-- End of Delivery Service-->
-    	</div>
-    </div>
-
-    <div class="full-width row">
-    	<div class="col-xs-12">
-    		<!-- Paragraphs -->
-            <?php
-                echo $this->MelisTag($this->idPage, "homepage_line_2", 'html',
-                '<div class="blog-area pb-70">
-                    <div class="container">
-                        <div class="row">
-                	        <div class="col-md-12 col-sm-8 col-xs-12">
-                	           <div class="single-blog-body">
-                	               <div class="single-blog sb-2 mb-30">
-                				        <div class="blog-content">
-                			                <div class="blog-title">
-                			                    <h5 class="uppercase font-bold">New fashion collection 2016</h5>
-                			                    <div class="blog-text">
-                			                        <p>There are many variations of passages of Lorem Ipsum available, but the majority suffered alteration in some form, by injected humour, 
-                                                        or random ised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, 
-                                                        you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum. 
-                                                        <br><br>generators on the Internet tend to repeat predefined chunks as necessary. 
-                                                        There are many variations of passages of Lorem Ipsum available the Internet tend to repeat 
-                                                        predefined chunks as necessary. There are many variations of passages of Lorem Ipsum available
-                                                    </p>
-                			                    </div>
-                			                </div>
-                			                <div class="blockqot mtb-30">
-                			                    <blockquote><p>There are many variations of passages of Lorem Ipsum available, but majority have suffered alteration in some form, by injected humour. There are many variations of passages of Lorem Ipsum available, but the majorit. There are many variations of passages of Lorem Ipsum available, but the majorit.</p></blockquote>
-                			                </div>
-                	                    </div>
-                	                </div>
-                	            </div>
-                	        </div>
-                    	</div>
-                	</div>
-                </div>');
-            ?>
-            <!-- End of Paragraphs -->
-    	</div>
-    </div>
-
-    <!-- Big Right Image -->
-    <div class="blog-area pb-70">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-md-push-8 col-sm-4 col-xs-12">
-                	<?php echo $this->MelisTag($this->idPage, "homepage_line_3_img", 'media',
-                	    '<img class="img-responsive" src="/MelisDemoCms/images/news/N01.jpg" alt="">')?>
-                </div>
-                <div class="col-md-7 col-md-pull-4 col-sm-8 col-xs-12">
-                   <div class="single-blog-body">
-                       <div class="single-blog sb-2 mb-30">
-                            <div class="blog-content">
-                                <div class="blog-title">
-                                	<?php echo $this->MelisTag($this->idPage, "homepage_line_3", 'html',
-                                        '<h5 class="uppercase font-bold">New fashion collection 2016</h5>
-                                        <div class="blog-text">
-                                            <p>There are many variations of passages of Lorem Ipsum available, but the majority suffered alteration in some form, by injected humour, or random ised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum. <br><br>generators on the Internet tend to repeat predefined chunks as necessary. There are many variations of passages of Lorem Ipsum available the Internet tend to repeat predefined chunks as necessary. There are many variations of passages of Lorem Ipsum available</p>
-                                        </div>
-                            	    ')?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
+</section>
 
-    <!-- Big Left Image -->
-    <div class="blog-area pb-70">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                    <?php echo $this->MelisTag($this->idPage, "homepage_line_4_img", 'media',
-                	    '<img class="img-responsive" src="/MelisDemoCms/images/product/shoes/03/03.jpg" alt="">')?>
-                </div>
-                <div class="col-md-7 col-md-push-1 col-sm-8 col-xs-12">
-                   <div class="single-blog-body">
-                       <div class="single-blog sb-2 mb-30">
-                            <div class="blog-content">
-                                <div class="blog-title">
-                                    <?php echo $this->MelisTag($this->idPage, "homepage_line_4", 'html',
-                                        '<h5 class="uppercase font-bold">New fashion collection 2016</h5>
-                                        <div class="blog-text">
-                                            <p>There are many variations of passages of Lorem Ipsum available, but the majority suffered alteration in some form, by injected humour, or random ised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum. <br><br>generators on the Internet tend to repeat predefined chunks as necessary. There are many variations of passages of Lorem Ipsum available the Internet tend to repeat predefined chunks as necessary. There are many variations of passages of Lorem Ipsum available</p>
-                                        </div>
-                            	    ')?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<!-- Slider plugin | Testimonials -->
+<?= $this->homeTestimonials1 ?>
 
-
-    <!--blog area are start-->
-    <div class="blog-area pb-70">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 text-center">
-                   <div class="heading-title heading-style pos-rltv mb-50 text-center">
-                       <h5 class="uppercase"><?php echo $this->MelisTag($this->idPage, "homepage_news_title", 'textarea','News')?></h5>
-                   </div>
-               </div>
-           </div>
-
-    		<!-- Latest News -->
-           	<?php echo $this->latestNews?>
-            <!-- End of Latest News -->
-
-            <?php echo $this->gdprBanner; ?>
-        </div>
-    </div>
-    <!--blog area are end-->
-
-    <!--testimonial-area-start-->
-    <div class="testimonial-area overlay ptb-70 mt-70" style="background: rgba(0, 0, 0, 0) url('<?php echo $this->basePath('/MelisDemoCms/images/bg/testimonial.jpg')?>') no-repeat fixed 50% 50% / cover">
-         <div class="container">
-             <div class="row">
-                <div class="col-xs-12 text-center">
-                    <div class="heading-title color-lightgrey mb-40 text-center">
-                        <h5 class="uppercase"><?php echo $this->MelisTag($this->idPage, 'homepage_testimonial_title', 'textarea', 'Testimonial')?></h5>
-                    </div>
-                </div>
-                 <div class="col-xs-12 col-md-8 col-md-push-2">
-                    <?php echo $this->testimonialList ?>
-                 </div>
-             </div>
-         </div>
-     </div>
-    <!--testimonial-area-end-->
-
-    <!--brand area are start-->
-    <div class="brand-area ptb-60">
-        <div class="container">
-               <div class="total-brand-owl owl-carousel w-bg">
-                    <div class="single-brand shadow-box"><a href="#"><img src="<?php echo $this->basePath('/MelisDemoCms/images/brand/01.png')?>" alt=""></a></div>
-                    <div class="single-brand shadow-box"><a href="#"><img src="<?php echo $this->basePath('/MelisDemoCms/images/brand/02.png')?>" alt=""></a></div>
-                    <div class="single-brand shadow-box"><a href="#"><img src="<?php echo $this->basePath('/MelisDemoCms/images/brand/03.png')?>" alt=""></a></div>
-                    <div class="single-brand shadow-box"><a href="#"><img src="<?php echo $this->basePath('/MelisDemoCms/images/brand/04.png')?>" alt=""></a></div>
-                    <div class="single-brand shadow-box"><a href="#"><img src="<?php echo $this->basePath('/MelisDemoCms/images/brand/05.png')?>" alt=""></a></div>
-                    <div class="single-brand shadow-box"><a href="#"><img src="<?php echo $this->basePath('/MelisDemoCms/images/brand/06.png')?>" alt=""></a></div>
-                    <div class="single-brand shadow-box"><a href="#"><img src="<?php echo $this->basePath('/MelisDemoCms/images/brand/01.png')?>" alt=""></a></div>
-                    <div class="single-brand shadow-box"><a href="#"><img src="<?php echo $this->basePath('/MelisDemoCms/images/brand/02.png')?>" alt=""></a></div>
-                    <div class="single-brand shadow-box"><a href="#"><img src="<?php echo $this->basePath('/MelisDemoCms/images/brand/03.png')?>" alt=""></a></div>
-                    <div class="single-brand shadow-box"><a href="#"><img src="<?php echo $this->basePath('/MelisDemoCms/images/brand/04.png')?>" alt=""></a></div>
-            </div>
-      </div>
-    </div>
-    <!--brand area are start-->
-</div>
+<!-- GDPR banner for cookies -->
+<?= $this->gdprBanner ?>
