@@ -13,7 +13,7 @@
                 <!-- Check if the page have child pages with link -->
                 <?php if (! empty($page['pages'])) : ?>
                     <?php foreach ($page['pages'] as $subKey => $subPage) : ?>
-                        <?php if ($subPage['menu'] == 'LINK') : ?>
+                        <?php if ($subPage['menu'] === 'LINK') : ?>
                             <?php
                                 $hasSubMenu = true;
                                 break;
