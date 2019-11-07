@@ -22,7 +22,11 @@
                     <?php endforeach; ?>
                 <?php endif; ?>
                 <li class="nav-item <?= ($hasSubMenu) ? 'dropdown submenu' : '' ?>">
-                    <a class="nav-link dropdown-toggle" href="<?= $page['uri'] ?>" style="white-space: nowrap">
+                    <a
+                        class="nav-link dropdown-toggle"
+                        <?= ($page['menu']) == 'LINK' ? 'href="' . $page['uri'] . '"' : '' ?>
+                        style="white-space: nowrap"
+                    >
                         <?= strtoupper($page['label']) ?>
                     </a>
                     <?php if ($hasSubMenu) : ?>
@@ -32,6 +36,12 @@
                                 <?php if ($subPage['menu'] == 'LINK') : ?>
                                     <li class="nav-item">
                                         <a href="<?= $subPage['uri'] ?>" class="nav-link">
+                                            <span style="font-size: 12px; white-space: nowrap"> <?= strtoupper($subPage['label']) ?> </span>
+                                        </a>
+                                    </li>
+                                <?php elseif ($subPage['menu'] == 'NOLINK') : ?>
+                                    <li class="nav-item">
+                                        <a class="nav-link">
                                             <span style="font-size: 12px; white-space: nowrap"> <?= strtoupper($subPage['label']) ?> </span>
                                         </a>
                                     </li>
