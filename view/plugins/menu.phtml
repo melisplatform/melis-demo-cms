@@ -1,7 +1,12 @@
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <?php if (! empty($this->menu)) : ?>
-        <!-- Main page -->
         <ul class="navbar-nav ml-auto mr-auto menu">
+            <!-- Main page -->
+            <li class="nav-item">
+                <a class="nav-link dropdown-toggle" href="/">
+                    HOME
+                </a>
+            </li>
             <!-- Other pages -->
             <?php foreach ($this->menu[0]['pages'] as $key => $page) : ?>
                 <?php $hasSubMenu = false ?>
@@ -17,17 +22,17 @@
                     <?php endforeach; ?>
                 <?php endif; ?>
                 <li class="nav-item <?= ($hasSubMenu) ? 'dropdown submenu' : '' ?>">
-                    <a class="nav-link dropdown-toggle" href="<?= $page['uri'] ?>">
+                    <a class="nav-link dropdown-toggle" href="<?= $page['uri'] ?>" style="white-space: nowrap">
                         <?= strtoupper($page['label']) ?>
                     </a>
                     <?php if ($hasSubMenu) : ?>
                         <ul class="dropdown-menu dropdown-menu-custom">
                             <!-- List sub pages -->
                             <?php foreach ($page['pages'] as $subKey => $subPage) : ?>
-                                <?php if ($subPage['menu'] == 'LINK') : ?>
+                                <?php if ($subPage['menu'] === 'LINK') : ?>
                                     <li class="nav-item">
                                         <a href="<?= $subPage['uri'] ?>" class="nav-link">
-                                            <span style="font-size: 12px;"> <?= strtoupper($subPage['label']) ?> </span>
+                                            <span style="font-size: 12px; style="white-space: nowrap""> <?= strtoupper($subPage['label']) ?> </span>
                                         </a>
                                     </li>
                                 <?php endif; ?>
