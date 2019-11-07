@@ -18,7 +18,7 @@
                 <?php endif; ?>
                 <li class="nav-item <?= ($hasSubMenu) ? 'dropdown submenu' : '' ?>">
                     <a class="nav-link dropdown-toggle" href="<?= $page['uri'] ?>">
-                        <?= $page['label'] ?>
+                        <?= strtoupper($page['label']) ?>
                     </a>
                     <?php if ($hasSubMenu) : ?>
                         <ul class="dropdown-menu dropdown-menu-custom">
@@ -27,7 +27,7 @@
                                 <?php if ($subPage['menu'] == 'LINK') : ?>
                                     <li class="nav-item">
                                         <a href="<?= $subPage['uri'] ?>" class="nav-link">
-                                            <span style="font-size: 12px;"> <?= $subPage['label'] ?> </span>
+                                            <span style="font-size: 12px;"> <?= strtoupper($subPage['label']) ?> </span>
                                         </a>
                                     </li>
                                 <?php endif; ?>
