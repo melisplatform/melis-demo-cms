@@ -12,8 +12,8 @@
                     <div class="media post_item">
                         <img src="<?= $this->basePath($news['cnews_image1']) ?? '' ?>" alt="" style="height: 80px; width: 90px;">
                         <div class="media-body">
-                            <a href="#">
-                                <h3 class="f_size_16 f_p f_400"><a href="<?= $this->MelisLink(4, true) . '?' . http_build_query(['newsId' => $news['cnews_id']]) ?>"><?= $news['cnews_title'] ?></a></h3>
+                            <a href="<?= $this->MelisLink(4, true) . '?' . http_build_query(['newsId' => $news['cnews_id']]) ?>">
+                                <h3 class="f_size_16 f_p f_400"><?= $news['cnews_title'] ?></h3>
                             </a>
                             <div class="entry_post_info">
                                 <a href="#"><?= $news['newsDateFormated'] ?></a>
