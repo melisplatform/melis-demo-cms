@@ -6,32 +6,28 @@
         <?php else : ?>
         <?php endif; ?>
     <?php else : ?>
-        <?php if (! empty($this->searchresults)) : ?>
-<div class="job_listing">
-    <div class="listing_tab" id="tab_filter">
-            <?php foreach ($this->searchresults as $key => $val) : ?>
-                <div class="item lon" style="width: 100%;">
-                    <div class="list_item">
-                        <div class="joblisting_text">
-                            <div class="job_list_table">
-                                <div class="jobsearch-table-cell">
-                                    <h4><a href="<?php echo $val->url ?>" class="search-results-link"><?php echo $val->pageName ?></a></h4>
-                                    <ul class="list-unstyled">
-                                        <li class="g_color">Full Time</li>
-                                        <li>London, United Kingdom</li>
-                                        <li>Published 4 months ago</li>
-                                    </ul>
-                                </div>
-                                <div class="jobsearch-table-cell">
+        <?php if ($this->searchresults->count()) : ?>
+            <div class="job_listing">
+                <div class="listing_tab" id="tab_filter">
+                    <?php foreach ($this->searchresults as $key => $val) : ?>
+                        <div class="item lon" style="width: 100%;">
+                            <div class="list_item">
+                                <div class="joblisting_text">
+                                    <div class="job_list_table">
+                                        <div class="jobsearch-table-cell">
+                                            <h4><a href="<?php echo $val->url ?>" class="search-results-link"><?php echo $val->pageName ?></a></h4>
+                                        </div>
+                                        <div class="jobsearch-table-cell">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
-            <?php endforeach; ?>
-    </div>
-</div>
+            </div>
         <?php else : ?>
+            <h4>No Results</h4>
         <?php endif; ?>
 
         <!-- Pagination Plugin -->
