@@ -112,6 +112,7 @@ return [
             'MelisDemoCms/plugins/news-list' => __DIR__ . '/../view/plugins/news-list.phtml',
             'MelisDemoCms/plugins/news-details' => __DIR__ . '/../view/plugins/news-details.phtml',
             'MelisDemoCms/plugins/latest-news-vertical' => __DIR__ . '/../view/plugins/latest-news-vertical.phtml',
+            'MelisDemoCms/plugins/latest-news-horizontal' => __DIR__ . '/../view/plugins/latest-news-horizontal.phtml',
             'MelisDemoCms/plugins/list-paginator' => __DIR__ . '/../view/plugins/list-paginator.phtml',
             'MelisDemoCms/plugins/team-slider' => __DIR__ . '/../view/plugins/team-slider.phtml',
             'MelisDemoCms/plugins/faq-listing' => __DIR__ . '/../view/plugins/faq-listing.phtml',
