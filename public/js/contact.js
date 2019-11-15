@@ -6,12 +6,18 @@
     var $mapLong = $('#map-long');
 
     // override lat and long
-    if (!$mapLat.text() || !isNaN($mapLat.text())) {
+    var lat = $mapLat.text().trim();
+    if (lat.length > 0) {
+        console.log('wan');
         $mapBox.data('lat', $mapLat.text());
+        $mapBox.data('mlat', $mapLat.text());
     }
 
-    if (!$mapLong.text() || !isNaN($mapLong.text())) {
+    var long = $mapLong.text().trim();
+    if (long.length > 0) {
+        console.log('wo');
         $mapBox.data('lon', $mapLong.text());
+        $mapBox.data('mlon', $mapLong.text());
     }
 
     // initialize map
