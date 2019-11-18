@@ -20,7 +20,8 @@ class ContactController extends BaseController
             'template_path' => 'MelisDemoCms/plugins/prospect-form',
             'fields' => 'pros_name,pros_company,pros_country,pros_telephone,pros_email,pros_theme,pros_message',
             'required_fields' => 'pros_name,pros_telephone,pros_email,pros_theme,pros_message',
-            'theme' => 1
+            'theme' => 1,
+            'pros_site_id' => 1
         ];
 
         $result = $prospectForm->render($parameter);
