@@ -60,6 +60,10 @@
             data : dataString,
             dataType : 'json',
             encode : true,
+            beforeSend: function () {
+                console.log('before send');
+                hideErrors();
+            },
             success: function (data) {
                 if (data.success) {
                     $('.success').removeClass('hidden');
@@ -94,5 +98,11 @@
             var label = '<label for="' + key + '" class="error" style="color: red;">' + errorTexts + '</label>';
             $element.parent().after().append(label);
         });
+    }
+
+    function hideErrors () {
+        $('.success').addClass('hidden');
+        $('.error').addClass('hidden');
+        $('.form-group label').remove();
     }
 })(jQuery);
