@@ -16,7 +16,8 @@ return [
                     'front' => [
                         'template_path' => [
                             'MelisDemoCms/plugins/faq-listing',
-                            'MelisDemoCms/plugins/faq-values'
+                            'MelisDemoCms/plugins/faq-values',
+                            'MelisDemoCms/plugins/home-testimonial-slider'
                         ],
                         'files' => [
                             'js' => [
@@ -30,6 +31,13 @@ return [
                         'template_path' => [
                             'MelisDemoCms/plugins/gdpr-banner'
                         ]
+                    ],
+                ],
+                'MelisFrontSearchResultsPlugin' => [
+                    'front' => [
+                        'template_path' => [
+                            'MelisDemoCms/plugins/search-results'
+                        ],
                     ],
                 ],
             ],
