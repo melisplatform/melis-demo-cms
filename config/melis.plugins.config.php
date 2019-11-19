@@ -53,7 +53,7 @@ return [
                         ],
                         'files' => [
                             'js' => [
-                                '',
+                                '/MelisDemoCms/js/MelisPlugins/MelisDemoCms.MelisCmsSliderShowSliderPlugin.init.js',
                             ],
                         ],
                     ],
