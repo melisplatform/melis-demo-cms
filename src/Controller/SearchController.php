@@ -13,9 +13,6 @@ class SearchController extends BaseController
 {
     public function searchResultsAction()
     {
-        $search = $this->params()->fromQuery('keyword', null);
-        $this->layout()->setVariable('search', $search);
-
         $searchResultPlugin = $this->MelisFrontSearchResultsPlugin();
         $searchResultsParameters = [
             'template_path' => 'MelisDemoCms/plugins/search-results',

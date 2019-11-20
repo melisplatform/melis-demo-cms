@@ -1,8 +1,14 @@
 <?php
     $urlQryStr = [];
 
+    // Site Search
+    if ($this->siteSearchKey)
+    {
+        $urlQryStr['keyword'] = $this->siteSearchKey;
+    }
+
     // News Search
-    if (! empty($this->searchKey)) {
+    if ($this->searchKey) {
         $urlQryStr['search'] = $this->searchKey;
     }
 ?>
