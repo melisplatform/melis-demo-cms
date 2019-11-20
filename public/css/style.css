@@ -7483,7 +7483,7 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
   margin-bottom: 30px;
-  cursor: pointer;
+  /*cursor: pointer;*/
 }
 
 .app_service_item .app_icon {

@@ -84,7 +84,9 @@
 <?= $this->inlineScript(); ?>
 <!-- No conflict fix with page edition | tiny mce  -->
 <script type="text/javascript">
-    var jQuery_3_2_1 = $.noConflict(true);
+    <?php if ($this->renderMode == 'melis') : ?>
+        var jQuery_3_2_1 = $.noConflict(true);
+    <?php endif; ?>
 </script>
 </body>
 </html>
