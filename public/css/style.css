@@ -18586,6 +18586,7 @@ a .h_head:hover {
   background: #f9f9fe;
   position: relative;
   z-index: 0;
+  overflow: hidden;
 }
 
 .erp_banner_area_two + section {
