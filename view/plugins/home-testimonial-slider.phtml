@@ -1,23 +1,62 @@
-<section class="erp_testimonial_area sec_pad">
+<section class="erp_testimonial_area sec_pad" id="<?= $this->pluginId; ?>">
     <div class="container">
         <?php if (! empty($this->listofpages)) : ?>
-        <div class="row">
-            <div class="erp_testimonial_info owl-carousel">
-                <?php foreach ($this->listofpages as $key => $page) : ?>
-                    <div class="erp_testimonial_item">
-                        <div class="content">
-                            <p><?= $page->page_tags['testi-html-1'] ?></p>
-                        </div>
-                        <div class="media">
-                            <div class="media-body">
-                                <h5><?= $page->page_tags['testi-textarea-1'] ?></h5>
-                                <p><?= $page->page_tags['testi-textarea-2'] ?></p>
+            <?php
+                $testimonials = [];
+                $testimonialTags = [
+                    'testi-html-1',
+                    'testi-textarea-1',
+                    'testi-textarea-2'
+                ];
+
+                foreach ($this->listofpages as $key => $val) {
+                    $pageData = [];
+                    $pageTags = $val->page_tags;
+
+                    foreach ($pageTags as $tagKey => $tagVal) {
+                        if (in_array($tagKey, $testimonialTags)) {
+                            $pageData[$tagKey] = $tagVal;
+                        }
+                    }
+
+                    if (! empty($pageData)) {
+                        array_push($testimonials, $pageData);
+                    }
+                }
+            ?>
+
+            <?php if (! empty($testimonials)) : ?>
+                <div class="row">
+                    <div class="erp_testimonial_info owl-carousel">
+                        <?php foreach ($testimonials as $key => $val) : ?>
+                            <div class="erp_testimonial_item">
+                                <div class="content">
+                                    <p><?= $val['testi-html-1'] ?></p>
+                                </div>
+                                <div class="media">
+                                    <div class="media-body">
+                                        <h5><?= $val['testi-textarea-1'] ?></h5>
+                                        <p><?= $val['testi-textarea-2'] ?></p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        <?php endforeach; ?>
                     </div>
-                <?php endforeach; ?>
-            </div>
-        </div>
+                </div>
+            <?php else : ?>
+                <div class="alert warning">
+                    <div class="alert_body">
+                        <i class="icon-close"></i>
+                        <?=
+                        $this->siteTranslate(
+                            'tr_demo_meliscms_no_data',
+                            $this->SiteConfig('default_lang_id'),
+                            $this->SiteConfig('site_id')
+                        )
+                        ?>
+                    </div>
+                </div>
+            <?php endif; ?>
         <?php else : ?>
             <div class="alert warning">
                 <div class="alert_body">

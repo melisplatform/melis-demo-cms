@@ -21,7 +21,7 @@ return [
                         ],
                         'files' => [
                             'js' => [
-                                '',
+                                '/MelisDemoCms/js/MelisPlugins/MelisDemoCms.MelisFrontShowListFromFolderPlugin.init.js',
                             ],
                         ],
                     ],
