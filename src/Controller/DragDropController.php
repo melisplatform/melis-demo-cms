@@ -18,4 +18,12 @@ class DragDropController extends BaseController
 
         return $this->view;
     }
+
+    public function dragdrop2zonesAction()
+    {
+        $this->view->setVariable('idPage', $this->idPage);
+        $this->view->setVariable('renderMode', $this->renderMode);
+
+        return $this->view;
+    }
 }

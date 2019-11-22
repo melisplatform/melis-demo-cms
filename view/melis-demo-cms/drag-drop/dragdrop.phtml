@@ -1,13 +1,9 @@
-<div style="height: 100px;"></div>
+<?php if ($this->renderMode == 'melis') : ?>
+    <div style="height: 100px;"></div>
+<?php endif; ?>
 
 <div class="row">
     <div class="col-lg-12">
         <?= $this->MelisDragDropZone($this->idPage, "dragdropzone_home_1") ?>
     </div>
 </div>
-<div class="row">
-    <div class="col-lg-12">
-        <?= $this->MelisDragDropZone($this->idPage, "dragdropzone_home_2") ?>
-    </div>
-</div>
-
