@@ -39,6 +39,8 @@ class NewsController extends BaseController
         $newsList = $newsListPlugin->render($parameters);
         // Add rendered plugin to the view
         $this->view->addChild($newsList, 'newsList');
+        $this->view->setVariable('idPage', $this->idPage);
+        $this->view->setVariable('renderMode', $this->renderMode);
 
         return  $this->view;
     }
