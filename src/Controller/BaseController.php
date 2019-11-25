@@ -34,12 +34,12 @@ class BaseController extends MelisSiteActionController
         $siteConfigSrv = $sm->get('MelisSiteConfigService');
         // Use site config service to get data from the config
         $homePageId = $siteConfigSrv->getSiteConfigByKey('homePageId', $pageId);
-        $blackMenu = $siteConfigSrv->getSiteConfigByKey('blackMenu', 1, 'allSites');
+        $whiteMenu = $siteConfigSrv->getSiteConfigByKey('whiteMenu', 1, 'allSites');
 
         // Check if we will use the black or white menu for the page based on the config
-        if (! in_array($pageId, $blackMenu)) {
-            $template_path = 'MelisDemoCms/plugins/white-menu';
-            $menuFlag = 'white';
+        if (! in_array($pageId, $whiteMenu)) {
+            $template_path = 'MelisDemoCms/plugins/menu';
+            $menuFlag = 'black';
         }
 
         // Get menu plugin
@@ -47,7 +47,7 @@ class BaseController extends MelisSiteActionController
         $menuPlugin = $this->MelisFrontMenuPlugin();
         // Set parameters for the menu
         $menuParameters = [
-            'template_path' => $template_path ?? 'MelisDemoCms/plugins/menu',
+            'template_path' => $template_path ?? 'MelisDemoCms/plugins/white-menu',
             'pageIdRootMenu' => $homePageId
         ];
         // Render plugin
@@ -65,7 +65,7 @@ class BaseController extends MelisSiteActionController
         // Add rendered footer menu to the layout
         $this->layout()->addChild($footerMenu, 'footerMenu');
         $this->layout()->setVariable('renderMode', $renderMode);
-        $this->layout()->setVariable('menuFlag', $menuFlag ?? 'black');
+        $this->layout()->setVariable('menuFlag', $menuFlag ?? 'white');
 
         return parent::onDispatch($event);
     }
