@@ -1,27 +1,25 @@
 <div class="blog-sidebar">
     <div class="widget sidebar_widget widget_recent_post mt_60">
-        <div class="row">
-            <div class="widget_title">
-                <h3 class="f_p f_size_20 t_color3">
-                    <?= $this->siteTranslate('tr_demo_meliscms_news_details_latest_news', $this->SiteConfig('default_lang_id'), $this->SiteConfig('site_id')) ?>
-                </h3>
-                <div class="border_bottom"></div>
-            </div>
-            <?php if (! empty($this->latestNews)) : ?>
-                <?php foreach ($this->latestNews as $key => $news) : ?>
-                    <div class="media post_item">
-                        <img src="<?= $this->basePath($news['cnews_image1']) ?? '' ?>" alt="" style="height: 80px; width: 90px;">
-                        <div class="media-body">
-                            <a href="<?= $this->MelisLink(4, true) . '?' . http_build_query(['newsId' => $news['cnews_id']]) ?>">
-                                <h3 class="f_size_16 f_p f_400"><?= $news['cnews_title'] ?></h3>
-                            </a>
-                            <div class="entry_post_info">
-                                <a href="#"><?= $news['newsDateFormated'] ?></a>
-                            </div>
+        <div class="widget_title">
+            <h3 class="f_p f_size_20 t_color3">
+                <?= $this->siteTranslate('tr_demo_meliscms_news_details_latest_news', $this->SiteConfig('default_lang_id'), $this->SiteConfig('site_id')) ?>
+            </h3>
+            <div class="border_bottom"></div>
+        </div>
+        <?php if (! empty($this->latestNews)) : ?>
+            <?php foreach ($this->latestNews as $key => $news) : ?>
+                <div class="media post_item">
+                    <img src="<?= $this->basePath($news['cnews_image1']) ?? '' ?>" alt="" style="height: 80px; width: 90px;">
+                    <div class="media-body">
+                        <a href="<?= $this->MelisLink(4, true) . '?' . http_build_query(['newsId' => $news['cnews_id']]) ?>">
+                            <h3 class="f_size_16 f_p f_400"><?= $news['cnews_title'] ?></h3>
+                        </a>
+                        <div class="entry_post_info">
+                            <a href="#"><?= $news['newsDateFormated'] ?></a>
                         </div>
                     </div>
-                <?php endforeach; ?>
-            <?php endif; ?>
-        </div>
+                </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
     </div>
 </div>
