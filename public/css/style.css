@@ -19258,7 +19258,7 @@ a .h_head:hover {
 
 .erp_testimonial_area {
   position: relative;
-  z-index: 2;
+  /*z-index: 2;*/
 }
 
 .erp_testimonial_area .row {
