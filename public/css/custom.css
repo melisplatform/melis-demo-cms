@@ -37,6 +37,11 @@ h6 {
     background: #5e2ced !important;
 }
 
+.clear {
+    clear: both;
+    display: block;
+}
+
 /*
 ####################################################
 M E D I A  Q U E R I E S
