@@ -38,7 +38,7 @@ h6 {
 }
 
 .clear {
-    clear: both;
+    clear: left;
     display: block;
 }
 
