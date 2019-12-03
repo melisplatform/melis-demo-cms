@@ -34,7 +34,7 @@ class BaseController extends MelisSiteActionController
         $siteConfigSrv = $sm->get('MelisSiteConfigService');
         // Use site config service to get data from the config
         $homePageId = $siteConfigSrv->getSiteConfigByKey('homePageId', $pageId);
-        $whiteMenu = $siteConfigSrv->getSiteConfigByKey('whiteMenu', 1, 'allSites');
+        $whiteMenu = $siteConfigSrv->getSiteConfigByKey('whiteMenu', 1, 'allSites') ?? [];
 
         // Check if we will use the black or white menu for the page based on the config
         if (! in_array($pageId, $whiteMenu)) {
@@ -66,6 +66,7 @@ class BaseController extends MelisSiteActionController
         $this->layout()->addChild($footerMenu, 'footerMenu');
         $this->layout()->setVariable('renderMode', $renderMode);
         $this->layout()->setVariable('menuFlag', $menuFlag ?? 'white');
+        $this->layout()->setVariable('pageId', $pageId);
 
         return parent::onDispatch($event);
     }

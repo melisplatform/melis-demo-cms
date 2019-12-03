@@ -13,9 +13,7 @@ return [
             // General cross site config
             // No page ids here
             'allSites' => [
-                'whiteMenu' => [
-                    3, 4, 5, 7, 8, 9, 14, 21, 27
-                ]
+
             ],
         ]
     ]
