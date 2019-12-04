@@ -9,15 +9,23 @@
         <?php if ($this->searchresults->count()) : ?>
             <div class="job_listing">
                 <div class="listing_tab" id="tab_filter">
-                    <?php foreach ($this->searchresults as $key => $val) : ?>
+                    <?php foreach ($this->searchresults as $key => $page) : ?>
                         <div class="item lon" style="width: 100%;">
                             <div class="list_item">
                                 <div class="joblisting_text">
                                     <div class="job_list_table">
                                         <div class="jobsearch-table-cell">
-                                            <h4><a href="<?php echo $val->url ?>" class="search-results-link"><?php echo $val->pageName ?></a></h4>
-                                        </div>
-                                        <div class="jobsearch-table-cell">
+                                            <h4>
+                                                <a
+                                                    href="<?= $page->url ?>"
+                                                    class="search-results-link"
+                                                >
+                                                    <?= $page->pageName ?>
+                                                </a>
+                                            </h4>
+                                            <ul class="list-unstyled">
+                                                <li><?= $page->description ?></li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
