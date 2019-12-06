@@ -1,4 +1,11 @@
-<section class="erp_testimonial_area sec_pad" id="<?= $this->pluginId; ?>">
+<?php
+$widths = null;
+
+if ($this->fromDragDropZone) {
+    $widths = "$this->widthDesktop $this->widthTablet $this->widthMobile";
+}
+?>
+<section id="<?= $this->pluginId; ?>" class="<?= $widths ?> erp_testimonial_area sec_pad">
     <div class="container">
         <?php if (! empty($this->listofpages)) : ?>
             <?php

@@ -1,19 +1,28 @@
-<?php if (! empty($this->listofpages)) : ?>
-    <?php foreach ($this->listofpages as $page) : ?>
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse<?= $page->page_id ?>" aria-expanded="false" aria-controls="collapse<?= $page->page_id ?>">
-                        <?= $page->page_tags['faq-textarea-1'] ?><i class="ti-plus"></i><i class="ti-minus"></i>
-                    </button>
-                </h5>
-            </div>
+<?php
+$widths = null;
 
-            <div id="collapse<?= $page->page_id ?>" class="collapse" aria-labelledby="heading<?= $page->page_id ?>" data-parent="#accordion">
-                <div class="card-body">
-                    <?= $page->page_tags['faq-html-1'] ?>
+if ($this->fromDragDropZone) {
+    $widths = "$this->widthDesktop $this->widthTablet $this->widthMobile";
+}
+?>
+<?php if (! empty($this->listofpages)) : ?>
+    <div id="<?= $this->pluginId ?>" class="<?= $width ?>">
+        <?php foreach ($this->listofpages as $page) : ?>
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse<?= $page->page_id ?>" aria-expanded="false" aria-controls="collapse<?= $page->page_id ?>">
+                            <?= $page->page_tags['faq-textarea-1'] ?><i class="ti-plus"></i><i class="ti-minus"></i>
+                        </button>
+                    </h5>
+                </div>
+
+                <div id="collapse<?= $page->page_id ?>" class="collapse" aria-labelledby="heading<?= $page->page_id ?>" data-parent="#accordion">
+                    <div class="card-body">
+                        <?= $page->page_tags['faq-html-1'] ?>
+                    </div>
                 </div>
             </div>
-        </div>
-    <?php endforeach; ?>
+        <?php endforeach; ?>
+    </div>
 <?php endif; ?>

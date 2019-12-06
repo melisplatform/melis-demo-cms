@@ -1,4 +1,11 @@
-<div class="blog-sidebar">
+<?php
+$widths = null;
+
+if ($this->fromDragDropZone) {
+    $widths = "$this->widthDesktop $this->widthTablet $this->widthMobile";
+}
+?>
+<div id="<?= $this->pluginId ?>" class="<?= $widths ?> blog-sidebar">
     <div class="widget sidebar_widget widget_recent_post mt_60">
         <div class="widget_title">
             <h3 class="f_p f_size_20 t_color3">

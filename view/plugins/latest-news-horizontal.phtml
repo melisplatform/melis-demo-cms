@@ -1,4 +1,12 @@
-<div class="blog_post">
+<?php
+$widths = null;
+
+if ($this->fromDragDropZone) {
+    $widths = "$this->widthDesktop $this->widthTablet $this->widthMobile";
+}
+
+?>
+<div id="<?= $this->pluginId ?>" class="<?= $widths ?> blog_post">
     <div class="widget_title">
         <h3 class="f_p f_size_20 t_color3">Latest News</h3>
         <div class="border_bottom"></div>

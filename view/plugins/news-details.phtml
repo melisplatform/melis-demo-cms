@@ -1,5 +1,12 @@
+<?php
+$widths = null;
+
+if ($this->fromDragDropZone) {
+    $widths = "$this->widthDesktop $this->widthTablet $this->widthMobile";
+}
+?>
 <?php if (! empty($this->news)) : ?>
-    <div class="blog_single mb_50">
+    <div id="<?= $this->pluginId ?>" class="<?= $widths ?> blog_single mb_50">
         <?php if (! empty($this->news['cnews_image1'])) : ?>
             <img class="img-fluid" src="<?= $this->news['cnews_image1']; ?>" alt="" style="height: auto; width: 100%; object-fit: cover;">
         <?php else : ?>

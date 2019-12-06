@@ -1,10 +1,15 @@
 <?php
-    $time = 0;
+$time = 0;
+$widths = null;
+
+if ($this->fromDragDropZone) {
+    $widths = "$this->widthDesktop $this->widthTablet $this->widthMobile";
+}
 ?>
 <div>
     <span class="clear"></span>
 </div>
-<section class="erp_customer_logo_area">
+<section id="<?= $this->pluginId ?>" class="<?= $widths ?> erp_customer_logo_area">
     <div class="container">
         <?php if (! empty($this->showSlider)) : ?>
         <ul class="list-unstyled animation_inner">

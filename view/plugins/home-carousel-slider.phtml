@@ -1,7 +1,14 @@
+<?php
+$widths = null;
+
+if ($this->fromDragDropZone) {
+    $widths = "$this->widthDesktop $this->widthTablet $this->widthMobile";
+}
+?>
 <div>
     <span class="clear"></span>
 </div>
-<section class="app_screenshot_area sec_pad home-carousel-slider" id="<?= $this->pluginId; ?>">
+<section id="<?= $this->pluginId; ?>" class="<?= $widths ?> app_screenshot_area sec_pad home-carousel-slider">
     <div class="container custom_container p0">
         <?php if (! empty($this->showSlider)) : ?>
             <div class="app_screen_info">

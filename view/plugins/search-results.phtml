@@ -1,3 +1,10 @@
+<?php
+$widths = null;
+
+if ($this->fromDragDropZone) {
+    $widths = "$this->widthDesktop $this->widthTablet $this->widthMobile";
+}
+?>
 <?php if ($this->siteDirExist) : ?>
 
     <?php if (! $this->indexerOk) : ?>
@@ -7,7 +14,7 @@
         <?php endif; ?>
     <?php else : ?>
         <?php if ($this->searchresults->count()) : ?>
-            <div class="job_listing">
+            <div id="<?= $this->pluginId ?>" class="<?= $widths ?> job_listing">
                 <div class="listing_tab" id="tab_filter">
                     <?php foreach ($this->searchresults as $key => $page) : ?>
                         <div class="item lon" style="width: 100%;">

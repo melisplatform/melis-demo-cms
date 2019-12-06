@@ -1,5 +1,12 @@
+<?php
+$widths = null;
+
+if ($this->fromDragDropZone) {
+    $widths = "$this->widthDesktop $this->widthTablet $this->widthMobile";
+}
+?>
 <?php if (! empty($this->showSlider)) : ?>
-    <div class="row">
+    <div id="<?= $this->pluginId ?>" class="<?= $widths ?> row">
         <?php foreach ($this->showSlider as $key => $slide) : ?>
             <div class="col-lg-3 col-sm-6">
                 <div class="ex_team_item">

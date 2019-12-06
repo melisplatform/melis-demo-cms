@@ -1,5 +1,12 @@
+<?php
+$widths = null;
+
+if ($this->fromDragDropZone) {
+    $widths = "$this->widthDesktop $this->widthTablet $this->widthMobile";
+}
+?>
 <?php if (! empty($this->listofpages)) : ?>
-    <div class="faq_tab">
+    <div id="<?= $this->pluginId ?>" class="<?= $widths ?> faq_tab">
         <h4 class="f_p t_color3 f_600 f_size_22 mb_40">Quick Navigation</h4>
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <?php
