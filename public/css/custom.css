@@ -83,7 +83,28 @@ No media query since this is the default in Bootstrap because it is "mobile firs
 
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
+    .erp_service_item img, .erp_action_area img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
+    .h_head, .erp_service_item p, .erp_content {
+        text-align: center;
+    }
+
+    .melis-gdpr-banner-container {
+        height: auto !important;
+    }
+
+    .melis-gdpr-banner-content {
+        padding: 15px;
+        line-height: unset !important;
+    }
+
+    .melis-gdpr-banner-agree {
+        display: block;
+    }
 }
 
 /* Small devices (landscape phones, less than 768px) */
