@@ -81,6 +81,110 @@ No media query since this is the default in Bootstrap because it is "mobile firs
 
 /* We occasionally use media queries that go in the other direction (the given screen size or smaller): */
 
+@media (max-width: 320px) {
+    .animation_inner li:nth-child(1) {
+        left: 20px;
+    }
+
+    .animation_inner li:nth-child(2) {
+        top: 35px;
+        left: 100px;
+    }
+
+    .animation_inner li:nth-child(3) {
+        top: 130px;
+        left: 109px;
+    }
+
+    .animation_inner li:nth-child(4) {
+        left: 12px;
+        top: auto;
+        bottom: -74px;
+    }
+
+    .animation_inner li:nth-child(5) {
+        top: 187px;
+        left: 11px;
+    }
+
+    .animation_inner li:nth-child(6) {
+        top: 79px;
+        left: 215px;
+    }
+
+    .animation_inner li:nth-child(7) {
+        left: 212px;
+    }
+
+    .animation_inner li:nth-child(8) {
+        top: 100px;
+        left: 18px;
+    }
+
+    .animation_inner li:nth-child(9) {
+        left: 211px;
+        top: 178px;
+    }
+
+    .animation_inner li:nth-child(10) {
+        left: 91px;
+        top: 215px;
+    }
+
+    .animation_inner li:nth-child(11) {
+        top: 511px;
+        left: 136px;
+    }
+
+    .animation_inner li:nth-child(12) {
+        top: 400px;
+        left: 102px;
+        display: unset !important;
+    }
+
+    .animation_inner li:nth-child(13) {
+        left: 15px;
+        top: 284px;
+        bottom: unset !important;
+    }
+
+    .animation_inner li:nth-child(14) {
+        left: 114px;
+        top: 297px;
+    }
+
+    .animation_inner li:nth-child(15) {
+        bottom: -250px;
+        left: 14px;
+    }
+
+    .animation_inner li:nth-child(16) {
+        bottom: -36px;
+        left: 206px;
+    }
+
+    .animation_inner li:nth-child(17) {
+        left: 228px;
+        bottom: 53px;
+    }
+
+    .animation_inner li:nth-child(18) {
+        bottom: -129px;
+        left: 195px;
+    }
+
+    .animation_inner li:nth-child(19) {
+        bottom: -168px;
+        left: 37px;
+    }
+
+    .animation_inner li:nth-child(20) {
+        bottom: -252px;
+        right: 16px;
+        display: unset !important;
+    }
+}
+
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
     .erp_service_item img, .erp_action_area img {
@@ -109,7 +213,9 @@ No media query since this is the default in Bootstrap because it is "mobile firs
 
 /* Small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) {
-
+    .erp_testimonial_area {
+        margin-top: 500px;
+    }
 }
 
 /* Medium devices (tablets, less than 992px) */
@@ -129,16 +235,318 @@ No media query since this is the default in Bootstrap because it is "mobile firs
 
 /* There are also media queries and mixins for targeting a single segment of screen sizes using the minimum and maximum breakpoint widths. */
 /* Extra small devices (portrait phones, less than 576px)
-@media (max-width: 575.98px) { ... }
+@media (max-width: 575.98px) { ... } */
+
+@media (min-width: 321px) and (max-width: 375px) {
+    .animation_inner li:nth-child(1) {
+        left: 25px !important;
+    }
+
+    .animation_inner li:nth-child(2) {
+        left: 115px !important;
+    }
+
+    .animation_inner li:nth-child(3) {
+        top: 129px !important;
+        left: 206px !important;
+    }
+
+    .animation_inner li:nth-child(4) {
+        top: 19px !important;
+        left: 242px !important;
+        bottom: unset !important;
+    }
+
+    .animation_inner li:nth-child(5) {
+        top: 212px !important;
+        left: 260px !important;
+    }
+
+    .animation_inner li:nth-child(6) {
+        top: 417px !important;
+        left: 42px !important;
+    }
+
+    .animation_inner li:nth-child(7) {
+        top: 501px !important;
+        left: 248px !important;
+    }
+
+    .animation_inner li:nth-child(8) {
+        top: 124px !important;
+        left: 51px !important;
+    }
+
+    .animation_inner li:nth-child(9) {
+        top: 382px !important;
+        left: 245px !important;
+    }
+
+    .animation_inner li:nth-child(10) {
+        top: 526px !important;
+        left: 25px !important;
+    }
+
+    .animation_inner li:nth-child(11) {
+        top: 316px !important;
+        left: 71px !important;
+    }
+
+    .animation_inner li:nth-child(12) {
+        top: 718px !important;
+        left: 230px !important;
+        display: unset !important;
+    }
+
+    .animation_inner li:nth-child(13) {
+        left: 24px !important;
+        bottom: 71px !important;
+    }
+
+    .animation_inner li:nth-child(14) {
+        bottom: 80px !important;
+        left: 141px !important;
+    }
+
+    .animation_inner li:nth-child(15) {
+        bottom: -166px !important;
+        left: 148px !important;
+    }
+
+    .animation_inner li:nth-child(16) {
+        bottom: -275px !important;
+        left: 108px !important;
+    }
+
+    .animation_inner li:nth-child(17) {
+        bottom: -315px !important;
+        left: 227px !important;
+    }
+
+    .animation_inner li:nth-child(18) {
+        bottom: -364px !important;
+        left: 31px !important;
+    }
+
+    .animation_inner li:nth-child(19) {
+        bottom: -13px !important;
+        left: 195px !important;
+    }
+
+    .animation_inner li:nth-child(20) {
+        bottom: -417px !important;
+        left: 113px !important;
+        display: unset !important;
+    }
+}
 
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) {
+@media (min-width: 425px) and (max-width: 767.98px) {
+    .animation_inner li:nth-child(1) {
+        left: 33px;
+    }
 
+    .animation_inner li:nth-child(2) {
+        left: 151px !important;
+    }
+
+    .animation_inner li:nth-child(3) {
+        top: 129px !important;
+        left: 206px !important;
+    }
+
+    .animation_inner li:nth-child(4) {
+        top: 19px !important;
+        left: 295px !important;
+        bottom: unset !important;
+    }
+
+    .animation_inner li:nth-child(5) {
+        top: 212px !important;
+        left: 303px !important;
+    }
+
+    .animation_inner li:nth-child(6) {
+        top: 457px !important;
+        left: 20px !important;
+    }
+
+    .animation_inner li:nth-child(7) {
+        top: 548px !important;
+        left: 279px !important;
+    }
+
+    .animation_inner li:nth-child(8) {
+        top: 124px !important;
+        left: 51px !important;
+    }
+
+    .animation_inner li:nth-child(9) {
+        top: 424px !important;
+        left: 298px !important;
+    }
+
+    .animation_inner li:nth-child(10) {
+        top: 561px !important;
+        left: 62px !important;
+    }
+
+    .animation_inner li:nth-child(11) {
+        top: 357px !important;
+        left: 53px !important;
+    }
+
+    .animation_inner li:nth-child(12) {
+        top: 769px !important;
+        left: 288px !important;
+        display: unset !important;
+    }
+
+    .animation_inner li:nth-child(13) {
+        left: 24px !important;
+        bottom: 47px !important;
+    }
+
+    .animation_inner li:nth-child(14) {
+        bottom: 32px !important;
+        left: 150px !important;
+    }
+
+    .animation_inner li:nth-child(15) {
+        bottom: -166px !important;
+        left: 148px !important;
+    }
+
+    .animation_inner li:nth-child(16) {
+        bottom: -324px !important;
+        left: 153px !important;
+    }
+
+    .animation_inner li:nth-child(17) {
+        bottom: -367px !important;
+        left: 292px !important;
+    }
+
+    .animation_inner li:nth-child(18) {
+        bottom: -411px !important;
+        left: 45px !important;
+    }
+
+    .animation_inner li:nth-child(19) {
+        bottom: -47px !important;
+        left: 233px !important;
+    }
+
+    .animation_inner li:nth-child(20) {
+        bottom: -446px !important;
+        left: 162px !important;
+        display: unset !important;
+    }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
+    .animation_inner li:nth-child(1) {
 
+    }
+
+    .animation_inner li:nth-child(2) {
+        left: 107px;
+    }
+
+    .animation_inner li:nth-child(3) {
+        top: 138px;
+        left: 141px;
+    }
+
+    .animation_inner li:nth-child(4) {
+        top: 19px;
+        left: 242px;
+    }
+
+    .animation_inner li:nth-child(5) {
+        top: 117px;
+        left: 290px;
+    }
+
+    .animation_inner li:nth-child(6) {
+        top: 36px;
+        left: 613px;
+    }
+
+    .animation_inner li:nth-child(7) {
+        top: 0;
+        left: 384px;
+    }
+
+    .animation_inner li:nth-child(8) {
+        top: 40%;
+        left: 5px;
+    }
+
+    .animation_inner li:nth-child(9) {
+        top: 175px;
+        left: 373px;
+    }
+
+    .animation_inner li:nth-child(10) {
+        top: 135px;
+        left: 526px;
+    }
+
+    .animation_inner li:nth-child(11) {
+        top: 366px;
+        left: 74px;
+    }
+
+    .animation_inner li:nth-child(12) {
+        top: 50px;
+        left: 475px;
+    }
+
+    .animation_inner li:nth-child(13) {
+        left: 0;
+        bottom: 0;
+    }
+
+    .animation_inner li:nth-child(14) {
+        bottom: 30px;
+        left: 150px;
+    }
+
+    .animation_inner li:nth-child(15) {
+        bottom: 20px;
+        left: 310px;
+    }
+
+    .animation_inner li:nth-child(16) {
+        bottom: -46px;
+        left: 460px;
+    }
+
+    .animation_inner li:nth-child(17) {
+        bottom: 60px;
+        left: 485px;
+    }
+
+    .animation_inner li:nth-child(18) {
+        bottom: -30px;
+        left: 608px;
+    }
+
+    .animation_inner li:nth-child(19) {
+        bottom: -85px;
+        left: 258px;
+    }
+
+    .animation_inner li:nth-child(20) {
+        bottom: 119px;
+        right: -4px;
+    }
+
+    .erp_testimonial_area {
+        margin-top: 100px;
+    }
 }
 
 /* Large devices (desktops, 992px and up) */
