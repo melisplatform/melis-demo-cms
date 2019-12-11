@@ -341,7 +341,7 @@ No media query since this is the default in Bootstrap because it is "mobile firs
 }
 
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 425px) and (max-width: 767.98px) {
+@media (min-width: 376px) and (max-width: 767.98px) {
     .animation_inner li:nth-child(1) {
         left: 33px;
     }
