@@ -74,7 +74,7 @@ class Module
                 if (empty($transPath)) {
 
                     // if translation is not found, use melis default translations
-                    $defaultLocale = (file_exists(__DIR__ . "/language/$locale.$type.php")) ? $locale : "en_EN";
+                    $defaultLocale = (file_exists(__DIR__ . "/../language/$locale.$type.php")) ? $locale : "en_EN";
                     $transPath = __DIR__ . "/../language/$defaultLocale.$type.php";
                 }
 
