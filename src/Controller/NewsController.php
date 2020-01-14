@@ -26,7 +26,8 @@ class NewsController extends BaseController
             'pageId' => $this->idPage,
             'pageIdNews' => 4,
             'pagination' => [
-                'nbPerPage' => 6
+                'nbPerPage' => 6,
+                'nbPageBeforeAfter' => 3
             ],
             'filter' => [
                 'column' => 'cnews_publish_date',
