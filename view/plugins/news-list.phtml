@@ -12,6 +12,7 @@ if ($this->fromDragDropZone) {
                 <div class="col-lg-12">
                     <div class="filter-top" id="news-list-plugin">
                         <form
+                            id="news-dates-form"
                             action=""
                             class="contact_form_box apply_form"
                             method="get"
@@ -19,7 +20,7 @@ if ($this->fromDragDropZone) {
                             style="width: 100%;"
                         >
                             <div class="row">
-                                <div class="col-lg-3">
+                                <div class="col-lg-2">
                                     <div class="single-aside search-aside search-box">
                                         <div class="form-group text_box">
                                             <input
@@ -33,7 +34,7 @@ if ($this->fromDragDropZone) {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-3">
+                                <div class="col-lg-2">
                                     <div class="single-aside search-aside search-box">
                                         <div class="form-group text_box">
                                             <input
@@ -47,10 +48,13 @@ if ($this->fromDragDropZone) {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-3">
-                                    <button type="submit" class="btn_three mt_c20" style="height: 60px;">Filter</button>
+                                <div class="col-lg-2">
+                                    <button type="submit" class="btn_three mt_c20" id="news-dates-submit" style="height: 60px;">Filter</button>
                                 </div>
-                                <div class="col-lg-3">
+                                <div class="col-lg-2">
+                                    <button type="submit" class="btn_three mt_c20" id="news-refresh-filter" style="height: 60px;">Reset</button>
+                                </div>
+                                <div class="col-lg-4">
                                     <div class="blog-sidebar float-right">
                                         <div class="widget sidebar_widget widget_search">
                                             <div class="search-form input-group">
