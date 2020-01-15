@@ -61,7 +61,6 @@
             dataType : 'json',
             encode : true,
             beforeSend: function () {
-                console.log('before send');
                 hideErrors();
             },
             success: function (data) {
