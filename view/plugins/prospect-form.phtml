@@ -35,6 +35,11 @@ if ($this->fromDragDropZone) {
             data-pluginid="<?= $formAttributes['data-pluginid'] ?>"
             novalidate="novalidate"
         >
+            <input
+                type="hidden"
+                name="pros_type"
+                value="default"
+            >
             <div class="row">
                 <?php foreach ($form->getElements() as $key => $element) : ?>
                     <?php if ($key == 'pros_message') : ?>
@@ -65,9 +70,9 @@ if ($this->fromDragDropZone) {
                             <div class="form-group text_box">
                                 <input
                                     type="text"
-                                    id="<?= $element->getAttributes()['id'] ?>"
-                                    name="<?= $element->getAttributes()['name'] ?>"
-                                    placeholder="<?= $element->getAttributes()['placeholder'] ?>"
+                                    id="<?= $element->getAttributes()['id'] ?? '' ?>"
+                                    name="<?= $element->getAttributes()['name'] ?? '' ?>"
+                                    placeholder="<?= $element->getAttributes()['placeholder'] ?? '' ?>"
                                 >
                             </div>
                         </div>
