@@ -42,6 +42,10 @@ h6 {
     display: block;
 }
 
+.faq_content .tab-pane .card .card-body {
+    padding: 0px 0px 0px !important;
+}
+
 /*
 ####################################################
 M E D I A  Q U E R I E S
