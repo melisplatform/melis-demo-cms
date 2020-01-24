@@ -264,7 +264,6 @@
     function erpTestimonial(){
         var erpT = $(".erp_testimonial_info");
         if( erpT.length ){
-            console.log('test');
             erpT.owlCarousel({
                 loop:true,
                 margin:0,

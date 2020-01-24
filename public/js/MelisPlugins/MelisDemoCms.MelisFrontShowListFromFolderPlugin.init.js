@@ -15,7 +15,6 @@ function MelisFrontShowListFromFolderPlugin_init (idPlugin) {
             /*===========Start app_testimonial_slider js ===========*/
             function erpTestimonial() {
                 var erpT = jQuery_3_2_1(".erp_testimonial_info");
-                console.log('test');
                 if( erpT.length ){
                     erpT.owlCarousel({
                         loop: true,
