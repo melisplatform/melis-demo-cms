@@ -13,12 +13,13 @@ function MelisFrontShowListFromFolderPlugin_init (idPlugin) {
     if ($plugin.length) {
         if ($plugin.hasClass('erp_testimonial_area')) {
             /*===========Start app_testimonial_slider js ===========*/
-            function erpTestimonial(){
+            function erpTestimonial() {
                 var erpT = jQuery_3_2_1(".erp_testimonial_info");
+                console.log('test');
                 if( erpT.length ){
                     erpT.owlCarousel({
-                        loop:true,
-                        margin:0,
+                        loop: true,
+                        margin: 0,
                         items: 2,
                         nav:true,
                         dots: false,
@@ -38,6 +39,12 @@ function MelisFrontShowListFromFolderPlugin_init (idPlugin) {
                                 items:2,
                             }
                         },
+                        onInitialized: function () {
+                            $('.erp_testimonial_info .owl-nav').removeClass('disabled');
+                        },
+                        onChanged: function () {
+                            $('.erp_testimonial_info .owl-nav').removeClass('disabled');
+                        }
                     })
                 }
             }
