@@ -46,6 +46,21 @@ h6 {
     padding: 0px 0px 0px !important;
 }
 
+.cursor-text {
+    cursor: text;
+}
+
+.h-100 {
+    height: 100px;
+}
+
+.h-200 {
+    height: 200px;
+}
+
+.c-black {
+    color: black !important;
+}
 /*
 ####################################################
 M E D I A  Q U E R I E S
