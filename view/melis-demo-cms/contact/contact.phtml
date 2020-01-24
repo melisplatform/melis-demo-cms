@@ -17,39 +17,6 @@
 
 <section class="contact_info_area sec_pad bg_color">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-4 pr-0">
-                <?=
-                    $this->MelisTag(
-                        $this->idPage,
-                        'contact-html-2',
-                        'html',
-                        '<div class="info_item">
-                            <h3>Office Address</h3>
-                            <p>4, rue du Dahomey 75011 Paris, France</p>
-                        </div>
-                        <div class="info_item">
-                            <h3>Contact Info</h3>
-                            <p>Phone: (+33) 972 386 280<br>Email: contact@melistechnology.com </p>
-                        </div>'
-                    )
-                ?>
-            </div>
-            <div class="col-lg-8">
-                <div class="mapbox">
-                    <div id="mapBox" class="row m0" data-lat="48.850973" data-lon="2.382171" data-zoom="16" data-info="4, rue du Dahomey 75011 Paris, France" data-mlat="48.850973" data-mlon="2.382171">
-                    </div>
-                </div>
-                <div style="<?= ($this->renderMode == 'melis') ? : 'display: none;' ?>">
-                    <div class="col-xs-6" id="map-lat">
-                        <?= $this->MelisTag($this->idPage, 'contact_gmap_lat', 'textarea', '48.850973') ?>
-                    </div>
-                    <div class="col-xs-6" id="map-long">
-                        <?= $this->MelisTag($this->idPage, 'contact_gmap_long', 'textarea', '2.382171'); ?>
-                    </div>
-                </div>
-            </div>
-        </div>
         <?= $this->prospectForm ?>
     </div>
 </section>

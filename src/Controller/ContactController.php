@@ -40,8 +40,6 @@ class ContactController extends BaseController
 
             $this->layout()->setVariables([
                 'pageJs' => [
-                    'https://maps.googleapis.com/maps/api/js?key=AIzaSyA-IIoucJ-70FQg6xZsORjQCUPHCVj9GV4',
-                    '/MelisDemoCms/js/gmaps.min.js',
                     '/MelisDemoCms/js/plugins.js',
                     '/MelisDemoCms/js/jquery.form.js',
                     '/MelisDemoCms/js/jquery.validate.min.js',
