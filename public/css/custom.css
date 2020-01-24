@@ -61,6 +61,12 @@ h6 {
 .c-black {
     color: black !important;
 }
+
+.custom-text-faq {
+    font-family: 'Open Sans',sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+}
 /*
 ####################################################
 M E D I A  Q U E R I E S
