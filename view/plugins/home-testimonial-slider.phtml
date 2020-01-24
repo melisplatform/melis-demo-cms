@@ -13,7 +13,8 @@ if ($this->fromDragDropZone) {
                 $testimonialTags = [
                     'testi-html-1',
                     'testi-textarea-1',
-                    'testi-textarea-2'
+                    'testi-textarea-2',
+                    'testi-img-1'
                 ];
 
                 foreach ($this->listofpages as $key => $val) {
@@ -41,6 +42,7 @@ if ($this->fromDragDropZone) {
                                     <p><?= $val['testi-html-1'] ?></p>
                                 </div>
                                 <div class="media">
+                                    <?= $val['testi-img-1'] ?? '' ?>
                                     <div class="media-body">
                                         <h5><?= $val['testi-textarea-1'] ?></h5>
                                         <p><?= $val['testi-textarea-2'] ?></p>
