@@ -7,7 +7,16 @@ if ($this->fromDragDropZone) {
 ?>
 <?php if (! empty($this->listofpages)) : ?>
     <div id="<?= $this->pluginId ?>" class="<?= $widths ?> faq_tab">
-        <h4 class="f_p t_color3 f_600 f_size_22 mb_40">Quick Navigation</h4>
+        <h4 class="f_p t_color3 f_600 f_size_22 mb_40">
+            <?=
+                $this->MelisTag(
+                    $this->idPage,
+                    'faq-listing-text-1',
+                    'textarea',
+                    'Quick Navigation'
+                )
+            ?>
+        </h4>
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <?php
                 $count = 0;

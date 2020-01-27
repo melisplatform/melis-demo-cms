@@ -26,7 +26,14 @@
                 <div class="tab-content faq_content" id="myTabContent">
                     <div class="tab-pane fade show active" id="page_tab_<?= $this->faqValues1PageId ?>" role="tabpanel" aria-labelledby="page_tab_<?= $this->faqValues1PageId ?>-tab">
                         <h3 class="f_p f_size_22 f_500 t_color3 mb_20">
-                            <?= $this->siteTranslate('tr_demo_meliscms_faq_title_1', $this->SiteConfig('default_lang_id'), $this->SiteConfig('site_id')) ?>
+                            <?=
+                                $this->MelisTag(
+                                    $this->idPage,
+                                    'faq-values-title-1',
+                                    'textarea',
+                                    'Questions about delivery'
+                                )
+                            ?>
                         </h3>
                         <div id="accordion">
                             <!-- Faq values -->
@@ -35,7 +42,14 @@
                     </div>
                     <div class="tab-pane fade" id="page_tab_<?= $this->faqValues2PageId ?>" role="tabpanel" aria-labelledby="page_tab_<?= $this->faqValues2PageId ?>-tab">
                         <h3 class="f_p f_size_22 f_500 t_color3 mb_20">
-                            <?= $this->siteTranslate('tr_demo_meliscms_faq_title_2', $this->SiteConfig('default_lang_id'), $this->SiteConfig('site_id')) ?>
+                            <?=
+                                $this->MelisTag(
+                                    $this->idPage,
+                                    'faq-values-title-2',
+                                    'textarea',
+                                    'Question about the product'
+                                )
+                            ?>
                         </h3>
                         <div id="accordion">
                             <!-- Faq values -->
@@ -44,7 +58,14 @@
                     </div>
                     <div class="tab-pane fade" id="page_tab_<?= $this->faqValues3PageId ?>" role="tabpanel" aria-labelledby="page_tab_<?= $this->faqValues2PageId ?>-tab">
                         <h3 class="f_p f_size_22 f_500 t_color3 mb_20">
-                            <?= $this->siteTranslate('tr_demo_meliscms_faq_title_3', $this->SiteConfig('default_lang_id'), $this->SiteConfig('site_id')) ?>
+                            <?=
+                                $this->MelisTag(
+                                    $this->idPage,
+                                    'faq-values-title-3',
+                                    'textarea',
+                                    'Questions about payment'
+                                )
+                            ?>
                         </h3>
                         <div id="accordion">
                             <!-- Faq values -->
