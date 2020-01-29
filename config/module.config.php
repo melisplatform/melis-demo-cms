@@ -88,7 +88,8 @@ return [
             'MelisDemoCms\Controller\Faq' => 'MelisDemoCms\Controller\FaqController',
             'MelisDemoCms\Controller\Contact' => 'MelisDemoCms\Controller\ContactController',
             'MelisDemoCms\Controller\Search' => 'MelisDemoCms\Controller\SearchController',
-            'MelisDemoCms\Controller\Testimonial' => 'MelisDemoCms\Controller\TestimonialController'
+            'MelisDemoCms\Controller\Testimonial' => 'MelisDemoCms\Controller\TestimonialController',
+            'MelisDemoCms\Controller\Template' => 'MelisDemoCms\Controller\TemplateController'
         ],
     ],
     'view_manager' => [
