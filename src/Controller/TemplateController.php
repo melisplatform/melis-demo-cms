@@ -58,4 +58,12 @@ class TemplateController extends BaseController
 
         return $this->view;
     }
+
+    public function centeredDragdropAction()
+    {
+        $this->view->setVariable('idPage', $this->idPage);
+        $this->view->setVariable('renderMode', $this->renderMode);
+
+        return $this->view;
+    }
 }
