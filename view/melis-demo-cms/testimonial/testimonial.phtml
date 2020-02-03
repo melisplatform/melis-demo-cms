@@ -1,18 +1,20 @@
 <?= $this->MelisDragDropZone($this->idPage, "testimonial_html_1") ?>
 <div class="erp_testimonial_item">
     <div class="content">
-        <p>
-            <?=
-                $this->MelisTag(
-                    $this->idPage,
-                    'testi-html-1',
-                    'html',
-                    'Loo car boot bodge smashing I up the duff horse play give us a bell, William bugger all mate happy days mush at public school tosser victoria sponge, say lurgy hunky-dory twit hotpot gutted mate.'
-                )
-            ?>
+        <p class="mb-0 c-black custom-text-faq">
+            Input testimonial
         </p>
+        <?=
+            $this->MelisTag(
+                $this->idPage,
+                'testi-html-1',
+                'html',
+                'Loo car boot bodge smashing I up the duff horse play give us a bell, William bugger all mate happy days mush at public school tosser victoria sponge, say lurgy hunky-dory twit hotpot gutted mate.'
+            )
+        ?>
     </div>
     <div class="media">
+        <p class="mb-0 c-black custom-text-faq">Input image</p>
         <?=
             $this->MelisTag(
                 $this->idPage,
@@ -22,26 +24,24 @@
             )
         ?>
         <div class="media-body">
-            <h5>
-                <?=
-                    $this->MelisTag(
-                        $this->idPage,
-                        'testi-textarea-1',
-                        'html',
-                        'Lance Bogrol'
-                    )
-                ?>
-            </h5>
-            <p>
-                <?=
-                    $this->MelisTag(
-                        $this->idPage,
-                        'testi-textarea-2',
-                        'html',
-                        'Officer at Samumed'
-                    )
-                ?>
-            </p>
+            <p class="mb-0 c-black custom-text-faq">Input name</p>
+            <?=
+                $this->MelisTag(
+                    $this->idPage,
+                    'testi-textarea-1',
+                    'html',
+                    'Lance Bogrol'
+                )
+            ?>
+            <p class="mb-0 c-black custom-text-faq">Input position</p>
+            <?=
+                $this->MelisTag(
+                    $this->idPage,
+                    'testi-textarea-2',
+                    'html',
+                    'Officer at Samumed'
+                )
+            ?>
         </div>
     </div>
 </div>
