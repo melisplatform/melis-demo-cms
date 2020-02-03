@@ -55,6 +55,7 @@ return array(
     'tr_melis_installer_tool_site_name_error_empty' => 'Name is required',
 
     'tr_install_setup_message_ok' => 'Setup complete',
+    'tr_install_setup_title' => 'MelisDemoCms Setup',
 
     'tr_site_demo_cms_common_no_result' => 'No Result',
     'tr_site_demo_cms_common_read_more' => 'Read More',

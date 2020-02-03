@@ -8,11 +8,12 @@
     {
         $imgSrc = $matches[1];
     }
+
     $imgBg = 'background: rgba(0, 0, 0, 0) url('.$imgSrc.') no-repeat scroll 0 0';
 ?>
 
 <div class="breadcumb-area overlay pos-rltv" style="<?php echo $imgBg ?>">
-	<?php if ($this->renderMode == 'melis'):?>
+	<?php if ($this->renderMode == 'melis' && !$this->layout()->preview):?>
     	<div class="breadcumb-area-overlay-media">
     		<?php echo $this->MelisTag($this->idPage, 'header_image', 'media', '<img alt="" src="'.$imgSrc.'">');?>
     	</div>

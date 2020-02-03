@@ -1,6 +1,6 @@
 <div class="news-details-page">
     <!--breadcumb area start -->
-    <?php 
+    <?php
         $subject = $this->MelisTag($this->idPage, 'header_image', 'media', '');
         preg_match('/<img\s.*?\bsrc="(.*?)".*?>/si', $subject, $matches);
         
@@ -10,16 +10,17 @@
             $imgSrc = $matches[1];
         }
         $imgBg = 'background: rgba(0, 0, 0, 0) url('.$imgSrc.') no-repeat scroll 0 0';
+
     ?>
     <div class="breadcumb-area breadcumb-2 overlay pos-rltv" style="<?php echo $imgBg ?>">
-    	<?php if ($this->renderMode == 'melis'):?>
+    	<?php if ($this->renderMode == 'melis' && !$this->layout()->preview):?>
         	<div class="breadcumb-area-overlay-media">
         		<?php echo $this->MelisTag($this->idPage, 'header_image', 'media', '<img alt="" src="'.$imgSrc.'">');?>
         	</div>
     	<?php endif;?>
         <div class="bread-main">
             <div class="bred-hading text-center">
-                <h5><?php echo $this->MelisTag($this->idPage, 'header_title', 'textarea', 'News')?></h5> 
+                <h5><?php echo $this->MelisTag($this->idPage, 'header_title', 'textarea', 'News')?></h5>
             </div>
             <?php echo $this->layout()->pageBreadcrumb?>
         </div>
@@ -30,6 +31,9 @@
     <div class="shop-main-area pt-70 pb-40">
         <div class="container">
             <div class="row">
+                <div class="col-xs-12">
+                    <?php echo $this->MelisDragDropZone($this->idPage, "dragdropzone_news_details") ?>
+                </div>
                 
                 <!--main-shop-product start-->
                 <div class="col-md-12 col-sm-12 col-xs-12">

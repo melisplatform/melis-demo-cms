@@ -25,7 +25,7 @@ return array(
     'tr_site_demo_cms_sdom_scheme_info' => 'Scheme info',
     'tr_site_demo_cms_sdom_domain' => 'Domain name',
     'tr_site_demo_cms_sdom_domain_info' => 'Domain name info',
-    'tr_site_demo_cms_name' => 'Name',
+    'tr_site_demo_cms_name' => 'Nom',
     'tr_site_demo_cms_name_tooltip' => 'Use to display the name of the site',
 
     //not empty validator
@@ -49,6 +49,7 @@ return array(
     'tr_site_demo_cms_tool_site_domain_invalid' => 'Veuillez saisir un nom de domaine valide',
 
     'tr_install_setup_message_ok' => 'Setup complete',
+    'tr_install_setup_title' => 'Configuration MelisDemoCms',
 
     'tr_site_demo_cms_common_no_result' => 'Aucun résultat',
     'tr_site_demo_cms_common_read_more' => 'Lire plus',

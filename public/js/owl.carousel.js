@@ -1274,7 +1274,7 @@
 		} else if (document.documentElement && document.documentElement.clientWidth) {
 			width = document.documentElement.clientWidth;
 		} else {
-			console.warn('Can not detect viewport width.');
+			console.log('Can not detect viewport width.');
 		}
 		return width;
 	};
@@ -2252,22 +2252,22 @@
 				type: 'GET',
 				url: '//vimeo.com/api/v2/video/' + video.id + '.json',
 				jsonp: 'callback',
-				dataType: 'jsonp',
-				success: function(data) {
-					path = data[0].thumbnail_large;
-					create(path);
-				}
+				dataType: 'jsonp'
+			}).done(function(data) {
+				path = data[0].thumbnail_large;
+				create(path);
 			});
 		} else if (video.type === 'vzaar') {
 			$.ajax({
 				type: 'GET',
 				url: '//vzaar.com/api/videos/' + video.id + '.json',
 				jsonp: 'callback',
-				dataType: 'jsonp',
-				success: function(data) {
-					path = data.framegrab_url;
-					create(path);
-				}
+				dataType: 'jsonp'
+			}).done(function(data) {
+				path = data.framegrab_url;
+				create(path);
+			}).fail(function() {
+				alert( translations.tr_meliscore_error_message );
 			});
 		}
 	};
