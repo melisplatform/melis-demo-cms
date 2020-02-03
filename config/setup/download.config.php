@@ -387,7 +387,7 @@ return [
                                                 [
                                                     Melis::PRIMARY_KEY => 'page_id',
                                                     'page_id' => Melis::FOREIGN_KEY,
-                                                    'page_type' => 'PAGE',
+                                                    'page_type' => 'NEWS_DETAIL',
                                                     'page_status' => '1',
                                                     'page_menu' => 'LINK',
                                                     'page_name' => 'News Details',
