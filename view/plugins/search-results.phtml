@@ -6,15 +6,37 @@ if ($this->fromDragDropZone) {
 }
 ?>
 <?php if ($this->siteDirExist) : ?>
-
     <?php if (! $this->indexerOk) : ?>
-
         <?php if ($this->moduleDirWritable) : ?>
+            <div class="alert warning" style="width: 100%;">
+                <div class="alert_body">
+                    <?=
+                        $this->siteTranslate(
+                            'tr_demo_meliscms_search_result_not_indexed',
+                            $this->SiteConfig('default_lang_id'),
+                            $this->SiteConfig('site_id')
+                        )
+                    ?>
+                    <br>
+                    <a href="<?php echo $this->indexerURL ?>" class="text-danger"><?php echo $this->indexerURL?></a>
+                </div>
+            </div>
         <?php else : ?>
+            <div class="alert warning" style="width: 100%;">
+                <div class="alert_body">
+                    <?=
+                        $this->siteTranslate(
+                            'tr_demo_meliscms_search_result_lucene_index_not_writable',
+                            $this->SiteConfig('default_lang_id'),
+                            $this->SiteConfig('site_id')
+                        )
+                    ?>
+                </div>
+            </div>
         <?php endif; ?>
     <?php else : ?>
         <?php if ($this->searchresults->count()) : ?>
-            <div id="<?= $this->pluginId ?>" class="<?= $widths ?> job_listing">
+            <div id="<?= $this->pluginId ?>" class="<?= $widths ?> job_listing m-0">
                 <div class="listing_tab" id="tab_filter">
                     <?php foreach ($this->searchresults as $key => $page) : ?>
                         <div class="item lon" style="width: 100%;">
@@ -42,7 +64,18 @@ if ($this->fromDragDropZone) {
                 </div>
             </div>
         <?php else : ?>
-            <h4>No Results</h4>
+            <div class="alert warning" style="width: 100%;">
+                <div class="alert_body">
+                    <i class="icon-close"></i>
+                    <?=
+                        $this->siteTranslate(
+                            'tr_demo_meliscms_no_result',
+                            $this->SiteConfig('default_lang_id'),
+                            $this->SiteConfig('site_id')
+                        )
+                    ?>
+                </div>
+            </div>
         <?php endif; ?>
 
         <!-- Pagination Plugin -->
@@ -57,10 +90,19 @@ if ($this->fromDragDropZone) {
                 ]
             )
         ?>
-
         <div style="height: 50px;"></div>
-
     <?php endif; ?>
 <?php else : ?>
-
+    <div class="alert warning" style="width: 100%;">
+        <div class="alert_body">
+            <i class="icon-close"></i>
+            <?=
+                $this->siteTranslate(
+                    'tr_demo_meliscms_search_result_no_dir',
+                    $this->SiteConfig('default_lang_id'),
+                    $this->SiteConfig('site_id')
+                )
+            ?>
+        </div>
+    </div>
 <?php endif; ?>
