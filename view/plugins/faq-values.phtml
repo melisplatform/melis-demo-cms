@@ -17,7 +17,7 @@ if ($this->fromDragDropZone) {
                     </h5>
                 </div>
 
-                <div id="collapse<?= $page->page_id ?>" class="collapse" aria-labelledby="heading<?= $page->page_id ?>" data-parent="#accordion">
+                <div id="collapse<?= $page->page_id ?>" class="collapse" aria-labelledby="heading<?= $page->page_id ?>" data-parent="#accordion<?= $this->pageIdFolder ?>">
                     <div class="card-body">
                         <?= $page->page_tags['faq-html-1'] ?>
                     </div>

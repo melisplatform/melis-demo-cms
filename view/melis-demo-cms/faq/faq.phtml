@@ -20,7 +20,7 @@
                                 )
                             ?>
                         </h3>
-                        <div id="accordion">
+                        <div id="accordion<?= $this->faqValues1PageId ?>">
                             <!-- Faq values -->
                             <?= $this->faqValues1 ?>
                         </div>
@@ -36,12 +36,12 @@
                                 )
                             ?>
                         </h3>
-                        <div id="accordion">
+                        <div id="accordion<?= $this->faqValues2PageId ?>">
                             <!-- Faq values -->
                             <?= $this->faqValues2 ?>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="page_tab_<?= $this->faqValues3PageId ?>" role="tabpanel" aria-labelledby="page_tab_<?= $this->faqValues2PageId ?>-tab">
+                    <div class="tab-pane fade" id="page_tab_<?= $this->faqValues3PageId ?>" role="tabpanel" aria-labelledby="page_tab_<?= $this->faqValues3PageId ?>-tab">
                         <h3 class="f_p f_size_22 f_500 t_color3 mb_20">
                             <?=
                                 $this->MelisTag(
@@ -52,7 +52,7 @@
                                 )
                             ?>
                         </h3>
-                        <div id="accordion">
+                        <div id="accordion<?= $this->faqValues3PageId ?>">
                             <!-- Faq values -->
                             <?= $this->faqValues3 ?>
                         </div>
