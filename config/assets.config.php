@@ -5,6 +5,7 @@ return [
         '/MelisDemoCms/css/bootstrap.min.css',
         '/MelisDemoCms/vendors/bootstrap-selector/css/bootstrap-select.min.css',
         // Other Css
+        '/MelisDemoCms/css/glyphicons.css',
         '/MelisDemoCms/vendors/themify-icon/themify-icons.css',
         '/MelisDemoCms/vendors/flaticon/flaticon.css',
         '/MelisDemoCms/vendors/animation/animate.css',
