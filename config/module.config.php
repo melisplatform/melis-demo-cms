@@ -63,14 +63,14 @@ return [
                             ],
                         ],
                     ],
-                ],
-                'setup' => [
-                    'type' => 'Segment',
-                    'options' => [
-                        'route' => '/setup',
-                        'defaults' => [
-                            'controller' => 'MelisDemoCms\Controller\MelisSetup',
-                            'action' => 'setupForm',
+                    'setup' => [
+                        'type' => 'Segment',
+                        'options' => [
+                            'route' => '/setup',
+                            'defaults' => [
+                                'controller' => 'MelisDemoCms\Controller\MelisSetup',
+                                'action' => 'setupForm',
+                            ],
                         ],
                     ],
                 ],
