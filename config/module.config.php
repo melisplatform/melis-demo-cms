@@ -64,32 +64,80 @@ return [
                         ],
                     ],
                 ],
+                'setup' => [
+                    'type' => 'Segment',
+                    'options' => [
+                        'route' => '/setup',
+                        'defaults' => [
+                            'controller' => 'MelisDemoCms\Controller\MelisSetup',
+                            'action' => 'setupForm',
+                        ],
+                    ],
+                ],
+            ],
+            'melis-backoffice' => [
+                'type' => 'Segment',
+                'options' => [
+                    'route' => '/melis[/]',
+                ],
+                'child_routes' => [
+                    'application-MelisDemoCms' => [
+                        'type' => 'Literal',
+                        'options' => [
+                            'route' => 'MelisDemoCms',
+                            'defaults' => [
+                                '__NAMESPACE__' => 'MelisDemoCms\Controller',
+                            ],
+                        ],
+                        'may_terminate' => true,
+                        'child_routes' => [
+                            'default' => [
+                                'type' => 'Segment',
+                                'options' => [
+                                    'route' => '/[:controller[/:action]]',
+                                    'constraints' => [
+                                        'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                    ],
+                                    'defaults' => [
+                                        '__NAMESPACE__' => 'MelisDemoCms\Controller',
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
     ],
     'service_manager' => [
         'abstract_factories' => [
-            'Zend\Cache\Service\StorageCacheAbstractServiceFactory',
-            'Zend\Log\LoggerAbstractServiceFactory',
+            \Zend\Cache\Service\StorageCacheAbstractServiceFactory::class,
+            \Zend\Log\LoggerAbstractServiceFactory::class,
         ],
         'aliases' => [
             'translator' => 'MvcTranslator',
+            'MelisPlatformTable' => \MelisDemoCms\Model\Tables\MelisPlatformTable::class,
+        ],
+        'factories' => [
+            'DemoCmsService' => \MelisDemoCms\Service\Factory\DemoCmsServiceFactory::class,
+            'MelisDemoCms\Model\Tables\MelisPlatformTable' => \MelisDemoCms\Model\Tables\Factory\MelisPlatformTableFactory::class,
         ],
     ],
     'translator' => [],
     'controllers' => [
         'invokables' => [
-            'MelisDemoCms\Controller\Home'    => 'MelisDemoCms\Controller\HomeController',
-            'MelisDemoCms\Controller\Page404' => 'MelisDemoCms\Controller\Page404Controller',
-            'MelisDemoCms\Controller\News'    => 'MelisDemoCms\Controller\NewsController',
-            'MelisDemoCms\Controller\Team' => 'MelisDemoCms\Controller\TeamController',
-            'MelisDemoCms\Controller\Services' => 'MelisDemoCms\Controller\ServicesController',
-            'MelisDemoCms\Controller\DragDrop' => 'MelisDemoCms\Controller\DragDropController',
-            'MelisDemoCms\Controller\Faq' => 'MelisDemoCms\Controller\FaqController',
-            'MelisDemoCms\Controller\Contact' => 'MelisDemoCms\Controller\ContactController',
-            'MelisDemoCms\Controller\Search' => 'MelisDemoCms\Controller\SearchController',
-            'MelisDemoCms\Controller\Testimonial' => 'MelisDemoCms\Controller\TestimonialController',
-            'MelisDemoCms\Controller\Template' => 'MelisDemoCms\Controller\TemplateController'
+            'MelisDemoCms\Controller\Home'    => MelisDemoCms\Controller\HomeController::class,
+            'MelisDemoCms\Controller\Page404' => MelisDemoCms\Controller\Page404Controller::class,
+            'MelisDemoCms\Controller\News'    => MelisDemoCms\Controller\NewsController::class,
+            'MelisDemoCms\Controller\Team' => MelisDemoCms\Controller\TeamController::class,
+            'MelisDemoCms\Controller\Services' => MelisDemoCms\Controller\ServicesController::class,
+            'MelisDemoCms\Controller\DragDrop' => MelisDemoCms\Controller\DragDropController::class,
+            'MelisDemoCms\Controller\Faq' => MelisDemoCms\Controller\FaqController::class,
+            'MelisDemoCms\Controller\Contact' => MelisDemoCms\Controller\ContactController::class,
+            'MelisDemoCms\Controller\Search' => MelisDemoCms\Controller\SearchController::class,
+            'MelisDemoCms\Controller\Testimonial' => MelisDemoCms\Controller\TestimonialController::class,
+            'MelisDemoCms\Controller\Template' => MelisDemoCms\Controller\TemplateController::class
         ],
     ],
     'view_manager' => [
