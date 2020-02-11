@@ -137,7 +137,9 @@ return [
             'MelisDemoCms\Controller\Contact' => MelisDemoCms\Controller\ContactController::class,
             'MelisDemoCms\Controller\Search' => MelisDemoCms\Controller\SearchController::class,
             'MelisDemoCms\Controller\Testimonial' => MelisDemoCms\Controller\TestimonialController::class,
-            'MelisDemoCms\Controller\Template' => MelisDemoCms\Controller\TemplateController::class
+            'MelisDemoCms\Controller\Template' => MelisDemoCms\Controller\TemplateController::class,
+            'MelisDemoCms\Controller\MelisSetupPostDownload'    => \MelisDemoCms\Controller\MelisSetupPostDownloadController::class,
+            'MelisDemoCms\Controller\MelisSetupPostUpdate'    => \MelisDemoCms\Controller\MelisSetupPostUpdateController::class,
         ],
     ],
     'view_manager' => [
