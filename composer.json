@@ -1,13 +1,13 @@
 {
   "name": "melisplatform/melis-demo-cms",
-  "description": "Official Melis Platform Demo Cms Site Module",
+  "description": "Official Melis Platform Demo Site",
   "type": "melisplatform-module",
   "license": "OSL-3.0",
-  "homepage": "https://github.com/benborla/melis-demo-cms",
+  "homepage": "https://github.com/melisplatform/melis-demo-cms",
   "support": {
     "email": "contact@melistechnology.com",
-    "source": "https://github.com/benborla/melis-demo-cms",
-    "issues": "https://github.com/benborla/melis-demo-cms/issues",
+    "source": "https://github.com/melisplatform/melis-demo-cms",
+    "issues": "https://github.com/melisplatform/melis-demo-cms/issues",
     "docs": "https://www.melistechnology.com/melistechnology/resources/download-documentation/id/17#documentation"
   },
   "authors": [
@@ -37,8 +37,14 @@
     }
   },
   "require": {
+    "php": "^7.0",
     "composer/installers": "~1.0",
-    "php": "^7.0"
+    "melisplatform/melis-engine": "*",
+    "melisplatform/melis-front": "*",
+    "melisplatform/melis-cms": "*",
+    "melisplatform/melis-cms-slider": "*",
+    "melisplatform/melis-cms-prospects": "*",
+    "melisplatform/melis-cms-news": "*"
   },
   "suggest": {
     "melisplatform/melis-engine": "MelisEngine provides a set of services and classes to access the CMS pages and data.",
