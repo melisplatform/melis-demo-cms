@@ -2,22 +2,33 @@
 return [
     'site' => [
         'MelisDemoCms' => [
-            '1' => [
+            '%site_id%' => [
                 'en_EN' => [
-                    'homePageId' => 1,
-                    'static_home_page_id' => 34,
-                    'news_page_id' => 3,
-                    'news_details_page_id' => 4,
-                    'team_page_id' => 5,
-                    'services_page_id' => 6,
-                    'premium_plugins_page_id' => 7,
-                    'unique_elements_page_id' => 8,
-                    'live_page_builder_page_id' => 9,
-                    'process_page_id' => 10,
-                    'faq_page_id' => 14,
-                    'contact_page_id' => 21,
-                    'testimonial_folder_id' => 23,
-                    'search_result_page_id' => 27,
+                    // pages
+                    'home_page_id' => '%home_page_id%',
+                    'news_page_id' => '%news_page_id%',
+                    'news_details_page_id' => '%news_details_page_id%',
+                    'team_page_id' => '%team_page_id%',
+                    'our_services_page_id' => '%our_services_page_id%',
+                    'premium_plugins_page_id' => '%premium_plugins_page_id%',
+                    'unique_elements_page_id' => '%unique_elements_page_id%',
+                    'live_page_builder_page_id' => '%live_page_builder_page_id%',
+                    'our_process_page_id' => '%our_process_page_id%',
+                    'identification_of_needs_page_id' => '%identification_of_needs_page_id%',
+                    'tailored_solution_page_id' => '%tailored_solution_page_id%',
+                    'implementation_page_id' => '%implementation_page_id%',
+                    'faq_page_id' => '%faq_page_id%',
+                    'delivery_folder_id' => '%delivery_folder_id%',
+                    'product_folder_id' => '%product_folder_id%',
+                    'payment_folder_id' => '%payment_folder_id%',
+                    'contact_page_id' => '%contact_page_id%',
+                    'testimonials_folder_id' => '%testimonials_folder_id%',
+                    'search_result_page_id' => '%search_result_page_id%',
+                    '404_page_id' => '%404_page_id%',
+                    // sliders
+                    'home_page_slider_1_id' => '%home_page_slider_1_id%',
+                    'home_page_slider_2_id' => '%home_page_slider_2_id%',
+                    'team_page_slider_1_id' => '%team_page_slider_1_id%'
                 ],
             ],
 
