@@ -37,6 +37,9 @@ class TemplateController extends BaseController
 
     public function staticTemplateAction()
     {
+        // Get site config service
+        $siteConfigSrv = $this->getServiceLocator()->get('MelisSiteConfigService');
+
         // Initialize slider plugin
         /** @var MelisCmsSliderShowSliderPlugin $sliderPlugin */
         $sliderPlugin = $this->MelisCmsSliderShowSliderPlugin();
@@ -45,7 +48,7 @@ class TemplateController extends BaseController
             'template_path' => 'MelisDemoCms/plugins/home-carousel-slider',
             'id' => 'homeSlider1',
             'pageId' => $this->idPage,
-            'sliderId' => 1
+            'sliderId' => $siteConfigSrv->getSiteConfigByKey('home_page_slider_1_id', $this->idPage)
         ];
         // Render plugin
         $homeSlider1 = $sliderPlugin->render($slider1Parameters);

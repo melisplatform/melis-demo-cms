@@ -28,7 +28,7 @@ class HomeController extends BaseController
             'template_path' => 'MelisDemoCms/plugins/home-carousel-slider',
             'id' => 'homeSlider1',
             'pageId' => $this->idPage,
-            'sliderId' => 1
+            'sliderId' => $siteConfigSrv->getSiteConfigByKey('home_page_slider_1_id', $this->idPage)
         ];
         // Render plugin
         $homeSlider1 = $sliderPlugin->render($slider1Parameters);
@@ -40,7 +40,7 @@ class HomeController extends BaseController
             'template_path' => 'MelisDemoCms/plugins/home-slider2',
             'id' => 'homeSlider2',
             'pageId' => $this->idPage,
-            'sliderId' => 2
+            'sliderId' => $siteConfigSrv->getSiteConfigByKey('home_page_slider_2_id', $this->idPage)
         ];
         // Render plugin
         $homeSlider2 = $sliderPlugin->render($slider2Parameters);

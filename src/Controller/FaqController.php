@@ -13,44 +13,50 @@ class FaqController extends BaseController
 {
     public function faqAction()
     {
+        // Get site config service
+        $siteConfigSrv = $this->getServiceLocator()->get('MelisSiteConfigService');
+
         // Adds the faq category list
         $faqListPlugin = $this->MelisFrontShowListFromFolderPlugin();
         $menuParameters = array(
             'template_path' => 'MelisDemoCms/plugins/faq-listing',
             'pageId' => $this->idPage,
-            'pageIdFolder' => 14,
+            'pageIdFolder' => $siteConfigSrv->getSiteConfigByKey('faq_page_id', $this->idPage),
             'renderMode' => $this->renderMode,
         );
         $this->view->addChild($faqListPlugin->render($menuParameters), 'faqList');
 
         // Adds the faq question and answers
+        $delivery_folder_id = $siteConfigSrv->getSiteConfigByKey('delivery_folder_id', $this->idPage);
         $menuParameters = array(
             'template_path' => 'MelisDemoCms/plugins/faq-values',
             'pageId' => $this->idPage,
-            'pageIdFolder' => 15,
+            'pageIdFolder' => $delivery_folder_id,
             'renderMode' => $this->renderMode,
         );
-        $this->view->faqValues1PageId = 15;
+        $this->view->faqValues1PageId = $delivery_folder_id;
         $this->view->addChild($faqListPlugin->render($menuParameters), 'faqValues1');
 
         // Adds the faq question and answers
+        $product_folder_id = $siteConfigSrv->getSiteConfigByKey('product_folder_id', $this->idPage);
         $menuParameters = array(
             'template_path' => 'MelisDemoCms/plugins/faq-values',
             'pageId' => $this->idPage,
-            'pageIdFolder' => 19,
+            'pageIdFolder' => $product_folder_id,
             'renderMode' => $this->renderMode,
         );
-        $this->view->faqValues2PageId = 19;
+        $this->view->faqValues2PageId = $product_folder_id;
         $this->view->addChild($faqListPlugin->render($menuParameters), 'faqValues2');
 
         // Adds the faq question and answers
+        $payment_folder_id = $siteConfigSrv->getSiteConfigByKey('payment_folder_id', $this->idPage);
         $menuParameters = array(
             'template_path' => 'MelisDemoCms/plugins/faq-values',
             'pageId' => $this->idPage,
-            'pageIdFolder' => 20,
+            'pageIdFolder' => $payment_folder_id,
             'renderMode' => $this->renderMode,
         );
-        $this->view->faqValues3PageId = 20;
+        $this->view->faqValues3PageId = $payment_folder_id;
         $this->view->addChild($faqListPlugin->render($menuParameters), 'faqValues3');
 
         $this->view->setVariable('idPage', $this->idPage);

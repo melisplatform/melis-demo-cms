@@ -15,6 +15,9 @@ class TeamController extends BaseController
 {
     public function teamAction()
     {
+        // Get site config service
+        $siteConfigSrv = $this->getServiceLocator()->get('MelisSiteConfigService');
+
         // Get slider plugin
         /** @var MelisCmsSliderShowSliderPlugin $teamSlider */
         $teamSlider = $this->MelisCmsSliderShowSliderPlugin();
@@ -23,7 +26,7 @@ class TeamController extends BaseController
             'template_path' => 'MelisDemoCms/plugins/team-slider',
             'id' => 'teamSlider1',
             'pageId' => $this->idPage,
-            'sliderId' => 3
+            'sliderId' => $siteConfigSrv->getSiteConfigByKey('team_page_slider_1_id', $this->idPage)
         ];
         // Render slider plugin
         $teamSlider = $teamSlider->render($teamSliderParameters);

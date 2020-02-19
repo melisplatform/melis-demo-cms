@@ -33,7 +33,7 @@ class BaseController extends MelisSiteActionController
         // Use service manager to get the site config service
         $siteConfigSrv = $sm->get('MelisSiteConfigService');
         // Use site config service to get data from the config
-        $homePageId = $siteConfigSrv->getSiteConfigByKey('homePageId', $pageId);
+        $homePageId = $siteConfigSrv->getSiteConfigByKey('home_page_id', $pageId);
         $whiteMenu = $siteConfigSrv->getSiteConfigByKey('whiteMenu', 1, 'allSites') ?? [];
 
         // Check if we will use the black or white menu for the page based on the config

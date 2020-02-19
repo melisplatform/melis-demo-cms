@@ -17,6 +17,9 @@ class NewsController extends BaseController
 {
     public function newsAction()
     {
+        // Get site config service
+        $siteConfigSrv = $this->getServiceLocator()->get('MelisSiteConfigService');
+
         // Initialize list news plugin
         /** @var MelisCmsNewsListNewsPlugin $newsListPlugin */
         $newsListPlugin = $this->MelisCmsNewsListNewsPlugin();
@@ -24,7 +27,7 @@ class NewsController extends BaseController
         $parameters = [
             'template_path' => 'MelisDemoCms/plugins/news-list',
             'pageId' => $this->idPage,
-            'pageIdNews' => 4,
+            'pageIdNews' => $siteConfigSrv->getSiteConfigByKey('news_details_page_id', $this->idPage),
             'pagination' => [
                 'nbPerPage' => 6,
                 'nbPageBeforeAfter' => 3
@@ -33,7 +36,7 @@ class NewsController extends BaseController
                 'column' => 'cnews_publish_date',
                 'order' => 'DESC',
                 'unpublish_filter' => true,
-                'site_id' => 1
+                'site_id' => $siteConfigSrv->getSiteConfigByKey('home_page_id', $this->idPage)
             ]
         ];
         // Render news list plugin
@@ -54,6 +57,9 @@ class NewsController extends BaseController
 
     public function newsDetailsAction()
     {
+        // Get site config service
+        $siteConfigSrv = $this->getServiceLocator()->get('MelisSiteConfigService');
+
         // Initialize show news plugin
         /** @var MelisCmsNewsShowNewsPlugin $newsPlugin */
         $newsPlugin = $this->MelisCmsNewsShowNewsPlugin();
@@ -73,14 +79,14 @@ class NewsController extends BaseController
         // Set parameters
         $latestNewsParameters = [
             'template_path' => 'MelisDemoCms/plugins/latest-news-vertical',
-            'pageIdNews' => 4,
+            'pageIdNews' => $siteConfigSrv->getSiteConfigByKey('news_details_page_id', $this->idPage),
             'filter' => [
                 'column' => 'cnews_publish_date',
                 'order' => 'DESC',
                 'limit' => 5,
                 'unpublish_filter' => true,
                 'date_max' => null,
-                'site_id' => 1,
+                'site_id' => $siteConfigSrv->getSiteConfigByKey('home_page_id', $this->idPage),
             ]
         ];
         // Render latest news plugin
