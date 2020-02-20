@@ -79,7 +79,7 @@ class NewsController extends BaseController
         // Set parameters
         $latestNewsParameters = [
             'template_path' => 'MelisDemoCms/plugins/latest-news-vertical',
-            'pageIdNews' => $siteConfigSrv->getSiteConfigByKey('news_details_page_id', $this->idPage),
+            'pageIdNews' => $this->idPage,
             'filter' => [
                 'column' => 'cnews_publish_date',
                 'order' => 'DESC',
