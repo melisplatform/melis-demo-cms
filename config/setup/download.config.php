@@ -424,127 +424,6 @@ return [
                         ],
                         // </Home>
 
-                        // <Examples>
-                        [
-                            Melis::PRIMARY_KEY => 'tree_page_id',
-                            'tree_page_id' => Melis::CURRENT_PAGE_ID,
-                            'tree_father_page_id' => Melis::CMS_SITE_ID,
-                            'tree_page_order' => 1,
-                            Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
-                            Melis::RELATION => [
-                                Melis::CMS_PAGE_PUBLISHED => [
-                                    [
-                                        Melis::PRIMARY_KEY => 'page_id',
-                                        'page_id' => Melis::FOREIGN_KEY,
-                                        'page_type' => 'FOLDER',
-                                        'page_status' => '0',
-                                        'page_menu' => 'NONE',
-                                        'page_name' => 'Examples Templates',
-                                        'page_tpl_id' => -1,
-                                        'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0"></document>',
-                                    ],
-                                ],
-                                Melis::CMS_PAGE_LANG => [
-                                    [
-                                        'plang_page_id' =>  Melis::FOREIGN_KEY,
-                                        'plang_lang_id' => 1,
-                                        'plang_page_id_initial' =>  Melis::FOREIGN_KEY
-                                    ]
-                                ],
-                                Melis::CMS_PAGE_TREE => [
-                                    [
-                                        Melis::PRIMARY_KEY => 'tree_page_id',
-                                        'tree_page_id' => Melis::CURRENT_PAGE_ID,
-                                        'tree_father_page_id' => Melis::FOREIGN_KEY,
-                                        'tree_page_order' => 1,
-                                        Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
-                                        Melis::RELATION => [
-                                            Melis::CMS_PAGE_PUBLISHED => [
-                                                [
-                                                    Melis::PRIMARY_KEY => 'page_id',
-                                                    'page_id' => Melis::FOREIGN_KEY,
-                                                    'page_type' => 'PAGE',
-                                                    'page_status' => '1',
-                                                    'page_menu' => 'NONE',
-                                                    'page_name' => 'Drag & Drop',
-                                                    'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Drag n Drop']],
-                                                    'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0"><melisTag id="tag-miniTpl_1580886992" plugin_container_id="" type="html" width_desktop="100" width_tablet="100" width_mobile="100"><![CDATA[<section class="breadcrumb_area" style="z-index: unset !important;"><div class="container"><div class="breadcrumb_content text-center"><h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">A full page built drag\'n\'drop style</h1><p class="f_400 w_color f_size_16 l_height26">The 3 pages in this folder are all the same. They are built differently though.<br />This one is completely made of drag\'n\'drop plugins, allowing users to be really autonomous. This is the prefered way to build a page but sometimes, other methods can be preffered depending on the needs of the project.<br /><br />Building with drag\'n\'drop plugins is the easiest way for the users as it will help them having blocks with easily maintained HTML zones.<br /><br />The following examples in this page are here to help developpers understand how plugins are built and inserted in a template. It is highly educational on the technical side of Melis Platform.</p></div></div></section>]]></melisTag><melisTag id="tag01_1580887199" plugin_container_id="" type="html" width_desktop="100" width_tablet="100" width_mobile="100"><![CDATA[<h5><strong>Lorem ipsum dolor</strong></h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br /><br /><h5><strong>Lorem ipsum dolor</strong></h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br /><br />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.]]></melisTag><melisTag id="tag01_1580887205" plugin_container_id="" type="textarea" width_desktop="100" width_tablet="100" width_mobile="100"><![CDATA[<span style="color: #2880b9;">Lorem ipsum dolor</span><br />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.]]></melisTag><melisTag id="tag01_1580887210" plugin_container_id="" type="media" width_desktop="100" width_tablet="0" width_mobile="0"><![CDATA[<center><img src="/media/erp_dashboard.jpg" width="1070" height="669" alt="" /></center>]]></melisTag><melisDragDropZone id="centered_dragdrop_html_1" plugin_container_id="" width_desktop="100" width_tablet="100" width_mobile="100"><plugin module="MelisMiniTemplate" name="MiniTemplatePlugin_title-subtitle-centered-with-background-purple_melisdemocms" id="tag-miniTpl_1580886992"/></melisDragDropZone><melisDragDropZone id="centered_dragdrop_html_2" plugin_container_id="" width_desktop="100" width_tablet="100" width_mobile="100"><plugin module="melisfront" name="MelisFrontTagHtmlPlugin" id="tag01_1580887199"/><plugin module="melisfront" name="MelisFrontTagTextareaPlugin" id="tag01_1580887205"/><plugin module="melisfront" name="MelisFrontTagMediaPlugin" id="tag01_1580887210"/><plugin module="meliscmsslider" name="MelisCmsSliderShowSliderPlugin" id="showslider_1580894020"/></melisDragDropZone><melisCmsSlider id="showslider_1580894020" plugin_container_id="" width_desktop="100" width_tablet="100" width_mobile="100"><template_path><![CDATA[MelisDemoCms/plugins/home-carousel-slider]]></template_path><sliderId><![CDATA[1]]></sliderId></melisCmsSlider></document>',
-
-                                                ],
-                                            ],
-                                            Melis::CMS_PAGE_LANG => [
-                                                [
-                                                    'plang_page_id' =>  Melis::FOREIGN_KEY,
-                                                    'plang_lang_id' => 1,
-                                                    'plang_page_id_initial' =>  Melis::FOREIGN_KEY
-                                                ]
-                                            ],
-                                        ],
-                                    ],
-                                    [
-                                        Melis::PRIMARY_KEY => 'tree_page_id',
-                                        'tree_page_id' => Melis::CURRENT_PAGE_ID,
-                                        'tree_father_page_id' => Melis::FOREIGN_KEY,
-                                        'tree_page_order' => 2,
-                                        Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
-                                        Melis::RELATION => [
-                                            Melis::CMS_PAGE_PUBLISHED => [
-                                                [
-                                                    Melis::PRIMARY_KEY => 'page_id',
-                                                    'page_id' => Melis::FOREIGN_KEY,
-                                                    'page_type' => 'PAGE',
-                                                    'page_status' => '1',
-                                                    'page_menu' => 'NONE',
-                                                    'page_name' => 'Mixed',
-                                                    'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Mixed Template']],
-                                                    'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0"><melisTag id="mixed-html-1" plugin_container_id="" type="html"><![CDATA[<div><h5><strong>Lorem ipsum dolor</strong></h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br /><br /><h5><strong>Lorem ipsum dolor</strong></h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br /><br />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>]]></melisTag><melisTag id="mixed-textarea-1" plugin_container_id="" type="textarea"><![CDATA[<span style="color: #2880b9;">Lorem ipsum dolor</span><br />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.]]></melisTag><melisTag id="mixed-media-1" plugin_container_id="" type="media"><![CDATA[<center><img src="/MelisDemoCms/img/erp-home/erp_dashboard.jpg" alt="" /></center>]]></melisTag><melisTag id="tag-miniTpl_1580276369" plugin_container_id="" type="html"><![CDATA[<section class="breadcrumb_area" style="z-index: unset !important;"><div class="container"><div class="breadcrumb_content text-center"><h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">A full page built with mixed methods: drag\'n\'drop and static plugins.</h1><p class="f_400 w_color f_size_16 l_height26">The 3 pages in this folder are all the same. They are built differently though.<br />This one is&nbsp; made of drag\'n\'drop plugins and static plugins, allowing users to be autonomous but at the same time, defining zones where the plugins can\'t be moved or deleted, avoiding the users to make predictable mistake. On the opposite, in dra\'n\'drop zone, they\'re free to do what they want.<br /><br />The following examples in this page are here to help developpers understand how plugins and drag\'n\'drop zones are built and inserted in a template. It is highly educational on the technical side of Melis Platform.</p></div></div></section>]]></melisTag><melisDragDropZone id="dragdropzone_mixed_template_1" plugin_container_id="" width_desktop="100" width_tablet="100" width_mobile="100"><plugin module="MelisMiniTemplate" name="MiniTemplatePlugin_title-subtitle-centered-with-background-purple_melisdemocms" id="tag-miniTpl_1580276369"/></melisDragDropZone><melisDragDropZone id="dragdropzone_mixed_template_2" plugin_container_id="" width_desktop="100" width_tablet="100" width_mobile="100"><plugin module="meliscmsslider" name="MelisCmsSliderShowSliderPlugin" id="showslider_1580894138"/></melisDragDropZone><melisCmsSlider id="showslider_1580894138" plugin_container_id="" width_desktop="100" width_tablet="100" width_mobile="100"><template_path><![CDATA[MelisDemoCms/plugins/home-carousel-slider]]></template_path><sliderId><![CDATA[1]]></sliderId></melisCmsSlider></document>',
-
-                                                ],
-                                            ],
-                                            Melis::CMS_PAGE_LANG => [
-                                                [
-                                                    'plang_page_id' =>  Melis::FOREIGN_KEY,
-                                                    'plang_lang_id' => 1,
-                                                    'plang_page_id_initial' =>  Melis::FOREIGN_KEY
-                                                ]
-                                            ],
-                                        ],
-                                    ],
-                                    [
-                                        Melis::PRIMARY_KEY => 'tree_page_id',
-                                        'tree_page_id' => Melis::CURRENT_PAGE_ID,
-                                        'tree_father_page_id' => Melis::FOREIGN_KEY,
-                                        'tree_page_order' => 3,
-                                        Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
-                                        Melis::RELATION => [
-                                            Melis::CMS_PAGE_PUBLISHED => [
-                                                [
-                                                    Melis::PRIMARY_KEY => 'page_id',
-                                                    'page_id' => Melis::FOREIGN_KEY,
-                                                    'page_type' => 'PAGE',
-                                                    'page_status' => '1',
-                                                    'page_menu' => 'NONE',
-                                                    'page_name' => 'Static',
-                                                    'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Static Template']],
-                                                    'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0"><melisTag id="static-html-1" plugin_container_id="" type="html"><![CDATA[<section class="breadcrumb_area" style="z-index: unset !important;"><div class="container"><div class="breadcrumb_content text-center"><h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">A full page built with static plugins.</h1><p class="f_400 w_color f_size_16 l_height26">The 3 pages in this folder are all the same. They are built differently though.<br />This one is completely made of static plugins, not allowing users to move or remove the plugins, but only to configure them.&nbsp;<br /><br />Building with static plugins is not the best way to make users happy and confortable but it is sometimes necessary when wanting to avoid problems, giving too much power to users or preventing them from destroying a global page\'s design.<br /><br />The following examples in this page are here to help developpers understand how plugins are built and inserted in a template. It is highly educational on the technical side of Melis Platform.</p></div></div></section>]]></melisTag><melisTag id="mixed-html-1" plugin_container_id="" type="html"><![CDATA[<div><h5><strong>Lorem ipsum dolor</strong></h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br /><br /><h5><strong>Lorem ipsum dolor</strong></h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br /><br />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>]]></melisTag><melisTag id="mixed-textarea-1" plugin_container_id="" type="textarea"><![CDATA[<span style="color: #2880b9;">Lorem ipsum dolor</span><br />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.]]></melisTag><melisTag id="mixed-media-1" plugin_container_id="" type="media"><![CDATA[<center><img src="/MelisDemoCms/img/erp-home/erp_dashboard.jpg" alt="" /></center>]]></melisTag></document>',
-
-                                                ],
-                                            ],
-                                            Melis::CMS_PAGE_LANG => [
-                                                [
-                                                    'plang_page_id' =>  Melis::FOREIGN_KEY,
-                                                    'plang_lang_id' => 1,
-                                                    'plang_page_id_initial' =>  Melis::FOREIGN_KEY
-                                                ]
-                                            ],
-                                        ],
-                                    ],
-                                ]
-                                // </Drag & Drop>
-                            ],
-                        ],
-                        // </Examples>
-
                         // <News>
                         [
                             // News Page
@@ -1275,6 +1154,37 @@ return [
                         ],
                         // <//FAQ>
 
+                        // <Contact>
+                        [
+                            Melis::PRIMARY_KEY => 'tree_page_id',
+                            'tree_page_id' => Melis::CURRENT_PAGE_ID,
+                            'tree_father_page_id' => Melis::CMS_SITE_ID,
+                            'tree_page_order' => 8,
+                            Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
+                            Melis::RELATION => [
+                                Melis::CMS_PAGE_PUBLISHED => [
+                                    [
+                                        Melis::PRIMARY_KEY => 'page_id',
+                                        'page_id' => Melis::FOREIGN_KEY,
+                                        'page_type' => 'PAGE',
+                                        'page_status' => '1',
+                                        'page_menu' => 'LINK',
+                                        'page_name' => 'Contact',
+                                        'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Contact']],
+                                        'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0"><melisTag id="contact-html-1" plugin_container_id="" type="html"><![CDATA[<div class="breadcrumb_content text-center"><h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">Contact Us</h1><p class="f_400 w_color f_size_16 l_height26">Why I say old chap that is spiffing off his nut arse pear shaped plastered<br />Jeffrey bodge barney some dodgy.!!</p></div>]]></melisTag><melisTag id="contact-html-2" plugin_container_id="" type="html"><![CDATA[<div class="info_item"><h3>Office Address</h3><p>4, rue du Dahomey&nbsp;75011 Paris, France</p></div><div class="info_item"><h3>Contact Info</h3><p>Phone: (+33) 972 386 280<br />Email: contact@melistechnology.com&nbsp;</p></div>]]></melisTag><melisTag id="contact_gmap_lat" plugin_container_id="" type="textarea"><![CDATA[48.850973]]></melisTag><melisTag id="contact_gmap_long" plugin_container_id="" type="textarea"><![CDATA[2.382171]]></melisTag><melisTag id="tag-miniTpl_1580200207" plugin_container_id="" type="html"><![CDATA[<section class="breadcrumb_area" style="z-index: unset !important;"><div class="container"><div class="breadcrumb_content text-center"><h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">Contact Us: prospect plugin implementation</h1><p class="f_400 w_color f_size_16 l_height26">This page\'s goal is to show how to use the prospects plugin to developpers. <br />It is voluntarily static in the template so that developpers can look how to configure it and use it.&nbsp;<br />Theplugin works together with the Prospect Tool, accessible in the left menu of the platform.&nbsp;</p></div></div></section>]]></melisTag><melisCmsProspects id="showform" plugin_container_id="" width_desktop="100" width_tablet="100" width_mobile="100"><template_path><![CDATA[MelisDemoCms/plugins/prospect-form]]></template_path><pros_site_id><![CDATA[1]]></pros_site_id><fields><![CDATA[pros_name,pros_company,pros_email,pros_telephone,pros_country,pros_theme,pros_message]]></fields><required_fields><![CDATA[pros_name,pros_message]]></required_fields><theme><![CDATA[1]]></theme></melisCmsProspects><melisDragDropZone id="dragdropzone_contact_1" plugin_container_id="" width_desktop="100" width_tablet="100" width_mobile="100"><plugin module="MelisMiniTemplate" name="MiniTemplatePlugin_title-subtitle-centered-with-background-purple_melisdemocms" id="tag-miniTpl_1580200207"/></melisDragDropZone></document>',
+                                    ],
+                                ],
+                                Melis::CMS_PAGE_LANG => [
+                                    [
+                                        'plang_page_id' =>  Melis::FOREIGN_KEY,
+                                        'plang_lang_id' => 1,
+                                        'plang_page_id_initial' =>  Melis::FOREIGN_KEY
+                                    ]
+                                ],
+                            ],
+                        ],
+                        // </Contact>
+
                         // <TraversalPages>
                         [
                             Melis::PRIMARY_KEY => 'tree_page_id',
@@ -1470,24 +1380,24 @@ return [
                         ],
                         // </TraversalPages>
 
-                        // <Contact>
+                        // <Examples>
                         [
                             Melis::PRIMARY_KEY => 'tree_page_id',
                             'tree_page_id' => Melis::CURRENT_PAGE_ID,
                             'tree_father_page_id' => Melis::CMS_SITE_ID,
-                            'tree_page_order' => 8,
+                            'tree_page_order' => 1,
                             Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
                             Melis::RELATION => [
                                 Melis::CMS_PAGE_PUBLISHED => [
                                     [
                                         Melis::PRIMARY_KEY => 'page_id',
                                         'page_id' => Melis::FOREIGN_KEY,
-                                        'page_type' => 'PAGE',
-                                        'page_status' => '1',
-                                        'page_menu' => 'LINK',
-                                        'page_name' => 'Contact',
-                                        'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Contact']],
-                                        'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0"><melisTag id="contact-html-1" plugin_container_id="" type="html"><![CDATA[<div class="breadcrumb_content text-center"><h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">Contact Us</h1><p class="f_400 w_color f_size_16 l_height26">Why I say old chap that is spiffing off his nut arse pear shaped plastered<br />Jeffrey bodge barney some dodgy.!!</p></div>]]></melisTag><melisTag id="contact-html-2" plugin_container_id="" type="html"><![CDATA[<div class="info_item"><h3>Office Address</h3><p>4, rue du Dahomey&nbsp;75011 Paris, France</p></div><div class="info_item"><h3>Contact Info</h3><p>Phone: (+33) 972 386 280<br />Email: contact@melistechnology.com&nbsp;</p></div>]]></melisTag><melisTag id="contact_gmap_lat" plugin_container_id="" type="textarea"><![CDATA[48.850973]]></melisTag><melisTag id="contact_gmap_long" plugin_container_id="" type="textarea"><![CDATA[2.382171]]></melisTag><melisTag id="tag-miniTpl_1580200207" plugin_container_id="" type="html"><![CDATA[<section class="breadcrumb_area" style="z-index: unset !important;"><div class="container"><div class="breadcrumb_content text-center"><h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">Contact Us: prospect plugin implementation</h1><p class="f_400 w_color f_size_16 l_height26">This page\'s goal is to show how to use the prospects plugin to developpers. <br />It is voluntarily static in the template so that developpers can look how to configure it and use it.&nbsp;<br />Theplugin works together with the Prospect Tool, accessible in the left menu of the platform.&nbsp;</p></div></div></section>]]></melisTag><melisCmsProspects id="showform" plugin_container_id="" width_desktop="100" width_tablet="100" width_mobile="100"><template_path><![CDATA[MelisDemoCms/plugins/prospect-form]]></template_path><pros_site_id><![CDATA[1]]></pros_site_id><fields><![CDATA[pros_name,pros_company,pros_email,pros_telephone,pros_country,pros_theme,pros_message]]></fields><required_fields><![CDATA[pros_name,pros_message]]></required_fields><theme><![CDATA[1]]></theme></melisCmsProspects><melisDragDropZone id="dragdropzone_contact_1" plugin_container_id="" width_desktop="100" width_tablet="100" width_mobile="100"><plugin module="MelisMiniTemplate" name="MiniTemplatePlugin_title-subtitle-centered-with-background-purple_melisdemocms" id="tag-miniTpl_1580200207"/></melisDragDropZone></document>',
+                                        'page_type' => 'FOLDER',
+                                        'page_status' => '0',
+                                        'page_menu' => 'NONE',
+                                        'page_name' => 'Examples Templates',
+                                        'page_tpl_id' => -1,
+                                        'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0"></document>',
                                     ],
                                 ],
                                 Melis::CMS_PAGE_LANG => [
@@ -1497,9 +1407,99 @@ return [
                                         'plang_page_id_initial' =>  Melis::FOREIGN_KEY
                                     ]
                                 ],
+                                Melis::CMS_PAGE_TREE => [
+                                    [
+                                        Melis::PRIMARY_KEY => 'tree_page_id',
+                                        'tree_page_id' => Melis::CURRENT_PAGE_ID,
+                                        'tree_father_page_id' => Melis::FOREIGN_KEY,
+                                        'tree_page_order' => 1,
+                                        Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
+                                        Melis::RELATION => [
+                                            Melis::CMS_PAGE_PUBLISHED => [
+                                                [
+                                                    Melis::PRIMARY_KEY => 'page_id',
+                                                    'page_id' => Melis::FOREIGN_KEY,
+                                                    'page_type' => 'PAGE',
+                                                    'page_status' => '1',
+                                                    'page_menu' => 'NONE',
+                                                    'page_name' => 'Drag & Drop',
+                                                    'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Drag n Drop']],
+                                                    'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0"><melisTag id="tag-miniTpl_1580886992" plugin_container_id="" type="html" width_desktop="100" width_tablet="100" width_mobile="100"><![CDATA[<section class="breadcrumb_area" style="z-index: unset !important;"><div class="container"><div class="breadcrumb_content text-center"><h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">A full page built drag\'n\'drop style</h1><p class="f_400 w_color f_size_16 l_height26">The 3 pages in this folder are all the same. They are built differently though.<br />This one is completely made of drag\'n\'drop plugins, allowing users to be really autonomous. This is the prefered way to build a page but sometimes, other methods can be preffered depending on the needs of the project.<br /><br />Building with drag\'n\'drop plugins is the easiest way for the users as it will help them having blocks with easily maintained HTML zones.<br /><br />The following examples in this page are here to help developpers understand how plugins are built and inserted in a template. It is highly educational on the technical side of Melis Platform.</p></div></div></section>]]></melisTag><melisTag id="tag01_1580887199" plugin_container_id="" type="html" width_desktop="100" width_tablet="100" width_mobile="100"><![CDATA[<h5><strong>Lorem ipsum dolor</strong></h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br /><br /><h5><strong>Lorem ipsum dolor</strong></h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br /><br />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.]]></melisTag><melisTag id="tag01_1580887205" plugin_container_id="" type="textarea" width_desktop="100" width_tablet="100" width_mobile="100"><![CDATA[<span style="color: #2880b9;">Lorem ipsum dolor</span><br />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.]]></melisTag><melisTag id="tag01_1580887210" plugin_container_id="" type="media" width_desktop="100" width_tablet="0" width_mobile="0"><![CDATA[<center><img src="/media/erp_dashboard.jpg" width="1070" height="669" alt="" /></center>]]></melisTag><melisDragDropZone id="centered_dragdrop_html_1" plugin_container_id="" width_desktop="100" width_tablet="100" width_mobile="100"><plugin module="MelisMiniTemplate" name="MiniTemplatePlugin_title-subtitle-centered-with-background-purple_melisdemocms" id="tag-miniTpl_1580886992"/></melisDragDropZone><melisDragDropZone id="centered_dragdrop_html_2" plugin_container_id="" width_desktop="100" width_tablet="100" width_mobile="100"><plugin module="melisfront" name="MelisFrontTagHtmlPlugin" id="tag01_1580887199"/><plugin module="melisfront" name="MelisFrontTagTextareaPlugin" id="tag01_1580887205"/><plugin module="melisfront" name="MelisFrontTagMediaPlugin" id="tag01_1580887210"/><plugin module="meliscmsslider" name="MelisCmsSliderShowSliderPlugin" id="showslider_1580894020"/></melisDragDropZone><melisCmsSlider id="showslider_1580894020" plugin_container_id="" width_desktop="100" width_tablet="100" width_mobile="100"><template_path><![CDATA[MelisDemoCms/plugins/home-carousel-slider]]></template_path><sliderId><![CDATA[1]]></sliderId></melisCmsSlider></document>',
+
+                                                ],
+                                            ],
+                                            Melis::CMS_PAGE_LANG => [
+                                                [
+                                                    'plang_page_id' =>  Melis::FOREIGN_KEY,
+                                                    'plang_lang_id' => 1,
+                                                    'plang_page_id_initial' =>  Melis::FOREIGN_KEY
+                                                ]
+                                            ],
+                                        ],
+                                    ],
+                                    [
+                                        Melis::PRIMARY_KEY => 'tree_page_id',
+                                        'tree_page_id' => Melis::CURRENT_PAGE_ID,
+                                        'tree_father_page_id' => Melis::FOREIGN_KEY,
+                                        'tree_page_order' => 2,
+                                        Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
+                                        Melis::RELATION => [
+                                            Melis::CMS_PAGE_PUBLISHED => [
+                                                [
+                                                    Melis::PRIMARY_KEY => 'page_id',
+                                                    'page_id' => Melis::FOREIGN_KEY,
+                                                    'page_type' => 'PAGE',
+                                                    'page_status' => '1',
+                                                    'page_menu' => 'NONE',
+                                                    'page_name' => 'Mixed',
+                                                    'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Mixed Template']],
+                                                    'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0"><melisTag id="mixed-html-1" plugin_container_id="" type="html"><![CDATA[<div><h5><strong>Lorem ipsum dolor</strong></h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br /><br /><h5><strong>Lorem ipsum dolor</strong></h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br /><br />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>]]></melisTag><melisTag id="mixed-textarea-1" plugin_container_id="" type="textarea"><![CDATA[<span style="color: #2880b9;">Lorem ipsum dolor</span><br />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.]]></melisTag><melisTag id="mixed-media-1" plugin_container_id="" type="media"><![CDATA[<center><img src="/MelisDemoCms/img/erp-home/erp_dashboard.jpg" alt="" /></center>]]></melisTag><melisTag id="tag-miniTpl_1580276369" plugin_container_id="" type="html"><![CDATA[<section class="breadcrumb_area" style="z-index: unset !important;"><div class="container"><div class="breadcrumb_content text-center"><h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">A full page built with mixed methods: drag\'n\'drop and static plugins.</h1><p class="f_400 w_color f_size_16 l_height26">The 3 pages in this folder are all the same. They are built differently though.<br />This one is&nbsp; made of drag\'n\'drop plugins and static plugins, allowing users to be autonomous but at the same time, defining zones where the plugins can\'t be moved or deleted, avoiding the users to make predictable mistake. On the opposite, in dra\'n\'drop zone, they\'re free to do what they want.<br /><br />The following examples in this page are here to help developpers understand how plugins and drag\'n\'drop zones are built and inserted in a template. It is highly educational on the technical side of Melis Platform.</p></div></div></section>]]></melisTag><melisDragDropZone id="dragdropzone_mixed_template_1" plugin_container_id="" width_desktop="100" width_tablet="100" width_mobile="100"><plugin module="MelisMiniTemplate" name="MiniTemplatePlugin_title-subtitle-centered-with-background-purple_melisdemocms" id="tag-miniTpl_1580276369"/></melisDragDropZone><melisDragDropZone id="dragdropzone_mixed_template_2" plugin_container_id="" width_desktop="100" width_tablet="100" width_mobile="100"><plugin module="meliscmsslider" name="MelisCmsSliderShowSliderPlugin" id="showslider_1580894138"/></melisDragDropZone><melisCmsSlider id="showslider_1580894138" plugin_container_id="" width_desktop="100" width_tablet="100" width_mobile="100"><template_path><![CDATA[MelisDemoCms/plugins/home-carousel-slider]]></template_path><sliderId><![CDATA[1]]></sliderId></melisCmsSlider></document>',
+
+                                                ],
+                                            ],
+                                            Melis::CMS_PAGE_LANG => [
+                                                [
+                                                    'plang_page_id' =>  Melis::FOREIGN_KEY,
+                                                    'plang_lang_id' => 1,
+                                                    'plang_page_id_initial' =>  Melis::FOREIGN_KEY
+                                                ]
+                                            ],
+                                        ],
+                                    ],
+                                    [
+                                        Melis::PRIMARY_KEY => 'tree_page_id',
+                                        'tree_page_id' => Melis::CURRENT_PAGE_ID,
+                                        'tree_father_page_id' => Melis::FOREIGN_KEY,
+                                        'tree_page_order' => 3,
+                                        Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
+                                        Melis::RELATION => [
+                                            Melis::CMS_PAGE_PUBLISHED => [
+                                                [
+                                                    Melis::PRIMARY_KEY => 'page_id',
+                                                    'page_id' => Melis::FOREIGN_KEY,
+                                                    'page_type' => 'PAGE',
+                                                    'page_status' => '1',
+                                                    'page_menu' => 'NONE',
+                                                    'page_name' => 'Static',
+                                                    'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Static Template']],
+                                                    'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0"><melisTag id="static-html-1" plugin_container_id="" type="html"><![CDATA[<section class="breadcrumb_area" style="z-index: unset !important;"><div class="container"><div class="breadcrumb_content text-center"><h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">A full page built with static plugins.</h1><p class="f_400 w_color f_size_16 l_height26">The 3 pages in this folder are all the same. They are built differently though.<br />This one is completely made of static plugins, not allowing users to move or remove the plugins, but only to configure them.&nbsp;<br /><br />Building with static plugins is not the best way to make users happy and confortable but it is sometimes necessary when wanting to avoid problems, giving too much power to users or preventing them from destroying a global page\'s design.<br /><br />The following examples in this page are here to help developpers understand how plugins are built and inserted in a template. It is highly educational on the technical side of Melis Platform.</p></div></div></section>]]></melisTag><melisTag id="mixed-html-1" plugin_container_id="" type="html"><![CDATA[<div><h5><strong>Lorem ipsum dolor</strong></h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br /><br /><h5><strong>Lorem ipsum dolor</strong></h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br /><br />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>]]></melisTag><melisTag id="mixed-textarea-1" plugin_container_id="" type="textarea"><![CDATA[<span style="color: #2880b9;">Lorem ipsum dolor</span><br />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.]]></melisTag><melisTag id="mixed-media-1" plugin_container_id="" type="media"><![CDATA[<center><img src="/MelisDemoCms/img/erp-home/erp_dashboard.jpg" alt="" /></center>]]></melisTag></document>',
+
+                                                ],
+                                            ],
+                                            Melis::CMS_PAGE_LANG => [
+                                                [
+                                                    'plang_page_id' =>  Melis::FOREIGN_KEY,
+                                                    'plang_lang_id' => 1,
+                                                    'plang_page_id_initial' =>  Melis::FOREIGN_KEY
+                                                ]
+                                            ],
+                                        ],
+                                    ],
+                                ]
+                                // </Drag & Drop>
                             ],
                         ],
-                        // </Contact>
+                        // </Examples>
                     ],
                     // </editor-fold>
 
