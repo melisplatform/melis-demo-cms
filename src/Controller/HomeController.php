@@ -51,7 +51,7 @@ class HomeController extends BaseController
         /** @var MelisFrontShowListFromFolderPlugin $showListForFolderPlugin */
         $showListForFolderPlugin = $this->MelisFrontShowListFromFolderPlugin();
         // Get folder id for testimonials from the config
-        $testimonialFolderId = $siteConfigSrv->getSiteConfigByKey('testimonial_folder_id', $this->idPage);
+        $testimonialFolderId = $siteConfigSrv->getSiteConfigByKey('testimonials_folder_id', $this->idPage);
         // Set parameters
         $menuParameters = array(
             'template_path' => 'MelisDemoCms/plugins/home-testimonial-slider',
