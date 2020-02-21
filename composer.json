@@ -42,9 +42,9 @@
     "melisplatform/melis-engine": "*",
     "melisplatform/melis-front": "*",
     "melisplatform/melis-cms": "*",
-    "melisplatform/melis-cms-slider": "*",
-    "melisplatform/melis-cms-prospects": "*",
-    "melisplatform/melis-cms-news": "*"
+    "melisplatform/melis-cms-slider": "dev-develop",
+    "melisplatform/melis-cms-prospects": "dev-develop",
+    "melisplatform/melis-cms-news": "dev-develop"
   },
   "suggest": {
     "melisplatform/melis-engine": "MelisEngine provides a set of services and classes to access the CMS pages and data.",
@@ -60,5 +60,15 @@
     "psr-4": {
       "MelisDemoCms\\": "src/"
     }
-  }
+  },
+  "repositories": [{
+    "type": "git",
+    "url": "https://github.com/melisplatform/melis-cms-slider"
+  }, {
+    "type": "git",
+    "url": "https://github.com/melisplatform/melis-cms-prospects"
+  }, {
+    "type": "git",
+    "url": "https://github.com/melisplatform/melis-cms-news"
+  }]
 }
