@@ -10,6 +10,7 @@
 namespace MelisDemoCms\Service;
 
 use MelisCore\Service\MelisCoreGeneralService;
+use Zend\Session\Container;
 
 /**
  * MelisDemoCms Services
@@ -87,6 +88,9 @@ class DemoCmsService extends MelisCoreGeneralService
      */
     public function getNewsListFormMenu($newsId, $limit = null)
     {
+        $container = new Container('melisplugins');
+        $langId = $container['melis-plugins-lang-id'];
+
         /**
          * get the site config service
          */
@@ -129,7 +133,7 @@ class DemoCmsService extends MelisCoreGeneralService
              */
             $news = array();
             if(!empty($val['month']) && !empty($val['year'])){
-                $news = $newsTable->getNewsByMonthYear($val['month'], $val['year'], $limit, $siteConfigSrv->getSiteConfigByKey('site_id', $newsId))->toArray();
+                $news = $newsTable->getNewsByMonthYear($val['month'], $val['year'], $langId, $limit, $siteConfigSrv->getSiteConfigByKey('site_id', $newsId))->toArray();
             }
             
             $newsSubMenu = array();
