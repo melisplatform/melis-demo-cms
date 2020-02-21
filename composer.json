@@ -39,12 +39,12 @@
   "require": {
     "php": "^7.0",
     "composer/installers": "~1.0",
-    "melisplatform/melis-engine": "dev-update/melis-demo-cms-v2",
-    "melisplatform/melis-front": "dev-update/melis-demo-cms-v2",
-    "melisplatform/melis-cms": "dev-update/melis-demo-cms-v2",
-    "melisplatform/melis-cms-slider": "dev-develop",
-    "melisplatform/melis-cms-prospects": "dev-develop",
-    "melisplatform/melis-cms-news": "dev-develop"
+    "melisplatform/melis-engine": "dev-update/melis-demo-cms-v2 as 3.2",
+    "melisplatform/melis-front": "dev-update/melis-demo-cms-v2 as 3.2",
+    "melisplatform/melis-cms": "dev-update/melis-demo-cms-v2 as 3.2",
+    "melisplatform/melis-cms-slider": "dev-develop as 3.2",
+    "melisplatform/melis-cms-prospects": "dev-develop as 3.2",
+    "melisplatform/melis-cms-news": "dev-develop as 3.2"
   },
   "suggest": {
     "melisplatform/melis-engine": "MelisEngine provides a set of services and classes to access the CMS pages and data.",
