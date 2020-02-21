@@ -42,9 +42,9 @@
     "melisplatform/melis-engine": "*",
     "melisplatform/melis-front": "*",
     "melisplatform/melis-cms": "*",
-    "melisplatform/melis-cms-slider": "3.2 as dev-develop",
-    "melisplatform/melis-cms-prospects": "3.2 as dev-develop",
-    "melisplatform/melis-cms-news": "3.2 as dev-develop"
+    "melisplatform/melis-cms-slider": "*",
+    "melisplatform/melis-cms-prospects": "*",
+    "melisplatform/melis-cms-news": "*"
   },
   "suggest": {
     "melisplatform/melis-engine": "MelisEngine provides a set of services and classes to access the CMS pages and data.",
