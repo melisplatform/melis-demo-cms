@@ -465,7 +465,7 @@ return [
                                                 [
                                                     Melis::PRIMARY_KEY => 'page_id',
                                                     'page_id' => Melis::FOREIGN_KEY,
-                                                    'page_type' => 'PAGE',
+                                                    'page_type' => 'NEWS_DETAIL',
                                                     'page_status' => '1',
                                                     'page_menu' => 'NONE',
                                                     'page_name' => 'News Details',
@@ -2032,7 +2032,7 @@ return [
                         [
                             'mcgdpr_text_site_id' => 1,
                             'mcgdpr_text_lang_id' => 1,
-                            'mcgdpr_text_value' => 'Our site uses cookies. By continuing to use our site you are agreeing to our Cookie Policy.',
+                            'mcgdpr_text_value' => 'The text of this banner is administrable from the Back Office in Melis Core > Administration > GDPR > Banners.',
                         ],
                     ],
                     // </editor-fold>
