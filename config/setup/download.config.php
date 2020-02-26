@@ -1529,7 +1529,7 @@ return [
                             'cnews_status' => '1',
                             'cnews_image1' => '/' . __NAMESPACE__ . '/img/news/blog-grid2_1.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
-                            'cnews_publish_date' =>  date('Y-m-d h:i:s',strtotime('2018-11-27')),
+                            'cnews_publish_date' =>  date('Y-m-d h:i:s',strtotime('2018-07-03')),
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
                                     [
@@ -1549,7 +1549,7 @@ return [
                             'cnews_status' => '1',
                             'cnews_image1' => '/' . __NAMESPACE__ . '/img/news/blog-grid3_1.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
-                            'cnews_publish_date' =>  date('Y-m-d h:i:s',strtotime('2018-11-27')),
+                            'cnews_publish_date' =>  date('Y-m-d h:i:s',strtotime('2018-09-03')),
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
                                     [
@@ -1569,7 +1569,7 @@ return [
                             'cnews_status' => '1',
                             'cnews_image1' => '/' . __NAMESPACE__ . '/img/news/blog-grid4_1.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
-                            'cnews_publish_date' =>  date('Y-m-d h:i:s',strtotime('2018-11-27')),
+                            'cnews_publish_date' =>  date('Y-m-d h:i:s',strtotime('2019-10-03')),
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
                                     [
@@ -1589,7 +1589,7 @@ return [
                             'cnews_status' => '1',
                             'cnews_image1' => '/' . __NAMESPACE__ . '/img/news/blog-grid5_1.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
-                            'cnews_publish_date' =>  date('Y-m-d h:i:s',strtotime('2018-10-27')),
+                            'cnews_publish_date' =>  date('Y-m-d h:i:s',strtotime('2019-12-03')),
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
                                     [
@@ -1609,7 +1609,7 @@ return [
                             'cnews_status' => '1',
                             'cnews_image1' => '/' . __NAMESPACE__ . '/img/news/blog-grid6.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
-                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2018-10-27')),
+                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2019-12-25')),
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
                                     [
@@ -1629,7 +1629,7 @@ return [
                             'cnews_status' => '1',
                             'cnews_image1' => '/' . __NAMESPACE__ . '/img/news/blog-grid7.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
-                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2018-10-27')),
+                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2019-12-27')),
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
                                     [
@@ -1649,7 +1649,7 @@ return [
                             'cnews_status' => '1',
                             'cnews_image1' => '/' . __NAMESPACE__ . '/img/news/blog-grid8_1.jpg',
                             'cnews_site_id' => Melis::CMS_SITE_ID,
-                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2018-10-27')),
+                            'cnews_publish_date' => date('Y-m-d h:i:s',strtotime('2020-01-12')),
                             Melis::RELATION => [
                                 Melis::CMS_NEWS_TEXTS => [
                                     [
