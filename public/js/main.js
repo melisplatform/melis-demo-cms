@@ -262,6 +262,7 @@
 
 
     function erpTestimonial(){
+        var width = $(window).width();
         var erpT = $(".erp_testimonial_info");
         if( erpT.length ){
             erpT.owlCarousel({
@@ -287,10 +288,18 @@
                     }
                 },
                 onInitialized: function () {
-                    $('.erp_testimonial_info .owl-nav').removeClass('disabled');
+                    if (width > 1024) {
+                        $('.erp_testimonial_info .owl-nav').removeClass('disabled');
+                    } else {
+                        $('.erp_testimonial_info .owl-nav').addClass('disabled');
+                    }
                 },
                 onChanged: function () {
-                    $('.erp_testimonial_info .owl-nav').removeClass('disabled');
+                    if (width > 1024) {
+                        $('.erp_testimonial_info .owl-nav').removeClass('disabled');
+                    } else {
+                        $('.erp_testimonial_info .owl-nav').addClass('disabled');
+                    }
                 }
             });
         }

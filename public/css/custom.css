@@ -256,6 +256,13 @@ No media query since this is the default in Bootstrap because it is "mobile firs
     .dropdown-menu-custom {
         display: block !important;
     }
+    .news-list-btn.btn_three.mt_c20, .news-list-search.blog-sidebar.float-right {
+        margin-bottom: 30px !important;
+        width: 100% !important;
+    }
+    .news-list-search.blog-sidebar.float-right {
+        margin-top: 0 !important;
+    }
 }
 
 /* Large devices (desktops, less than 1200px) */
@@ -584,10 +591,29 @@ No media query since this is the default in Bootstrap because it is "mobile firs
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
-
+    .news-list-btn.btn_three.mt_c20 {
+        min-width: 155px !important;
+    }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
 
+}
+
+@media (max-width: 450px) {
+    .nice-select.selectpickers {
+        padding-left: 10px !important;
+        padding-right: 0 !important;
+    }
+
+    .logo-slider {
+        margin-bottom: 450px !important;
+    }
+}
+
+@media (max-width: 320px) {
+    .logo-slider {
+        margin-bottom: 270px !important;
+    }
 }

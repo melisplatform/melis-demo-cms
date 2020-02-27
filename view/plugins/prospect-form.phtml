@@ -55,15 +55,13 @@ if ($this->fromDragDropZone) {
                             </div>
                         </div>
                     <?php elseif ($key == 'pros_theme') : ?>
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <select id="<?= $element->getAttributes()['id'] ?>" name="<?= $element->getAttributes()['name'] ?>" class="selectpickers">
-                                    <option selected value=""><?= $element->getEmptyOption() ?></option>
-                                    <?php foreach ($element->getValueOptions() as $oKey => $option) : ?>
-                                        <option value="<?= $oKey ?>"><?= $option ?></option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </div>
+                        <div class="col-lg-6 mb-30">
+                            <select id="<?= $element->getAttributes()['id'] ?>" name="<?= $element->getAttributes()['name'] ?>" class="selectpickers">
+                                <option selected value=""><?= $element->getEmptyOption() ?></option>
+                                <?php foreach ($element->getValueOptions() as $oKey => $option) : ?>
+                                    <option value="<?= $oKey ?>"><?= $option ?></option>
+                                <?php endforeach; ?>
+                            </select>
                         </div>
                     <?php else : ?>
                         <div class="col-lg-6">
