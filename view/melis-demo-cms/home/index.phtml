@@ -3,35 +3,35 @@
     <?php echo $this->homePageSlider ?>
     <!-- End of Homepage Header Slider -->
     <div class="full-width row">
-    	<div class="col-xs-12">
+    	<div class="col-12">
     		<?php echo $this->MelisDragDropZone($this->idPage, "dragdropzone_home_1") ?>
     	</div>
-    	<div class="col-xs-12">
+    	<div class="col-12">
         	<!--Delivery Service Start-->
             <?php
                 echo $this->MelisTag($this->idPage, "homepage_line_1", 'html',
                 '<div class="delivery-service-area ptb-30">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="col-md-3 col-sm-6 col-12">
                                 <div class="single-service shadow-box text-center">
                                     <img src="'.$this->basePath('/MelisDemoCms/images/icons/trending.png').'" alt="">
                                     <h5>Money Back Guarantee</h5>
                                 </div>
                             </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="col-md-3 col-sm-6 col-12">
                                 <div class="single-service shadow-box text-center">
                                     <img src="'.$this->basePath('/MelisDemoCms/images/icons/news.png').'" alt="">
                                     <h5>Gift Coupon</h5>
                                 </div>
                             </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="col-md-3 col-sm-6 col-12">
                                 <div class="single-service shadow-box text-center">
                                     <img src="'.$this->basePath('/MelisDemoCms/images/icons/live.png').'" alt="">
                                     <h5>Free Shipping</h5>
                                 </div>
                             </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="col-md-3 col-sm-6 col-12">
                                 <div class="single-service shadow-box text-center">
                                     <img src="'.$this->basePath('/MelisDemoCms/images/icons/chat.png').'" alt="">
                                     <h5>24x7 Support</h5>
@@ -46,14 +46,14 @@
     </div>
 
     <div class="full-width row">
-    	<div class="col-xs-12">
+    	<div class="col-12">
     		<!-- Paragraphs -->
             <?php
                 echo $this->MelisTag($this->idPage, "homepage_line_2", 'html',
                 '<div class="blog-area pb-70">
                     <div class="container">
                         <div class="row">
-                	        <div class="col-md-12 col-sm-8 col-xs-12">
+                	        <div class="col-md-12 col-sm-8 col-12">
                 	           <div class="single-blog-body">
                 	               <div class="single-blog sb-2 mb-30">
                 				        <div class="blog-content">
@@ -88,11 +88,11 @@
     <div class="blog-area pb-70">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-md-push-8 col-sm-4 col-xs-12">
+                <div class="col-md-4 col-md-push-8 col-sm-4 col-12">
                 	<?php echo $this->MelisTag($this->idPage, "homepage_line_3_img", 'media',
-                	    '<img class="img-responsive" src="/MelisDemoCms/images/news/N01.jpg" alt="">')?>
+                	    '<img class="img-fluid" src="/MelisDemoCms/images/news/N01.jpg" alt="">')?>
                 </div>
-                <div class="col-md-7 col-md-pull-4 col-sm-8 col-xs-12">
+                <div class="col-md-7 col-md-pull-4 col-sm-8 col-12">
                    <div class="single-blog-body">
                        <div class="single-blog sb-2 mb-30">
                             <div class="blog-content">
@@ -116,11 +116,11 @@
     <div class="blog-area pb-70">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="col-md-4 col-sm-4 col-12">
                     <?php echo $this->MelisTag($this->idPage, "homepage_line_4_img", 'media',
-                	    '<img class="img-responsive" src="/MelisDemoCms/images/product/shoes/03/03.jpg" alt="">')?>
+                	    '<img class="img-fluid" src="/MelisDemoCms/images/product/shoes/03/03.jpg" alt="">')?>
                 </div>
-                <div class="col-md-7 col-md-push-1 col-sm-8 col-xs-12">
+                <div class="col-md-7 col-md-push-1 col-sm-8 col-12">
                    <div class="single-blog-body">
                        <div class="single-blog sb-2 mb-30">
                             <div class="blog-content">
@@ -145,7 +145,7 @@
     <div class="blog-area pb-70">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 text-center">
+                <div class="col-12 text-center">
                    <div class="heading-title heading-style pos-rltv mb-50 text-center">
                        <h5 class="uppercase"><?php echo $this->MelisTag($this->idPage, "homepage_news_title", 'textarea','News')?></h5>
                    </div>
@@ -165,12 +165,12 @@
     <div class="testimonial-area overlay ptb-70 mt-70" style="background: rgba(0, 0, 0, 0) url('<?php echo $this->basePath('/MelisDemoCms/images/bg/testimonial.jpg')?>') no-repeat fixed 50% 50% / cover">
          <div class="container">
              <div class="row">
-                <div class="col-xs-12 text-center">
+                <div class="col-12 text-center">
                     <div class="heading-title color-lightgrey mb-40 text-center">
                         <h5 class="uppercase"><?php echo $this->MelisTag($this->idPage, 'homepage_testimonial_title', 'textarea', 'Testimonial')?></h5>
                     </div>
                 </div>
-                 <div class="col-xs-12 col-md-8 col-md-push-2">
+                 <div class="col-12 col-md-8 col-md-push-2">
                     <?php echo $this->testimonialList ?>
                  </div>
              </div>

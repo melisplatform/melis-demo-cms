@@ -31,12 +31,12 @@
     <div id="googleMap"></div>
     <div class="google-map-overlay-inputs" style="<?php echo ($this->renderMode == 'melis') ? 'position: absolute; right: 100px;' : 'display : none'?>">
     	<div class="row">
-        	<div class="col-xs-6" id="about-us-latitude">
+        	<div class="col-6" id="about-us-latitude">
         		<?php 
         		    echo $this->MelisTag($this->idPage, 'contact_gmap_lat', 'textarea', '10.2963459');
         		?>
         	</div>
-        	<div class="col-xs-6" id="about-us-longitude">
+        	<div class="col-6" id="about-us-longitude">
         		<?php 
         		    echo $this->MelisTag($this->idPage, 'contact_gmap_long', 'textarea', '123.896545');
         		?>
@@ -91,7 +91,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12">
+            <div class="col-12">
                <div class="pos-rltv">
                		<div class="contact-des">
                         <?php echo $this->MelisTag($this->idPage, 'contact_text', 'html',
