@@ -15,7 +15,7 @@ foreach($siteDemoCmsForm->getElements() as $element => $attributes)  {
     $placeHolder  = isset($el->getAttributes()['placeholder']) ? $el->getAttributes()['placeholder'] : null;
 
     echo '<div class="form-group">';
-    echo '<label for="'.$el->getAttributes()['name'].'">'.$this->translate($label) . " " .$requiredSign;
+    echo '<label for="'.$el->getAttributes()['name'].'" class="d-flex flex-row justify-content-between"><div class="label-text">'.$this->translate($label) . " " .$requiredSign . "</div>";
     echo   "<i class='fa fa-info-circle fa-lg pull-right' data-toggle='tooltip' data-placement='left' title='$toolTip' ></i>";
     echo '</label> ';
 
