@@ -11,7 +11,7 @@ function MelisFrontShowListFromFolderPlugin_init (idPlugin) {
     var	$plugin = $('#'+idPlugin);
 
     if ($plugin.length) {
-        if ($plugin.hasClass('erp_testimonial_area')) {
+        if ($plugin.find('.erp_testimonial_info').length) {
             /*===========Start app_testimonial_slider js ===========*/
             function erpTestimonial() {
                 var erpT = $(".erp_testimonial_info");
