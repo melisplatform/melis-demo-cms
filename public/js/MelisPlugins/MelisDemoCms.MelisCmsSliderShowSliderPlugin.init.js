@@ -14,7 +14,7 @@
             if ($plugin.hasClass('home-carousel-slider')) {
                 /*===========Start app_testimonial_slider js ===========*/
                 function appScreenshot() {
-                    var app_screenshotSlider = jQuery_3_2_1(".app_screenshot_slider");
+                    var app_screenshotSlider = $(".app_screenshot_slider");
 
                     if ( app_screenshotSlider.length ) {
                         app_screenshotSlider.owlCarousel({
