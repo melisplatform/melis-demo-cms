@@ -1,116 +1,130 @@
-<div id="<?php echo $this->pluginId?>">
-	<div class="filter-top" id="news-list-plugin">
-        <div class="row">
-        	<form action="" method="get">
-                <div class="col-12 col-sm-6 col-sm-push-6 col-md-4 col-md-push-8">
-                   <!--single search start-->
-                    <div class="single-aside search-aside search-box">
-                        <div class="input-box">
-                            <input class="single-input" name="search" placeholder="Search News...." type="text" value="<?php echo $this->searchKey?>">
-                            <button class="src-btn sb-2"><i class="fa fa-search"></i></button>
-                        </div>
-                     </div>
-                    <!--single search end-->
+<?php
+$widths = null;
+
+if ($this->fromDragDropZone) {
+    $widths = "$this->widthDesktop $this->widthTablet $this->widthMobile";
+}
+?>
+<section id="<?= $this->pluginId ?>" class="<?= $widths ?> blog_area sec_pad">
+    <div class="container">
+        <div id="<?php echo $this->pluginId?>">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="filter-top" id="news-list-plugin">
+                        <form
+                            id="news-dates-form"
+                            action=""
+                            class="contact_form_box apply_form"
+                            method="get"
+                            novalidate="novalidate"
+                            style="width: 100%;"
+                        >
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <div class="single-aside search-aside search-box">
+                                        <div class="form-group text_box">
+                                            <input
+                                                type="text"
+                                                id="date-min"
+                                                name="date_min"
+                                                placeholder="Date from"
+                                                value="<?php echo $this->dateMin?>"
+                                                readonly
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="single-aside search-aside search-box">
+                                        <div class="form-group text_box">
+                                            <input
+                                                type="text"
+                                                id="date-max"
+                                                name="date_max"
+                                                placeholder="Date to"
+                                                value="<?php echo $this->dateMax?>"
+                                                readonly
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="submit" class="news-list-btn btn_three mt_c20" id="news-dates-submit" style="height: 60px;">Filter</button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="submit" class="news-list-btn btn_three mt_c20" id="news-refresh-filter" style="height: 60px;">Reset</button>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="news-list-search blog-sidebar float-right">
+                                        <div class="widget sidebar_widget widget_search">
+                                            <div class="search-form input-group">
+                                                <input
+                                                    id="news-search-input"
+                                                    type="text"
+                                                    class="form-control widget_input"
+                                                    placeholder="Search news"
+                                                    name="search"
+                                                    value="<?php echo $this->searchKey?>"
+                                                    required=""
+                                                    style="height: 60px;"
+                                                >
+                                                <button type="submit"><i class="ti-search"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="row">
+                        <?php if ($this->listNews->count()) : ?>
+                            <?php foreach ($this->listNews as $key => $news) : ?>
+                                <div class="col-lg-4 col-sm-4">
+                                    <div class="blog_grid_item mb-30">
+                                        <div class="blog_img">
+                                            <img src="<?= $this->basePath($news['cnews_image1']) ?? '' ?>" alt="">
+                                        </div>
+                                        <div class="blog_content">
+                                            <div class="entry_post_info">
+                                                <a href="#"><?= $news['newsDateFormated'] ?></a>
+                                            </div>
+                                            <a href="#">
+                                                <h5 class="f_p f_size_20 f_500 t_color mb_20"><a href="<?= $news['newsLink'] ?>"><?= $news['cnews_title'] ?></a></h5>
+                                            </a>
+                                            <p class="f_400 mb-0"><?= $news['cnews_subtitle'] ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                            <!-- Pagination Plugin -->
+                            <?=
+                                $this->paginationControl(
+                                    $this->listNews,
+                                    'Sliding',
+                                    'MelisDemoCms/plugins/list-paginator',
+                                    [
+                                        'searchKey' => $this->searchKey,
+                                        'nbPageBeforeAfter' => $this->nbPageBeforeAfter
+                                    ]
+                                )
+                            ?>
+                        <?php else : ?>
+                            <div class="alert warning" style="width: 100%;">
+                                <div class="alert_body">
+                                    <i class="icon-close"></i>
+                                    <?=
+                                        $this->siteTranslate(
+                                            'tr_demo_meliscms_no_result',
+                                            $this->SiteConfig('default_lang_id'),
+                                            $this->SiteConfig('site_id')
+                                        )
+                                    ?>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    </div>
                 </div>
-                <div class="col-12 col-sm-6 col-sm-pull-6 col-md-8 col-md-pull-4">
-                	<div class="row">
-                    	<div class="col-md-3">
-                           	<div class="single-aside search-aside search-box">
-                                <div class="input-box">
-                                    <input class="single-input" name="date_min" id="date-min" placeholder="Date from" value="<?php echo $this->dateMin?>" readonly>
-                                </div>
-                            </div>
-                       	</div>
-                    	<div class="col-md-3">
-                           	<div class="single-aside search-aside search-box">
-                                <div class="input-box">
-                                    <input class="single-input" name="date_max" id="date-max"  placeholder="Date to" value="<?php echo $this->dateMax?>" readonly>
-                                </div>
-                            </div>
-                       	</div>
-                       	<div class="col-md-3">
-                           	<div class="single-aside search-aside search-box">
-                                <div class="input-box">
-                                    <button class="src-btn sb-2" style="left: 0; width: 35%;">Filter</button>
-                                </div>
-                            </div>
-                       	</div>
-                   	</div>
-    			</div>
-			</form>
+            </div>
         </div>
     </div>
-    <div class="filter-top"></div>
-    <div class="row">
-    	<?php 
-            if ($this->listNews->count())
-            {
-        ?>	
-            <div class="total-blog">
-           		<?php 
-           		   foreach ($this->listNews As $key => $val)
-           		   {
-           		?>
-                    <div class="col-md-4">
-                       	<div class="single-blog">
-                       		<?php 
-                       		   if (!empty($val['cnews_image1']))
-                       		   {       
-                       		?>
-                               	<div class="blog-img pos-rltv product-overlay">
-                                   	<a href="<?= $val['newsLink']; ?>"><img src="<?= $val['cnews_image1']; ?>"></a>
-                               	</div>
-                           	<?php 
-                       		   }
-                       		?>
-                           	<div class="blog-content">
-                               	<div class="blog-title">
-                                   	<h5 class="uppercase font-bold">
-                               			<a href="<?= $val['newsLink']; ?>"><?= $val['cnews_title']; ?></a>
-                               		</h5>
-                                   	<div class="like-comments-date">
-                                       	<ul>
-                                           	<li></li>
-                                           	<li class="blog-date text-danger">
-                                           		<i class="zmdi zmdi-calendar-alt"></i> <?= $val['newsDateFormated']; ?>
-                                       		</li>
-                                       	</ul>
-                                   	</div>
-                                   	<div class="blog-text">
-                                       	<p><?= $val['cnews_paragraph1']; ?></p>
-                                   	</div>
-                                   	<a class="read-more montserrat" href="<?= $val['newsLink']; ?>">Read More</a>
-                               	</div>
-                           	</div>
-                       	</div> 
-                    </div>
-                <?php
-           		   }
-                ?>
-            </div>
-        <?php
-            }
-            else
-            {
-        ?>    
-        	<div class="col-12">
-        		<h4 class="search-results-title"><?= $this->siteTranslate('tr_site_demo_cms_common_no_result', $this->SiteConfig('default_lang_id'), $this->SiteConfig('site_id')); ?></h4>
-        	</div>
-        <?php
-            }
-        ?>
-    </div>
-    
-    <!-- Pagination -->
-    <?php 
-        // Generating Pagination Control using partial view
-        echo $this->paginationControl($this->listNews, 
-                    'Sliding', 
-                    'MelisDemoCms/plugin/list-paginator', 
-                    array(
-                        'searchKey' => $this->searchKey,
-                        'nbPageBeforeAfter' => $this->nbPageBeforeAfter
-                    )
-            ); 
-    ?>
-</div>
+</section>

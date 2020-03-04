@@ -1,0 +1,38 @@
+<?php
+$widths = null;
+
+if ($this->fromDragDropZone) {
+    $widths = "$this->widthDesktop $this->widthTablet $this->widthMobile";
+}
+
+?>
+<div id="<?= $this->pluginId ?>" class="<?= $widths ?> blog_post">
+    <div class="widget_title">
+        <h3 class="f_p f_size_20 t_color3">Latest News</h3>
+        <div class="border_bottom"></div>
+    </div>
+    <div class="row">
+        <?php if (! empty($this->latestNews)) : ?>
+            <?php foreach ($this->latestNews as $key => $news) : ?>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="blog_post_item">
+                        <div class="blog_img">
+                            <img src="<?= $this->basePath($news['cnews_image1']) ?? '' ?>" alt="">
+                        </div>
+                        <div class="blog_content">
+                            <div class="entry_post_info">
+                                <a href="#"><?= $news['newsDateFormated'] ?></a>
+                            </div>
+                            <a href="<?= $this->MelisLink(4, true) . '?' . http_build_query(['newsId' => $news['cnews_id']]) ?>">
+                                <h5 class="f_p f_size_16 f_500 t_color"><?= $news['cnews_title'] ?></h5>
+                            </a>
+                            <?php if (! empty($news['cnews_subtitle'])) : ?>
+                                <p class="f_400 mb-0"><?= substr($news['cnews_subtitle'], 0, 40) ?>...</p>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    </div>
+</div>

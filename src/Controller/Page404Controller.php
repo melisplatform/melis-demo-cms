@@ -9,13 +9,10 @@
 
 namespace MelisDemoCms\Controller;
 
-use Zend\View\Model\ViewModel;
-
 class Page404Controller extends BaseController
 {
     public function indexAction()
     {
-    	$view = new ViewModel();
-    	return $view;
+    	return $this->view;
     }
 }

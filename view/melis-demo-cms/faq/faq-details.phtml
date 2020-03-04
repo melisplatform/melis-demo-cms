@@ -1,0 +1,48 @@
+<?= $this->MelisDragDropZone($this->idPage, "dragdropzone_faq_details_1") ?>
+<section class="faq_area bg_color sec_pad">
+    <div class="container">
+        <div class="row">
+            <div class="tab-content faq_content" id="myTabContent">
+                <div class="tab-pane fade show active" role="tabpanel">
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header">
+                                <?php if ($this->renderMode = 'melis') : ?>
+                                    <p class="mb-0 c-black custom-text-faq">Input the question</p>
+                                <?php endif; ?>
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link pt-0 cursor-text">
+                                        <?=
+                                            $this->MelisTag(
+                                                $this->idPage,
+                                                'faq-textarea-1',
+                                                'textarea',
+                                                'How do I repair an item?'
+                                            )
+                                        ?>
+                                    </button>
+                                </h5>
+                            </div>
+                            <?php if ($this->renderMode = 'melis') : ?>
+                                <p class="mb-0 c-black custom-text-faq">Input the answer</p>
+                            <?php endif; ?>
+                            <div class="collapse show">
+                                <?=
+                                    $this->MelisTag(
+                                        $this->idPage,
+                                        'faq-html-1',
+                                        'html',
+                                        '<div class="card-body">
+                                            <p>Why I say old chap that is spiffing pukka, bamboozled wind up bugger buggered zonked hanky panky a blinding shot the little rotter, bubble and squeak vagabond cheeky bugger at public school pardon you bloke the BBC. Tickety-boo Elizabeth plastered matie.!</p>
+                                        </div>'
+                                    )
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<?= $this->MelisDragDropZone($this->idPage, "dragdropzone_faq_details_2") ?>

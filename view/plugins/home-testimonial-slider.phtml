@@ -1,0 +1,84 @@
+<?php
+$widths = null;
+
+if ($this->fromDragDropZone) {
+    $widths = "$this->widthDesktop $this->widthTablet $this->widthMobile";
+}
+?>
+<section id="<?= $this->pluginId; ?>" class="<?= $widths ?> erp_testimonial_area sec_pad" style="padding-top: 0;">
+    <div class="container">
+        <?php if (! empty($this->listofpages)) : ?>
+            <?php
+                $testimonials = [];
+                $testimonialTags = [
+                    'testi-html-1',
+                    'testi-textarea-1',
+                    'testi-textarea-2',
+                    'testi-img-1'
+                ];
+
+                foreach ($this->listofpages as $key => $val) {
+                    $pageData = [];
+                    $pageTags = $val->page_tags;
+
+                    foreach ($pageTags as $tagKey => $tagVal) {
+                        if (in_array($tagKey, $testimonialTags)) {
+                            $pageData[$tagKey] = $tagVal;
+                        }
+                    }
+
+                    if (! empty($pageData)) {
+                        array_push($testimonials, $pageData);
+                    }
+                }
+            ?>
+
+            <?php if (! empty($testimonials)) : ?>
+                <div class="row">
+                    <div class="erp_testimonial_info owl-carousel">
+                        <?php foreach ($testimonials as $key => $val) : ?>
+                            <div class="erp_testimonial_item">
+                                <div class="content">
+                                    <p><?= $val['testi-html-1'] ?></p>
+                                </div>
+                                <div class="media">
+                                    <?= $val['testi-img-1'] ?? '' ?>
+                                    <div class="media-body">
+                                        <h5><?= $val['testi-textarea-1'] ?></h5>
+                                        <p><?= $val['testi-textarea-2'] ?></p>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            <?php else : ?>
+                <div class="alert warning">
+                    <div class="alert_body">
+                        <i class="icon-close"></i>
+                        <?=
+                        $this->siteTranslate(
+                            'tr_demo_meliscms_no_data',
+                            $this->SiteConfig('default_lang_id'),
+                            $this->SiteConfig('site_id')
+                        )
+                        ?>
+                    </div>
+                </div>
+            <?php endif; ?>
+        <?php else : ?>
+            <div class="alert warning">
+                <div class="alert_body">
+                    <i class="icon-close"></i>
+                    <?=
+                        $this->siteTranslate(
+                            'tr_demo_meliscms_no_result',
+                            $this->SiteConfig('default_lang_id'),
+                            $this->SiteConfig('site_id')
+                        )
+                    ?>
+                </div>
+            </div>
+        <?php endif ?>
+    </div>
+</section>

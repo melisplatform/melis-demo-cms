@@ -9,15 +9,12 @@
 
 namespace MelisDemoCms\Controller;
 
-use MelisDemoCms\Controller\BaseController;
+use Zend\View\Model\ViewModel;
 
 class TestimonialController extends BaseController
 {
-    public function testimonialAction(){
-        
-        $this->view->setVariable('idPage', $this->idPage);
-        $this->view->setVariable('renderType', $this->renderType);
-        $this->view->setVariable('renderMode', $this->renderMode);
+    public function testimonialAction()
+    {
         return $this->view;
     }
 }

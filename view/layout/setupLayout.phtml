@@ -33,16 +33,16 @@
         	<div class="jumbotron">
               	<h1>Melis Demo CMS Setup</h1>
               	<div class="alert alert-info hidden" role="alert">
-            		<i class="fa fa-cog fa-spin fa-3x fa-fw float-left"></i>
+            		<i class="fa fa-cog fa-spin fa-3x fa-fw pull-left"></i>
 					<p><strong>MelisDemoCms setup started.</strong></p>
 					<p>Please wait while the setup is running, this may take a few minutes.</p>
             	</div>
             	<div class="alert alert-success hidden" role="alert">
-            		<i class="fa fa-check-circle fa-3x float-left"></i>
+            		<i class="fa fa-check-circle fa-3x pull-left"></i>
 					<p><strong>MelisDemoCms setup completed.</strong></p>
             	</div>
             	<div class="alert alert-warning hidden" role="alert">
-            		<i class="fa fa-info-circle fa-3x float-left"></i>
+            		<i class="fa fa-info-circle fa-3x pull-left"></i>
 					<p><strong>Opps... Something went wrong.</strong></p>
 					<p>An error has occurred, please contact the administrator if the problem persists.</p>
             	</div>
@@ -124,7 +124,7 @@
         	        data        : dataString,
         	        dataType    : 'json',
         	        encode		: true
-        		}).done(function(data){
+        		}).success(function(data){
         			$(".alert").addClass("hidden");
     				$("#setupStartbtn").addClass("hidden");
     				$(".alert-success").removeClass("hidden");

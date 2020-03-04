@@ -1,0 +1,42 @@
+<?php
+$widths = null;
+
+if ($this->fromDragDropZone) {
+    $widths = "$this->widthDesktop $this->widthTablet $this->widthMobile";
+}
+?>
+<?php if (! empty($this->listofpages)) : ?>
+    <div id="<?= $this->pluginId ?>" class="<?= $widths ?> faq_tab">
+        <h4 class="f_p t_color3 f_600 f_size_22 mb_40">
+            <?=
+                $this->MelisTag(
+                    $this->idPage,
+                    'faq-listing-text-1',
+                    'textarea',
+                    'Quick Navigation'
+                )
+            ?>
+        </h4>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <?php
+                $count = 0;
+            ?>
+            <?php foreach ($this->listofpages as $page) : ?>
+                <li class="nav-item">
+                    <a
+                        class="nav-link <?= $count == 0 ? 'active' : '' ?>"
+                        id="page_<?= $page->page_id?>"
+                        data-toggle="tab"
+                        href="#page_tab_<?= $page->page_id?>"
+                        role="tab"
+                        aria-controls="page_tab_<?= $page->page_id?>"
+                        aria-selected="<?= $count == 0 ? 'true' : 'false' ?>"
+                    >
+                        <?= $page->page_name ?>
+                    </a>
+                </li>
+                <?php $count++ ?>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+<?php endif; ?>

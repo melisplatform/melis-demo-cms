@@ -1,49 +1,43 @@
 <?php
-    if (is_object($this->news)) {
-        $this->news = (array) $this->news;
-    }
+$widths = null;
+
+if ($this->fromDragDropZone) {
+    $widths = "$this->widthDesktop $this->widthTablet $this->widthMobile";
+}
 ?>
-<?php if (!empty($this->news)): ?>
-    <div class="blog-img pos-rltv product-overlay" style="cursor: default">
-        <?php if (!empty($this->news['cnews_image1'])): ?>
-            <img src="<?= $this->news['cnews_image1']; ?>" alt="">
+<?php if (! empty($this->news)) : ?>
+    <div id="<?= $this->pluginId ?>" class="<?= $widths ?> blog_single mb_50">
+        <?php if (! empty($this->news['cnews_image1'])) : ?>
+            <img class="img-fluid" src="<?= $this->news['cnews_image1']; ?>" alt="" style="height: auto; width: 100%; object-fit: cover;">
+        <?php else : ?>
+            <img class="img-fluid" src="<?= $this->basePath('MelisDemoCms/img/blog-grid/blog_single.png') ?>" alt="">
         <?php endif; ?>
+        <div class="blog_content">
+            <div class="post_date">
+                <h2><?= date('d', strtotime($this->news['cnews_publish_date'])) ?> <span><?= date('M Y', strtotime($this->news['cnews_publish_date'])) ?></span></h2>
+            </div>
+            <div class="entry_post_info">
+            </div>
+            <a href="#">
+                <h5 class="f_p f_size_20 f_500 t_color mb-30"><?= $this->news['cnews_title'] ?></h5>
+            </a>
+            <p class="f_400 mb-30"><?= $this->news['cnews_paragraph1'] ?></p>
+            <p class="f_400 mb_40"><?= $this->news['cnews_paragraph2'] ?></p>
+            <p class="f_400 mb-30"><?= $this->news['cnews_paragraph3'] ?></p>
+            <p class="f_400 mb-30"><?= $this->news['cnews_paragraph4'] ?></p>
+        </div>
     </div>
-    <div class="blog-title">
-        <h5 class="uppercase font-bold"><?= $this->news['cnews_title']?></h5>
-        <div class="like-comments-date">
-            <ul>
-                <li></li>
-                <li class="blog-date text-danger">
-                    <i class="zmdi zmdi-calendar-alt"></i> <?= date('d M Y', strtotime(($this->news['cnews_publish_date']) ? $this->news['cnews_publish_date']: $this->news['cnews_creation_date'])); ?>
-                </li>
-            </ul>
+<?php else : ?>
+    <div class="alert warning">
+        <div class="alert_body">
+            <i class="icon-close"></i>
+            <?=
+                $this->siteTranslate(
+                    'tr_demo_meliscms_no_result',
+                    $this->SiteConfig('default_lang_id'),
+                    $this->SiteConfig('site_id')
+                )
+            ?>
         </div>
-        <div class="blog-text">
-            <p><?= $this->news['cnews_paragraph1']?></p>
-        </div>
-    </div>
-    <?php if (!empty($this->news['cnews_paragraph2'])): ?>
-        <div class="blockqot mtb-30">
-            <blockquote>
-                <p><?= $this->news['cnews_paragraph2']?></p>
-            </blockquote>
-        </div>
-    <?php endif; ?>
-
-    <?php if (!empty($this->news['cnews_paragraph3'])): ?>
-        <div class="blog-text">
-            <p><?= $this->news['cnews_paragraph3']?></p>
-        </div>
-    <?php endif; ?>
-
-    <?php if (!empty($this->news['cnews_paragraph4'])): ?>
-        <div class="blog-text">
-            <p><?= $this->news['cnews_paragraph4']?></p>
-        </div>
-    <?php endif; ?>
-<?php else: ?>
-    <div class="alert alert-warning" role="alert">
-        <?= $this->siteTranslate('tr_site_demo_cms_common_no_result', $this->SiteConfig('default_lang_id'), $this->SiteConfig('site_id')); ?>
     </div>
 <?php endif; ?>

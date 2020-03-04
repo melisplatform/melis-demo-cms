@@ -9,72 +9,73 @@
 
 namespace MelisDemoCms\Controller;
 
-use MelisDemoCms\Controller\BaseController;
-use Zend\View\Model\JsonModel;
-use Zend\View\Model\ViewModel;
+use MelisCmsSlider\Controller\Plugin\MelisCmsSliderShowSliderPlugin;
+use MelisFront\Controller\Plugin\MelisFrontGdprBannerPlugin;
+use MelisFront\Controller\Plugin\MelisFrontShowListFromFolderPlugin;
+
 class HomeController extends BaseController
 {
     public function indexAction()
     {
-        /**
-         * get the site config
-         */
+        // Get config
         $siteConfigSrv = $this->getServiceLocator()->get('MelisSiteConfigService');
-        /**
-         * Generating Homepage header Slider using MelisCmsSliderShowSliderPlugin Plugin
-         */
-        $showSlider = $this->MelisCmsSliderShowSliderPlugin();
-        $showSliderParameters = array(
-            'template_path' => 'MelisDemoCms/plugin/homepage-slider',
-            'id' => 'showSliderHomepage',
+
+        // Initialize slider plugin
+        /** @var MelisCmsSliderShowSliderPlugin $sliderPlugin */
+        $sliderPlugin = $this->MelisCmsSliderShowSliderPlugin();
+        // Set parameters
+        $slider1Parameters = [
+            'template_path' => 'MelisDemoCms/plugins/home-carousel-slider',
+            'id' => 'homeSlider1',
             'pageId' => $this->idPage,
-            'sliderId' => $siteConfigSrv->getSiteConfigByKey('homepage_header_slider', $this->idPage),
+            'sliderId' => $siteConfigSrv->getSiteConfigByKey('home_page_slider_1_id', $this->idPage)
+        ];
+        // Render plugin
+        $homeSlider1 = $sliderPlugin->render($slider1Parameters);
+        // Add rendered plugin to the view
+        $this->view->addChild($homeSlider1, 'homeSlider1');
+
+        // Set parameters for another slider
+        $slider2Parameters = [
+            'template_path' => 'MelisDemoCms/plugins/home-slider2',
+            'id' => 'homeSlider2',
+            'pageId' => $this->idPage,
+            'sliderId' => $siteConfigSrv->getSiteConfigByKey('home_page_slider_2_id', $this->idPage)
+        ];
+        // Render plugin
+        $homeSlider2 = $sliderPlugin->render($slider2Parameters);
+        // Add rendered plugin to the view
+        $this->view->addChild($homeSlider2, 'homeSlider2');
+
+    	// Initialize show list from folder plugin
+        /** @var MelisFrontShowListFromFolderPlugin $showListForFolderPlugin */
+        $showListForFolderPlugin = $this->MelisFrontShowListFromFolderPlugin();
+        // Get folder id for testimonials from the config
+        $testimonialFolderId = $siteConfigSrv->getSiteConfigByKey('testimonials_folder_id', $this->idPage);
+        // Set parameters
+        $menuParameters = array(
+            'template_path' => 'MelisDemoCms/plugins/home-testimonial-slider',
+            'pageId' => $this->idPage,
+            'pageIdFolder' => $testimonialFolderId,
+            'renderMode' => $this->renderMode,
         );
-        // add generated view to children views for displaying it in the contact view
-        $this->view->addChild($showSlider->render($showSliderParameters), 'homePageSlider');
+        // Render plugin
+        $homeTestimonials1 = $showListForFolderPlugin->render($menuParameters);
+        // Add rendered plugin to the view
+        $this->view->addChild($homeTestimonials1, 'homeTestimonials1');
 
-        /**
-         * Generating Homepage Latest News slider using MelisCmsNewsLatestNewsPlugin Plugin
-         */
-	    $latestNewsPluginView = $this->MelisCmsNewsLatestNewsPlugin();
-	    $latestNewsParameters = array(
-	        'template_path' => 'MelisDemoCms/plugin/latest-news',
-	        'pageIdNews'    => $siteConfigSrv->getSiteConfigByKey('news_details_page_id', $this->idPage),
-	        'filter' => array(
-	            'column' => 'cnews_publish_date',
-	            'order' => 'DESC',
-	            'date_min' => null,
-	            'date_max' => null,
-	            'unpublish_filter' => true,
-	            'site_id' => $siteConfigSrv->getSiteConfigByKey('site_id', $this->idPage),
-	            'search' => '',
-	            'limit' => 6,
-	        )
-	    );
-
-		// add generated view to children views for displaying it in the contact view
-		$this->view->addChild($latestNewsPluginView->render($latestNewsParameters), 'latestNews');
-
-	    $showListForFolderPlugin = $this->MelisFrontShowListFromFolderPlugin();
-	    $menuParameters = array(
-	        'template_path' => 'MelisDemoCms/plugin/testimonial-slider',
-            'pageId' => $this->idPage,
-	        'pageIdFolder' => $siteConfigSrv->getSiteConfigByKey('testimonial_id', $this->idPage),
-	        'renderMode' => $this->renderMode,
-	    );
-		// add generated view to children views for displaying it in the contact view
-		$this->view->addChild($showListForFolderPlugin->render($menuParameters), 'testimonialList');
-
-        /**
-         * Displaying a GDPR/Cookie banner using MelisGdprBanner plugin
-         * @var \MelisFront\Controller\Plugin\MelisFrontGdprBannerPlugin $gdprBannerPlugin
-         */
+        // Get gdpr banner plugin
+        /** @var MelisFrontGdprBannerPlugin $gdprBannerPlugin */
         $gdprBannerPlugin = $this->MelisFrontGdprBannerPlugin();
-        $this->view->addChild($gdprBannerPlugin->render(['template_path' => 'MelisDemoCms/plugin/gdpr-banner']), 'gdprBanner');
+        $gdprParameters = [
+            'template_path' => 'MelisDemoCms/plugins/gdpr-banner'
+        ];
+        $gdprBanner = $gdprBannerPlugin->render($gdprParameters);
+        $this->view->addChild($gdprBanner, 'gdprBanner');
 
         $this->view->setVariable('idPage', $this->idPage);
-        $this->view->setVariable('renderType', $this->renderType);
         $this->view->setVariable('renderMode', $this->renderMode);
-        return $this->view;
+
+    	return $this->view;
     }
 }

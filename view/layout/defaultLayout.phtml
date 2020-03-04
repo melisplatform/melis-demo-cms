@@ -1,238 +1,91 @@
 <!doctype html>
-<html class="no-js" lang="en">
-
+<html lang="en">
 <head>
-  <title></title>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <?php 
-        /* All css files are included here. */
-        
-        // Favicon
-        $this->headLink(array('rel' => 'apple-touch-icon', 'href' => $this->basePath('/MelisDemoCms/images/icons/favicon.ico'), 'PREPEND'));
-        // Render Page CSS from Controller Action of the page
-        if (is_array($this->pageCss)){
-            for ($i = 0 ; $i < count($this->pageCss); $i++){
-                $this->headLink()->appendStylesheet($this->pageCss[$i]);
-            }
-        }
-        
-        // Generate Styles
-        echo $this->headLink();
-        
-        // Modernizr JS
-        $this->headScript()->appendFile($this->basePath('/MelisDemoCms/js/vendor/modernizr-2.8.3.min.js'));
-          
-        // Generate JS
-        echo $this->headScript();
-    ?>
+    <?php $this->headLink(array('rel' => 'shortcut icon', 'href' => $this->basePath('/MelisDemoCms/img/melis-favicon.ico'), 'PREPEND')); ?>
+
+    <!-- Append css files from controller -->
+    <?php if (! empty($this->pageCss)) : ?>
+        <?php foreach ($this->pageCss as $key => $css) : ?>
+            <?php $this->headLink()->appendStylesheet($css) ?>
+        <?php endforeach; ?>
+    <?php endif; ?>
+
+    <!-- List CSS files. Located at /config/assets.config.php -->
+    <?= $this->headLink() ?>
 </head>
+<body style="<?= ($this->renderMode == 'melis' ? 'padding-top: 50px;' : '') ?>">
+<div class="body_wrapper">
+    <header class="header_area">
+        <nav class="navbar navbar-expand-lg menu_one menu_four" style="<?= ($this->renderMode == 'melis' ? 'padding-top: 50px;' : '') ?>">
+            <div class="container">
+                <a class="navbar-brand" href="/" style="padding-right: 40px;padding-left: 8px; margin-top: 7px;"><img src="<?= $this->basePath('/MelisDemoCms/img/melis-logo.png') ?>" style="width: 30px; float: left;"><h4 style="letter-spacing: -2px;font-weight: 600;color: #e61c23;">&nbsp Melis Demo Cms</h4></a>
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="menu_toggle">
+                        <span class="hamburger">
+                            <span class="<?= ($this->menuFlag == 'black') ? 'custom-hamburger-color' : '' ?>"></span>
+                            <span class="<?= ($this->menuFlag == 'black') ? 'custom-hamburger-color' : '' ?>"></span>
+                            <span class="<?= ($this->menuFlag == 'black') ? 'custom-hamburger-color' : '' ?>"></span>
+                        </span>
+                        <span class="hamburger-cross">
+                            <span class="<?= ($this->menuFlag == 'black') ? 'custom-hamburger-color' : '' ?>"></span>
+                            <span class="<?= ($this->menuFlag == 'black') ? 'custom-hamburger-color' : '' ?>"></span>
+                        </span>
+                    </span>
+                </button>
 
-    <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->  
-        
-        <!-- Body main wrapper start -->
-        <div class="wrapper home-one">
-            <!-- Start of header area -->
-            <header class="header-area header-wrapper">
-                <div class="header-top-bar black-bg clearfix">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 hidden-xs">
-                                <div class="social-search-area text-right">
-                                    <div class="social-icon socile-icon-style-2">
-                                        <ul>
-                                            <li><a href="https://www.facebook.com/melistechnology" title="facebook" target="_blank"><i class="fa fa-facebook"></i></a> </li>
-                                            <li><a href="https://twitter.com/meliscms" title="twitter" target="_blank"><i class="fa fa-twitter"></i></a> </li>
-                                            <li><a href="https://www.linkedin.com/company/melis-technology" title="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a> </li>
-                                        </ul>
-                                     </div>
-                                </div>
-                            </div>
+                <!-- Add menu -->
+                <?= $this->layout()->menu ?>
+            </div>
+        </nav>
+    </header>
+    <div style="height: 93px;"></div>
+    <?= $this->content; ?>
+    <footer class="footer_area h_footer_dark h_footer_dark_two">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="f_widget dark_widget company_widget">
+                        <a href="/" class="f-logo">
+                            <img src="<?= $this->basePath('/MelisDemoCms/img/melis-logo.png') ?>" alt="" style="width: 70px; float: left;margin-top: -5px;">
+                            <h4 style="letter-spacing: -2px;font-weight: 600;color: #e61c23;">&nbsp Melis &nbsp Demo &nbsp Cms <br> &nbsp for &nbsp MELISPLATFORM</h4>
+                        </a>
+                        <p>© <?= date('Y') ?> Melis Technology <br> All rights reserved</p>
+                        <div class="f_social_icon">
+                            <a href="https://www.facebook.com/melistechnology" class="ti-facebook"></a>
+                            <a href="https://twitter.com/meliscms" class="ti-twitter-alt"></a>
+                            <a href="https://www.linkedin.com/company/melis-technology" class="ti-linkedin"></a>
+                            <a href="#" class="ti-youtube"></a>
                         </div>
                     </div>
                 </div>
-                <div id="sticky-header"  class="header-middle-area">
-                    <div class="container">
-                        <div class="full-width-mega-dropdown">
-                            <div class="row">
-                                <div class="col-md-2 col-sm-2">
-                                    <div class="logo ptb-20"><a href="/"> 
-                                      <img src="<?php echo $this->basePath('/MelisDemoCms/images/logo/logo.png')?>" alt="main logo"></a>
-                                    </div>
-                                </div>
-                                <div class="col-md-8 col-sm-10 col-12 m-no-padding">
-                                <!-- Site Menu -->
-                                <?php echo $this->layout()->siteMenu ?>
-                                <!-- End of Site Menu -->
-                                </div>
-                                <!-- Header Search Menu -->
-                                <div class="col-md-2 hidden-sm hidden-xs">
-                                    <div class="search-box global-table">
-                                        <div class="global-row">
-                                            <div class="global-cell">
-                                                <form action="<?php echo $this->MelisLink($this->SiteConfig('search_result_page_id'), false)?>" method="get">
-                                                    <div class="input-box">
-                                                        <input class="single-input" placeholder="Search" type="text" name=keyword value="<?php echo $this->layout()->search?>" required>
-                                                        <button class="src-btn"><i class="fa fa-search"></i></button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End of Header Search Menu -->
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </header>
-            <!-- End of header area -->
-            
-            <!-- Content area start -->
-            <?php echo $this->content?>
-            <!-- End of Content area -->
-            
-            <?php 
-                /*
-                 * Homepage with pageId of one(1) can only edit the editable areas.
-                 * On this demo we use pageId one(1) as homepage
-                 * */
-                $editableTextarea = ($this->idPage == $this->SiteConfig('homePageId')) ? 'textarea' : null;
-                $editableHtml = ($this->idPage == $this->SiteConfig('homePageId')) ? 'html' : null;
-            ?>
-            <!-- footer area start-->
-            <div class="footer-area ptb-50">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-4 col-12">
-                            <div class="single-footer contact-us">
-                                <div class="footer-title uppercase">
-                                    <h5>
-                                      <?php echo $this->MelisTag($this->SiteConfig('homePageId'), "footer_title_1", $editableTextarea, 'Contact US') ?>
-                                 </h5> 
-                                </div>
-                                <?php 
-                                    echo $this->melisTag($this->SiteConfig('homePageId'), 'footer_text_1', $editableHtml,
-                                    '<ul>
-                                        <li>
-                                            <div class="contact-icon"> 
-                                              <i class="zmdi zmdi-pin-drop"></i>
-                                          </div>
-                                            <div class="contact-text">
-                                                <p><span>777/a  Seventh Street,</span> <span>Rampura, Bonosri</span></p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="contact-icon"> <i class="zmdi zmdi-email-open"></i> </div>
-                                            <div class="contact-text">
-                                                <p><span><a href="#">company@gmail.com</a></span> <span><a href="#">admin@devitems.com</a></span></p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="contact-icon"> <i class="zmdi zmdi-phone-paused"></i> </div>
-                                            <div class="contact-text">
-                                                <p><span>+11 (019) 25184203</span> <span>+11 (018) 50950555</span></p>
-                                            </div>
-                                        </li>
-                                    </ul>')
-                                ?>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-4 col-12">
-                            <div class="single-footer informaton-area">
-                                <div class="footer-title uppercase">
-                                    <h5><?php echo $this->MelisTag($this->SiteConfig('homePageId'), "footer_title_2", $editableTextarea, 'Information')?></h5>
-                                </div>
-                                <div class="informatoin">
-                                    <ul>
-                                      <?php 
-                                            echo $this->melisTag($this->SiteConfig('homePageId'), 'footer_text_2', $editableHtml,
-                                                '<li><a href="#">My Account</a></li>
-                                                <li><a href="#">Order History</a></li>
-                                                <li><a href="#">Wishlist</a></li>
-                                                <li><a href="#">Returnes</a></li>
-                                                <li><a href="#">Private Policy</a></li>
-                                                <li><a href="#">Site Map</a></li>')
-                                        ?>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 hidden-sm col-12">
-                            <div class="single-footer instagrm-area">
-                                <div class="footer-title uppercase">
-                                    <h5><?php echo $this->MelisTag($this->SiteConfig('homePageId'), "footer_title_3", $editableTextarea, 'InstaGram')?></h5>
-                                </div>
-                                <?php 
-                                    echo $this->melisTag($this->SiteConfig('homePageId'), 'footer_text_3', $editableHtml,
-                                    '<div class="instagrm">
-                                        <ul>
-                                            <li><a href="#"><img src="'.$this->basePath('/MelisDemoCms/images/gallery/01.jpg').'" alt=""></a></li>
-                                            <li><a href="#"><img src="'.$this->basePath('/MelisDemoCms/images/gallery/02.jpg').'" alt=""></a></li>
-                                            <li><a href="#"><img src="'.$this->basePath('/MelisDemoCms/images/gallery/03.jpg').'" alt=""></a></li>
-                                            <li><a href="#"><img src="'.$this->basePath('/MelisDemoCms/images/gallery/04.jpg').'" alt=""></a></li>
-                                            <li><a href="#"><img src="'.$this->basePath('/MelisDemoCms/images/gallery/05.jpg').'" alt=""></a></li>
-                                            <li><a href="#"><img src="'.$this->basePath('/MelisDemoCms/images/gallery/06.jpg').'" alt=""></a></li>
-                                        </ul>
-                                    </div>')
-                                ?>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-2 col-sm-4 col-lg-offset-1 col-12">
-                            <div class="social-icon socile-icon-style-3">
-                                <div class="footer-title uppercase">
-                                    <h5><?php echo $this->MelisTag($this->SiteConfig('homePageId'), "footer_title_4", $editableTextarea, 'Social Network')?></h5>
-                                </div>
-                                <ul>
-                                    <li><a href="https://www.facebook.com/melistechnology" target="_blank"><i class="zmdi zmdi-facebook"></i></a></li>
-                                    <li><a href="https://twitter.com/meliscms" target="_blank"><i class="zmdi zmdi-twitter"></i></a></li>
-                                    <li><a href="https://www.linkedin.com/company/melis-technology" target="_blank"><i class="zmdi zmdi-linkedin"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+
+                <!-- Add footer menu -->
+                <div class="col-lg-8">
+                    <?= $this->footerMenu ?>
                 </div>
             </div>
-            <!--footer area start-->
-            
-            <!--footer bottom area start-->
-            <div class="footer-bottom global-table">
-                <div class="global-row">
-                    <div class="global-cell">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12 col-sm-12 col-12">
-                                    <div class="site-note text-center">
-    									All of this demo website images are used under license from Shutterstock.com. It is strictly forbidden to reuse or reproduce them for any other use, even personal.
-    								</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--footer bottom area end-->
-        </div> 
-        <!-- Body main wrapper end -->
-        
-        <?php
-            // Render Page JS from Controller Action of the page
-            if (is_array($this->pageJs)){
-                for ($i = 0 ; $i < count($this->pageJs); $i++){
-                    $this->inlineScript()->appendFile($this->pageJs[$i]);
-                }
-            }
-              
-            // Generate JS
-            echo $this->inlineScript();
-            
-        ?>
-    </body>
+        </div>
+    </footer>
+</div>
+
+<!-- Optional JavaScript -->
+
+<!-- Append js files added from controller -->
+<?php if (! empty($this->pageJs)) : ?>
+    <?php foreach ($this->pageJs as $key => $js) : ?>
+        <?php $this->inlineScript()->appendFile($js) ?>
+    <?php endforeach; ?>
+<?php endif; ?>
+
+<!-- List all js files. Located at /config/assets.config.php -->
+<?= $this->inlineScript(); ?>
+<!-- No conflict fix with page edition | tiny mce  -->
+<script type="text/javascript">
+
+</script>
+</body>
 </html>
