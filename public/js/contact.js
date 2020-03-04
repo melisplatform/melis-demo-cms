@@ -5,7 +5,6 @@
     var $mapLat = $('#map-lat');
     var $mapLong = $('#map-long');
 
-    // override lat and long
     var lat = $mapLat.text().trim();
     if (lat.length > 0) {
         $mapBox.data('lat', $mapLat.text());
@@ -18,7 +17,6 @@
         $mapBox.data('mlon', $mapLong.text());
     }
 
-    // initialize map
     if ( $mapBox.length ) {
         var $lat = $mapBox.data('lat');
         var $lon = $mapBox.data('lon');
@@ -49,7 +47,6 @@
         })
     }
 
-    // validate contactForm form
     $contactForm.on('submit', function (e) {
         var dataString = $(this).serializeArray();
         var url = window.location.href;
