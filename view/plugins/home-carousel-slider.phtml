@@ -1,0 +1,42 @@
+<?php
+$widths = null;
+
+if ($this->fromDragDropZone) {
+    $widths = "$this->widthDesktop $this->widthTablet $this->widthMobile";
+}
+?>
+<div>
+    <span class="clear"></span>
+</div>
+<section id="<?= $this->pluginId; ?>" class="app_screenshot_area sec_pad home-carousel-slider <?= $widths ?>">
+    <div class="container custom_container p0">
+        <?php if (! empty($this->showSlider)) : ?>
+            <div class="app_screen_info">
+                <div class="app_screenshot_slider owl-carousel">
+                    <?php foreach ($this->showSlider as $key => $slide) : ?>
+                        <div class="item">
+                            <div class="screenshot_img">
+                                <a href="<?= $this->basePath($slide->mcsdetail_img) ?>" class="image-link">
+                                    <img src="<?= $this->basePath($slide->mcsdetail_img) ?>" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        <?php else : ?>
+            <div class="alert warning">
+                <div class="alert_body">
+                    <i class="icon-close"></i>
+                    <?=
+                        $this->siteTranslate(
+                            'tr_demo_meliscms_no_result',
+                            $this->SiteConfig('default_lang_id'),
+                            $this->SiteConfig('site_id')
+                        )
+                    ?>
+                </div>
+            </div>
+        <?php endif; ?>
+    </div>
+</section>

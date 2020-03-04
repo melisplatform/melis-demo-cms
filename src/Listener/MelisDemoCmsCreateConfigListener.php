@@ -28,28 +28,56 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
                 $pages = $this->createMap((array) $e->getParams()['pages']);
                 /** @var \MelisAssetManager\Service\MelisModulesService $moduleService */
                 $moduleService = $sm->get('MelisAssetManagerModulesService');
-                /** @var \MelisMarketPlace\Service\MelisMarketPlaceSiteService $melisMarketPlaceSiteSvc */
-                $melisMarketPlaceSiteSvc = $sm->get('MelisMarketPlaceSiteService');
                 $path = $moduleService->getModulePath('MelisDemoCms');
 
                 $siteId = (int) $e->getParams()['site_id'];
 
-                $aboutUsPageId = (int) $pages['About us'];
-                $homePageid = $siteId;
-
                 $melisDemoConfig = file_get_contents($path . '/config/MelisDemoCms.config.stub');
                 $melisDemoConfig = str_replace([
-                    '\'%site_id%\'', 
-                    '\'%news_page_id%\'', 
-                    '\'%news_details_id%\'', 
-                    '\'%testimonial%\'', 
-                    '\'%search_results_page_id%\''
+                    '\'%site_id%\'',
+                    '\'%home_page_id%\'',
+                    '\'%news_page_id%\'',
+                    '\'%news_details_page_id%\'',
+                    '\'%team_page_id%\'',
+                    '\'%our_services_page_id%\'',
+                    '\'%premium_plugins_page_id%\'',
+                    '\'%unique_elements_page_id%\'',
+                    '\'%live_page_builder_page_id%\'',
+                    '\'%our_process_page_id%\'',
+                    '\'%identification_of_needs_page_id%\'',
+                    '\'%tailored_solution_page_id%\'',
+                    '\'%implementation_page_id%\'',
+                    '\'%faq_page_id%\'',
+                    '\'%delivery_folder_id%\'',
+                    '\'%product_folder_id%\'',
+                    '\'%payment_folder_id%\'',
+                    '\'%contact_page_id%\'',
+                    '\'%testimonials_folder_id%\'',
+                    '\'%search_result_page_id%\'',
+                    '\'%404_page_id%\''
                 ],[
-                    $siteId, 
-                    $pages['News'], 
-                    $pages['News Details'], 
-                    $pages['Testimonials'], 
-                    $pages['Search results']], 
+                    $siteId,
+                    $siteId,
+                    $pages['News'],
+                    $pages['News Details'],
+                    $pages['Team'],
+                    $pages['Our Services'],
+                    $pages['Premium plugins'],
+                    $pages['Unique elements'],
+                    $pages['Live page builder'],
+                    $pages['Our Process'],
+                    $pages['Identification of Needs'],
+                    $pages['Tailored Solution'],
+                    $pages['Implementation'],
+                    $pages['FAQ'],
+                    $pages['Delivery'],
+                    $pages['Product'],
+                    $pages['Payment'],
+                    $pages['Contact'],
+                    $pages['Testimonials'],
+                    $pages['Search Results'],
+                    $pages['404']
+                ],
                     $melisDemoConfig
                 );
 
@@ -77,13 +105,14 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
 
                         $melisDemoConfig = file_get_contents($path . '/config/MelisDemoCms.config.stub');
 
-                        if (strpos($param['sql'], 'Homepage Header Slider')) {
-                            $melisDemoConfig = str_replace('\'%homepage_slider_id%\'', $param['id'], $melisDemoConfig);
-                        }
+                        if (strpos($param['sql'], 'Home Slider 1'))
+                            $melisDemoConfig = str_replace('\'%home_page_slider_1_id%\'', $param['id'], $melisDemoConfig);
 
-                        if (strpos($param['sql'], 'About us - Our Team')) {
-                            $melisDemoConfig = str_replace('\'%about_us_slider%\'', $param['id'], $melisDemoConfig);
-                        }
+                        if (strpos($param['sql'], 'Home Slider 2'))
+                            $melisDemoConfig = str_replace('\'%home_page_slider_2_id%\'', $param['id'], $melisDemoConfig);
+
+                        if (strpos($param['sql'], 'Team Slider 1'))
+                            $melisDemoConfig = str_replace('\'%team_page_slider_1_id%\'', $param['id'], $melisDemoConfig);
 
                         file_put_contents($path . '/config/MelisDemoCms.config.stub', $melisDemoConfig);
                     }

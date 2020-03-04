@@ -6,56 +6,45 @@
  * It will always receive the id of the plugin as a parameter, in case multiple
  * same plugin are on the page.
  */
+    function MelisCmsSliderShowSliderPlugin_init (idPlugin) {
+        var idPlugin = typeof idPlugin != "undefined" ? idPlugin : '';
+        var	$plugin = $('#'+idPlugin);
 
-function MelisCmsSliderShowSliderPlugin_init(idPlugin){
-	
-	var idPlugin = typeof idPlugin != "undefined" ? idPlugin : '';
-	var	$plugin = $('#'+idPlugin);
-	
-	if($plugin.length){
-		if($plugin.hasClass("homepage-slider-owl")){
-			
-			$plugin.owlCarousel({
-		    	lazyLoad:true,
-		        items: 1,
-		        smartSpeed:1500,
-		        loop:true,
-		        autoplay:true,
-		        autoplayTimeout:8000
-		    });
-			
-		}else if($plugin.hasClass("aboutus-slider-owl")){
-			
-			$plugin.owlCarousel({
-		    	margin: 30,
-		    	dots: false,
-		        responsiveClass:true,
-		        responsive:{
-		            0:{
-		                items: 1,
-		                nav:false
-		            },
-		            480:{
-		                items: 2,
-		                nav:false
-		            },
-		            768:{
-		                items: 3,
-		                nav:false,
-		    			dots: true,
-		            },
-		            1200:{
-		                items: 4,
-		                nav:false,
-		    			dots: true,
-		            },
-		            1400:{
-		                items: 4,
-		                nav: true,
-		                navText: ["<i class='fa fa-angle-left'>","<i class='fa fa-angle-right'>"],
-		            }
-		        }
-		    });
-		}
-	}
-}
+        if ($plugin.length) {
+            if ($plugin.hasClass('home-carousel-slider')) {
+                /*===========Start app_testimonial_slider js ===========*/
+                function appScreenshot() {
+                    var app_screenshotSlider = $(".app_screenshot_slider");
+
+                    if ( app_screenshotSlider.length ) {
+                        app_screenshotSlider.owlCarousel({
+                            loop:false,
+                            margin:10,
+                            items: 5,
+                            autoplay: false,
+                            smartSpeed: 2000,
+                            responsiveClass:false,
+                            nav: false,
+                            dots: true,
+                            responsive:{
+                                0:{
+                                    items: 1
+                                },
+                                650:{
+                                    items:2,
+                                },
+                                776:{
+                                    items:4,
+                                },
+                                1199:{
+                                    items:5,
+                                },
+                            },
+                        })
+                    }
+                }
+                appScreenshot();
+                /*===========End app_testimonial_slider js ===========*/
+            }
+        }
+    }

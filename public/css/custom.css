@@ -1,198 +1,619 @@
-/*--------------------------------------------------------------
-
-Template: Theme Name
-Author: 
-Version:  1
-Design and Developed by: 
-
-Note: This is the file where you can add your custom styles to change the look of the theme. But don't modify "style.css" file.
-
----------------------------------------------------------------*/
-
-/* ----------------------------------------------------
-	You can put your custom css code here: 
--------------------------------------------------------*/
-
-.mobile-menu-area{
-	max-height: 450px;
-    overflow-x: auto;
-}
-.mobile-menu-area .mobile-search-input{
-	width: 66%;
-    height: 20px;
-}
-.mobile-menu-area .mobile-search-btn{
-	display: block;
-    right: 10px;
-    padding-top: 7px;
-}
-.mobile-menu-area .input-box input{
-	border: none;
+.hidden {
+    display: none;
 }
 
-.full-width.row{
-    margin-left: auto;
-    margin-right: auto;
+.page-numbers.disabled:hover {
+    cursor: no-drop;
 }
 
-.instagrm ul img{
-	width : 79px;
-	height : 79px;
-}
-
-.breadcumb-area-overlay-media{
-    width: 15%;
-    position: absolute;
-    margin: 20px;
-}
-
-.breadcumb-area-overlay-media img{
-    width: 100%;
-    opacity: .5;
-	border: 5px solid rgba(255, 255, 255, 0.54);
-    border-radius: 3px;
-}
-
-.breadcumb-area-overlay-media img:hover{
-    opacity: 1;
-	cursor: pointer;
-}
-
-.contact-info form .form-control, .contact-info .alert{
-	border-radius: 0px;
-}
-
-.single-footer.contact-us li {
-	width: 100%;
-}
-
-.contact-info .single-footer.contact-us li {
-    width: initial;
-}
-
-.site-note{
-    color: #717171;
-    font-size: 12px;
-}
-
-.search-area{
-	min-height: 200px;
-}
-
-.single-choose .choose-icon .svg {
-    width: 100px;
-    height: 100px;
-    padding: 15px;
-    transition: all 0.4s ease-in-out;
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -ms-transition: all 0.4s ease-in-out;
-}
-
-.single-choose .choose-icon .svg svg{
-    width: 100%;
-    height: 100%;
-}
-
-.single-choose:hover .choose-icon .svg path{
-    fill: #cc3333;
-}
-.single-choose:hover .choose-icon .svg polygon{
-    fill: #cc3333;
-}
-
-.single-mega-item li.menu-title a {
- font-weight: 700;
-    font-family: Montserrat;
-}
-
-.single-mega-item {
- padding: 10px 25px;
-}
-
-.mega-menu-area {
- padding: 20px;
-}
-
-.mega-menu-area.news-menu-area ul.single-mega-item.coloum-4.line {
-    position: relative;
-}
-
-.mega-menu-area.news-menu-area ul.single-mega-item.coloum-4.line:after {
-	position: absolute;
-    right: 0;
-    content: ' ';
-    display: block;
-    width: 1px;
-    height: 38%;
-    background: #e2e2e2;
-    bottom: 33%;
-}
-
-.mega-menu-area.news-menu-area ul.single-mega-item.coloum-4:last-child:after {
- width: 0;
-}
-
-.main-menu li ul li a {
- line-height: 1.6;
-}
-
-.main-menu li ul .menu-title-all a{
+h1 {
     font-weight: 700;
-    font-family: Montserrat;
+    font-family: "Poppins", sans-serif;
+    font-size: 50px;
 }
 
-.home-page .blog-title h5, .news-details-page .blog-title h5{
-    text-overflow: inherit;
-    white-space: inherit;
+h2 {
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    line-height: 50px;
+    font-size: 40px;
 }
 
-/* Bootstrap datepicker */
-.bootstrap-datetimepicker-widget .list-unstyled li {
-	display: initial;
+h4 {
+    color: #051441;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
 }
 
-.bootstrap-datetimepicker-widget a:focus, .bootstrap-datetimepicker-widget a:hover {
-    color: inherit;
+h5 {
+    color: #222d39;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
 }
 
-.bootstrap-datetimepicker-widget a, .bootstrap-datetimepicker-widget button, .bootstrap-datetimepicker-widget input {
-    color: inherit;
+h6 {
+    color: #222d39;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
 }
 
-#news-list-plugin #date-min, #news-list-plugin #date-max {
-	background-color: rgba(255, 255, 255, 0);
+.custom-hamburger-color {
+    background: #5e2ced !important;
 }
 
-/* Custom button */
-.input-box button.sbumit-btn {
-    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-    border: 1px solid #e5e5e5;
-    height: 50px;
-    padding: 15px;
-	color: inherit;
+.clear {
+    clear: both;
+    display: block;
 }
 
-button.sbumit-btn {
-    width: 30%;
-    text-transform: uppercase;
+.faq_content .tab-pane .card .card-body {
+    padding: 0px 0px 0px !important;
 }
 
-/* Page 404 */
-.page-404-container{
-    width: 100%;
-    padding: 140px;
-    text-align:center;
+.cursor-text {
+    cursor: text;
 }
 
-.page-404-container h1{
-    font-weight: 600;
-    font-size: 60pt;
+.h-100 {
+    height: 100px !important;
 }
 
-.page-404-container p{
-    font-size: 14pt;
+.h-150 {
+    height: 150px !important;
 }
 
+.h-200 {
+    height: 200px;
+}
+
+.c-black {
+    color: black !important;
+}
+
+.custom-text-faq {
+    font-family: 'Open Sans',sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+}
+/*
+####################################################
+M E D I A  Q U E R I E S
+####################################################
+*/
+
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::
+Bootstrap 4 breakpoints
+*/
+
+/*
+Extra small devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap because it is "mobile first"
+*/
 
 
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
+
+/* We occasionally use media queries that go in the other direction (the given screen size or smaller): */
+
+@media (max-width: 320px) {
+    .animation_inner li:nth-child(1) {
+        left: 20px;
+    }
+
+    .animation_inner li:nth-child(2) {
+        top: 35px;
+        left: 100px;
+    }
+
+    .animation_inner li:nth-child(3) {
+        top: 130px;
+        left: 109px;
+    }
+
+    .animation_inner li:nth-child(4) {
+        left: 12px;
+        top: auto;
+        bottom: -74px;
+    }
+
+    .animation_inner li:nth-child(5) {
+        top: 187px;
+        left: 11px;
+    }
+
+    .animation_inner li:nth-child(6) {
+        top: 79px;
+        left: 215px;
+    }
+
+    .animation_inner li:nth-child(7) {
+        left: 212px;
+    }
+
+    .animation_inner li:nth-child(8) {
+        top: 100px;
+        left: 18px;
+    }
+
+    .animation_inner li:nth-child(9) {
+        left: 211px;
+        top: 178px;
+    }
+
+    .animation_inner li:nth-child(10) {
+        left: 91px;
+        top: 215px;
+    }
+
+    .animation_inner li:nth-child(11) {
+        top: 511px;
+        left: 136px;
+    }
+
+    .animation_inner li:nth-child(12) {
+        top: 400px;
+        left: 102px;
+        display: unset !important;
+    }
+
+    .animation_inner li:nth-child(13) {
+        left: 15px;
+        top: 284px;
+        bottom: unset !important;
+    }
+
+    .animation_inner li:nth-child(14) {
+        left: 114px;
+        top: 297px;
+    }
+
+    .animation_inner li:nth-child(15) {
+        bottom: -250px;
+        left: 14px;
+    }
+
+    .animation_inner li:nth-child(16) {
+        bottom: -36px;
+        left: 206px;
+    }
+
+    .animation_inner li:nth-child(17) {
+        left: 228px;
+        bottom: 53px;
+    }
+
+    .animation_inner li:nth-child(18) {
+        bottom: -129px;
+        left: 195px;
+    }
+
+    .animation_inner li:nth-child(19) {
+        bottom: -168px;
+        left: 37px;
+    }
+
+    .animation_inner li:nth-child(20) {
+        bottom: -252px;
+        right: 16px;
+        display: unset !important;
+    }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .erp_service_item img, .erp_action_area img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .h_head, .erp_service_item p, .erp_content {
+        text-align: center;
+    }
+
+    .melis-gdpr-banner-container {
+        height: auto !important;
+    }
+
+    .melis-gdpr-banner-content {
+        padding: 15px;
+        line-height: unset !important;
+    }
+
+    .melis-gdpr-banner-agree {
+        display: block;
+    }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    .erp_testimonial_area {
+        margin-top: 500px;
+    }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    .dropdown-menu-custom {
+        display: block !important;
+    }
+    .news-list-btn.btn_three.mt_c20, .news-list-search.blog-sidebar.float-right {
+        margin-bottom: 30px !important;
+        width: 100% !important;
+    }
+    .news-list-search.blog-sidebar.float-right {
+        margin-top: 0 !important;
+    }
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+
+}
+
+/* Extra large devices (large desktops) */
+/* No media query since the extra-large breakpoint has no upper bound on its width */
+
+/* There are also media queries and mixins for targeting a single segment of screen sizes using the minimum and maximum breakpoint widths. */
+/* Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { ... } */
+
+@media (min-width: 321px) and (max-width: 375px) {
+    .animation_inner li:nth-child(1) {
+        left: 25px !important;
+    }
+
+    .animation_inner li:nth-child(2) {
+        left: 115px !important;
+    }
+
+    .animation_inner li:nth-child(3) {
+        top: 129px !important;
+        left: 206px !important;
+    }
+
+    .animation_inner li:nth-child(4) {
+        top: 19px !important;
+        left: 242px !important;
+        bottom: unset !important;
+    }
+
+    .animation_inner li:nth-child(5) {
+        top: 212px !important;
+        left: 260px !important;
+    }
+
+    .animation_inner li:nth-child(6) {
+        top: 417px !important;
+        left: 42px !important;
+    }
+
+    .animation_inner li:nth-child(7) {
+        top: 501px !important;
+        left: 248px !important;
+    }
+
+    .animation_inner li:nth-child(8) {
+        top: 124px !important;
+        left: 51px !important;
+    }
+
+    .animation_inner li:nth-child(9) {
+        top: 382px !important;
+        left: 245px !important;
+    }
+
+    .animation_inner li:nth-child(10) {
+        top: 526px !important;
+        left: 25px !important;
+    }
+
+    .animation_inner li:nth-child(11) {
+        top: 316px !important;
+        left: 71px !important;
+    }
+
+    .animation_inner li:nth-child(12) {
+        top: 718px !important;
+        left: 230px !important;
+        display: unset !important;
+    }
+
+    .animation_inner li:nth-child(13) {
+        left: 24px !important;
+        bottom: 71px !important;
+    }
+
+    .animation_inner li:nth-child(14) {
+        bottom: 80px !important;
+        left: 141px !important;
+    }
+
+    .animation_inner li:nth-child(15) {
+        bottom: -166px !important;
+        left: 148px !important;
+    }
+
+    .animation_inner li:nth-child(16) {
+        bottom: -275px !important;
+        left: 108px !important;
+    }
+
+    .animation_inner li:nth-child(17) {
+        bottom: -315px !important;
+        left: 227px !important;
+    }
+
+    .animation_inner li:nth-child(18) {
+        bottom: -364px !important;
+        left: 31px !important;
+    }
+
+    .animation_inner li:nth-child(19) {
+        bottom: -13px !important;
+        left: 195px !important;
+    }
+
+    .animation_inner li:nth-child(20) {
+        bottom: -417px !important;
+        left: 113px !important;
+        display: unset !important;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 376px) and (max-width: 767.98px) {
+    .animation_inner li:nth-child(1) {
+        left: 33px;
+    }
+
+    .animation_inner li:nth-child(2) {
+        left: 151px !important;
+    }
+
+    .animation_inner li:nth-child(3) {
+        top: 129px !important;
+        left: 206px !important;
+    }
+
+    .animation_inner li:nth-child(4) {
+        top: 19px !important;
+        left: 295px !important;
+        bottom: unset !important;
+    }
+
+    .animation_inner li:nth-child(5) {
+        top: 212px !important;
+        left: 303px !important;
+    }
+
+    .animation_inner li:nth-child(6) {
+        top: 457px !important;
+        left: 20px !important;
+    }
+
+    .animation_inner li:nth-child(7) {
+        top: 548px !important;
+        left: 279px !important;
+    }
+
+    .animation_inner li:nth-child(8) {
+        top: 124px !important;
+        left: 51px !important;
+    }
+
+    .animation_inner li:nth-child(9) {
+        top: 424px !important;
+        left: 298px !important;
+    }
+
+    .animation_inner li:nth-child(10) {
+        top: 561px !important;
+        left: 62px !important;
+    }
+
+    .animation_inner li:nth-child(11) {
+        top: 357px !important;
+        left: 53px !important;
+    }
+
+    .animation_inner li:nth-child(12) {
+        top: 769px !important;
+        left: 288px !important;
+        display: unset !important;
+    }
+
+    .animation_inner li:nth-child(13) {
+        left: 24px !important;
+        bottom: 47px !important;
+    }
+
+    .animation_inner li:nth-child(14) {
+        bottom: 32px !important;
+        left: 150px !important;
+    }
+
+    .animation_inner li:nth-child(15) {
+        bottom: -166px !important;
+        left: 148px !important;
+    }
+
+    .animation_inner li:nth-child(16) {
+        bottom: -324px !important;
+        left: 153px !important;
+    }
+
+    .animation_inner li:nth-child(17) {
+        bottom: -367px !important;
+        left: 292px !important;
+    }
+
+    .animation_inner li:nth-child(18) {
+        bottom: -411px !important;
+        left: 45px !important;
+    }
+
+    .animation_inner li:nth-child(19) {
+        bottom: -47px !important;
+        left: 233px !important;
+    }
+
+    .animation_inner li:nth-child(20) {
+        bottom: -446px !important;
+        left: 162px !important;
+        display: unset !important;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .animation_inner li:nth-child(1) {
+
+    }
+
+    .animation_inner li:nth-child(2) {
+        left: 107px;
+    }
+
+    .animation_inner li:nth-child(3) {
+        top: 138px;
+        left: 141px;
+    }
+
+    .animation_inner li:nth-child(4) {
+        top: 19px;
+        left: 242px;
+    }
+
+    .animation_inner li:nth-child(5) {
+        top: 117px;
+        left: 290px;
+    }
+
+    .animation_inner li:nth-child(6) {
+        top: 36px;
+        left: 613px;
+    }
+
+    .animation_inner li:nth-child(7) {
+        top: 0;
+        left: 384px;
+    }
+
+    .animation_inner li:nth-child(8) {
+        top: 40%;
+        left: 5px;
+    }
+
+    .animation_inner li:nth-child(9) {
+        top: 175px;
+        left: 373px;
+    }
+
+    .animation_inner li:nth-child(10) {
+        top: 135px;
+        left: 526px;
+    }
+
+    .animation_inner li:nth-child(11) {
+        top: 366px;
+        left: 74px;
+    }
+
+    .animation_inner li:nth-child(12) {
+        top: 50px;
+        left: 475px;
+    }
+
+    .animation_inner li:nth-child(13) {
+        left: 0;
+        bottom: 0;
+    }
+
+    .animation_inner li:nth-child(14) {
+        bottom: 30px;
+        left: 150px;
+    }
+
+    .animation_inner li:nth-child(15) {
+        bottom: 20px;
+        left: 310px;
+    }
+
+    .animation_inner li:nth-child(16) {
+        bottom: -46px;
+        left: 460px;
+    }
+
+    .animation_inner li:nth-child(17) {
+        bottom: 60px;
+        left: 485px;
+    }
+
+    .animation_inner li:nth-child(18) {
+        bottom: -30px;
+        left: 608px;
+    }
+
+    .animation_inner li:nth-child(19) {
+        bottom: -85px;
+        left: 258px;
+    }
+
+    .animation_inner li:nth-child(20) {
+        bottom: 119px;
+        right: -4px;
+    }
+
+    .erp_testimonial_area {
+        margin-top: 100px;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .news-list-btn.btn_three.mt_c20 {
+        min-width: 155px !important;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
+
+@media (max-width: 450px) {
+    .nice-select.selectpickers {
+        padding-left: 10px !important;
+        padding-right: 0 !important;
+    }
+
+    .logo-slider {
+        margin-bottom: 450px !important;
+    }
+}
+
+@media (max-width: 320px) {
+    .logo-slider {
+        margin-bottom: 270px !important;
+    }
+}

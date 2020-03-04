@@ -1,131 +1,82 @@
-<?php if(!empty($this->menu)){?>
-    <!-- <div class="col-md-8 col-sm-10 hidden-xs"> -->
-    <nav id="primary-menu" class="hidden-xs">
-        <ul class="main-menu">
-            <?php
-        	    foreach ($this->menu As $key => $val)
-        	    {
-        	        if (in_array($val['pageType'], array('PAGE', 'SITE')))
-        	        {
-            	        $pageName = $val['label'];
-            	        $hasChild = (!empty($val['pages']) && count($val['pages']) > 0) ? 'class="mega-parent"' : '';
-            	        echo '<li '.$hasChild.'>';
-            	        echo '<a href="'.$val['uri'].'">'.$pageName.'</a>';
-            	        
-            	        if (!empty($val['pages']) && count($val['pages']) > 0)
-            	        {
-            	            $newsClass = '';
-            	            if ($val['idPage'] == $this->SiteConfig('news_menu_page_id'))
-            	            {
-            	                $newsClass = 'news-menu-area';
-            	            }
-            	            
-            	            echo '<div class="mega-menu-area '.$newsClass.' mma-970">';
-            	            foreach ($val['pages'] As $sHkey => $sHVal)
-            	            {
-                	            echo '<ul class="single-mega-item coloum-4">';
-                	                
-                	            $subTitlePageName = $sHVal['label'];
-        	                    
-                	            echo '<li class="menu-title uppercase"><a href="'.$sHVal['uri'].'" >'.$subTitlePageName.'</a></li>';
-        	                    
-        	                    if (!empty($sHVal['pages']))
-        	                    {
-        	                        foreach ($sHVal['pages'] As $sHLkey => $sHLVal)
-        	                        {
-        	                            $subPageName = $sHLVal['label'];
-        	                            
-        	                            echo '<li><a href="'.$sHLVal['uri'].'">'.$subPageName.'</a></li>';
-        	                        }
-        	                    }
-            	                    
-            	                if (count($val['pages']) == ($sHkey + 1))
-            	                {
-            	                    echo '<li>&nbsp;</li><li class="menu-title-all"><a href="'.$val['uri'].'">SEE ALL '.strtoupper($pageName).'</a></li>';
-            	                }
-        	                    echo '</ul>';
-    	                    }
-    	                    
-        	                echo '</div>';
-            	        }
-        	            echo '</li>';
-        	        }
-            	}
-            ?>
-        </ul>
-    </nav>
-    <!-- </div> -->
-    
-    <!-- mobile-menu-area start -->
-    <div class="mobile-menu-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <nav id="dropdown">
-                        <ul>
-                        	<li>
-                            	<form action="<?php echo $this->MelisLink($this->SiteConfig('search_result_page_id'), false)?>" method="get">
-                                    <div class="input-box">
-                                        <input class="mobile-search-input" placeholder="Search" type="text" name="search" value="<?php echo $this->layout()->search?>" required>
-                                        <button class="src-btn mobile-search-btn"><i class="fa fa-search fa-2x"></i></button>
-                                    </div>
-                                </form>
-                            </li>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <?php if (! empty($this->menu)) : ?>
+        <ul class="navbar-nav ml-auto mr-auto menu">
+            <!-- Main page -->
+
+            <!-- Other pages -->
+            <?php foreach ($this->menu[0]['pages'] as $key => $page) : ?>
+                <?php $hasSubMenu = false ?>
+                <!-- Check if the page have child pages with link -->
+                <?php if (! empty($page['pages'])) : ?>
+                    <?php foreach ($page['pages'] as $subKey => $subPage) : ?>
+                        <?php if ($subPage['menu'] === 'LINK') : ?>
                             <?php
-                        	    foreach ($this->menu As $key => $val)
-                        	    {
-                        	        if (in_array($val['pageType'], array('PAGE', 'SITE')))
-                        	        {
-                            	        $pageName = $val['label'];
-                            	        echo '<li>';
-                            	        echo '<a href="'.$val['uri'].'">'.$pageName.'</a>';
-                            	        
-                            	        if (!empty($val['pages']))
-                            	        {
-                            	            echo '<ul class="single-mega-item">';
-                                	            foreach ($val['pages'] As $sHkey => $sHVal)
-                                	            {
-                                    	            $subTitlePageName = $sHVal['label'];
-                            	                    
-                                    	            echo '<li><a href="'.$val['uri'].'" >'.$subTitlePageName.'</a>';
-                            	                    
-                            	                    if (!empty($sHVal['pages']))
-                            	                    {
-                            	                        echo '<ul class="single-mega-item">';
-                            	                        
-                            	                        foreach ($sHVal['pages'] As $sHLkey => $sHLVal)
-                            	                        {
-                            	                            $subPageName = $sHLVal['label'];
-                            	                            
-                            	                            echo '<li><a href="'.$val['uri'].'">'.$subPageName.'</a></li>';
-                            	                        }
-                            	                        echo '</ul>';
-                            	                    }
-                            	                    
-                            	                    if (count($val['pages']) == ($sHkey + 1))
-                            	                    {
-                            	                        echo '<li class="menu-title-all"><a href="'.$val['uri'].'">SEE ALL '.strtoupper($pageName).'</a></li>';
-                            	                    }
-                                	                
-                            	                    echo '</li>';
-                        	                    }
-                        	                    
-                    	                    echo '</ul>';
-                    	                    
-                            	        }
-                        	            echo '</li>';
-                        	        }
-                        	    }
+                                $hasSubMenu = true;
+                                break;
                             ?>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+                <li class="nav-item <?= ($hasSubMenu) ? 'dropdown submenu' : '' ?>">
+                    <a
+                        class="nav-link dropdown-toggle"
+                        <?= ($page['menu']) == 'LINK' ? 'href="' . $page['uri'] . '"' : '' ?>
+                        style="white-space: nowrap"
+                    >
+                        <?= strtoupper($page['label']) ?>
+                    </a>
+                    <?php if ($hasSubMenu) : ?>
+                        <ul class="dropdown-menu dropdown-menu-custom">
+                            <!-- List sub pages -->
+                            <?php foreach ($page['pages'] as $subKey => $subPage) : ?>
+                                <?php if ($subPage['menu'] == 'LINK') : ?>
+                                    <li class="nav-item">
+                                        <a href="<?= $subPage['uri'] ?>" class="nav-link">
+                                            <span style="font-size: 12px; white-space: nowrap"> <?= strtoupper($subPage['label']) ?> </span>
+                                        </a>
+                                    </li>
+                                <?php elseif ($subPage['menu'] == 'NOLINK') : ?>
+                                    <li class="nav-item">
+                                        <a class="nav-link">
+                                            <span style="font-size: 12px; white-space: nowrap"> <?= strtoupper($subPage['label']) ?> </span>
+                                        </a>
+                                    </li>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
                         </ul>
-                    </nav>
-                </div>
+                    <?php endif; ?>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    <?php else : ?>
+        <div class="alert warning" style="width: 100%; margin-top: 10px;">
+            <div class="alert_body">
+                <i class="icon-close"></i>
+                <?=
+                    $this->siteTranslate(
+                        'tr_demo_meliscms_no_result',
+                        $this->SiteConfig('default_lang_id'),
+                        $this->SiteConfig('site_id')
+                    )
+                ?>
             </div>
         </div>
+    <?php endif; ?>
+
+    <!-- Search Input -->
+    <div class="blog-sidebar">
+        <div class="widget sidebar_widget widget_search">
+            <form action="<?= $this->MelisLink($this->SiteConfig('search_result_page_id'), false) ?>" method="get" class="search-form input-group">
+                <input
+                    type="text"
+                    class="form-control widget_input"
+                    placeholder="<?= $this->siteTranslate('tr_demo_meliscms_search', $this->SiteConfig('default_lang_id'), $this->SiteConfig('site_id')) ?>"
+                    name="keyword"
+                    value="<?= $this->layout()->search?>"
+                    required
+                >
+                <button type="submit"><i class="ti-search"></i></button>
+            </form>
+        </div>
     </div>
-<!--mobile menu area end-->
-<?php }else{?>
-	<div class="alert alert-warning" role="alert">
-        <?= $this->siteTranslate('tr_site_demo_cms_common_no_result', $this->SiteConfig('default_lang_id'), $this->SiteConfig('site_id')); ?>
-    </div>
-<?php }?>
+</div>

@@ -1,0 +1,49 @@
+<?php
+$widths = null;
+
+if ($this->fromDragDropZone) {
+    $widths = "$this->widthDesktop $this->widthTablet $this->widthMobile";
+}
+?>
+<?php if (! empty($this->showSlider)) : ?>
+    <div id="<?= $this->pluginId ?>" class="<?= $widths ?> row">
+        <?php foreach ($this->showSlider as $key => $slide) : ?>
+            <div class="col-lg-3 col-sm-6">
+                <div class="ex_team_item">
+                    <img src="<?= $slide->mcsdetail_img ?>" alt="">
+                    <div class="team_content">
+                        <a href="#">
+                            <h3 class="f_p f_size_16 f_600 t_color3"><?= $slide->mcsdetail_title ?></h3>
+                        </a>
+                        <h5><?= $slide->mcsdetail_sub1 ?></h5>
+                    </div>
+                    <div class="hover_content">
+                        <div class="n_hover_content">
+                            <ul class="list-unstyled">
+
+                            </ul>
+                            <div class="br"></div>
+                            <a href="#">
+                                <h3 class="f_p f_size_16 f_600 w_color"><?= $slide->mcsdetail_title ?></h3>
+                            </a>
+                            <h5><?= $this->mcsdetail_sub1 ?></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+<?php else : ?>
+    <div class="alert warning">
+        <div class="alert_body">
+            <i class="icon-close"></i>
+            <?=
+                $this->siteTranslate(
+                    'tr_demo_meliscms_no_result',
+                    $this->SiteConfig('default_lang_id'),
+                    $this->SiteConfig('site_id')
+                )
+            ?>
+        </div>
+    </div>
+<?php endif; ?>

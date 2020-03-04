@@ -11,6 +11,7 @@ namespace MelisDemoCms;
 
 use MelisDemoCms\Listener\SetupDemoCmsListener;
 use MelisDemoCms\Listener\SiteMenuCustomizationListener;
+use MelisDemoCms\Listener\LatestNewsHorizontalListener;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 use Zend\Session\Container;
@@ -39,6 +40,7 @@ class Module
         $eventManager->attach(new SetupDemoCmsListener());
 
         $eventManager->attach(new \MelisDemoCms\Listener\MelisDemoCmsCreateConfigListener());
+        $eventManager->attach(new LatestNewsHorizontalListener());
 
         $this->createTranslations($e);
     }

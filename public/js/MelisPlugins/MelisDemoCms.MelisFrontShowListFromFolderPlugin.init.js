@@ -6,16 +6,49 @@
  * It will always receive the id of the plugin as a parameter, in case multiple
  * same plugin are on the page.
  */
+function MelisFrontShowListFromFolderPlugin_init (idPlugin) {
+    var idPlugin = typeof idPlugin != "undefined" ? idPlugin : '';
+    var	$plugin = $('#'+idPlugin);
 
-function MelisFrontShowListFromFolderPlugin_init(idPlugin){
-	console.log('Front Show List ID', idPlugin);
-	var idPlugin = typeof idPlugin != "undefined" ? idPlugin : '';
-	var	$plugin = $('#'+idPlugin);
-
-	if(idPlugin == "testimonial-show-list-from-folder" || idPlugin.indexOf('testimonial-show-list-from-folder') > -1) {
-		$plugin.owlCarousel({items: 1});
-	} else {
-		// default testimonial slider
-		$plugin.owlCarousel({items: 1});
-	}
+    if ($plugin.length) {
+        if ($plugin.hasClass('erp_testimonial_area')) {
+            /*===========Start app_testimonial_slider js ===========*/
+            function erpTestimonial() {
+                var erpT = $(".erp_testimonial_info");
+                if( erpT.length ){
+                    erpT.owlCarousel({
+                        loop: true,
+                        margin: 0,
+                        items: 2,
+                        nav:true,
+                        dots: false,
+                        autoplay: false,
+                        smartSpeed: 2000,
+                        stagePadding: 0,
+                        responsiveClass:true,
+                        navText: ['<i class="arrow_left"></i>','<i class="arrow_right"></i>'],
+                        responsive:{
+                            0:{
+                                items:1,
+                            },
+                            776:{
+                                items:2,
+                            },
+                            1199:{
+                                items:2,
+                            }
+                        },
+                        onInitialized: function () {
+                            $('.erp_testimonial_info .owl-nav').removeClass('disabled');
+                        },
+                        onChanged: function () {
+                            $('.erp_testimonial_info .owl-nav').removeClass('disabled');
+                        }
+                    })
+                }
+            }
+            erpTestimonial();
+            /*===========End app_testimonial_slider js ===========*/
+        }
+    }
 }
