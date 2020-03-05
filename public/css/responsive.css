@@ -6,6 +6,11 @@
         margin-top: -320px;
     }
 }
+@media(min-width: 1651px) {
+    .section_container{
+        max-height: 800px;
+    }
+}
 @media(max-width:1650px){
     .about_content{
         padding: 100px 30px;
