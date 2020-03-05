@@ -15,27 +15,27 @@
 	<package_images>
 		<img_1>
 			<mpi_image_title>Melis Demo Cms Home Page</mpi_image_title>
-			<mpi_image_file>home_page.JPG</mpi_image_file>
+			<mpi_image_file>home_page.jpg</mpi_image_file>
 			<mpi_image_main>1</mpi_image_main>
 		</img_1>
 		<img_2>
 			<mpi_image_title>Melis Demo Cms News Page</mpi_image_title>
-			<mpi_image_file>news_page.JPG</mpi_image_file>
+			<mpi_image_file>news_page.jpg</mpi_image_file>
 			<mpi_image_main>0</mpi_image_main>
 		</img_2>
 		<img_3>
 			<mpi_image_title>Melis Demo Cms Team Page</mpi_image_title>
-			<mpi_image_file>team_page.JPG</mpi_image_file>
+			<mpi_image_file>team_page.jpg</mpi_image_file>
 			<mpi_image_main>0</mpi_image_main>
 		</img_3>
 		<img_4>
 			<mpi_image_title>Melis Demo Cms Contact Us Page</mpi_image_title>
-			<mpi_image_file>contact_page.JPG</mpi_image_file>
+			<mpi_image_file>contact_page.jpg</mpi_image_file>
 			<mpi_image_main>0</mpi_image_main>
 		</img_4>
 		<img_5>
 			<mpi_image_title>Melis Demo Cms FAQ Page</mpi_image_title>
-			<mpi_image_file>faq_page.JPG</mpi_image_file>
+			<mpi_image_file>faq_page.jpg</mpi_image_file>
 			<mpi_image_main>0</mpi_image_main>
 		</img_5>
 	</package_images>
