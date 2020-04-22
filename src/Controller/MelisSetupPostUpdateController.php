@@ -9,9 +9,9 @@
 
 namespace MelisDemoCms\Controller;
 
-use Laminas\Mvc\Controller\AbstractActionController;
 use Laminas\View\Model\JsonModel;
 use Laminas\View\Model\ViewModel;
+use MelisCore\Controller\AbstractActionController;
 use MelisCore\MelisSetupInterface;
 
 /**
