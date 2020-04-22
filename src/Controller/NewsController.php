@@ -18,7 +18,7 @@ class NewsController extends BaseController
     public function newsAction()
     {
         // Get site config service
-        $siteConfigSrv = $this->getServiceLocator()->get('MelisSiteConfigService');
+        $siteConfigSrv = $this->getServiceManager()->get('MelisSiteConfigService');
 
         // Initialize list news plugin
         /** @var MelisCmsNewsListNewsPlugin $newsListPlugin */
@@ -58,7 +58,7 @@ class NewsController extends BaseController
     public function newsDetailsAction()
     {
         // Get site config service
-        $siteConfigSrv = $this->getServiceLocator()->get('MelisSiteConfigService');
+        $siteConfigSrv = $this->getServiceManager()->get('MelisSiteConfigService');
 
         // Initialize show news plugin
         /** @var MelisCmsNewsShowNewsPlugin $newsPlugin */

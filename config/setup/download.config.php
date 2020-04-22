@@ -22,12 +22,12 @@ return [
                             'method' => 'POST',
                             'action' => '',
                         ],
-                        'hydrator' => \Zend\Stdlib\Hydrator\ArraySerializable::class,
+                        'hydrator' => \Laminas\Hydrator\ArraySerializable::class,
                         'elements' => [
                             [
                                 'spec' => [
                                     'name' => 'scheme',
-                                    'type' => \Zend\Form\Element\Select::class,
+                                    'type' => \Laminas\Form\Element\Select::class,
                                     'options' => [
                                         'label' => 'tr_site_demo_cms_tool_site_scheme',
                                         'tooltip' => 'tr_site_demo_cms_tool_site_scheme tooltip',
@@ -49,7 +49,7 @@ return [
                             [
                                 'spec' => [
                                     'name' => 'domain',
-                                    'type' => \Zend\Form\Element\Text::class,
+                                    'type' => \Laminas\Form\Element\Text::class,
                                     'options' => [
                                         'label' => 'tr_site_demo_cms_tool_site_domain',
                                         'tooltip' => 'tr_site_demo_cms_tool_site_domain tooltip',
@@ -67,7 +67,7 @@ return [
                             [
                                 'spec' => [
                                     'name' => 'name',
-                                    'type' => \Zend\Form\Element\Text::class,
+                                    'type' => \Laminas\Form\Element\Text::class,
                                     'options' => [
                                         'label' => 'tr_site_demo_cms_name',
                                         'tooltip' => 'tr_site_demo_cms_name_tooltip',
@@ -93,7 +93,7 @@ return [
                                         'options' => [
                                             'haystack' => ['http', 'https'],
                                             'messages' => [
-                                                \Zend\Validator\InArray::NOT_IN_ARRAY => 'tr_site_demo_cms_tool_site_scheme_invalid_selection',
+                                                \Laminas\Validator\InArray::NOT_IN_ARRAY => 'tr_site_demo_cms_tool_site_scheme_invalid_selection',
                                             ],
                                         ],
                                     ],
@@ -101,7 +101,7 @@ return [
                                         'name' => 'NotEmpty',
                                         'options' => [
                                             'messages' => [
-                                                \Zend\Validator\NotEmpty::IS_EMPTY => 'tr_melis_installer_tool_site_scheme_error_empty',
+                                                \Laminas\Validator\NotEmpty::IS_EMPTY => 'tr_melis_installer_tool_site_scheme_error_empty',
                                             ],
                                         ],
                                     ],
@@ -119,7 +119,7 @@ return [
                                             'encoding' => 'UTF-8',
                                             'max' => 50,
                                             'messages' => [
-                                                \Zend\Validator\StringLength::TOO_LONG => 'tr_melis_installer_tool_site_domain_error_long',
+                                                \Laminas\Validator\StringLength::TOO_LONG => 'tr_melis_installer_tool_site_domain_error_long',
                                             ],
                                         ],
                                     ],
@@ -127,7 +127,7 @@ return [
                                         'name' => 'NotEmpty',
                                         'options' => [
                                             'messages' => [
-                                                \Zend\Validator\NotEmpty::IS_EMPTY => 'tr_melis_installer_tool_site_domain_error_empty',
+                                                \Laminas\Validator\NotEmpty::IS_EMPTY => 'tr_melis_installer_tool_site_domain_error_empty',
                                             ],
                                         ],
                                     ],
@@ -147,7 +147,7 @@ return [
                                             'encoding' => 'UTF-8',
                                             'max' => 50,
                                             'messages' => [
-                                                \Zend\Validator\StringLength::TOO_LONG => 'tr_site_demo_cms_tool_site_name_error_long',
+                                                \Laminas\Validator\StringLength::TOO_LONG => 'tr_site_demo_cms_tool_site_name_error_long',
                                             ],
                                         ],
                                     ],
@@ -155,7 +155,7 @@ return [
                                         'name' => 'NotEmpty',
                                         'options' => [
                                             'messages' => [
-                                                \Zend\Validator\NotEmpty::IS_EMPTY => 'tr_melis_installer_tool_site_name_error_empty',
+                                                \Laminas\Validator\NotEmpty::IS_EMPTY => 'tr_melis_installer_tool_site_name_error_empty',
                                             ],
                                         ],
                                     ],

@@ -39,6 +39,7 @@
   "require": {
     "php": "^7.0",
     "composer/installers": "~1.0",
+    "laminas/laminas-log": "^2.9",
     "melisplatform/melis-engine": "*",
     "melisplatform/melis-front": "*",
     "melisplatform/melis-cms": "*",

@@ -1,10 +1,10 @@
 <?php
 /**
- * Zend Framework (http://framework.zend.com/)
+ * Laminas Framework (http://framework.Laminas.com/)
  *
- * @link      http://github.com/zendframework/ZendSkeletonApplication for the canonical source repository
- * @copyright Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd New BSD License
+ * @link      http://github.com/Laminasframework/LaminasSkeletonApplication for the canonical source repository
+ * @copyright Copyright (c) 2005-2015 Laminas Technologies USA Inc. (http://www.Laminas.com)
+ * @license   http://framework.Laminas.com/license/new-bsd New BSD License
  */
 
 return [
@@ -112,16 +112,13 @@ return [
     ],
     'service_manager' => [
         'abstract_factories' => [
-            \Zend\Cache\Service\StorageCacheAbstractServiceFactory::class,
-            \Zend\Log\LoggerAbstractServiceFactory::class,
+            \Laminas\Cache\Service\StorageCacheAbstractServiceFactory::class,
+            \Laminas\Log\LoggerAbstractServiceFactory::class,
         ],
         'aliases' => [
-            'translator' => 'MvcTranslator',
             'MelisPlatformTable' => \MelisDemoCms\Model\Tables\MelisPlatformTable::class,
-        ],
-        'factories' => [
-            'DemoCmsService' => \MelisDemoCms\Service\Factory\DemoCmsServiceFactory::class,
-            'MelisDemoCms\Model\Tables\MelisPlatformTable' => \MelisDemoCms\Model\Tables\Factory\MelisPlatformTableFactory::class,
+
+            'DemoCmsService' => \MelisDemoCms\Service\DemoCmsService::class,
         ],
     ],
     'translator' => [],

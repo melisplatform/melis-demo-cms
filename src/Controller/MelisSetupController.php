@@ -9,14 +9,14 @@
 
 namespace MelisDemoCms\Controller;
 
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
-use Zend\View\Model\JsonModel;
-use Zend\Validator\File\Size;
-use Zend\Validator\File\IsImage;
-use Zend\Validator\File\Upload;
-use Zend\File\Transfer\Adapter\Http;
-use Zend\Session\Container;
+use Laminas\Mvc\Controller\AbstractActionController;
+use Laminas\View\Model\ViewModel;
+use Laminas\View\Model\JsonModel;
+use Laminas\Validator\File\Size;
+use Laminas\Validator\File\IsImage;
+use Laminas\Validator\File\Upload;
+use Laminas\File\Transfer\Adapter\Http;
+use Laminas\Session\Container;
 
 class MelisSetupController extends AbstractActionController
 {
@@ -82,7 +82,7 @@ class MelisSetupController extends AbstractActionController
         // $data = $this->getTool()->sanitizeRecursive($this->params()->fromQuery());
 
         // Getting the DemoSite config
-        $config = $this->getServiceLocator()->get('config');
+        $config = $this->getServiceManager()->get('config');
         $siteId = $config['site']['MelisDemoCms']['datas']['site_id'];
 
         $docPath = $_SERVER['DOCUMENT_ROOT'];
@@ -94,9 +94,9 @@ class MelisSetupController extends AbstractActionController
         $siteDemoCmsForm->setData($data);
 
         //Services
-        // $tablePlatformIds = $this->getServiceLocator()->get('MelisEngineTablePlatformIds');
+        // $tablePlatformIds = $this->getServiceManager()->get('MelisEngineTablePlatformIds');
 
-        $container = new \Zend\Session\Container('melis_modules_configuration_status');
+        $container = new \Laminas\Session\Container('melis_modules_configuration_status');
         $hasErrors = false;
 
 
@@ -109,7 +109,7 @@ class MelisSetupController extends AbstractActionController
                         $hasErrors = true;
                 }
 
-                $container = new \Zend\Session\Container('melismodules');
+                $container = new \Laminas\Session\Container('melismodules');
                 $installerModuleConfigurationSuccess = isset($container['module_configuration']['success']) ?
                     (bool) $container['module_configuration']['success'] : false;
 
@@ -128,7 +128,7 @@ class MelisSetupController extends AbstractActionController
                     // DemoCms Service that process the DemoCms pre-defined datas
 
 
-                    $setupSrv = $this->getServiceLocator()->get('SetupDemoCmsService');
+                    $setupSrv = $this->getServiceManager()->get('SetupDemoCmsService');
 
                     // $setupSrv->setupSite($siteData);
                     $setupSrv->setup(getenv('MELIS_PLATFORM'));
@@ -166,7 +166,7 @@ class MelisSetupController extends AbstractActionController
      */
     private function getTool()
     {
-        $melisTool = $this->getServiceLocator()->get('MelisCoreTool');
+        $melisTool = $this->getServiceManager()->get('MelisCoreTool');
 
 
         return $melisTool;
@@ -175,16 +175,16 @@ class MelisSetupController extends AbstractActionController
     /**
      * Create a form from the configuration
      * @param $formConfig
-     * @return \Zend\Form\ElementInterface
+     * @return \Laminas\Form\ElementInterface
      */
     private function getFormSiteDemo()
     {
-        $melisMelisCoreConfig = $this->serviceLocator->get('MelisCoreConfig');
+        $melisMelisCoreConfig = $this->getServiceManager()->get('MelisCoreConfig');
         $appConfigForm = $melisMelisCoreConfig->getItem('melis_demo_cms_setup/forms/melis_installer_demo_cms');
 
 
-        $factory = new \Zend\Form\Factory();
-        $formElements = $this->getServiceLocator()->get('FormElementManager');
+        $factory = new \Laminas\Form\Factory();
+        $formElements = $this->getServiceManager()->get('FormElementManager');
         $factory->setFormElementManager($formElements);
         $form = $factory->createForm($appConfigForm);
 
@@ -206,7 +206,7 @@ class MelisSetupController extends AbstractActionController
     private function formatErrorMessage($errors = array())
     {
 
-        $melisMelisCoreConfig = $this->serviceLocator->get('MelisCoreConfig');
+        $melisMelisCoreConfig = $this->getServiceManager()->get('MelisCoreConfig');
 
         $appConfigForm = $melisMelisCoreConfig->getItem('melis_demo_cms_setup/forms/melis_installer_demo_cms');
 

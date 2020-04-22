@@ -12,8 +12,8 @@ namespace MelisDemoCms\Controller;
 use MelisFront\Controller\MelisSiteActionController;
 use MelisFront\Controller\Plugin\MelisFrontMenuPlugin;
 use MelisFront\Service\MelisSiteConfigService;
-use Zend\Mvc\MvcEvent;
-use Zend\View\Model\ViewModel;
+use Laminas\Mvc\MvcEvent;
+use Laminas\View\Model\ViewModel;
 
 class BaseController extends MelisSiteActionController
 {

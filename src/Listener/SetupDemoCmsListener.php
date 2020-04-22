@@ -9,22 +9,20 @@
 
 namespace MelisDemoCms\Listener;
 
-use Zend\EventManager\EventManagerInterface;
-use Zend\EventManager\ListenerAggregateInterface;
+use Laminas\EventManager\EventManagerInterface;
+use Laminas\EventManager\ListenerAggregateInterface;
 
 class SetupDemoCmsListener implements ListenerAggregateInterface
 {
-    public function attach(EventManagerInterface $events)
+    public function attach(EventManagerInterface $events, $priority = 1)
     {
         $sharedEvents = $events->getSharedManager();
         
         $callBackHandler = $sharedEvents->attach(
         	'MelisInstaller',
-        	array(
-                'melis_install_last_process_start'
-        	),
+            'melis_install_last_process_start',
         	function($e){
-        		$sm = $e->getTarget()->getServiceLocator();
+        		$sm = $e->getTarget()->getServiceManager();
         		$params = $e->getParams();
         		$environment = $params['environments'];
         		$environmentName   = $environment['default_environment']['wildcard']['sdom_env'];

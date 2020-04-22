@@ -9,21 +9,22 @@
 
 namespace MelisDemoCms\Listener;
 
-use Zend\EventManager\EventManagerInterface;
-use Zend\EventManager\ListenerAggregateInterface;
+use Laminas\EventManager\EventManagerInterface;
+use Laminas\EventManager\ListenerAggregateInterface;
 
 class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
 {
     protected $map = [];
 
-    public function attach(EventManagerInterface $events)
+    public function attach(EventManagerInterface $events, $priority = 1)
     {
         $sharedEvents = $events->getSharedManager();
 
         $callBackHandler = $sharedEvents->attach(
-            '*', 'melis_marketplace_site_install_results',
+            '*',
+            'melis_marketplace_site_install_results',
             function ($e) {
-                $sm = $e->getTarget()->getServiceLocator();
+                $sm = $e->getTarget()->getServiceManager();
 
                 $pages = $this->createMap((array) $e->getParams()['pages']);
                 /** @var \MelisAssetManager\Service\MelisModulesService $moduleService */
@@ -90,7 +91,8 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
         $this->listeners[] = $callBackHandler;
 
         $callBackHandler = $sharedEvents->attach(
-            '*', 'melis_marketplace_site_install_inserted_id',
+            '*',
+            'melis_marketplace_site_install_inserted_id',
             function ($e) {
 
 
@@ -99,7 +101,7 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
                 if (!empty($param['table_name'])) {
                     if ($param['table_name'] == 'melis_cms_slider') {
 
-                        $sm = $e->getTarget()->getServiceLocator();
+                        $sm = $e->getTarget()->getServiceManager();
                         $moduleService = $sm->get('MelisAssetManagerModulesService');
                         $path = $moduleService->getModulePath('MelisDemoCms');
 

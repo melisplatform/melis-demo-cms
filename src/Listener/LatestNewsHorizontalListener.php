@@ -10,25 +10,23 @@
 namespace MelisDemoCms\Listener;
 
 use MelisFront\Service\MelisSiteConfigService;
-use Zend\EventManager\EventManagerInterface;
-use Zend\EventManager\ListenerAggregateInterface;
+use Laminas\EventManager\EventManagerInterface;
+use Laminas\EventManager\ListenerAggregateInterface;
 
 class LatestNewsHorizontalListener implements ListenerAggregateInterface
 {
-    private $serviceLocator;
+    private $serviceManager;
 
-    public function attach(EventManagerInterface $events)
+    public function attach(EventManagerInterface $events, $priority = 1)
     {
         $sharedEvents      = $events->getSharedManager();
 
         $callBackHandler = $sharedEvents->attach(
             '*',
-            [
-                'MelisCmsNewsLatestNewsPlugin_melistemplating_final_plugin_config',
-            ],
+            'MelisCmsNewsLatestNewsPlugin_melistemplating_final_plugin_config',
             function($e){
                 // Getting the Service Locator from param target
-                $this->serviceLocator = $e->getTarget()->getServiceLocator();
+                $this->serviceManager = $e->getTarget()->getServiceManager();
 
                 // Getting the Datas from the Event Parameters
                 $params = $e->getParams();

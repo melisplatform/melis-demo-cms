@@ -9,14 +9,14 @@
 
 namespace MelisDemoCms\Controller;
 
-use Zend\View\Model\JsonModel;
+use Laminas\View\Model\JsonModel;
 
 class ContactController extends BaseController
 {
     public function contactAction()
     {
         // Get site config service
-        $siteConfigSrv = $this->getServiceLocator()->get('MelisSiteConfigService');
+        $siteConfigSrv = $this->getServiceManager()->get('MelisSiteConfigService');
 
         $prospectForm = $this->MelisCmsProspectsShowFormPlugin();
         $parameter = [
