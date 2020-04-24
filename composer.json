@@ -40,12 +40,12 @@
     "php": "^7.0",
     "composer/installers": "~1.0",
     "laminas/laminas-log": "^2.9",
-    "melisplatform/melis-engine": "*",
-    "melisplatform/melis-front": "*",
-    "melisplatform/melis-cms": "*",
-    "melisplatform/melis-cms-slider": "*",
-    "melisplatform/melis-cms-prospects": "*",
-    "melisplatform/melis-cms-news": "*"
+    "melisplatform/melis-engine": "dev-migrate/laminas as 3.2",
+    "melisplatform/melis-front": "dev-migrate/laminas as 3.2",
+    "melisplatform/melis-cms": "dev-migrate/laminas as 3.2",
+    "melisplatform/melis-cms-slider": "dev-migrate/laminas as 3.2",
+    "melisplatform/melis-cms-prospects": "dev-migrate/laminas as 3.2",
+    "melisplatform/melis-cms-news": "dev-migrate/laminas as 3.2"
   },
   "suggest": {
     "melisplatform/melis-engine": "MelisEngine provides a set of services and classes to access the CMS pages and data.",
