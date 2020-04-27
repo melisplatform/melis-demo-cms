@@ -33,13 +33,13 @@ return [
                         ]
                     ],
                 ],
-                'MelisFrontSearchResultsPlugin' => [
-                    'front' => [
-                        'template_path' => [
-                            'MelisDemoCms/plugins/search-results'
-                        ],
-                    ],
-                ],
+//                'MelisFrontSearchResultsPlugin' => [
+//                    'front' => [
+//                        'template_path' => [
+//                            'MelisDemoCms/plugins/search-results'
+//                        ],
+//                    ],
+//                ],
             ],
         ],
         'meliscmsslider' => [

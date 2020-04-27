@@ -55,7 +55,7 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
                     '\'%payment_folder_id%\'',
                     '\'%contact_page_id%\'',
                     '\'%testimonials_folder_id%\'',
-                    '\'%search_result_page_id%\'',
+//                    '\'%search_result_page_id%\'',
                     '\'%404_page_id%\''
                 ],[
                     $siteId,
@@ -77,7 +77,7 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
                     $pages['Payment'],
                     $pages['Contact'],
                     $pages['Testimonials'],
-                    $pages['Search Results'],
+//                    $pages['Search Results'],
                     $pages['404']
                 ],
                     $melisDemoConfig
