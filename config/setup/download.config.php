@@ -289,19 +289,19 @@ return [
                             'tpl_creation_date' => date('Y-m-d H:i:s'),
                             Site::THEN => [Site::UPDATE_CURRENT_TEMPLATE_ID],
                         ],
-                        [
-                            Melis::PRIMARY_KEY => 'tpl_id',
-                            'tpl_id' => Melis::CURRENT_TEMPLATE_ID,
-                            'tpl_site_id' => Melis::CMS_SITE_ID,
-                            'tpl_name' => 'Search Results',
-                            'tpl_type' => 'ZF2',
-                            'tpl_zf2_website_folder' => __NAMESPACE__,
-                            'tpl_zf2_layout' => 'defaultLayout',
-                            'tpl_zf2_controller' => 'Search',
-                            'tpl_zf2_action' => 'searchResults',
-                            'tpl_creation_date' => date('Y-m-d H:i:s'),
-                            Site::THEN => [Site::UPDATE_CURRENT_TEMPLATE_ID],
-                        ],
+//                        [
+//                            Melis::PRIMARY_KEY => 'tpl_id',
+//                            'tpl_id' => Melis::CURRENT_TEMPLATE_ID,
+//                            'tpl_site_id' => Melis::CMS_SITE_ID,
+//                            'tpl_name' => 'Search Results',
+//                            'tpl_type' => 'ZF2',
+//                            'tpl_zf2_website_folder' => __NAMESPACE__,
+//                            'tpl_zf2_layout' => 'defaultLayout',
+//                            'tpl_zf2_controller' => 'Search',
+//                            'tpl_zf2_action' => 'searchResults',
+//                            'tpl_creation_date' => date('Y-m-d H:i:s'),
+//                            Site::THEN => [Site::UPDATE_CURRENT_TEMPLATE_ID],
+//                        ],
                         [
                             Melis::PRIMARY_KEY => 'tpl_id',
                             'tpl_id' => Melis::CURRENT_TEMPLATE_ID,
@@ -1310,34 +1310,34 @@ return [
                                     ],
                                     // </TraversalPages>
                                     // <SearchResults>
-                                    [
-                                        Melis::PRIMARY_KEY => 'tree_page_id',
-                                        'tree_page_id' => Melis::CURRENT_PAGE_ID,
-                                        'tree_father_page_id' => Melis::FOREIGN_KEY,
-                                        'tree_page_order' => 2,
-                                        Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
-                                        Melis::RELATION => [
-                                            Melis::CMS_PAGE_PUBLISHED => [
-                                                [
-                                                    Melis::PRIMARY_KEY => 'page_id',
-                                                    'page_id' => Melis::FOREIGN_KEY,
-                                                    'page_type' => 'PAGE',
-                                                    'page_status' => '1',
-                                                    'page_menu' => 'LINK',
-                                                    'page_name' => 'Search Results',
-                                                    'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Search Results']],
-                                                    'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0"><melisTag id="tag-miniTpl_1580200267" plugin_container_id="" type="html"><![CDATA[<section class="breadcrumb_area" style="z-index: unset !important;"><div class="container"><div class="breadcrumb_content text-center"><h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">Search Results: plugin implementation</h1><p class="f_400 w_color f_size_16 l_height26">This page\'s goal is to show developpers how to use and configure the search plugin for Melis Platform\'s pages.<br />It is voluntarily static so that developpers can look atthe configuration in the template.</p></div></div></section>]]></melisTag><melisDragDropZone id="dragdropzone_search_result_1" plugin_container_id="" width_desktop="100" width_tablet="100" width_mobile="100"><plugin module="MelisMiniTemplate" name="MiniTemplatePlugin_title-subtitle-centered-with-background-purple_melisdemocms" id="tag-miniTpl_1580200267"/></melisDragDropZone></document>',
-                                                ],
-                                            ],
-                                            Melis::CMS_PAGE_LANG => [
-                                                [
-                                                    'plang_page_id' => Melis::FOREIGN_KEY,
-                                                    'plang_lang_id' => 1,
-                                                    'plang_page_id_initial' => Melis::FOREIGN_KEY
-                                                ]
-                                            ],
-                                        ],
-                                    ],
+//                                    [
+//                                        Melis::PRIMARY_KEY => 'tree_page_id',
+//                                        'tree_page_id' => Melis::CURRENT_PAGE_ID,
+//                                        'tree_father_page_id' => Melis::FOREIGN_KEY,
+//                                        'tree_page_order' => 2,
+//                                        Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
+//                                        Melis::RELATION => [
+//                                            Melis::CMS_PAGE_PUBLISHED => [
+//                                                [
+//                                                    Melis::PRIMARY_KEY => 'page_id',
+//                                                    'page_id' => Melis::FOREIGN_KEY,
+//                                                    'page_type' => 'PAGE',
+//                                                    'page_status' => '1',
+//                                                    'page_menu' => 'LINK',
+//                                                    'page_name' => 'Search Results',
+//                                                    'page_tpl_id' => [Site::GET_TEMPLATE_ID => ['template_name' => 'Search Results']],
+/*                                                    'page_content' => '<?xml version="1.0" encoding="UTF-8"?><document type="MelisCMS" author="MelisTechnology" version="2.0"><melisTag id="tag-miniTpl_1580200267" plugin_container_id="" type="html"><![CDATA[<section class="breadcrumb_area" style="z-index: unset !important;"><div class="container"><div class="breadcrumb_content text-center"><h1 class="f_p f_700 f_size_50 w_color l_height50 mb_20">Search Results: plugin implementation</h1><p class="f_400 w_color f_size_16 l_height26">This page\'s goal is to show developpers how to use and configure the search plugin for Melis Platform\'s pages.<br />It is voluntarily static so that developpers can look atthe configuration in the template.</p></div></div></section>]]></melisTag><melisDragDropZone id="dragdropzone_search_result_1" plugin_container_id="" width_desktop="100" width_tablet="100" width_mobile="100"><plugin module="MelisMiniTemplate" name="MiniTemplatePlugin_title-subtitle-centered-with-background-purple_melisdemocms" id="tag-miniTpl_1580200267"/></melisDragDropZone></document>',*/
+//                                                ],
+//                                            ],
+//                                            Melis::CMS_PAGE_LANG => [
+//                                                [
+//                                                    'plang_page_id' => Melis::FOREIGN_KEY,
+//                                                    'plang_lang_id' => 1,
+//                                                    'plang_page_id_initial' => Melis::FOREIGN_KEY
+//                                                ]
+//                                            ],
+//                                        ],
+//                                    ],
                                     // </SearchResults>
                                     // <Page404>
                                     [

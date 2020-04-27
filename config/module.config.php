@@ -132,7 +132,7 @@ return [
             'MelisDemoCms\Controller\DragDrop' => MelisDemoCms\Controller\DragDropController::class,
             'MelisDemoCms\Controller\Faq' => MelisDemoCms\Controller\FaqController::class,
             'MelisDemoCms\Controller\Contact' => MelisDemoCms\Controller\ContactController::class,
-            'MelisDemoCms\Controller\Search' => MelisDemoCms\Controller\SearchController::class,
+//            'MelisDemoCms\Controller\Search' => MelisDemoCms\Controller\SearchController::class,
             'MelisDemoCms\Controller\Testimonial' => MelisDemoCms\Controller\TestimonialController::class,
             'MelisDemoCms\Controller\Template' => MelisDemoCms\Controller\TemplateController::class,
             'MelisDemoCms\Controller\MelisSetupPostDownload'    => \MelisDemoCms\Controller\MelisSetupPostDownloadController::class,
