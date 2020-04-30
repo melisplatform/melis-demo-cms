@@ -113,7 +113,6 @@ return [
     'service_manager' => [
         'abstract_factories' => [
             \Laminas\Cache\Service\StorageCacheAbstractServiceFactory::class,
-            \Laminas\Log\LoggerAbstractServiceFactory::class,
         ],
         'aliases' => [
             'MelisPlatformTable' => \MelisDemoCms\Model\Tables\MelisPlatformTable::class,
