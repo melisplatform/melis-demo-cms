@@ -46,11 +46,11 @@ class NewsController extends BaseController
         $this->view->setVariable('idPage', $this->idPage);
         $this->view->setVariable('renderMode', $this->renderMode);
 
-        $this->layout()->setVariables([
-            'pageJs' => [
-                '/MelisDemoCms/js/news.js',
-            ]
-        ]);
+//        $this->layout()->setVariables([
+//            'pageJs' => [
+//                '/MelisDemoCms/js/news.js',
+//            ]
+//        ]);
 
         return  $this->view;
     }

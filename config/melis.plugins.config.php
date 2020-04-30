@@ -67,6 +67,11 @@ return [
                         'template_path' => [
                             'MelisDemoCms/plugins/news-list'
                         ],
+                        'files' => [
+                            'js' => [
+                                '/MelisDemoCms/js/news.js',
+                            ],
+                        ],
                     ],
                 ],
                 'MelisCmsNewsShowNewsPlugin' => [
