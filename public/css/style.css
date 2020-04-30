@@ -23006,6 +23006,23 @@ a .h_head:hover {
   margin: 0 auto;
 }
 
-/*====================================================*/
+/* Junry edits */
+.blog-sidebar .widget.widget_search .search-form input[type="text"] {
+  padding-right: 46px;
+}
 
-/*# sourceMappingURL=style.css.map */
+.contact_form {
+  padding: 2rem;
+}
+
+#contact-us .text_box input[type="text"], 
+#contact-us .text_box textarea, 
+#contact-us .text_box input[type="password"], 
+#contact-us .text_box input[type="email"] {
+  padding-right: 30px;
+}
+
+.blockquote {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
