@@ -94,7 +94,7 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
                     'MelisCmsProspects',
                 ];
 
-                $this->getServiceLocator()->get('MelisAssetManagerModulesService')->activateModule($demoSiteDepModules);
+                $sm->get('MelisAssetManagerModulesService')->activateModule($demoSiteDepModules);
             },
             -10000);
 
