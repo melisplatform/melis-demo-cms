@@ -84,6 +84,17 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
                 unlink($path . '/config/MelisDemoCms.config.php');
                 file_put_contents($path . '/config/MelisDemoCms.config.php', $melisDemoConfig);
 
+                /**
+                 * Activating Melis modules dependencies on BO
+                 * Demo Site Memlis modules dependency
+                 */
+                $demoSiteDepModules = [
+                    'MelisCmsNews',
+                    'MelisCmsSlider',
+                    'MelisCmsProspects',
+                ];
+
+                $this->getServiceLocator()->get('MelisAssetManagerModulesService')->activateModule($demoSiteDepModules);
             },
             -10000);
 
