@@ -11,6 +11,7 @@ namespace MelisDemoCms\Listener;
 
 use Zend\EventManager\EventManagerInterface;
 use Zend\EventManager\ListenerAggregateInterface;
+use Zend\Session\Container;
 
 class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
 {
@@ -94,7 +95,16 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
                     'MelisCmsProspects',
                 ];
 
-                $sm->get('MelisAssetManagerModulesService')->activateModule($demoSiteDepModules);
+//                $sm->get('MelisAssetManagerModulesService')->activateModule($demoSiteDepModules);
+
+                /**
+                 * Required modules removing from Terporary activated modules
+                 * to remain activated from BO
+                 */
+                $reqModSessTemp = new Container('melismarketplace');
+                $reqModSessTemp['temp_mod_actvt'] = array_filter($reqModSessTemp['temp_mod_actvt'], function($module) use ($demoSiteDepModules) {
+                    if (!in_array($module, $demoSiteDepModules)) return $module;
+                });
             },
             -10000);
 
