@@ -389,7 +389,7 @@ return [
                         [
                             // Home Page
                             Melis::PRIMARY_KEY => 'tree_page_id',
-                            'tree_page_id' => Melis::CMS_SITE_ID,
+                            'tree_page_id' => Melis::CMS_SITE_HOME_PAGE_ID,
                             'tree_father_page_id' => Melis::CMS_SITE_DEFAULT_PARENT_ID,
                             'tree_page_order' => 1,
                             Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID, Site::TRIGGER_EVENT => ['event_name' => 'melis_marketplace_site_intall_test', 'params' => ['page' => 'HomePage']]],
