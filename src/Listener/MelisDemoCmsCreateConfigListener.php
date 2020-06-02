@@ -31,12 +31,11 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
                 $path = $moduleService->getModulePath('MelisDemoCms');
 
                 $siteId = (int) $e->getParams()['site_id'];
-                $homePageid = (int)$e->getParams()['site_home_page_id'];
 
                 $melisDemoConfig = file_get_contents($path . '/config/MelisDemoCms.config.stub');
                 $melisDemoConfig = str_replace([
                     '\'%site_id%\'',
-                    '\'%site_home_page_id%\'',
+                    '\'%home_page_id%\'',
                     '\'%news_page_id%\'',
                     '\'%news_details_page_id%\'',
                     '\'%team_page_id%\'',
@@ -58,7 +57,7 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
                     '\'%404_page_id%\''
                 ],[
                     $siteId,
-                    $homePageid,
+                    $siteId,
                     $pages['News'],
                     $pages['News Details'],
                     $pages['Team'],
