@@ -85,6 +85,34 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
                 unlink($path . '/config/MelisDemoCms.config.php');
                 file_put_contents($path . '/config/MelisDemoCms.config.php', $melisDemoConfig);
 
+                //use config service to get some ids
+                $siteConfigSrv = $sm->get('MelisSiteConfigService');
+                /**
+                 * Update pages content for id's
+                 */
+                $siteService = $sm->get('MelisEnginePage');
+                //page ids to update the content
+                $idPages = [
+                    $homePageid // home page
+                ];
+                foreach($idPages as $key => $pageId) {
+                    $data = $siteService->getPageById($pageId);
+                    if (!empty($data)) {
+                        $search = [
+                            '%testimonial_id%',
+                            '%home_page_slider_1_id%',
+                            '%home_page_slider_2_id%'
+                        ];
+                        $replacement = [
+                            $pages['Testimonials'],
+                            $siteConfigSrv->getSiteConfigByKey('home_page_slider_1_id', $pageId),
+                            $siteConfigSrv->getSiteConfigByKey('home_page_slider_2_id', $pageId),
+                        ];
+                        $pageContent = str_replace($search, $replacement, $data->page_content);
+                        $siteService->updatePageById($pageId, ['page_content' => $pageContent]);
+                    }
+                }
+
             },
             -10000);
 
