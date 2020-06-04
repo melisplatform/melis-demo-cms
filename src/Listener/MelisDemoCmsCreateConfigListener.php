@@ -93,20 +93,38 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
                 $siteService = $sm->get('MelisEnginePage');
                 //page ids to update the content
                 $idPages = [
-                    $homePageid // home page
+                    $homePageid, // home page
+                    $pages['Our Services'], //for our services page
+                    $pages['Our Process'], //for our process page
                 ];
                 foreach($idPages as $key => $pageId) {
                     $data = $siteService->getPageById($pageId);
                     if (!empty($data)) {
                         $search = [
+                            //homepage
                             '%testimonial_id%',
                             '%home_page_slider_1_id%',
-                            '%home_page_slider_2_id%'
+                            '%home_page_slider_2_id%',
+                            //our services
+                            '%premium_plugins_page_id%',
+                            '%unique_elements_page_id%',
+                            '%live_page_builder_page_id%',
+                            //our process
+                            '%identification_of_needs_page_id%',
+                            '%tailored_solution_page_id%',
+                            '%implementation_page_id%'
+
                         ];
                         $replacement = [
                             $pages['Testimonials'],
                             $siteConfigSrv->getSiteConfigByKey('home_page_slider_1_id', $pageId),
                             $siteConfigSrv->getSiteConfigByKey('home_page_slider_2_id', $pageId),
+                            $pages['Premium plugins'],
+                            $pages['Unique elements'],
+                            $pages['Live page builder'],
+                            $pages['Identification of Needs'],
+                            $pages['Tailored Solution'],
+                            $pages['Implementation']
                         ];
                         $pageContent = str_replace($search, $replacement, $data->page_content);
                         $siteService->updatePageById($pageId, ['page_content' => $pageContent]);
