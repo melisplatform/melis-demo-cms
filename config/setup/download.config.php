@@ -778,7 +778,7 @@ return [
                         [
                             Melis::PRIMARY_KEY => 'tree_page_id',
                             'tree_page_id' => Melis::CURRENT_PAGE_ID,
-                            'tree_father_page_id' => Melis::CMS_SITE_ID,
+                            'tree_father_page_id' => Melis::CMS_SITE_HOME_PAGE_ID,
                             'tree_page_order' => 6,
                             Site::THEN => [Site::UPDATE_CURRENT_PAGE_ID],
                             Melis::RELATION => [
