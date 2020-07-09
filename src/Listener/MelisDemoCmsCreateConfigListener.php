@@ -88,7 +88,7 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
 
                 // Home Page
                 $melisDemoConfig = file_get_contents($path . '/config/module.config.php');
-                file_put_contents($path . '/config/MelisDemoCms.config.php', str_replace('\'%site_home_page_id%\'', $homePageid, $melisDemoConfig));
+                file_put_contents($path . '/config/module.config.php', str_replace('\'%site_home_page_id%\'', $homePageid, $melisDemoConfig));
 
                 /**
                  * Activating Melis modules dependencies on BO
