@@ -32,11 +32,12 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
                 $path = $moduleService->getModulePath('MelisDemoCms');
 
                 $siteId = (int) $e->getParams()['site_id'];
+                $homePageid = (int)$e->getParams()['site_home_page_id'];
 
                 $melisDemoConfig = file_get_contents($path . '/config/MelisDemoCms.config.stub');
                 $melisDemoConfig = str_replace([
                     '\'%site_id%\'',
-                    '\'%home_page_id%\'',
+                    '\'%site_home_page_id%\'',
                     '\'%news_page_id%\'',
                     '\'%news_details_page_id%\'',
                     '\'%team_page_id%\'',
@@ -58,7 +59,7 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
                     '\'%404_page_id%\''
                 ],[
                     $siteId,
-                    $siteId,
+                    $homePageid,
                     $pages['News'],
                     $pages['News Details'],
                     $pages['Team'],
@@ -85,6 +86,10 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
                 unlink($path . '/config/MelisDemoCms.config.php');
                 file_put_contents($path . '/config/MelisDemoCms.config.php', $melisDemoConfig);
 
+                // Home Page
+                $melisDemoConfig = file_get_contents($path . '/config/module.config');
+                file_put_contents($path . '/config/MelisDemoCms.config.php', str_replace('\'%site_home_page_id%\'', $homePageid, $melisDemoConfig));
+
                 /**
                  * Activating Melis modules dependencies on BO
                  * Demo Site Memlis modules dependency
@@ -95,7 +100,7 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
                     'MelisCmsProspects',
                 ];
 
-//                $sm->get('MelisAssetManagerModulesService')->activateModule($demoSiteDepModules);
+                // $sm->get('MelisAssetManagerModulesService')->activateModule($demoSiteDepModules);
 
                 /**
                  * Required modules removing from Terporary activated modules

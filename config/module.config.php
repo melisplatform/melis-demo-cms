@@ -31,7 +31,7 @@ return [
                         'renderType'     => 'melis_zf2_mvc',
                         'renderMode'     => 'front',
                         'preview'        => false,
-                        'idpage'         => 1
+                        'idpage'         => '%site_home_page_id%',
                     ]
                 ],
             ],
