@@ -65,6 +65,9 @@ class NewsController extends BaseController
         // Get site config service
         $siteConfigSrv = $this->getServiceLocator()->get('MelisSiteConfigService');
 
+        $pageTreeSvc = $this->getServiceLocator()->get('MelisEngineTree');
+        $siteId = $pageTreeSvc->getSiteByPageId($this->idPage)->site_id;
+
         // Initialize show news plugin
         /** @var MelisCmsNewsShowNewsPlugin $newsPlugin */
         $newsPlugin = $this->MelisCmsNewsShowNewsPlugin();
@@ -91,7 +94,7 @@ class NewsController extends BaseController
                 'limit' => 5,
                 'unpublish_filter' => true,
                 'date_max' => null,
-                'site_id' => $siteConfigSrv->getSiteConfigByKey('home_page_id', $this->idPage),
+                'site_id' => $siteId,
             ]
         ];
         // Render latest news plugin
