@@ -23,6 +23,10 @@ class NewsController extends BaseController
         // Initialize list news plugin
         /** @var MelisCmsNewsListNewsPlugin $newsListPlugin */
         $newsListPlugin = $this->MelisCmsNewsListNewsPlugin();
+
+        $pageTreeSvc = $this->getServiceLocator()->get('MelisEngineTree');
+        $siteId = $pageTreeSvc->getSiteByPageId($this->idPage)->site_id;
+
         // Set parameters
         $parameters = [
             'template_path' => 'MelisDemoCms/plugins/news-list',
@@ -36,7 +40,8 @@ class NewsController extends BaseController
                 'column' => 'cnews_publish_date',
                 'order' => 'DESC',
                 'unpublish_filter' => true,
-                'site_id' => $siteConfigSrv->getSiteConfigByKey('home_page_id', $this->idPage)
+                'date_max' => date('Y-m-d'),
+                'site_id' => $siteId
             ]
         ];
         // Render news list plugin
