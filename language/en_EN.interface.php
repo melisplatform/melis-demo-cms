@@ -36,6 +36,7 @@ return [
     'tr_site_demo_cms_tool_site_name_error_long' => 'Domain value too long, maximum characters accepted is 50 characters',
     'tr_site_demo_cms_tool_site_domain_error_empty' => 'Please enter the domain',
     'tr_site_demo_cms_tool_site_domain_invalid' => 'Please enter a valid domain',
+    'tr_site_demo_cms_tool_site_domain_exists' => 'Domain is already exists, please choose another',
 
     'tr_melis_installer_tool_site_domain_error_long' => 'Domain too long, it should not exceed on 50 characters',
     'tr_melis_installer_tool_site_domain_error_empty' => 'Domain is required',
