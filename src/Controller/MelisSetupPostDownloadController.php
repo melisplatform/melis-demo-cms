@@ -9,7 +9,7 @@
 
 namespace MelisDemoCms\Controller;
 
-use MelisCore\Controller\AbstractActionController;
+use MelisCore\Controller\MelisAbstractActionController;
 use MelisCore\MelisSetupInterface;
 use Laminas\View\Model\JsonModel;
 use Laminas\View\Model\ViewModel;
@@ -21,7 +21,7 @@ use MelisMarketPlace\Support\MelisMarketPlaceSiteInstall as Site;
 /**
  * @property bool $showOnMarketplacePostSetup
  */
-class MelisSetupPostDownloadController extends AbstractActionController implements MelisSetupInterface
+class MelisSetupPostDownloadController extends MelisAbstractActionController implements MelisSetupInterface
 {
     /**
      * flag for Marketplace whether to display the setup form or not
