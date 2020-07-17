@@ -59,5 +59,6 @@
     "psr-4": {
       "MelisDemoCms\\": "src/"
     }
-  }
+  },
+  "minimum_stability": "dev"
 }
