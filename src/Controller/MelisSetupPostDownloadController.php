@@ -96,7 +96,7 @@ class MelisSetupPostDownloadController extends MelisAbstractActionController imp
 
         if($form->isValid()) {
             // Checking if domain is available/existing
-            if (!empty($this->getServiceLocator()->get('MelisEngineSiteDomainService')->getDomainByDomainName($data['domain']))){
+            if (!empty($this->getServiceManager()->get('MelisEngineSiteDomainService')->getDomainByDomainName($data['domain']))){
                 $errors = [
                     'domain' => [
                         'is_exist' => $this->getTool()->getTranslation('tr_site_demo_cms_tool_site_domain_exists'),
