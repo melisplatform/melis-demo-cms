@@ -18,13 +18,16 @@ class ContactController extends BaseController
         // Get site config service
         $siteConfigSrv = $this->getServiceManager()->get('MelisSiteConfigService');
 
+        $pageTreeSvc = $this->getServiceLocator()->get('MelisEngineTree');
+        $siteId = $pageTreeSvc->getSiteByPageId($this->idPage)->site_id;
+
         $prospectForm = $this->MelisCmsProspectsShowFormPlugin();
         $parameter = [
             'template_path' => 'MelisDemoCms/plugins/prospect-form',
             'fields' => 'pros_name,pros_company,pros_country,pros_telephone,pros_email,pros_theme,pros_message',
             'required_fields' => 'pros_name,pros_telephone,pros_email,pros_theme,pros_message',
             'theme' => 1,
-            'pros_site_id' => $siteConfigSrv->getSiteConfigByKey('home_page_id', $this->idPage)
+            'pros_site_id' => $siteId
         ];
 
         $result = $prospectForm->render($parameter);

@@ -23,6 +23,10 @@ class NewsController extends BaseController
         // Initialize list news plugin
         /** @var MelisCmsNewsListNewsPlugin $newsListPlugin */
         $newsListPlugin = $this->MelisCmsNewsListNewsPlugin();
+
+        $pageTreeSvc = $this->getServiceLocator()->get('MelisEngineTree');
+        $siteId = $pageTreeSvc->getSiteByPageId($this->idPage)->site_id;
+
         // Set parameters
         $parameters = [
             'template_path' => 'MelisDemoCms/plugins/news-list',
@@ -36,7 +40,8 @@ class NewsController extends BaseController
                 'column' => 'cnews_publish_date',
                 'order' => 'DESC',
                 'unpublish_filter' => true,
-                'site_id' => $siteConfigSrv->getSiteConfigByKey('home_page_id', $this->idPage)
+                'date_max' => date('Y-m-d'),
+                'site_id' => $siteId
             ]
         ];
         // Render news list plugin
@@ -59,6 +64,9 @@ class NewsController extends BaseController
     {
         // Get site config service
         $siteConfigSrv = $this->getServiceManager()->get('MelisSiteConfigService');
+
+        $pageTreeSvc = $this->getServiceLocator()->get('MelisEngineTree');
+        $siteId = $pageTreeSvc->getSiteByPageId($this->idPage)->site_id;
 
         // Initialize show news plugin
         /** @var MelisCmsNewsShowNewsPlugin $newsPlugin */
@@ -86,7 +94,7 @@ class NewsController extends BaseController
                 'limit' => 5,
                 'unpublish_filter' => true,
                 'date_max' => null,
-                'site_id' => $siteConfigSrv->getSiteConfigByKey('home_page_id', $this->idPage),
+                'site_id' => $siteId,
             ]
         ];
         // Render latest news plugin

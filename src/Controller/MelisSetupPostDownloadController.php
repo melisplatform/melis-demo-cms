@@ -95,8 +95,18 @@ class MelisSetupPostDownloadController extends MelisAbstractActionController imp
         $form->setData($data);
 
         if($form->isValid()) {
-            $success = true;
-            $message = 'tr_install_setup_message_ok';
+            // Checking if domain is available/existing
+            if (!empty($this->getServiceLocator()->get('MelisEngineSiteDomainService')->getDomainByDomainName($data['domain']))){
+                $errors = [
+                    'domain' => [
+                        'is_exist' => $this->getTool()->getTranslation('tr_site_demo_cms_tool_site_domain_exists'),
+                        'label' => $this->getTool()->getTranslation('tr_site_demo_cms_tool_site_domain')
+                    ]
+                ];
+            } else {
+                $success = true;
+                $message = 'tr_install_setup_message_ok';
+            }
         }
         else {
             $errors = $this->formatErrorMessage($form->getMessages());

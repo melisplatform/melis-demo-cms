@@ -5,7 +5,7 @@ return [
             '%site_id%' => [
                 'en_EN' => [
                     // pages
-                    'home_page_id' => '%home_page_id%',
+                    'home_page_id' => '%site_home_page_id%',
                     'news_page_id' => '%news_page_id%',
                     'news_details_page_id' => '%news_details_page_id%',
                     'team_page_id' => '%team_page_id%',
