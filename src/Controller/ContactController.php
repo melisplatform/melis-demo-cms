@@ -18,7 +18,7 @@ class ContactController extends BaseController
         // Get site config service
         $siteConfigSrv = $this->getServiceManager()->get('MelisSiteConfigService');
 
-        $pageTreeSvc = $this->getServiceLocator()->get('MelisEngineTree');
+        $pageTreeSvc = $this->getServiceManager()->get('MelisEngineTree');
         $siteId = $pageTreeSvc->getSiteByPageId($this->idPage)->site_id;
 
         $prospectForm = $this->MelisCmsProspectsShowFormPlugin();

@@ -24,7 +24,7 @@ class NewsController extends BaseController
         /** @var MelisCmsNewsListNewsPlugin $newsListPlugin */
         $newsListPlugin = $this->MelisCmsNewsListNewsPlugin();
 
-        $pageTreeSvc = $this->getServiceLocator()->get('MelisEngineTree');
+        $pageTreeSvc = $this->getServiceManager()->get('MelisEngineTree');
         $siteId = $pageTreeSvc->getSiteByPageId($this->idPage)->site_id;
 
         // Set parameters
@@ -65,7 +65,7 @@ class NewsController extends BaseController
         // Get site config service
         $siteConfigSrv = $this->getServiceManager()->get('MelisSiteConfigService');
 
-        $pageTreeSvc = $this->getServiceLocator()->get('MelisEngineTree');
+        $pageTreeSvc = $this->getServiceManager()->get('MelisEngineTree');
         $siteId = $pageTreeSvc->getSiteByPageId($this->idPage)->site_id;
 
         // Initialize show news plugin
