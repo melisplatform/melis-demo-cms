@@ -99,7 +99,7 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
                 $siteService = $sm->get('MelisEnginePage');
                 //page ids to update the content
                 $idPages = [
-                    $homePageid, // home page
+                    $homePageId, // home page
                     $pages['Our Services'], //for our services page
                     $pages['Our Process'], //for our process page
                 ];
