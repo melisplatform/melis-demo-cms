@@ -111,48 +111,44 @@ return [
         ],
     ],
     'service_manager' => [
-        'abstract_factories' => [
-            \Laminas\Cache\Service\StorageCacheAbstractServiceFactory::class,
-            \Laminas\Log\LoggerAbstractServiceFactory::class,
-        ],
         'aliases' => [
+            // Table
             'MelisPlatformTable' => \MelisDemoCms\Model\Tables\MelisPlatformTable::class,
-
+            // Service
             'DemoCmsService' => \MelisDemoCms\Service\DemoCmsService::class,
         ],
     ],
     'translator' => [],
     'controllers' => [
         'invokables' => [
-            'MelisDemoCms\Controller\Home'    => MelisDemoCms\Controller\HomeController::class,
+            'MelisDemoCms\Controller\Home' => MelisDemoCms\Controller\HomeController::class,
             'MelisDemoCms\Controller\Page404' => MelisDemoCms\Controller\Page404Controller::class,
-            'MelisDemoCms\Controller\News'    => MelisDemoCms\Controller\NewsController::class,
+            'MelisDemoCms\Controller\News' => MelisDemoCms\Controller\NewsController::class,
             'MelisDemoCms\Controller\Team' => MelisDemoCms\Controller\TeamController::class,
             'MelisDemoCms\Controller\Services' => MelisDemoCms\Controller\ServicesController::class,
             'MelisDemoCms\Controller\DragDrop' => MelisDemoCms\Controller\DragDropController::class,
             'MelisDemoCms\Controller\Faq' => MelisDemoCms\Controller\FaqController::class,
             'MelisDemoCms\Controller\Contact' => MelisDemoCms\Controller\ContactController::class,
+            // @TODO change to elastic search
 //            'MelisDemoCms\Controller\Search' => MelisDemoCms\Controller\SearchController::class,
             'MelisDemoCms\Controller\Testimonial' => MelisDemoCms\Controller\TestimonialController::class,
             'MelisDemoCms\Controller\Template' => MelisDemoCms\Controller\TemplateController::class,
-            'MelisDemoCms\Controller\MelisSetupPostDownload'    => \MelisDemoCms\Controller\MelisSetupPostDownloadController::class,
-            'MelisDemoCms\Controller\MelisSetupPostUpdate'    => \MelisDemoCms\Controller\MelisSetupPostUpdateController::class,
+            'MelisDemoCms\Controller\MelisSetupPostDownload' => \MelisDemoCms\Controller\MelisSetupPostDownloadController::class,
+            'MelisDemoCms\Controller\MelisSetupPostUpdate' => \MelisDemoCms\Controller\MelisSetupPostUpdateController::class,
         ],
     ],
     'view_manager' => [
-        'display_not_found_reason' => true,
-        'display_exceptions'       => true,
-        'doctype'                  => 'HTML5',
-        'not_found_template'       => 'error/404',
-        'exception_template'       => 'error/index',
+        'doctype' => 'HTML5',
+        'not_found_template' => 'error/404',
+        'exception_template' => 'error/index',
         'controller_map' => [
             'MelisDemoCms' => true,
         ],
         'template_map' => [
-            'MelisDemoCms/defaultLayout'       => __DIR__ . '/../view/layout/defaultLayout.phtml',
-            'layout/errorLayout'               => __DIR__ . '/../view/error/404.phtml',
-            'MelisDemoCms/plugins/menu'        => __DIR__ . '/../view/plugins/menu.phtml',
-            'MelisDemoCms/plugins/white-menu'        => __DIR__ . '/../view/plugins/white-menu.phtml',
+            'MelisDemoCms/defaultLayout' => __DIR__ . '/../view/layout/defaultLayout.phtml',
+            'layout/errorLayout' => __DIR__ . '/../view/error/404.phtml',
+            'MelisDemoCms/plugins/menu' => __DIR__ . '/../view/plugins/menu.phtml',
+            'MelisDemoCms/plugins/white-menu' => __DIR__ . '/../view/plugins/white-menu.phtml',
             'MelisDemoCms/plugins/footer-menu' => __DIR__ . '/../view/plugins/footer-menu.phtml',
             'MelisDemoCms/plugins/home-carousel-slider' => __DIR__ . '/../view/plugins/home-carousel-slider.phtml',
             'MelisDemoCms/plugins/home-slider2' => __DIR__ . '/../view/plugins/home-slider2.phtml',
@@ -170,8 +166,8 @@ return [
             'MelisDemoCms/plugins/gdpr-banner' => __DIR__ . '/../view/plugins/gdpr-banner.phtml',
 
             // Errors layout
-            'error/404'               		   => __DIR__ . '/../view/error/404.phtml',
-            'error/index'             		   => __DIR__ . '/../view/error/index.phtml',
+            'error/404' => __DIR__ . '/../view/error/404.phtml',
+            'error/index' => __DIR__ . '/../view/error/index.phtml',
         ],
         'template_path_stack' => [
             __DIR__ . '/../view',
