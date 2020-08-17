@@ -9,22 +9,23 @@
 
 namespace MelisDemoCms\Listener;
 
-use Zend\EventManager\EventManagerInterface;
-use Zend\EventManager\ListenerAggregateInterface;
+use Laminas\EventManager\EventManagerInterface;
+use Laminas\EventManager\ListenerAggregateInterface;
 use Zend\Session\Container;
 
 class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
 {
     protected $map = [];
 
-    public function attach(EventManagerInterface $events)
+    public function attach(EventManagerInterface $events, $priority = 1)
     {
         $sharedEvents = $events->getSharedManager();
 
         $callBackHandler = $sharedEvents->attach(
-            '*', 'melis_marketplace_site_install_results',
+            '*',
+            'melis_marketplace_site_install_results',
             function ($e) {
-                $sm = $e->getTarget()->getServiceLocator();
+                $sm = $e->getTarget()->getServiceManager();
 
                 $pages = $this->createMap((array) $e->getParams()['pages']);
                 /** @var \MelisAssetManager\Service\MelisModulesService $moduleService */
@@ -32,7 +33,7 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
                 $path = $moduleService->getModulePath('MelisDemoCms');
 
                 $siteId = (int) $e->getParams()['site_id'];
-                $homePageid = (int)$e->getParams()['site_home_page_id'];
+                $homePageId = (int) $e->getParams()['site_home_page_id'];
 
                 $melisDemoConfig = file_get_contents($path . '/config/MelisDemoCms.config.stub');
                 $melisDemoConfig = str_replace([
@@ -55,11 +56,11 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
                     '\'%payment_folder_id%\'',
                     '\'%contact_page_id%\'',
                     '\'%testimonials_folder_id%\'',
-                    '\'%search_result_page_id%\'',
+//                    '\'%search_result_page_id%\'',
                     '\'%404_page_id%\''
                 ],[
                     $siteId,
-                    $homePageid,
+                    $homePageId,
                     $pages['News'],
                     $pages['News Details'],
                     $pages['Team'],
@@ -77,7 +78,7 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
                     $pages['Payment'],
                     $pages['Contact'],
                     $pages['Testimonials'],
-                    $pages['Search Results'],
+//                    $pages['Search Results'],
                     $pages['404']
                 ],
                     $melisDemoConfig
@@ -88,7 +89,7 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
 
                 // Home Page
                 $melisDemoConfig = file_get_contents($path . '/config/module.config.php');
-                file_put_contents($path . '/config/module.config.php', str_replace('\'%site_home_page_id%\'', $homePageid, $melisDemoConfig));
+                file_put_contents($path . '/config/module.config.php', str_replace('\'%site_home_page_id%\'', $homePageId, $melisDemoConfig));
 
                 //use config service to get some ids
                 $siteConfigSrv = $sm->get('MelisSiteConfigService');
@@ -98,7 +99,7 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
                 $siteService = $sm->get('MelisEnginePage');
                 //page ids to update the content
                 $idPages = [
-                    $homePageid, // home page
+                    $homePageId, // home page
                     $pages['Our Services'], //for our services page
                     $pages['Our Process'], //for our process page
                 ];
@@ -163,7 +164,8 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
         $this->listeners[] = $callBackHandler;
 
         $callBackHandler = $sharedEvents->attach(
-            '*', 'melis_marketplace_site_install_inserted_id',
+            '*',
+            'melis_marketplace_site_install_inserted_id',
             function ($e) {
 
 
@@ -172,7 +174,7 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
                 if (!empty($param['table_name'])) {
                     if ($param['table_name'] == 'melis_cms_slider') {
 
-                        $sm = $e->getTarget()->getServiceLocator();
+                        $sm = $e->getTarget()->getServiceManager();
                         $moduleService = $sm->get('MelisAssetManagerModulesService');
                         $path = $moduleService->getModulePath('MelisDemoCms');
 

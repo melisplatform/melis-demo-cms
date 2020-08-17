@@ -9,15 +9,15 @@
 
 namespace MelisDemoCms\Controller;
 
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\JsonModel;
-use Zend\View\Model\ViewModel;
+use Laminas\View\Model\JsonModel;
+use Laminas\View\Model\ViewModel;
+use MelisCore\Controller\MelisAbstractActionController;
 use MelisCore\MelisSetupInterface;
 
 /**
  * @property bool $showOnMarketplacePostSetup
  */
-class MelisSetupPostUpdateController extends AbstractActionController implements MelisSetupInterface
+class MelisSetupPostUpdateController extends MelisAbstractActionController implements MelisSetupInterface
 {
     /**
      * flag for Marketplace whether to display the setup form or not
@@ -26,7 +26,7 @@ class MelisSetupPostUpdateController extends AbstractActionController implements
     public $showOnMarketplacePostSetup = true;
 
     /**
-     * @return \Zend\View\Model\ViewModel
+     * @return \Laminas\View\Model\ViewModel
      */
     public function getFormAction()
     {
@@ -37,7 +37,7 @@ class MelisSetupPostUpdateController extends AbstractActionController implements
     }
 
     /**
-     * @return \Zend\View\Model\JsonModel
+     * @return \Laminas\View\Model\JsonModel
      */
     public function validateFormAction()
     {
@@ -45,7 +45,7 @@ class MelisSetupPostUpdateController extends AbstractActionController implements
     }
 
     /**
-     * @return \Zend\View\Model\JsonModel
+     * @return \Laminas\View\Model\JsonModel
      */
     public function submitAction()
     {
@@ -58,22 +58,22 @@ class MelisSetupPostUpdateController extends AbstractActionController implements
     private function getTool()
     {
         /** @var \MelisCore\Service\MelisCoreToolService $service */
-        $service = $this->getServiceLocator()->get('MelisCoreTool');
+        $service = $this->getServiceManager()->get('MelisCoreTool');
 
         return $service;
     }
 
     /**
-     * @return \Zend\Form\ElementInterface
+     * @return \Laminas\Form\ElementInterface
      */
     private function getFormSiteDemo()
     {
-        $melisMelisCoreConfig = $this->serviceLocator->get('MelisCoreConfig');
+        $melisMelisCoreConfig = $this->getServiceManager()->get('MelisCoreConfig');
         $appConfigForm = $melisMelisCoreConfig->getItem('melis_demo_cms_setup/forms/melis_installer_demo_cms');
 
 
-        $factory = new \Zend\Form\Factory();
-        $formElements = $this->getServiceLocator()->get('FormElementManager');
+        $factory = new \Laminas\Form\Factory();
+        $formElements = $this->getServiceManager()->get('FormElementManager');
         $factory->setFormElementManager($formElements);
         $form = $factory->createForm($appConfigForm);
 
@@ -99,7 +99,7 @@ class MelisSetupPostUpdateController extends AbstractActionController implements
     private function formatErrorMessage($errors = [])
     {
         /** @var \MelisCore\Service\MelisCoreConfigService $melisMelisCoreConfig */
-        $melisMelisCoreConfig = $this->getServiceLocator()->get('MelisCoreConfig');
+        $melisMelisCoreConfig = $this->getServiceManager()->get('MelisCoreConfig');
         $appConfigForm = $melisMelisCoreConfig->getItem('melis_demo_cms_setup/forms/melis_installer_demo_cms');
         $appConfigForm = $appConfigForm['elements'];
 

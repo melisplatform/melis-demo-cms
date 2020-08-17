@@ -38,7 +38,7 @@ class TemplateController extends BaseController
     public function staticTemplateAction()
     {
         // Get site config service
-        $siteConfigSrv = $this->getServiceLocator()->get('MelisSiteConfigService');
+        $siteConfigSrv = $this->getServiceManager()->get('MelisSiteConfigService');
 
         // Initialize slider plugin
         /** @var MelisCmsSliderShowSliderPlugin $sliderPlugin */

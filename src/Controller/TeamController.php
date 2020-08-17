@@ -16,7 +16,7 @@ class TeamController extends BaseController
     public function teamAction()
     {
         // Get site config service
-        $siteConfigSrv = $this->getServiceLocator()->get('MelisSiteConfigService');
+        $siteConfigSrv = $this->getServiceManager()->get('MelisSiteConfigService');
 
         // Get slider plugin
         /** @var MelisCmsSliderShowSliderPlugin $teamSlider */

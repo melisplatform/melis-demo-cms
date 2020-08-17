@@ -9,16 +9,16 @@
 
 namespace MelisDemoCms\Controller;
 
-use Zend\View\Model\JsonModel;
+use Laminas\View\Model\JsonModel;
 
 class ContactController extends BaseController
 {
     public function contactAction()
     {
         // Get site config service
-        $siteConfigSrv = $this->getServiceLocator()->get('MelisSiteConfigService');
+        $siteConfigSrv = $this->getServiceManager()->get('MelisSiteConfigService');
 
-        $pageTreeSvc = $this->getServiceLocator()->get('MelisEngineTree');
+        $pageTreeSvc = $this->getServiceManager()->get('MelisEngineTree');
         $siteId = $pageTreeSvc->getSiteByPageId($this->idPage)->site_id;
 
         $prospectForm = $this->MelisCmsProspectsShowFormPlugin();

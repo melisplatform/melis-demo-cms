@@ -18,13 +18,13 @@ class NewsController extends BaseController
     public function newsAction()
     {
         // Get site config service
-        $siteConfigSrv = $this->getServiceLocator()->get('MelisSiteConfigService');
+        $siteConfigSrv = $this->getServiceManager()->get('MelisSiteConfigService');
 
         // Initialize list news plugin
         /** @var MelisCmsNewsListNewsPlugin $newsListPlugin */
         $newsListPlugin = $this->MelisCmsNewsListNewsPlugin();
 
-        $pageTreeSvc = $this->getServiceLocator()->get('MelisEngineTree');
+        $pageTreeSvc = $this->getServiceManager()->get('MelisEngineTree');
         $siteId = $pageTreeSvc->getSiteByPageId($this->idPage)->site_id;
 
         // Set parameters
@@ -51,11 +51,11 @@ class NewsController extends BaseController
         $this->view->setVariable('idPage', $this->idPage);
         $this->view->setVariable('renderMode', $this->renderMode);
 
-        $this->layout()->setVariables([
-            'pageJs' => [
-                '/MelisDemoCms/js/news.js',
-            ]
-        ]);
+//        $this->layout()->setVariables([
+//            'pageJs' => [
+//                '/MelisDemoCms/js/news.js',
+//            ]
+//        ]);
 
         return  $this->view;
     }
@@ -63,9 +63,9 @@ class NewsController extends BaseController
     public function newsDetailsAction()
     {
         // Get site config service
-        $siteConfigSrv = $this->getServiceLocator()->get('MelisSiteConfigService');
+        $siteConfigSrv = $this->getServiceManager()->get('MelisSiteConfigService');
 
-        $pageTreeSvc = $this->getServiceLocator()->get('MelisEngineTree');
+        $pageTreeSvc = $this->getServiceManager()->get('MelisEngineTree');
         $siteId = $pageTreeSvc->getSiteByPageId($this->idPage)->site_id;
 
         // Initialize show news plugin

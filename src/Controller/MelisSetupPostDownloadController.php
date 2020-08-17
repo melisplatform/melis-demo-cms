@@ -9,11 +9,11 @@
 
 namespace MelisDemoCms\Controller;
 
+use MelisCore\Controller\MelisAbstractActionController;
 use MelisCore\MelisSetupInterface;
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\JsonModel;
-use Zend\View\Model\ViewModel;
-use Zend\Session\Container;
+use Laminas\View\Model\JsonModel;
+use Laminas\View\Model\ViewModel;
+use Laminas\Session\Container;
 use MelisMarketPlace\Support\MelisMarketPlace as MarketPlace;
 use MelisMarketPlace\Support\MelisMarketPlaceCmsTables as Melis;
 use MelisMarketPlace\Support\MelisMarketPlaceSiteInstall as Site;
@@ -21,7 +21,7 @@ use MelisMarketPlace\Support\MelisMarketPlaceSiteInstall as Site;
 /**
  * @property bool $showOnMarketplacePostSetup
  */
-class MelisSetupPostDownloadController extends AbstractActionController implements MelisSetupInterface
+class MelisSetupPostDownloadController extends MelisAbstractActionController implements MelisSetupInterface
 {
     /**
      * flag for Marketplace whether to display the setup form or not
@@ -32,7 +32,7 @@ class MelisSetupPostDownloadController extends AbstractActionController implemen
     protected $formConfigPath = 'MelisDemoCms/' . Site::DOWNLOAD . '/' . MarketPlace::FORM . '/melis_demo_cms_setup_download_form';
 
     /**
-     * @return \Zend\View\Model\ViewModel
+     * @return \Laminas\View\Model\ViewModel
      */
     public function getFormAction()
     {
@@ -53,16 +53,16 @@ class MelisSetupPostDownloadController extends AbstractActionController implemen
     }
 
     /**
-     * @return \Zend\Form\ElementInterface
+     * @return \Laminas\Form\ElementInterface
      */
     private function getFormSiteDemo()
     {
         /** @var \MelisCore\Service\MelisCoreConfigService $config */
-        $config = $this->getServiceLocator()->get('MelisCoreConfig');
+        $config = $this->getServiceManager()->get('MelisCoreConfig');
         $appConfigForm = $config->getItem($this->formConfigPath);
 
-        $factory = new \Zend\Form\Factory();
-        $formElements = $this->getServiceLocator()->get('FormElementManager');
+        $factory = new \Laminas\Form\Factory();
+        $formElements = $this->getServiceManager()->get('FormElementManager');
         $factory->setFormElementManager($formElements);
         $form = $factory->createForm($appConfigForm);
 
@@ -81,7 +81,7 @@ class MelisSetupPostDownloadController extends AbstractActionController implemen
     }
 
     /**
-     * @return \Zend\View\Model\JsonModel
+     * @return \Laminas\View\Model\JsonModel
      */
     public function validateFormAction()
     {
@@ -96,7 +96,7 @@ class MelisSetupPostDownloadController extends AbstractActionController implemen
 
         if($form->isValid()) {
             // Checking if domain is available/existing
-            if (!empty($this->getServiceLocator()->get('MelisEngineSiteDomainService')->getDomainByDomainName($data['domain']))){
+            if (!empty($this->getServiceManager()->get('MelisEngineSiteDomainService')->getDomainByDomainName($data['domain']))){
                 $errors = [
                     'domain' => [
                         'is_exist' => $this->getTool()->getTranslation('tr_site_demo_cms_tool_site_domain_exists'),
@@ -129,7 +129,7 @@ class MelisSetupPostDownloadController extends AbstractActionController implemen
     private function getTool()
     {
         /** @var \MelisCore\Service\MelisCoreToolService $service */
-        $service = $this->getServiceLocator()->get('MelisCoreTool');
+        $service = $this->getServiceManager()->get('MelisCoreTool');
 
         return $service;
     }
@@ -142,7 +142,7 @@ class MelisSetupPostDownloadController extends AbstractActionController implemen
     private function formatErrorMessage($errors = [])
     {
         /** @var \MelisCore\Service\MelisCoreConfigService $melisMelisCoreConfig */
-        $melisMelisCoreConfig = $this->getServiceLocator()->get('MelisCoreConfig');
+        $melisMelisCoreConfig = $this->getServiceManager()->get('MelisCoreConfig');
         $appConfigForm = $melisMelisCoreConfig->getItem($this->formConfigPath);
         $appConfigForm = $appConfigForm['elements'];
 
@@ -159,7 +159,7 @@ class MelisSetupPostDownloadController extends AbstractActionController implemen
     }
 
     /**
-     * @return \Zend\View\Model\JsonModel
+     * @return \Laminas\View\Model\JsonModel
      */
     public function submitAction()
     {

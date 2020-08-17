@@ -24,7 +24,7 @@ return [
                     'payment_folder_id' => '%payment_folder_id%',
                     'contact_page_id' => '%contact_page_id%',
                     'testimonials_folder_id' => '%testimonials_folder_id%',
-                    'search_result_page_id' => '%search_result_page_id%',
+                    //'search_result_page_id' => '%search_result_page_id%',
                     '404_page_id' => '%404_page_id%',
                     // sliders
                     'home_page_slider_1_id' => '%home_page_slider_1_id%',

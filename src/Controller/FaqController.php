@@ -14,7 +14,7 @@ class FaqController extends BaseController
     public function faqAction()
     {
         // Get site config service
-        $siteConfigSrv = $this->getServiceLocator()->get('MelisSiteConfigService');
+        $siteConfigSrv = $this->getServiceManager()->get('MelisSiteConfigService');
 
         // Adds the faq category list
         $faqListPlugin = $this->MelisFrontShowListFromFolderPlugin();

@@ -18,7 +18,7 @@ class HomeController extends BaseController
     public function indexAction()
     {
         // Get config
-        $siteConfigSrv = $this->getServiceLocator()->get('MelisSiteConfigService');
+        $siteConfigSrv = $this->getServiceManager()->get('MelisSiteConfigService');
 
         // Initialize slider plugin
         /** @var MelisCmsSliderShowSliderPlugin $sliderPlugin */

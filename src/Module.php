@@ -9,13 +9,14 @@
 
 namespace MelisDemoCms;
 
+use MelisDemoCms\Listener\MelisDemoCmsCreateConfigListener;
 use MelisDemoCms\Listener\SetupDemoCmsListener;
 use MelisDemoCms\Listener\SiteMenuCustomizationListener;
 use MelisDemoCms\Listener\LatestNewsHorizontalListener;
-use Zend\Mvc\ModuleRouteListener;
-use Zend\Mvc\MvcEvent;
-use Zend\Session\Container;
-use Zend\Stdlib\ArrayUtils;
+use Laminas\Mvc\ModuleRouteListener;
+use Laminas\Mvc\MvcEvent;
+use Laminas\Session\Container;
+use Laminas\Stdlib\ArrayUtils;
 
 class Module
 {
@@ -35,12 +36,12 @@ class Module
         });
 
         // Adding Event listener to customize the Site menu from Plugin
-        $eventManager->attach(new SiteMenuCustomizationListener());
+        (new SiteMenuCustomizationListener())->attach($eventManager);
         // Event listener to Setup MelisDemoCms pre-defined datas
-        $eventManager->attach(new SetupDemoCmsListener());
+        (new SetupDemoCmsListener())->attach($eventManager);
 
-        $eventManager->attach(new \MelisDemoCms\Listener\MelisDemoCmsCreateConfigListener());
-        $eventManager->attach(new LatestNewsHorizontalListener());
+        (new MelisDemoCmsCreateConfigListener())->attach($eventManager);
+        (new LatestNewsHorizontalListener())->attach($eventManager);
 
         $this->createTranslations($e);
     }
@@ -106,7 +107,7 @@ class Module
     public function getAutoloaderConfig()
     {
         return [
-            'Zend\Loader\StandardAutoloader' => [
+            'Laminas\Loader\StandardAutoloader' => [
                 'namespaces' => [
                     __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
                 ],
