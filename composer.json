@@ -1,63 +1,63 @@
 {
-  "name": "melisplatform/melis-demo-cms",
-  "description": "Official Melis Platform Demo Site",
-  "type": "melisplatform-module",
-  "license": "OSL-3.0",
-  "homepage": "https://github.com/melisplatform/melis-demo-cms",
-  "support": {
-    "email": "contact@melistechnology.com",
-    "source": "https://github.com/melisplatform/melis-demo-cms",
-    "issues": "https://github.com/melisplatform/melis-demo-cms/issues",
-    "docs": "https://www.melistechnology.com/melistechnology/resources/download-documentation/id/17#documentation"
-  },
-  "authors": [
-    {
-      "name": "Melis Technology",
-      "email": "contact@melistechnology.com",
-      "homepage": "https://www.melistechnology.com",
-      "role": "Developer"
-    }
-  ],
-  "keywords": [
-    "cms",
-    "melis",
-    "zf2",
-    "module"
-  ],
-  "extra": {
-    "module-name": "MelisDemoCms",
-    "dbdeploy": true,
-    "melis-site": true,
-    "melis-module-category": "cms",
-    "installer-name": "MelisDemoCms",
-    "installer-paths": {
-      "module/MelisSites/{$name}": [
-        "type:melisplatform-site"
-      ]
-    }
-  },
-  "require": {
-    "php": "^7.1.3|^7.2|^7.3",
-    "melisplatform/melis-engine": "*",
-    "melisplatform/melis-front": "*",
-    "melisplatform/melis-cms": "*",
-    "melisplatform/melis-cms-slider": "*",
-    "melisplatform/melis-cms-prospects": "*",
-    "melisplatform/melis-cms-news": "*"
-  },
-  "suggest": {
-    "melisplatform/melis-engine": "MelisEngine provides a set of services and classes to access the CMS pages and data.",
-    "melisplatform/melis-front": "MelisFront is the engine that displays website hosted on Melis Platform.",
-    "melisplatform/melis-cms-slider": "MelisCmsSlider provides a full Slider system for Melis Platform, including templating plugins.",
-    "melisplatform/melis-cms-prospects": "MelisCmsProspects provides a full Prospect system for Melis Platform, including templating plugins.",
-    "melisplatform/melis-cms-news": "Provides a venue for creating and maintaining news posts inside Melis Platform"
-  },
-  "require-dev": {
-    "phpunit/phpunit": "~4.8"
-  },
-  "autoload": {
-    "psr-4": {
-      "MelisDemoCms\\": "src/"
-    }
-  }
+	"name": "melisplatform/melis-demo-cms",
+	"description": "Official Melis Platform Demo Site",
+	"type": "melisplatform-module",
+	"license": "OSL-3.0",
+	"homepage": "https://github.com/melisplatform/melis-demo-cms",
+	"support": {
+		"email": "contact@melistechnology.com",
+		"source": "https://github.com/melisplatform/melis-demo-cms",
+		"issues": "https://github.com/melisplatform/melis-demo-cms/issues",
+		"docs": "https://www.melistechnology.com/melistechnology/resources/download-documentation/id/17#documentation"
+	},
+	"authors": [
+		{
+			"name": "Melis Technology",
+			"email": "contact@melistechnology.com",
+			"homepage": "https://www.melistechnology.com",
+			"role": "Developer"
+		}
+	],
+	"keywords": [
+		"cms",
+		"melis",
+		"zf2",
+		"module"
+	],
+	"extra": {
+		"module-name": "MelisDemoCms",
+		"dbdeploy": true,
+		"melis-site": true,
+		"melis-module-category": "cms",
+		"installer-name": "MelisDemoCms",
+		"installer-paths": {
+			"module/MelisSites/{$name}": [
+				"type:melisplatform-site"
+			]
+		}
+	},
+	"require": {
+		"php": "^7.1.3|^7.2|^7.3",
+		"melisplatform/melis-engine": "*",
+		"melisplatform/melis-front": "*",
+		"melisplatform/melis-cms": "*",
+		"melisplatform/melis-cms-slider": "*",
+		"melisplatform/melis-cms-prospects": "*",
+		"melisplatform/melis-cms-news": "*"
+	},
+	"suggest": {
+		"melisplatform/melis-engine": "MelisEngine provides a set of services and classes to access the CMS pages and data.",
+		"melisplatform/melis-front": "MelisFront is the engine that displays website hosted on Melis Platform.",
+		"melisplatform/melis-cms-slider": "MelisCmsSlider provides a full Slider system for Melis Platform, including templating plugins.",
+		"melisplatform/melis-cms-prospects": "MelisCmsProspects provides a full Prospect system for Melis Platform, including templating plugins.",
+		"melisplatform/melis-cms-news": "Provides a venue for creating and maintaining news posts inside Melis Platform"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "~4.8"
+	},
+	"autoload": {
+		"psr-4": {
+			"MelisDemoCms\\": "src/"
+		}
+	}
 }
