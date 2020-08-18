@@ -155,9 +155,11 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
                  * to remain activated from BO
                  */
                 $reqModSessTemp = new Container('melismarketplace');
-                $reqModSessTemp['temp_mod_actvt'] = array_filter($reqModSessTemp['temp_mod_actvt'], function($module) use ($demoSiteDepModules) {
-                    if (!in_array($module, $demoSiteDepModules)) return $module;
-                });
+                if(!empty($reqModSessTemp['temp_mod_actvt'])) {
+                    $reqModSessTemp['temp_mod_actvt'] = array_filter($reqModSessTemp['temp_mod_actvt'], function($module) use ($demoSiteDepModules) {
+                        if (!in_array($module, $demoSiteDepModules)) return $module;
+                    });
+                }
             },
             -10000);
 
