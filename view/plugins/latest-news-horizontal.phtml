@@ -23,7 +23,7 @@ if ($this->fromDragDropZone) {
                             <div class="entry_post_info">
                                 <a href="#"><?= $news['newsDateFormated'] ?></a>
                             </div>
-                            <a href="<?= $this->MelisLink(4, true) . '?' . http_build_query(['newsId' => $news['cnews_id']]) ?>">
+                            <a href="<?= $news['newsLink'] ?>">
                                 <h5 class="f_p f_size_16 f_500 t_color"><?= $news['cnews_title'] ?></h5>
                             </a>
                             <?php if (! empty($news['cnews_subtitle'])) : ?>
