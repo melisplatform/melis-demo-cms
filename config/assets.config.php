@@ -4,6 +4,8 @@ return [
         // Boostrap Css
         '/melis-demo-cms/public/css/bootstrap.min.css',
         '/melis-demo-cms/public/vendors/bootstrap-selector/css/bootstrap-select.min.css',
+        // Font-awesome
+        '/melis-demo-cms/public/vendors/font-awesome/css/all.css',
         // Other Css
         '/melis-demo-cms/public/css/glyphicons.css',
         '/melis-demo-cms/public/vendors/themify-icon/themify-icons.css',
