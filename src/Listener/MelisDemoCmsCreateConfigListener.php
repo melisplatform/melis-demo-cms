@@ -88,9 +88,9 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
                 file_put_contents($path . '/config/MelisDemoCms.config.php', $melisDemoConfig);
 
                 // Final Site config custom data
-                $siteConfig = require $path . '/config/MelisDemoCms.config.php';
+                $siteConfig = require $path . '/config/MelisDemoCms.config.stub';
                 // Demo site config on default language
-                $siteDemoConfig = $siteConfig['site']['MelisDemoCms'][$siteId]['en_EN'];
+                $siteDemoConfig = $siteConfig['site']['MelisDemoCms']['%site_id%']['en_EN'];
 
                 // Home Page
                 $melisDemoConfig = file_get_contents($path . '/config/module.config.php');
