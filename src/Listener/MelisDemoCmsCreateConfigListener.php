@@ -87,12 +87,15 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
                 unlink($path . '/config/MelisDemoCms.config.php');
                 file_put_contents($path . '/config/MelisDemoCms.config.php', $melisDemoConfig);
 
+                // Final Site config custom data
+                $siteConfig = require $path . '/config/MelisDemoCms.config.php';
+                // Demo site config on default language
+                $siteDemoConfig = $siteConfig['site']['MelisDemoCms'][$siteId]['en_EN'];
+
                 // Home Page
                 $melisDemoConfig = file_get_contents($path . '/config/module.config.php');
                 file_put_contents($path . '/config/module.config.php', str_replace('\'%site_home_page_id%\'', $homePageId, $melisDemoConfig));
 
-                //use config service to get some ids
-                $siteConfigSrv = $sm->get('MelisSiteConfigService');
                 /**
                  * Update pages content for id's
                  */
@@ -123,8 +126,8 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
                         ];
                         $replacement = [
                             $pages['Testimonials'],
-                            $siteConfigSrv->getSiteConfigByKey('home_page_slider_1_id', $pageId),
-                            $siteConfigSrv->getSiteConfigByKey('home_page_slider_2_id', $pageId),
+                            $siteDemoConfig['home_page_slider_1_id'],
+                            $siteDemoConfig['home_page_slider_2_id'],
                             $pages['Premium plugins'],
                             $pages['Unique elements'],
                             $pages['Live page builder'],
