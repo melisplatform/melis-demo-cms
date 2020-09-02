@@ -29,31 +29,19 @@ class ContactController extends BaseController
 
         $result = $prospectForm->render($parameter);
 
-        if ($this->request->isPost()) {
-            $pluginVariables = $result->getVariables();
+        $this->view->addChild($result, 'prospectForm');
 
-            $response = [
-                'success' => $pluginVariables->success,
-                'errors' => $pluginVariables->errors,
-            ];
+        $this->layout()->setVariables([
+            'pageJs' => [
+                '/MelisDemoCms/js/plugins.js',
+                '/MelisDemoCms/js/jquery.form.js',
+                '/MelisDemoCms/js/jquery.validate.min.js'
+            ]
+        ]);
 
-            return new JsonModel($response);
-        } else {
-            $this->view->addChild($result, 'prospectForm');
+        $this->view->setVariable('idPage', $this->idPage);
+        $this->view->setVariable('renderMode', $this->renderMode);
 
-            $this->layout()->setVariables([
-                'pageJs' => [
-                    '/MelisDemoCms/js/plugins.js',
-                    '/MelisDemoCms/js/jquery.form.js',
-                    '/MelisDemoCms/js/jquery.validate.min.js',
-                    '/MelisDemoCms/js/contact.js',
-                ]
-            ]);
-
-            $this->view->setVariable('idPage', $this->idPage);
-            $this->view->setVariable('renderMode', $this->renderMode);
-
-            return $this->view;
-        }
+        return $this->view;
     }
 }

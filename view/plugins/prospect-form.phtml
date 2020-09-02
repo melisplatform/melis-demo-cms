@@ -8,22 +8,28 @@ if ($this->fromDragDropZone) {
 <?php if (! empty($this->prospectsForm)) : ?>
     <div id="<?= $this->pluginId ?>" class="<?= $widths ?> contact_form">
         <h2 class="f_p f_size_22 t_color3 f_600 l_height28 mb_40">Leave a Message</h2>
-        <div class="alert success hidden">
+
+        <?php if ($this->success) : ?>
+        <div class="alert success">
             <div class="alert_body">
                 <i class="icon-check"></i>
                 <?= $this->siteTranslate('tr_demo_meliscms_contact_us_success', $this->SiteConfig('default_lang_id'), $this->SiteConfig('site_id')) ?>
             </div>
             <div class="alert_close"><i class="icon_close"></i></div>
         </div>
-        <div class="alert error hidden">
+        <?php elseif (! empty($this->errors)) : ?>
+        <div class="alert error">
             <div class="alert_body">
                 <i class="icon-close"></i>
                 <?= $this->siteTranslate('tr_demo_meliscms_contact_us_error', $this->SiteConfig('default_lang_id'), $this->SiteConfig('site_id')) ?>
             </div>
             <div class="alert_close"><i class="icon_close"></i></div>
         </div>
+        <?php endif; ?>
+
         <?php
             $form = $this->prospectsForm;
+            $form->prepare();
             $formAttributes = $form->getAttributes();
         ?>
         <form
@@ -33,7 +39,6 @@ if ($this->fromDragDropZone) {
             id="<?= $formAttributes['id'] ?>"
             name="<?= $formAttributes['name'] ?>"
             data-pluginid="<?= $formAttributes['data-pluginid'] ?>"
-            novalidate="novalidate"
         >
             <input
                 type="hidden"
@@ -42,6 +47,7 @@ if ($this->fromDragDropZone) {
             >
             <div class="row">
                 <?php foreach ($form->getElements() as $key => $element) : ?>
+
                     <?php if ($key == 'pros_message') : ?>
                         <div class="col-lg-12">
                             <div class="form-group text_box">
@@ -51,17 +57,19 @@ if ($this->fromDragDropZone) {
                                     placeholder="<?= $element->getAttributes()['placeholder'] ?? $element->getLabel() ?>"
                                     cols="30"
                                     rows="10"
-                                ></textarea>
+                                ><?= $element->getValue() ?></textarea>
+                                <?= $this->formElementErrors($element, ['class' => 'text-danger', 'style' => 'padding: 0; list-style-type: none']) ?>
                             </div>
                         </div>
                     <?php elseif ($key == 'pros_theme') : ?>
                         <div class="col-lg-6 mb-30">
                             <select id="<?= $element->getAttributes()['id'] ?>" name="<?= $element->getAttributes()['name'] ?>" class="selectpickers">
-                                <option selected value=""><?= $element->getEmptyOption() ?></option>
+                                <option select value=""><?= $element->getEmptyOption() ?></option>
                                 <?php foreach ($element->getValueOptions() as $oKey => $option) : ?>
-                                    <option value="<?= $oKey ?>"><?= $option ?></option>
+                                    <option <?= ($oKey == $element->getValue()) ? 'selected' : '' ?> value="<?= $oKey ?>"><?= $option ?></option>
                                 <?php endforeach; ?>
                             </select>
+                            <?= $this->formElementErrors($element, ['class' => 'text-danger', 'style' => 'padding: 0; list-style-type: none']) ?>
                         </div>
                     <?php else : ?>
                         <div class="col-lg-6">
@@ -71,7 +79,9 @@ if ($this->fromDragDropZone) {
                                     id="<?= $element->getAttributes()['id'] ?? '' ?>"
                                     name="<?= $element->getAttributes()['name'] ?? '' ?>"
                                     placeholder="<?= $element->getAttributes()['placeholder'] ?? '' ?>"
+                                    value="<?= $element->getValue() ?>"
                                 >
+                                <?= $this->formElementErrors($element, ['class' => 'text-danger', 'style' => 'padding: 0; list-style-type: none']) ?>
                             </div>
                         </div>
                     <?php endif; ?>
