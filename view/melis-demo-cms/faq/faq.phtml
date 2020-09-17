@@ -9,54 +9,32 @@
             </div>
             <div class="col-lg-8">
                 <div class="tab-content faq_content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="page_tab_<?= $this->faqValues1PageId ?>" role="tabpanel" aria-labelledby="page_tab_<?= $this->faqValues1PageId ?>-tab">
-                        <h3 class="f_p f_size_22 f_500 t_color3 mb_20">
-                            <?=
-                                $this->MelisTag(
-                                    $this->idPage,
-                                    'faq-values-title-1',
-                                    'textarea',
-                                    'Questions about delivery'
-                                )
-                            ?>
-                        </h3>
-                        <div id="accordion<?= $this->faqValues1PageId ?>">
-                            <!-- Faq values -->
-                            <?= $this->faqValues1 ?>
+                    <?php
+                        $first = false;
+                    ?>
+                    <?php foreach ($this->pages as $page) : ?>
+                        <div class="tab-pane fade show <?= (!$first) ? 'active' : '' ?>" id="page_tab_<?= $page->page_id ?>" role="tabpanel" aria-labelledby="page_tab_<?= $page->page_id ?>-tab">
+                            <h3 class="f_p f_size_22 f_500 t_color3 mb_20">
+                                <?=
+                                    $this->MelisTag(
+                                        $this->idPage,
+                                        'faq-values-title-1',
+                                        'textarea',
+                                        'Questions about delivery'
+                                    )
+                                ?>
+                            </h3>
+                            <div id="accordion<?= $page->page_id ?>">
+                                <!-- Faq values -->
+                                <?= $this->{'faqValues' . $page->page_id} ?>
+                            </div>
                         </div>
-                    </div>
-                    <div class="tab-pane fade" id="page_tab_<?= $this->faqValues2PageId ?>" role="tabpanel" aria-labelledby="page_tab_<?= $this->faqValues2PageId ?>-tab">
-                        <h3 class="f_p f_size_22 f_500 t_color3 mb_20">
-                            <?=
-                                $this->MelisTag(
-                                    $this->idPage,
-                                    'faq-values-title-2',
-                                    'textarea',
-                                    'Question about the product'
-                                )
-                            ?>
-                        </h3>
-                        <div id="accordion<?= $this->faqValues2PageId ?>">
-                            <!-- Faq values -->
-                            <?= $this->faqValues2 ?>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="page_tab_<?= $this->faqValues3PageId ?>" role="tabpanel" aria-labelledby="page_tab_<?= $this->faqValues3PageId ?>-tab">
-                        <h3 class="f_p f_size_22 f_500 t_color3 mb_20">
-                            <?=
-                                $this->MelisTag(
-                                    $this->idPage,
-                                    'faq-values-title-3',
-                                    'textarea',
-                                    'Questions about payment'
-                                )
-                            ?>
-                        </h3>
-                        <div id="accordion<?= $this->faqValues3PageId ?>">
-                            <!-- Faq values -->
-                            <?= $this->faqValues3 ?>
-                        </div>
-                    </div>
+
+                        <?php
+                            if (! $first)
+                                $first = true;
+                        ?>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
