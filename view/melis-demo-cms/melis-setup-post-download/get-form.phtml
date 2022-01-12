@@ -6,7 +6,7 @@ $siteDemoCmsForm = $this->siteDemoCmsForm;
 $formId = $siteDemoCmsForm->getAttributes()['id'];
 echo "<h3>" . $this->translate('tr_install_setup_title') . "</h3>";
 echo $this->form()->openTag($siteDemoCmsForm);
-echo "<fieldset id='$formId'>";
+echo "<fieldset form='$formId'>";
 foreach ($siteDemoCmsForm->getElements() as $element => $attributes) {
     $el = $siteDemoCmsForm->get((string) $element);
     $label = $el->getLabel();
