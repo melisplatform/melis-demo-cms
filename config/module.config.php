@@ -164,6 +164,7 @@ return [
             'MelisDemoCms/plugins/prospect-form' => __DIR__ . '/../view/plugins/prospect-form.phtml',
             'MelisDemoCms/plugins/search-results' => __DIR__ . '/../view/plugins/search-results.phtml',
             'MelisDemoCms/plugins/gdpr-banner' => __DIR__ . '/../view/plugins/gdpr-banner.phtml',
+            'MelisDemoCms/plugins/breadcrumb' => __DIR__ . '/../view/plugins/breadcrumb.phtml',
 
             // Errors layout
             'error/404' => __DIR__ . '/../view/error/404.phtml',

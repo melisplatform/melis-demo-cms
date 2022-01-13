@@ -12,6 +12,13 @@ return [
                         ],
                     ],
                 ],
+                'MelisFrontBreadcrumbPlugin' => [
+                    'front' => [
+                        'template_path' => [
+                            'MelisDemoCms/plugins/breadcrumb',
+                        ],
+                    ],
+                ],   
                 'MelisFrontShowListFromFolderPlugin' => [
                     'front' => [
                         'template_path' => [

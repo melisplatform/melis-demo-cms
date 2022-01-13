@@ -625,3 +625,9 @@ No media query since this is the default in Bootstrap because it is "mobile firs
         margin-bottom: 270px !important;
     }
 }
+
+
+/*for the breadcrumb*/
+.breadcrumb-item a {
+    font-size: 12px;
+}

@@ -55,6 +55,15 @@ class BaseController extends MelisSiteActionController
         // Add rendered menu to the layout
         $this->layout()->addChild($menu, 'menu');
 
+        //Get breadcrumb plugin
+        $breadcrumb = $this->MelisFrontBreadcrumbPlugin();    
+        $breadcrumbParam = array(
+            'template_path' => 'MelisDemoCms/plugins/breadcrumb',
+            'pageId' => $this->idPage
+        );
+        $breadcrumb = $breadcrumb->render($breadcrumbParam);
+        $this->layout()->addChild($breadcrumb, 'breadcrumb');
+
         // Set parameters
         $footerMenuParameter = [
             'template_path' => 'MelisDemoCms/plugins/footer-menu',
