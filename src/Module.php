@@ -13,6 +13,7 @@ use MelisDemoCms\Listener\MelisDemoCmsCreateConfigListener;
 use MelisDemoCms\Listener\SetupDemoCmsListener;
 use MelisDemoCms\Listener\SiteMenuCustomizationListener;
 use MelisDemoCms\Listener\LatestNewsHorizontalListener;
+use MelisDemoCms\Listener\MelisDemoCmsBreadcrumbListener;
 use Laminas\Mvc\ModuleRouteListener;
 use Laminas\Mvc\MvcEvent;
 use Laminas\Session\Container;
@@ -34,6 +35,9 @@ class Module
             $viewModel = $e->getViewModel();
             $viewModel->setTemplate('layout/errorLayout');
         });
+
+        //Add event listener to update breadcrumb
+        (new MelisDemoCmsBreadcrumbListener())->attach($eventManager);
 
         // Adding Event listener to customize the Site menu from Plugin
         (new SiteMenuCustomizationListener())->attach($eventManager);
