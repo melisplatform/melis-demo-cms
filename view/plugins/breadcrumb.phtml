@@ -1,15 +1,16 @@
 <?php if ($this->breadcrumb) {?>
 <nav aria-label="breadcrumb" class="breadcrumb-nav">
     <div class="container">
-		<ol class="breadcrumb">
+		<ul class="breadcrumb">
+			<li class="home-icon"><i class="fa fa-home"></i></li>
 		    <?php foreach ($this->breadcrumb As $key => $val){?>
 		    	<?php if ($val['isActive']){?>
 		    		<li class="active breadcrumb-item"><?php echo $val['label']?></li>
 		    	<?php }else{?>
-		    		<li class="breadcrumb-item"><a title="<?php echo $val['label']  ?>" href="<?php echo $val['uri']?>"><?php echo $val['label'] ?></a></li>
+		    		<li class="breadcrumb-item"><a title="<?php echo $val['label'] ?>" href="<?php echo $val['uri']?>"><?php echo $val['label'] ?></a></li>
 		    	<?php }?>
 		    <?php }?>
-		</ol>
+		</ul>
  	</div>
 </nav>
 <?php } ?>

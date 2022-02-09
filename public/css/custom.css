@@ -628,6 +628,24 @@ No media query since this is the default in Bootstrap because it is "mobile firs
 
 
 /*for the breadcrumb*/
+.breadcrumb {
+    background-color: #f2f2f2;
+    border-radius: 0.2rem;
+    padding: 0.4rem 0.75rem;
+}
+.breadcrumb .home-icon {
+    color: #6c757d;
+    font-size: 13px;
+    margin-right: 0.2rem;
+}
+.breadcrumb-item,
 .breadcrumb-item a {
-    font-size: 12px;
+    font-size: 13px;
+}
+.breadcrumb-item.active {
+    font-weight: 500;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+    font-weight: normal;
+    content: "»";
 }
