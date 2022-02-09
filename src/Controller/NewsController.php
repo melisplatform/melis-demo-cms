@@ -38,7 +38,7 @@ class NewsController extends BaseController
                 'order' => 'DESC',
                 'unpublish_filter' => true,
                 'date_max' => date('Y-m-d'),
-                'site_id' => $siteConfigSrv->getSiteConfigByPageId($this->idPage)['siteConfig']['site_id']
+                'site_id' => !empty($siteConfigSrv->getSiteConfigByPageId($this->idPage)['siteConfig']['site_id']) ? $siteConfigSrv->getSiteConfigByPageId($this->idPage)['siteConfig']['site_id'] : null
             ]
         ];
         // Render news list plugin
