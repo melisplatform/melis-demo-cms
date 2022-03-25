@@ -149,6 +149,7 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
                     'MelisCmsNews',
                     'MelisCmsSlider',
                     'MelisCmsProspects',
+                    'MelisCmsPageScriptEditor'
                 ];
 
                 // $sm->get('MelisAssetManagerModulesService')->activateModule($demoSiteDepModules);
