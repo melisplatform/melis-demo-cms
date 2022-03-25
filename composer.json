@@ -51,7 +51,8 @@
 		"melisplatform/melis-front": "MelisFront is the engine that displays website hosted on Melis Platform.",
 		"melisplatform/melis-cms-slider": "MelisCmsSlider provides a full Slider system for Melis Platform, including templating plugins.",
 		"melisplatform/melis-cms-prospects": "MelisCmsProspects provides a full Prospect system for Melis Platform, including templating plugins.",
-		"melisplatform/melis-cms-news": "Provides a venue for creating and maintaining news posts inside Melis Platform"
+		"melisplatform/melis-cms-news": "Provides a venue for creating and maintaining news posts inside Melis Platform",
+		"melisplatform/melis-cms-page-script-editor": "MelisCmsPageScriptEditor provides a functionality to add custom scripts to the page and/or to the full site if desired."
 	},
 	"autoload": {
 		"psr-4": {
