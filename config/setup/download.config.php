@@ -22,7 +22,7 @@ return [
                             'method' => 'POST',
                             'action' => '',
                         ],
-                        'hydrator' => \Laminas\Hydrator\ArraySerializable::class,
+                        'hydrator' => \Laminas\Hydrator\ArraySerializableHydrator::class,
                         'elements' => [
                             [
                                 'spec' => [
