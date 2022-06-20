@@ -43,6 +43,7 @@ class ContactController extends BaseController
 
             $this->layout()->setVariables([
                 'pageJs' => [
+                    '/MelisDemoCms/js/jquery-3.2.1.min.js',
                     '/MelisDemoCms/js/plugins.js',
                     '/MelisDemoCms/js/jquery.form.js',
                     '/MelisDemoCms/js/jquery.validate.min.js',

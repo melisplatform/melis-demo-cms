@@ -21,10 +21,12 @@ if ($this->fromDragDropZone) {
             <a href="#">
                 <h5 class="f_p f_size_20 f_500 t_color mb-30"><?= $this->news['cnews_title'] ?></h5>
             </a>
-            <p class="f_400 mb-30"><?= $this->news['cnews_paragraph1'] ?></p>
-            <p class="f_400 mb_40"><?= $this->news['cnews_paragraph2'] ?></p>
-            <p class="f_400 mb-30"><?= $this->news['cnews_paragraph3'] ?></p>
-            <p class="f_400 mb-30"><?= $this->news['cnews_paragraph4'] ?></p>
+
+            <?php 
+                for ($i = 1; $i <= 10; $i++) { ?>
+                    <p class="f_400 mb-30"><?= $this->news['cnews_paragraph'.$i] ?></p>
+            <?php    }
+            ?>
         </div>
     </div>
 <?php else : ?>

@@ -37,14 +37,14 @@
 		}
 	},
 	"require": {
-		"php": "^7.1.3|^7.2|^7.3",
-		"melisplatform/melis-engine": "^4.0",
-		"melisplatform/melis-front": "^4.0",
-		"melisplatform/melis-cms": "^4.0",
-		"melisplatform/melis-cms-slider": "^4.0",
-		"melisplatform/melis-cms-prospects": "^4.0",
-		"melisplatform/melis-cms-news": "^4.0",
-		"melisplatform/melis-cms-page-script-editor": "^4.0"
+		"php": "^7.3|^8.0",
+		"melisplatform/melis-engine": "^5.0",
+		"melisplatform/melis-front": "^5.0",
+		"melisplatform/melis-cms": "^5.0",
+		"melisplatform/melis-cms-slider": "^5.0",
+		"melisplatform/melis-cms-prospects": "^5.0",
+		"melisplatform/melis-cms-news": "^5.0",
+		"melisplatform/melis-cms-page-script-editor": "^5.0"
 	},
 	"suggest": {
 		"melisplatform/melis-engine": "MelisEngine provides a set of services and classes to access the CMS pages and data.",
