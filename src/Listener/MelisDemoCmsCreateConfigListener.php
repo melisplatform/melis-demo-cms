@@ -146,6 +146,9 @@ class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
                  * Demo Site Memlis modules dependency
                  */
                 $demoSiteDepModules = [
+                    'MelisCms',
+                    'MelisFront',
+                    'MelisEngine',
                     'MelisCmsNews',
                     'MelisCmsSlider',
                     'MelisCmsProspects',
