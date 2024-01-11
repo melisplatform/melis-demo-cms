@@ -14,6 +14,7 @@ use Laminas\EventManager\ListenerAggregateInterface;
 
 class SetupDemoCmsListener implements ListenerAggregateInterface
 {
+    public $listeners = [];
     public function attach(EventManagerInterface $events, $priority = 1)
     {
         $sharedEvents = $events->getSharedManager();

@@ -16,6 +16,7 @@ use Laminas\EventManager\ListenerAggregateInterface;
 class LatestNewsHorizontalListener implements ListenerAggregateInterface
 {
     private $serviceManager;
+    public $listeners = [];
 
     public function attach(EventManagerInterface $events, $priority = 1)
     {

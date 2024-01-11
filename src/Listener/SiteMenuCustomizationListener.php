@@ -17,6 +17,7 @@ use Laminas\View\Model\ViewModel;
 class SiteMenuCustomizationListener implements ListenerAggregateInterface
 {
     private $serviceManager;
+    public $listeners = [];
 	
     public function attach(EventManagerInterface $events, $priority = 1)
     {

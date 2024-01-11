@@ -16,6 +16,7 @@ use Zend\Session\Container;
 class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
 {
     protected $map = [];
+    public $listeners = [];
 
     public function attach(EventManagerInterface $events, $priority = 1)
     {
