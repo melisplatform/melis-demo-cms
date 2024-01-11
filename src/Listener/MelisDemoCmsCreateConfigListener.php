@@ -11,7 +11,7 @@ namespace MelisDemoCms\Listener;
 
 use Laminas\EventManager\EventManagerInterface;
 use Laminas\EventManager\ListenerAggregateInterface;
-use Zend\Session\Container;
+use Laminas\Session\Container;
 
 class MelisDemoCmsCreateConfigListener implements ListenerAggregateInterface
 {
