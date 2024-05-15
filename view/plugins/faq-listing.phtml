@@ -26,8 +26,9 @@ if ($this->fromDragDropZone) {
                     <a
                         class="nav-link <?= $count == 0 ? 'active' : '' ?>"
                         id="page_<?= $page->page_id?>"
-                        data-toggle="tab"
+                        data-bs-toggle="tab"
                         href="#page_tab_<?= $page->page_id?>"
+                        data-bs-target="#page_tab_<?= $page->page_id?>"
                         role="tab"
                         aria-controls="page_tab_<?= $page->page_id?>"
                         aria-selected="<?= $count == 0 ? 'true' : 'false' ?>"
