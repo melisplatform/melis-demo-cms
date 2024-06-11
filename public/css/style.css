@@ -23026,3 +23026,7 @@ a .h_head:hover {
   margin-left: 1rem;
   margin-right: 1rem;
 }
+/* jQuery migration */
+.body_wrapper .melis-gdpr-banner-container .melis-gdpr-banner-content p {
+  color: #fff;
+}
