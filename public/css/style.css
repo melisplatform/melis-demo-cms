@@ -23028,5 +23028,5 @@ a .h_head:hover {
 }
 /* jQuery migration */
 .body_wrapper .melis-gdpr-banner-container .melis-gdpr-banner-content p {
-  color: #fff;
+  color: #fff !important;
 }
