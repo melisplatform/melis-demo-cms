@@ -60,6 +60,15 @@ class Module
                 'interface',
             ];
 
+            if (!empty($_SERVER['REQUEST_URI'])) {
+
+                $result = preg_match("#^\/melis(.*)$#i", $_SERVER['REQUEST_URI']);
+                if ($result) {
+                    // adding BO translations
+                    $translationType[] = 'setup';
+                }
+            }
+
             $translationList = [];
             if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/../module/MelisModuleConfig/config/translation.list.php')) {
                 $translationList = include 'module/MelisModuleConfig/config/translation.list.php';
@@ -70,18 +79,37 @@ class Module
                 $transPath = '';
                 $moduleTrans = __NAMESPACE__ . "/$locale.$type.php";
 
+                if ($type == 'setup') 
+                    $moduleTrans = __NAMESPACE__ . "/".$type."/".$locale.".php";
+
                 if (in_array($moduleTrans, $translationList)) {
                     $transPath = "module/MelisModuleConfig/languages/" . $moduleTrans;
                 }
 
+
                 if (empty($transPath)) {
 
-                    // if translation is not found, use melis default translations
-                    $defaultLocale = (file_exists(__DIR__ . "/../language/$locale.$type.php")) ? $locale : "en_EN";
-                    $transPath = __DIR__ . "/../language/$defaultLocale.$type.php";
+                    $defaultLocale = 'en_EN';
+
+                    if ($type == 'setup') {
+                        $langFile = $type.'/'.$locale.'.php';
+                        $langLocale = (file_exists(__DIR__ . "/../language/".$langFile)) ? $locale : $defaultLocale;
+                        $langPath = $type.'/'.$langLocale.'.php';
+
+                    } else {
+
+                        $langFile = $locale.$type.'.php';
+                        // if translation is not found, use melis default translations
+                        $langLocale = (file_exists(__DIR__ . "/../languags/".$langFile)) ? $locale : $defaultLocale;
+                        $langPath = $langLocale.'.'.$type.'.php';
+                    }
+
+                    
+                    $transPath = __DIR__ . "/../language/".$langPath;
                 }
 
-                $translator->addTranslationFile('phparray', $transPath);
+                if ($transPath)
+                    $translator->addTranslationFile('phparray', $transPath);
             }
         }
     }
