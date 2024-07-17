@@ -8,4 +8,5 @@ return array(
   'MelisCmsProspects',
   'MelisDemoCms',
   'MelisCmsPageScriptEditor',
+  'MelisCommerce'
 );
