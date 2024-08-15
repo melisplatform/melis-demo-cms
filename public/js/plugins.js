@@ -30,7 +30,7 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
 
     $.ajaxChimp = {
         responses: {
-            'You are sent to a welcome message and will be being sent our latest newsletters time to time'                                             : 0,
+            'You are sent to a welcome message and will be being sent our latest newsletters time to time' : 0,
             'Please enter a value'                                                              : 1,
             'An email address must contain a single @'                                          : 2,
             'The domain portion of the email address is invalid (the portion after the @: )'    : 3,
@@ -61,7 +61,7 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
             form.attr('novalidate', 'true');
             email.attr('name', 'EMAIL');
 
-            form.submit(function () {
+            form.on("submit", function () {
                 var msg;
                 function successCallback(resp) {
                     if (resp.result === 'success') {
@@ -120,11 +120,13 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
                 $.ajax({
                     url: url,
                     data: data,
-                    success: successCallback,
+                    //success: successCallback,
                     dataType: 'jsonp',
-                    error: function (resp, text) {
-                        console.log('mailchimp ajax submit error: ' + text);
-                    }
+                }).done(function(res) {
+                    successCallback(res);
+                }).fail(function(jqXHR, textStatus) {
+                    //alert( "jqXHR: " + jqXHR + " textStatus: " + textStatus );
+                    console.log('mailchimp ajax submit error: ' + textStatus);
                 });
 
                 // Translate and display submit message

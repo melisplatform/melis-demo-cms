@@ -21,8 +21,8 @@ return [
         '/melis-demo-cms/public/css/custom.css'
     ],
     'js' => [
-        '/melis-demo-cms/public/js/jquery-3.2.1.min.js',
-        '/melis-demo-cms/public/js/propper.js',
+        '/melis-demo-cms/public/js/jquery-3.7.1.min.js',
+        '/melis-demo-cms/public/js/popper.js',
         '/melis-demo-cms/public/js/bootstrap.min.js',
         '/melis-demo-cms/public/vendors/wow/wow.min.js',
         '/melis-demo-cms/public/vendors/sckroller/jquery.parallax-scroll.js',

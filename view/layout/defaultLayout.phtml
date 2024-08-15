@@ -23,7 +23,7 @@
         <nav class="navbar navbar-expand-lg menu_one menu_four" style="<?= ($this->renderMode == 'melis' ? 'padding-top: 50px;' : '') ?>">
             <div class="container">
                 <a class="navbar-brand" href="/" style="padding-right: 40px;padding-left: 8px; margin-top: 7px;"><img src="<?= $this->basePath('/MelisDemoCms/img/melis-logo.png') ?>" style="width: 30px; float: left;"><h4 style="letter-spacing: -2px;font-weight: 600;color: #e61c23;">&nbsp Melis Demo Cms</h4></a>
-                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="menu_toggle">
                         <span class="hamburger">
                             <span class="<?= ($this->menuFlag == 'black') ? 'custom-hamburger-color' : '' ?>"></span>
@@ -84,8 +84,5 @@
 <!-- List all js files. Located at /config/assets.config.php -->
 <?= $this->inlineScript(); ?>
 <!-- No conflict fix with page edition | tiny mce  -->
-<script type="text/javascript">
-
-</script>
 </body>
 </html>

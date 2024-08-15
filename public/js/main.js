@@ -3,7 +3,7 @@
 
     function navbarFixed(){
         if ( $('.header_area').length ){
-            $(window).scroll(function() {
+            $(window).on("scroll", function() {
                 var scroll = $(window).scrollTop();
                 if (scroll){
                     $(".header_area").addClass("navbar_fixed");
@@ -14,7 +14,6 @@
         };
     };
     navbarFixed();
-
 
     function offcanvasActivator(){
         if ( $('.bar_menu').length ){
@@ -540,7 +539,7 @@
         var getID = $(this).next().attr('id');
         var result = document.getElementById(getID);
         var qty = result.value;
-        $('.proceed_to_checkout .update-cart').removeAttr('disabled');
+        $('.proceed_to_checkout .update-cart').prop('disabled', false);
         if( !isNaN( qty ) ) {
             result.value++;
         }else{
@@ -552,7 +551,7 @@
         var getID = $(this).prev().attr('id');
         var result = document.getElementById(getID);
         var qty = result.value;
-        $('.proceed_to_checkout .update-cart').removeAttr('disabled');
+        $('.proceed_to_checkout .update-cart').prop('disabled', false);
         if( !isNaN( qty ) && qty > 0 ) {
             result.value--;
         }else {
@@ -779,8 +778,8 @@
     }
     loader();
 
-    if($('[data-toggle="tooltip"]').length){
-        $('[data-toggle="tooltip"]').tooltip()
+    if($('[data-bs-toggle="tooltip"]').length){
+        $('[data-bs-toggle="tooltip"]').tooltip();
     }
 
     if($("#slider-range").length){
@@ -800,7 +799,7 @@
     $('.search-btn').on('click', function(){
         $('body').addClass('open');
         setTimeout(function () {
-            $('.search-input').focus();
+            $('.search-input').trigger("focus");
         }, 500);
         return false;
     });
@@ -810,7 +809,7 @@
 	});
 
     if($('.develor_tab li a').length > 0){
-        $(".develor_tab li a").click(function () {
+        $(".develor_tab li a").on("click", function () {
             var tab_id = $(this).attr("data-tab");
             $(".tab_img").removeClass("active");
             $("#" + tab_id).addClass("active");
@@ -868,4 +867,4 @@
     }
    ppTestislider();
 
-})(jQuery)
+})(jQuery);

@@ -71,8 +71,7 @@
             echo $this->inlineScript();
         ?>
         <script type="text/javascript">
-            $("#setupStartbtn").click(function(){
-
+            $("#setupStartbtn").on("click", function(){
             	var noError = true;
             	var protocol = $("#siteProtocol").val();
               	if(protocol.trim().length){
@@ -93,7 +92,7 @@
           		if(noError){
           			$(".alert").addClass("hidden");
                     $(".alert-info").removeClass("hidden");
-                    $(this).attr('disabled', true);
+                    $(this).prop('disabled', true);
                  	executeSetup();
           		}
             });
@@ -115,8 +114,8 @@
                     value : $("#siteDomain").val()
                 });
 
-                $("#siteProtocol").attr("disabled", true);
-                $("#siteDomain").attr("disabled", true);
+                $("#siteProtocol").prop("disabled", true);
+                $("#siteDomain").prop("disabled", true);
 
                 $.ajax({
         			type        : 'POST',
@@ -124,7 +123,7 @@
         	        data        : dataString,
         	        dataType    : 'json',
         	        encode		: true
-        		}).success(function(data){
+        		}).done(function(data){
         			$(".alert").addClass("hidden");
     				$("#setupStartbtn").addClass("hidden");
     				$(".alert-success").removeClass("hidden");

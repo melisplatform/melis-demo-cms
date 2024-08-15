@@ -1,7 +1,7 @@
 /*!
- * Bootstrap-select v1.13.2 (https://developer.snapappointments.com/bootstrap-select)
+ * Bootstrap-select v1.13.18 (https://developer.snapappointments.com/bootstrap-select)
  *
- * Copyright 2012-2018 SnapAppointments, LLC
+ * Copyright 2012-2020 SnapAppointments, LLC
  * Licensed under MIT (https://github.com/snapappointments/bootstrap-select/blob/master/LICENSE)
  */
 
@@ -23,7 +23,7 @@
 }(this, function (jQuery) {
 
 (function ($) {
-  $.fn.selectpickers.defaults = {
+  $.fn.selectpicker.defaults = {
     noneSelectedText: '沒有選取任何項目',
     noneResultsText: '沒有找到符合的結果',
     countSelectedText: '已經選取{0}個項目',
@@ -36,3 +36,4 @@
 
 
 }));
+//# sourceMappingURL=defaults-zh_TW.js.map

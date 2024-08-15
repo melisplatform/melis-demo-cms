@@ -1,11 +1,11 @@
-$(document).ready(function(){
+$(function(){
         ajaxMailChimpForm($(".mailchimp-subscribe"), $(".mchimp-sucmessage"));
         // Turn the given MailChimp form into an ajax version of it.
         // If resultElement is given, the subscribe result is set as html to
         // that element.
         function ajaxMailChimpForm($form, $resultElement){
             // Hijack the submission. We'll submit the form manually.
-            $form.submit(function(e) {
+            $form.on("submit", function(e) {
                 e.preventDefault();
                 if (!isValidEmail($form)) {
                     var error =  "A valid email address must be provided.";
@@ -40,24 +40,22 @@ $(document).ready(function(){
                 cache: false,
                 dataType: "jsonp",
                 jsonp: "c", // trigger MailChimp to return a JSONP response
-                contentType: "application/json; charset=utf-8",
-                error: function (resp, text) {
-                        console.log('mailchimp ajax submit error: ' + text);
-                    },
-                success: function(data){
-                    if (data.result != "success") {
-                        var message = data.msg || "Sorry. Unable to subscribe. Please try again later.";
-                        $resultElement.css("color", "red");
-                        if (data.msg && data.msg.indexOf("already subscribed") >= 0) {
-                            message = "You're already subscribed. Thank you.";
-                            $resultElement.css("color", "black");
-                        }
-                        $resultElement.html(message);
-                    } else {
+                contentType: "application/json; charset=utf-8"
+            }).done(function(data) {
+                if (data.result != "success") {
+                    var message = data.msg || "Sorry. Unable to subscribe. Please try again later.";
+                    $resultElement.css("color", "red");
+                    if (data.msg && data.msg.indexOf("already subscribed") >= 0) {
+                        message = "You're already subscribed. Thank you.";
                         $resultElement.css("color", "black");
-                        $resultElement.html("Thank you!<br>You must confirm the subscription in your inbox.");
                     }
+                    $resultElement.html(message);
+                } else {
+                    $resultElement.css("color", "black");
+                    $resultElement.html("Thank you!<br>You must confirm the subscription in your inbox.");
                 }
+            }).fail(function(jqXHR, textStatus) {
+                console.log('mailchimp ajax submit error: ' + textStatus);
             });
         }
         function submitSubscribeForm2($form, $resultElement) {
@@ -68,24 +66,22 @@ $(document).ready(function(){
                 cache: false,
                 dataType: "jsonp",
                 jsonp: "c", // trigger MailChimp to return a JSONP response
-                contentType: "application/json; charset=utf-8",
-                error: function (resp, text) {
-                        console.log('mailchimp ajax submit error: ' + text);
-                    },
-                success: function(data){
-                    if (data.result != "success") {
-                        var message = data.msg || "Sorry. Unable to subscribe. Please try again later.";
-                        $resultElement.css("color", "red");
-                        if (data.msg && data.msg.indexOf("already subscribed") >= 0) {
-                            message = "You're already subscribed. Thank you.";
-                            $resultElement.css("color", "black");
-                        }
-                        $resultElement.html(message);
-                    } else {
+                contentType: "application/json; charset=utf-8"
+            }).done(function(data) {
+                if (data.result != "success") {
+                    var message = data.msg || "Sorry. Unable to subscribe. Please try again later.";
+                    $resultElement.css("color", "red");
+                    if (data.msg && data.msg.indexOf("already subscribed") >= 0) {
+                        message = "You're already subscribed. Thank you.";
                         $resultElement.css("color", "black");
-                        $resultElement.html("Thank you!<br>You must confirm the subscription in your inbox.");
                     }
+                    $resultElement.html(message);
+                } else {
+                    $resultElement.css("color", "black");
+                    $resultElement.html("Thank you!<br>You must confirm the subscription in your inbox.");
                 }
+            }).fail(function(jqXHR, textStatus) {
+                console.log('mailchimp ajax submit error: ' + textStatus);
             });
         }
     });

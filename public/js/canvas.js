@@ -6,7 +6,7 @@ var g;
 var pxs = [];
 var rint = 60;
 
-$(document).ready(function(){
+$(function(){
 	WIDTH = window.innerWidth;
 	HEIGHT = window.innerHeight;
 	$('#container').width(WIDTH).height(HEIGHT);

@@ -60,15 +60,16 @@
             beforeSend: function () {
                 hideErrors();
             },
-            success: function (data) {
-                if (data.success) {
-                    $('.success').removeClass('hidden');
-                    $contactForm[0].reset();
-                } else {
-                    $('.error').removeClass('hidden');
-                    showErrors(data.errors)
-                }
+        }).done(function(data) {
+            if (data.success) {
+                $('.success').removeClass('hidden');
+                $contactForm[0].reset();
+            } else {
+                $('.error').removeClass('hidden');
+                showErrors(data.errors)
             }
+        }).fail(function(jqXHR, textStatus) {
+            alert( "textStatus: " + textStatus + " jqXHR: " + jqXHR );
         });
 
         e.preventDefault();
