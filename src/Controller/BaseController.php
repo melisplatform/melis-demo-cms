@@ -58,7 +58,8 @@ class BaseController extends MelisSiteActionController
         // Set parameters
         $footerMenuParameter = [
             'template_path' => 'MelisDemoCms/plugins/footer-menu',
-            'pageIdRootMenu' => $homePageId
+            'pageIdRootMenu' => $homePageId,
+            'id' => 'menuFooter'
         ];
         // Render plugin
         $footerMenu = $menuPlugin->render($footerMenuParameter);
