@@ -7,6 +7,5 @@ return array(
   'MelisCmsSlider',
   'MelisCmsProspects',
   'MelisDemoCms',
-  'MelisCmsPageScriptEditor',
-  'MelisCommerce'
+  'MelisCmsPageScriptEditor'
 );
