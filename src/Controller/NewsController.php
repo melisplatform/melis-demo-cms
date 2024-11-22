@@ -88,7 +88,7 @@ class NewsController extends BaseController
                 'limit' => 5,
                 'unpublish_filter' => true,
                 'date_max' => null,
-                'site_id' => $siteConfigSrv->getSiteConfigByPageId($this->idPage)['siteConfig']['site_id'],
+                'site_id' => $siteConfigSrv->getSiteConfigByPageId($this->idPage)['siteConfig']['site_id'] ?? null,
             ]
         ];
         // Render latest news plugin

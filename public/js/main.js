@@ -778,9 +778,9 @@
     }
     loader();
 
-    if($('[data-bs-toggle="tooltip"]').length){
-        $('[data-bs-toggle="tooltip"]').tooltip();
-    }
+    /* if($('[data-toggle="tooltip"]').length){
+        $('[data-toggle="tooltip"]').tooltip();
+    } */
 
     if($("#slider-range").length){
         $( "#slider-range" ).slider({
