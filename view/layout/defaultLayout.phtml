@@ -16,6 +16,8 @@
 
     <!-- List CSS files. Located at /config/assets.config.php -->
     <?= $this->headLink() ?>
+
+    <link href="/assets/css/schemes.css?v=<?= time(); ?>" media="screen" rel="stylesheet" type="text/css">
 </head>
 <body style="<?= ($this->renderMode == 'melis' ? 'padding-top: 50px;' : '') ?>">
 <div class="body_wrapper">
