@@ -54,7 +54,11 @@ for developers… presents the dos and don'ts."*
 
 A complete sample website you can install in one step and then **explore from the back-office** (its
 pages, templates and plugins are all editable in MelisCms) — and **read the source** to learn how
-each piece is built. It shows the common building blocks of a real site:
+each piece is built.
+
+![The live MelisDemoCms front-office home page — top nav (News / Team / Our Services / Our Process / FAQ / Contact), the "Melis Demo Cms" hero with a call-to-action, and a dashboard hero graphic.](./images/melisdemocms-site.png)
+
+It shows the common building blocks of a real site:
 
 - A **home page** with sliders/carousels, a testimonials slider, and a GDPR banner.
 - A **News** section (list + details), a **Team** page, **Services** (list + details), an **FAQ**,
@@ -69,9 +73,10 @@ each piece is built. It shows the common building blocks of a real site:
 3. The site **self-installs** (its setup creates the site, pages and config). Browse the domain to see
    the front-office; edit it under **MelisCms** in the back-office.
 
-> **Screenshots.** The promo shots (Home / News / Team / Contact / FAQ) are described in
-> `etc/MarketPlace/melis-demo-cms.xml` (store images) — not this doc's screenshots; none captured for
-> the AI doc yet. (The best "screenshots" of this module are the live pages once installed.)
+> **Screenshots.** The home-page capture above is the AI-doc screenshot (see the
+> [Screenshot index](#screenshot-index)). The best way to see the rest is the **live site** once
+> installed; the `etc/MarketPlace/melis-demo-cms.xml` promo references (Home/News/Team/Contact/FAQ)
+> are separate store images.
 
 ---
 ---
@@ -178,6 +183,14 @@ melis-demo-cms/                     (the example front-office SITE module → mo
 ├── luceneIndex/                   → on-site search index
 └── etc/  MarketPlace (promo xml) + MelisAI/doc (this doc)
 ```
+
+---
+
+## Screenshot index
+
+| File (`./images/`) | Content |
+|---|---|
+| `melisdemocms-site.png` | The live **MelisDemoCms** front-office home page — top nav (News/Team/Our Services/Our Process/FAQ/Contact), the "Melis Demo Cms" hero + CTA, and a dashboard hero graphic. |
 
 ---
 
