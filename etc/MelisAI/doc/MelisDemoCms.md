@@ -58,12 +58,26 @@ each piece is built.
 
 ![The live MelisDemoCms front-office home page — top nav (News / Team / Our Services / Our Process / FAQ / Contact), the "Melis Demo Cms" hero with a call-to-action, and a dashboard hero graphic.](./images/melisdemocms-site.png)
 
-It shows the common building blocks of a real site:
+Crucially, it's a **tutorial**: it deliberately builds different pages in **different ways** so you
+can see the trade-offs — some pages place plugins **manually in code**, others are **full
+drag-and-drop**, others **mix** both. Each page demonstrates a real building block of a website:
 
-- A **home page** with sliders/carousels, a testimonials slider, and a GDPR banner.
-- A **News** section (list + details), a **Team** page, **Services** (list + details), an **FAQ**,
-  **Testimonials**, a **Contact** (prospect) form, and example **drag-and-drop / template** pages.
-- A **menu** (header / white / footer variants) and a **search** page.
+| Page | What it shows (functionally) | Plugins used | How it's built |
+|---|---|---|---|
+| **Home** | hero + two **sliders/carousels**, a **testimonials** slider, a **GDPR banner** | 2× Slider, ShowListFromFolder, GdprBanner | **manual** (controller renders, view echoes) |
+| **News** (list) | a **paginated news list** | News *List* | **mixed** (plugin + drop zones) |
+| **News** (details) | one article + a **latest-news** sidebar | News *Show* + *Latest* | **mixed** |
+| **Team** | a **team slider** + free content | Slider | **mixed** (slider + zones + tags) |
+| **Services** (list/details) | editable text/media content, no plugins | — | **inline tags** only |
+| **FAQ** | an FAQ **listing** + three FAQ **category** blocks | 4× ShowListFromFolder | **mixed** |
+| **Contact** | a **prospect/contact form** | Prospects *ShowForm* | **mixed** (form + zones) |
+| **Testimonial** | editable testimonial content | — | **drag-drop zone + tags** |
+| **Search** | **search results** (paginated) | Front *SearchResults* | **mixed** *(currently disabled)* |
+| **DragDrop / Template** | demo pages, each showing one **template style** | — / 1× Slider | **drag-drop / static / mixed** showcases |
+| **404** | a simple error page | — | **inline tags** |
+
+A shared **menu** (header / white / footer variants, via the Front menu plugin) wraps every page.
+Part B explains the three techniques and the exact plugins per page.
 
 ## A2. Install & view it
 
@@ -94,28 +108,59 @@ It shows the common building blocks of a real site:
 | Requires | `melis-cms`, `melis-cms-slider`, `melis-cms-prospects`, `melis-cms-news`, `melis-cms-page-script-editor` (`^5.2`); suggests `melis-engine`, `melis-front` |
 | `config/module.load.php` | the modules this site loads: AssetManager, Engine, Front, CmsNews, CmsSlider, CmsProspects, MelisDemoCms, CmsPageScriptEditor |
 
-## B2. The page-rendering pattern (what to copy)
+## B2. The three composition techniques (the tutorial heart)
 
-The site's **front controllers** (`Home`, `News`, `Team`, `Services`, `Faq`, `Contact`,
-`Testimonial`, `DragDrop`, `Template`, `Page404`) all extend `BaseController` and follow one pattern:
-read **site config keys**, **render templating plugins** with parameters, and `addChild` them to the
-view. `HomeController::indexAction` is the canonical example:
+The demo teaches **three ways** to put content/plugins on a page. Most real pages **combine** them.
+
+### (1) Manual placement — plugin rendered in the controller
+
+The developer wires the plugin: instantiate it, `render()` with params (the **template** + **site
+config** values), `addChild` it under a name, then the `.phtml` echoes `$this->name`.
+`HomeController::indexAction` is the canonical example:
 
 ```php
-$siteConfigSrv = $this->getServiceManager()->get('MelisSiteConfigService');
-
-$sliderPlugin = $this->MelisCmsSliderShowSliderPlugin();              // a plugin from melis-cms-slider
-$homeSlider1  = $sliderPlugin->render([
-    'template_path' => 'MelisDemoCms/plugins/home-carousel-slider',  // this site's template for it
+// Controller
+$cfg    = $this->getServiceManager()->get('MelisSiteConfigService');
+$slider = $this->MelisCmsSliderShowSliderPlugin();                   // plugin from melis-cms-slider
+$homeSlider1 = $slider->render([
+    'template_path' => 'MelisDemoCms/plugins/home-carousel-slider',  // THIS site's template
     'id' => 'homeSlider1', 'pageId' => $this->idPage,
-    'sliderId' => $siteConfigSrv->getSiteConfigByKey('home_page_slider_1_id', $this->idPage), // config-driven
+    'sliderId' => $cfg->getSiteConfigByKey('home_page_slider_1_id', $this->idPage),  // config-driven
 ]);
-$this->view->addChild($homeSlider1, 'homeSlider1');                  // exposed as $this->homeSlider1 in the .phtml
-// …same for a 2nd slider, the testimonials list (MelisFrontShowListFromFolderPlugin) and the GDPR banner
+$this->view->addChild($homeSlider1, 'homeSlider1');
+// view (home/index.phtml):  <?= $this->homeSlider1 ?>
 ```
 
-So: **plugins come from other modules**, **content/IDs come from site config**, **templates are this
-site's `.phtml`**, and the controller wires them together.
+**Use when:** the plugin needs computed parameters / config, or the layout is fixed and
+developer-owned. *Pages: Home, Team (slider), News (lists), FAQ (lists), Contact (form), Search.*
+
+### (2) Full drag-and-drop — a zone the BO user fills
+
+The `.phtml` declares a **drop zone**; a back-office editor drags any plugin into it and the choice is
+saved in the **page XML** — **no controller code**. The zone helper:
+
+```php
+<?= $this->MelisDragDropZone($this->idPage, "dragdropzone_home_1") ?>   // a named, droppable zone
+```
+
+**Use when:** marketers/editors should compose the page freely. *Pages: DragDrop, the
+Template showcase (1-zone / 2-zone / centered).*
+
+### (3) Inline editable tags — small editable blocks in code
+
+For fixed-but-editable text/media (titles, paragraphs, an image), the `.phtml` wraps a default value
+in a **tag** the BO user can edit in place — not a full plugin:
+
+```php
+<?= $this->MelisTag($this->idPage, 'static-html-1', 'html', '<h1>Accessible…</h1>') ?>   // 'html' | 'textarea' | 'media'
+```
+
+**Use when:** the developer owns the structure but the client should tweak copy/images.
+*Pages: Services, Testimonial, 404, and the static/mixed templates.*
+
+> All three coexist: e.g. **News** = a News-list **plugin** (manual) **+** top/bottom **drop zones**
+> for banners; **mixed-template** = `MelisTag` blocks **+** two drop zones. **Plugins come from other
+> modules, templates are this site's `.phtml`, content/IDs come from site config.**
 
 ## B3. Templating-plugin template overrides (`melis.plugins.config.php`)
 
@@ -133,11 +178,46 @@ A site supplies its **own templates** for shared plugins (so the same plugin loo
 `config/module.config.php`'s `template_map` maps each `MelisDemoCms/plugins/*` key to its `.phtml`,
 and `controller_map['MelisDemoCms'] = true` enables view-template auto-resolution for the controllers.
 
-## B4. Templates, config, translations & search
+## B4. Per-page plugin inventory (exact plugins + technique)
+
+Which **templating plugins** each page renders and how (manual `addChild` / drop **zone** / inline
+**tag**). Plugin classes are real; `template_path` is this site's override; config keys feed IDs.
+
+| Page · controller → view | Plugins (class · template_path · config key) | Drop zones | Tags |
+|---|---|---|---|
+| **Home** `Home::index` → `home/index` | `MelisCmsSliderShowSliderPlugin` ×2 (`home-carousel-slider`/`home_page_slider_1_id`, `home-slider2`/`home_page_slider_2_id`) · `MelisFrontShowListFromFolderPlugin` (`home-testimonial-slider`/`testimonials_folder_id`) · `MelisFrontGdprBannerPlugin` (`gdpr-banner`) | — | yes |
+| **News list** `News::news` → `news/news` | `MelisCmsNewsListNewsPlugin` (`news-list`, paginated 6, `news_details_page_id`) | `dragdropzone_news_1/2` | — |
+| **News details** `News::newsDetails` → `news/news-details` | `MelisCmsNewsShowNewsPlugin` (`news-details`) · `MelisCmsNewsLatestNewsPlugin` (`latest-news-vertical`, 5) | `dragdropzone_news_details_1/2` | — |
+| **Team** `Team::team` → `team/team` | `MelisCmsSliderShowSliderPlugin` (`team-slider`/`team_page_slider_1_id`) | `dragdropzone_team_1/2` | yes |
+| **Services** `Services::services / serviceDetails` | *(none)* | — | yes |
+| **FAQ** `Faq::faq` → `faq/faq` | `MelisFrontShowListFromFolderPlugin` ×4 (`faq-listing`/`faq_page_id`; `faq-values` ×3 → `delivery_folder_id`/`product_folder_id`/`payment_folder_id`) | `dragdropzone_faq_1/2` | yes |
+| **Contact** `Contact::contact` → `contact/contact` | `MelisCmsProspectsShowFormPlugin` (`prospect-form`; fields `pros_name,company,country,telephone,email,theme,message`) | `dragdropzone_contact_1/2` | — |
+| **Testimonial** `Testimonial::testimonial` | *(none)* | `testimonial_html_1` | yes |
+| **Search** `Search::searchResults` *(disabled)* | `MelisFrontSearchResultsPlugin` (`search-results`, paginated 10) | `dragdropzone_search_result_1/2` | — |
+| **DragDrop / Template** showcases | `Template::static` renders `MelisCmsSliderShowSliderPlugin` manually; the rest are zone-only | per template (below) | per template |
+
+Every page also gets the **menu** (header/footer) from `MelisFrontMenuPlugin` via the layout.
+
+### Template demonstrations (`view/melis-demo-cms/template/`)
+
+The `Template` controller exposes one action per template so you can see each style live:
+
+| Template | Technique it teaches | Zones / content |
+|---|---|---|
+| `static-template` | **manual + tags**, no zones | echoes `$this->staticSlider` (a Slider rendered in the controller) + `MelisTag` html/textarea/media blocks |
+| `dragdrop` | **simplest drag-drop** | one zone `dragdropzone_home_1` |
+| `dragdrop2zones` | **multiple zones** around fixed content | `dragdropzone2_home_1` … static text … `dragdropzone2_home_2` |
+| `centered-dragdrop` | **styled/centered zones** | `centered_dragdrop_html_1/2` inside a centered container |
+| `mixed-template` | **the hybrid** | `dragdropzone_mixed_template_1` + `MelisTag` blocks + `dragdropzone_mixed_template_2` |
+
+So a developer can compare, side by side: *fix everything in code* (static) → *let editors do
+everything* (dragdrop) → *fix the skeleton, open a few zones* (mixed).
+
+## B5. Templates, config, translations & search
 
 - **Page templates** (`view/melis-demo-cms/template/`): `static-template`, `dragdrop`,
   `dragdrop2zones`, `centered-dragdrop`, `mixed-template` — examples of **static** vs **drag-and-drop
-  zone** templates a CMS page can use.
+  zone** templates a CMS page can use (detailed in §B4).
 - **Site config & translations** — `config/MelisDemoCms.config.php` holds the site's config (slider
   IDs, folder IDs, etc.); read it with **`MelisSiteConfigService::getSiteConfigByKey($key, $pageId,
   $section, $lang)`** or the **`$this->SiteConfig(...)`** view helper, and translate with
@@ -146,7 +226,7 @@ and `controller_map['MelisDemoCms'] = true` enables view-template auto-resolutio
 - **Search** — a **Lucene** index (`luceneIndex/`) + `SearchController` provide on-site search; note
   it's currently **disabled** in `module.config.php` (a `@TODO change to elastic search`).
 
-## B5. Self-install (marketplace / installer hooks)
+## B6. Self-install (marketplace / installer hooks)
 
 Because it's a site product, the module installs itself when downloaded:
 
@@ -159,7 +239,7 @@ Because it's a site product, the module installs itself when downloaded:
   `LatestNewsHorizontalListener` (feeds a news plugin). Service `DemoCmsService` + `MelisPlatformTable`
   back the setup.
 
-## B6. Quick code map
+## B7. Quick code map
 
 ```
 melis-demo-cms/                     (the example front-office SITE module → module/MelisSites/MelisDemoCms)
