@@ -44,8 +44,8 @@ if ($this->fromDragDropZone) {
                                 <div class="media">
                                     <?= $val['testi-img-1'] ?? '' ?>
                                     <div class="media-body">
-                                        <h5><?= $val['testi-textarea-1'] ?></h5>
-                                        <p><?= $val['testi-textarea-2'] ?></p>
+                                        <h5><?= $this->escapeHtml($val['testi-textarea-1']) ?></h5>
+                                        <p><?= $this->escapeHtml($val['testi-textarea-2']) ?></p>
                                     </div>
                                 </div>
                             </div>

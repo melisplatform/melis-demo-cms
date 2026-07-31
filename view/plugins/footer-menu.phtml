@@ -4,7 +4,7 @@
             <div class="col-lg-2">
                 <div class="f_widget dark_widget about-widget">
                     <a
-                        <?= ($page['menu']) == 'LINK' ? 'href="' . $page['uri'] . '"' : '' ?>
+                        <?= ($page['menu']) == 'LINK' ? 'href="' . $this->escapeUrl($page['uri']) . '"' : '' ?>
                     >
                         <h3
                             class="f-title f_500 t_color mb_40"
@@ -18,7 +18,7 @@
                             <?php foreach ($page['pages'] as $subKey => $subPage) : ?>
                                 <?php if ($subPage['menu'] == 'LINK') : ?>
                                     <li>
-                                        <a href="<?= $subPage['uri'] ?>">
+                                        <a href="<?= $this->escapeUrl($subPage['uri']) ?>">
                                             <span style="font-size: 12px;"> <?= strtoupper($subPage['label']) ?> </span>
                                         </a>
                                     </li>

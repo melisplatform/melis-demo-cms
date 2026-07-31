@@ -46,14 +46,14 @@ if ($this->fromDragDropZone) {
                                         <div class="jobsearch-table-cell">
                                             <h4>
                                                 <a
-                                                    href="<?= $page->url ?>"
+                                                    href="<?= $this->escapeUrl($page->url) ?>"
                                                     class="search-results-link"
                                                 >
-                                                    <?= $page->pageName ?>
+                                                    <?= $this->escapeHtml($page->pageName) ?>
                                                 </a>
                                             </h4>
                                             <ul class="list-unstyled">
-                                                <li><?= $page->description ?></li>
+                                                <li><?= $this->escapeHtml($page->description) ?></li>
                                             </ul>
                                         </div>
                                     </div>

@@ -6,9 +6,9 @@ if ($this->fromDragDropZone) {
 }
 ?>
 <?php if (! empty($this->news)) : ?>
-    <div id="<?= $this->pluginId ?>" class="<?= $widths ?> blog_single mb_50">
+    <div id="<?= $this->escapeHtmlAttr($this->pluginId) ?>" class="<?= $widths ?> blog_single mb_50">
         <?php if (! empty($this->news['cnews_image1'])) : ?>
-            <img class="img-fluid" src="<?= $this->news['cnews_image1']; ?>" alt="" style="height: auto; width: 100%; object-fit: cover;">
+            <img class="img-fluid" src="<?= $this->escapeUrl($this->news['cnews_image1']); ?>" alt="" style="height: auto; width: 100%; object-fit: cover;">
         <?php else : ?>
             <img class="img-fluid" src="<?= $this->basePath('MelisDemoCms/img/blog-grid/blog_single.png') ?>" alt="">
         <?php endif; ?>
@@ -19,7 +19,7 @@ if ($this->fromDragDropZone) {
             <div class="entry_post_info">
             </div>
             <a href="#">
-                <h5 class="f_p f_size_20 f_500 t_color mb-30"><?= $this->news['cnews_title'] ?></h5>
+                <h5 class="f_p f_size_20 f_500 t_color mb-30"><?= $this->escapeHtml($this->news['cnews_title']) ?></h5>
             </a>
 
             <?php 
