@@ -16,9 +16,9 @@ if ($this->fromDragDropZone) {
         <?php if (! empty($this->latestNews)) : ?>
             <?php foreach ($this->latestNews as $key => $news) : ?>
                 <div class="media post_item">
-                    <img src="<?= $this->escapeUrl($this->basePath($news['cnews_image1']) ?? '') ?>" alt="" style="height: 80px; width: 90px;">
+                    <img src="<?= $this->escapeHtml($this->basePath($news['cnews_image1']) ?? '') ?>" alt="" style="height: 80px; width: 90px;">
                     <div class="media-body">
-                        <a href="<?= $this->escapeUrl($news['newsLink']) ?>">
+                        <a href="<?= $this->escapeHtml($news['newsLink']) ?>">
                             <h3 class="f_size_16 f_p f_400"><?= $this->escapeHtml($news['cnews_title']) ?></h3>
                         </a>
                         <div class="entry_post_info">

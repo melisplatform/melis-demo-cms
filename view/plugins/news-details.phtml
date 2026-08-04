@@ -8,7 +8,7 @@ if ($this->fromDragDropZone) {
 <?php if (! empty($this->news)) : ?>
     <div id="<?= $this->escapeHtmlAttr($this->pluginId) ?>" class="<?= $widths ?> blog_single mb_50">
         <?php if (! empty($this->news['cnews_image1'])) : ?>
-            <img class="img-fluid" src="<?= $this->escapeUrl($this->news['cnews_image1']); ?>" alt="" style="height: auto; width: 100%; object-fit: cover;">
+            <img class="img-fluid" src="<?= $this->escapeHtml($this->news['cnews_image1']); ?>" alt="" style="height: auto; width: 100%; object-fit: cover;">
         <?php else : ?>
             <img class="img-fluid" src="<?= $this->basePath('MelisDemoCms/img/blog-grid/blog_single.png') ?>" alt="">
         <?php endif; ?>

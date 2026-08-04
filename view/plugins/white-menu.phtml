@@ -24,7 +24,7 @@
                 <li class="nav-item <?= ($hasSubMenu) ? 'dropdown submenu' : '' ?>">
                     <a
                         class="nav-link dropdown-toggle"
-                        <?= ($page['menu']) == 'LINK' ? 'href="' . $this->escapeUrl($page['uri']) . '"' : '' ?>
+                        <?= ($page['menu']) == 'LINK' ? 'href="' . $this->escapeHtml($page['uri']) . '"' : '' ?>
                         style="white-space: nowrap"
                     >
                         <?= strtoupper($page['label']) ?>
@@ -35,7 +35,7 @@
                             <?php foreach ($page['pages'] as $subKey => $subPage) : ?>
                                 <?php if ($subPage['menu'] == 'LINK') : ?>
                                     <li class="nav-item">
-                                        <a href="<?= $this->escapeUrl($subPage['uri']) ?>" class="nav-link">
+                                        <a href="<?= $this->escapeHtml($subPage['uri']) ?>" class="nav-link">
                                             <span style="font-size: 12px; white-space: nowrap"> <?= strtoupper($subPage['label']) ?> </span>
                                         </a>
                                     </li>

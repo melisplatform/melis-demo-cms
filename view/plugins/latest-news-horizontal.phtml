@@ -17,13 +17,13 @@ if ($this->fromDragDropZone) {
                 <div class="col-lg-4 col-sm-6">
                     <div class="blog_post_item">
                         <div class="blog_img">
-                            <img src="<?= $this->escapeUrl($this->basePath($news['cnews_image1']) ?? '') ?>" alt="">
+                            <img src="<?= $this->escapeHtml($this->basePath($news['cnews_image1']) ?? '') ?>" alt="">
                         </div>
                         <div class="blog_content">
                             <div class="entry_post_info">
                                 <a href="#"><?= $this->escapeHtml($news['newsDateFormated']) ?></a>
                             </div>
-                            <a href="<?= $this->escapeUrl($news['newsLink']) ?>">
+                            <a href="<?= $this->escapeHtml($news['newsLink']) ?>">
                                 <h5 class="f_p f_size_16 f_500 t_color"><?= $this->escapeHtml($news['cnews_title']) ?></h5>
                             </a>
                             <?php if (! empty($news['cnews_subtitle'])) : ?>
